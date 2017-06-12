@@ -1,0 +1,28 @@
+# Editors' backup files
+*~
+*.sw?
+tags
+
+# Platform-dependant data
+.DS_Store
+Thumbs.db
+
+# Libraries & Objects
+*.lib
+*.o
+*.a
+*.dll
+*.dylib
+*.so
+*.hi
+*.class
+*.pyc
+__pycache__
+*.cmi
+*.cmt
+*.cmti
+*.cmx
+
+# Executables
+a.out
+a.exe

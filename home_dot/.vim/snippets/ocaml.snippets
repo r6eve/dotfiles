@@ -1,0 +1,133 @@
+snippet gcdlcm
+	let gcd m n =
+		let rec doit x y =
+			if y <= 0 then x else doit y (x mod y) in
+		doit (max m n) (min m n)
+
+	let lcm m n = m * n / (gcd m n)
+	${0}
+snippet iota
+	let iota ?(start=0) ?(step=1) cnt =
+		let rec doit i acc =
+			if i <= 0 then acc
+			else doit (i - 1) (start + step*(i - 1) :: acc) in
+		doit cnt []
+	${0}
+snippet lower_bound
+	let lower_bound a first last v =
+		let rec doit len first =
+			if len = 0 then first
+			else
+				let half = len / 2 in
+				let mid = first + half in
+				if a.(mid) < v then doit (len - half - 1) (mid + 1)
+				else doit half first in
+		doit (last - first + 1) first
+	${0}
+snippet measure
+	let measure f = let t = Sys.time () in f (); Sys.time () -. t
+snippet nthroot
+	let nth_root x n =
+		let fx = float_of_int x in
+		let fn = float_of_int n in
+		if x < 0 && n mod 2 = 1 then (-. exp (log (-. fx) /. fn))
+		else exp (log fx /. fn)
+	${0}
+snippet onl
+	Str.split (Str.regexp " ") (read_line ())
+snippet pi
+	let pi = 4. *. atan 1.
+
+	let degree_to_radian d = pi *. d /. 180.
+	${0}
+snippet split
+	let split_on_char sep s =
+		let open String in
+		let r = ref [] in
+		let j = ref (length s) in
+		for i = length s - 1 downto 0 do
+			if get s i = sep then begin
+				r := sub s (i + 1) (!j - i - 1) :: !r;
+				j := i
+			end
+		done;
+		sub s 0 !j :: !r
+	${0}
+snippet myary
+	module Array = struct
+		include Array
+
+		let rev_iter f a =
+			let rec doit i =
+				if i < 0 then ()
+				else (f (Array.get a i); doit (i - 1)) in
+			doit (Array.length a - 1)
+
+		let rev_iteri f a =
+			let rec doit i =
+				if i < 0 then ()
+				else (f i (Array.get a i); doit (i - 1)) in
+			doit (Array.length a - 1)
+
+	end
+	${0}
+snippet mystr
+	module String = struct
+		include String
+
+		let split_on_char sep s =
+			let open String in
+			let r = ref [] in
+			let j = ref (length s) in
+			for i = length s - 1 downto 0 do
+				if get s i = sep then begin
+					r := sub s (i + 1) (!j - i - 1) :: !r;
+					j := i
+				end
+			done;
+			sub s 0 !j :: !r
+
+		let to_int_list str =
+			Str.split (Str.regexp " ") str |> List.map int_of_string
+
+		let to_float_list str =
+			Str.split (Str.regexp " ") str |> List.map float_of_string
+
+		let to_string_list str = Str.split (Str.regexp " ") str
+
+		let to_list str =
+			let rec doit i acc =
+				if i < 0 then acc
+				else doit (i - 1) (String.get str i :: acc) in
+			doit (String.length str - 1) []
+
+		let fold_left f init str =
+			let n = String.length str - 1 in
+			let rec doit i acc =
+				if i > n then acc
+				else doit (i + 1) (f acc str.[i]) in
+			doit 0 init
+
+	end
+	${0}
+snippet mylst
+	module List = struct
+		include List
+
+		let take n lst =
+			let rec doit n lst acc =
+				if n <= 0 then List.rev acc
+				else
+					match lst with
+					| [] -> List.rev acc
+					| hd :: tl -> doit (n - 1) tl (hd :: acc) in
+			doit n lst []
+
+		let break p lst =
+			let rec doit acc = function
+				| [] -> (List.rev acc, [])
+				| (x :: _ as xs) when p x -> (List.rev acc, xs)
+				| x :: xs -> doit (x :: acc) xs in
+			doit [] lst
+	end
+	${0}

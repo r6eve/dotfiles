@@ -1,0 +1,32 @@
+[user]
+	name = r6eve
+	email = r6eve179f@gmail.com
+[color]
+	ui = auto
+# [color "status"]
+# 	changed = cyan
+# 	untracked = cyan
+# [color "diff"]
+# 	old = cyan
+[core]
+	excludesfile = ~/.gitignore
+	pager = less -R
+	editor = "LANG=en_US.UTF-8 vim"
+[github]
+	user = r6eve
+[alias]
+	br = branch
+	cmv = commit -v
+	co = checkout
+	di = diff
+	dic = diff --color-words
+	dij = diff --word-diff-regex='\\w+'
+	dis = diff --stat
+	gr = grep
+	lo = log --graph --pretty=format:'%C(Yellow)%h %C(White)%ad %s%C(Green)%d %C(Cyan)[%an]' --date=short
+	loc = log -p --color-words
+	lon = log --name-status
+	lop = log -p
+	mg = merge
+	mgn = merge --no-ff
+	st = status -sb

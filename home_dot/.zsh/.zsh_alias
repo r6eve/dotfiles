@@ -1,0 +1,63 @@
+# OS{{{1
+alias -g C="|perl -pe 's/\n// if eof' |xsel --input --clipboard"
+alias -g L='|less'
+alias -g LR='--color=always |less -R'
+alias grep='grep -n --color=auto'
+alias egrep='egrep -n --color=auto'
+alias fgrep='fgrep -n --color=auto'
+alias algrep='grep -n --color=always'
+alias alegrep='egrep -n --color=always'
+alias alfgrep='fgrep -n --color=always'
+alias ls='ls -F --color=auto'
+alias la='ls -AF --color=auto'
+alias ll='ls -AFl --color=auto'
+alias llt='ls -AFl --color=auto --time-style=full-iso'
+alias bc='bc -q'
+alias di='colordiff -uw'
+alias diff='colordiff'
+alias gdb='gdb -quiet'
+alias jobs='jobs -l'
+alias parallel='parallel --no-notice'
+alias q='exit'
+alias time='/usr/bin/time'
+alias v='nvim'
+# alias v='vim'
+alias caddy="$HOME/repos/caddy/caddy.rb"
+alias themis="$HOME/.vim/plugged/vim-themis/bin/themis"
+
+# C{{{1
+alias gcc='gcc -std=c99 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
+alias splint='splint +charindex -type -compdef -usedef -retvalother -casebreak'
+
+# C++{{{1
+alias g++='g++ -std=c++11 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
+alias clang++='clang++ -std=c++11 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
+
+# Common Lisp{{{1
+alias isbcl='rlwrap sbcl --noinform'
+alias sbcl='sbcl --noinform'
+
+# Haskell{{{1
+alias hinfo='hoogle --info'
+
+# JavaScript{{{1
+alias esa='eslint -c airbnb'
+
+# OCaml{{{1
+alias iocaml='rlwrap ocaml'
+
+# Perl{{{1
+alias iperl='perl -de0'
+alias plint='perl -MO=Lint,all'
+
+# R{{{1
+alias R='R --vanilla -q'
+alias Rscript='Rscript --vanilla'
+
+# Rust{{{1
+alias clippy='rustup run nightly cargo clippy'
+alias cbuild='RUSTC_WRAPPER=`which sccache` cargo build'
+
+# Scheme{{{1
+alias igosh='rlwrap gosh'
+alias isagi='rlwrap sagittarius'

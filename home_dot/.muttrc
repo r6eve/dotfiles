@@ -1,0 +1,43 @@
+# Genal options{{{1
+set imap_keepalive = 300
+set timeout = 300
+set mail_check = 60
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
+set include
+set editor = "vim %s"
+set tilde = yes
+set delete = yes
+set pager_stop
+set edit_headers
+set sleep_time = 0
+unset markers
+color normal     white default
+color hdrdefault green default
+color status     white blue
+
+# key bindings{{{1
+macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
+# macro index,pager \cwc '<sync-mailbox><enter-command>source ~/prog/config/mutt/kitcc<enter><change-folder>!<enter>'
+# macro index,pager \cwg '<sync-mailbox><enter-command>source ~/prog/config/mutt/gmail<enter><change-folder>!<enter>'
+# macro index,pager \cwk '<sync-mailbox><enter-command>source ~/prog/config/mutt/kit<enter><change-folder>!<enter>'
+# macro index,pager \cws '<sync-mailbox><enter-command>source ~/prog/config/mutt/sel<enter><change-folder>!<enter>'
+
+# kit{{{1
+# source "~/prog/config/mutt/kit"
+# folder-hook $folder 'source ~/prog/config/mutt/kit'
+
+# kitcc{{{1
+# source "~/prog/config/mutt/kitcc"
+# folder-hook $folder 'source ~/prog/config/mutt/kitcc'
+
+# sel{{{1
+# source "~/prog/config/mutt/sel"
+# folder-hook $folder 'source ~/prog/config/mutt/sel'
+
+# gmail{{{1
+# source "~/prog/config/mutt/gmail"
+# folder-hook $folder 'source ~/prog/config/mutt/gmail'
+
+# END{{{1
+# vim: syntax=muttrc

@@ -1,0 +1,63 @@
+snippet #!
+	#!/usr/bin/env gosh
+
+	${0}
+snippet #s
+	#!/usr/bin/env gosh
+
+	(define (usage program-name)
+		(format (current-error-port)
+						"Usage: ~a [FILE]...~%" program-name)
+		(exit 2))
+
+	(define (main args)
+		(if (null? (cdr args))
+				(usage (car args))
+				(for-each
+					(lambda (file)
+						(call-with-input-file file
+							(lambda (p) (foo p))))
+					(cdr args)))
+		0)
+snippet #su
+	(use gauche.parseopt)
+
+	(define (usage prog)
+		(format (current-error-port)
+	#"\
+	Usage: ~|prog| [options]
+
+	Options:
+		--help         brief help message
+		--verbose      verbose mode
+		--infile       input file   (required)
+		--outfile      output file  (required)
+		--debug-level  0, 1, 2, 3   (default: 0)
+	")
+		(exit 2))
+
+	(define (die . args)
+		(apply format (current-error-port) args)
+		(newline)
+		(exit 1))
+
+	(define (main args)
+		(let-args (cdr args)
+			((verbose     "v|verbose")
+			 (infile      "i|infile=s")
+			 (outfile     "o|outfile=s")
+			 (debug-level "d|debug-level=i" 0)
+			 (help        "h|help" => (cut usage (car args)))
+			 (else (opt . jnk)
+						 (die "Unknown option: ~a" opt))
+			 . restargs)
+			(cond ((eq? infile #f) (die "set --infile"))
+						((eq? outfile #f) (die "set --outfile")))
+
+			0))
+snippet die
+	(define (die . args)
+		(apply format (current-error-port) args)
+		(newline)
+		(exit 1))
+	${0}

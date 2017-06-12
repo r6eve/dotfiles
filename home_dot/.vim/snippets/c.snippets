@@ -1,0 +1,28 @@
+snippet #i
+	#include <stdio.h>
+
+	int main() {
+		${0}
+
+		return 0;
+	}
+snippet #ina
+	#include <stdio.h>
+
+	int main(int argc, char **argv) {
+		${0}
+
+		return 0;
+snippet al
+	#define array_length(x) ((int)(sizeof(x) / sizeof((x)[0])))
+snippet mm
+	#define min(a,b) ((a)<(b)?(a):(b))
+	#define max(a,b) ((a)>(b)?(a):(b))
+snippet rep
+	#define rep(i,n) for (int i=0;i<(n);i++)
+snippet rrep
+	#define rrep(i,n) for (int i=(n)-1;i>=0;i--)
+snippet mfor
+	#define for(i,a,b) for (int i=(a);i<(b);i++)
+snippet mrfor
+	#define rfor(i,a,b) for (int i=(b)-1;i>=(a);i--)

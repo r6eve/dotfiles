@@ -1,0 +1,57 @@
+# script{{{1
+export PATH="$HOME/prog/bin:$PATH"
+export PATH="$HOME/prog/rust_bin/target/release:$PATH"
+export PATH="$HOME/repos/twe/bin:$PATH"
+
+# Go{{{1
+if which go >/dev/null; then
+  if [ ! -d "$HOME/.go" ]; then
+    mkdir -p $HOME/.go
+  fi
+  export GOPATH=$HOME/.go
+  export PATH=$GOPATH/bin:$PATH
+fi
+
+# Haskell{{{1
+PATH="$HOME/.cabal/bin:$PATH"
+
+# Perl{{{1
+# Perl5
+export PATH="$HOME/.plenv/bin:$PATH"
+if which plenv >/dev/null; then
+  eval "$(plenv init -)"
+  plver=`plenv version |sed 's/\(.\+\) (.\+/\1/'`
+  export MANPATH=$HOME/.plenv/versions/$plver/man:$MANPATH
+fi
+
+# Perl6
+export PATH="$HOME/.rakudobrew/bin:$PATH"
+if which rakudobrew >/dev/null; then
+  eval "$(rakudobrew init -)"
+fi
+
+# Python{{{1
+which pyenv >/dev/null && eval "$(pyenv init -)"
+
+# Ruby{{{1
+export PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
+
+# Rust{{{1
+export PATH="$HOME/.cargo/bin:$PATH"
+export RUST_SRC_PATH="$HOME/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/"
+
+# Scala{{{1
+which scalaenv >/dev/null && eval "$(scalaenv init -)"
+which sbtenv >/dev/null && eval "$(sbtenv init -)"
+
+# set unique path{{{1
+typeset -U PATH
+
+# OCaml{{{1
+# You should add these settings after `typeset -U PATH`
+if which opam >/dev/null; then
+  export OCAMLPARAM="_,bin-annot=1"
+  export OPAMKEEPBUILDDIR=1
+  . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true;
+  eval `opam config env`
+fi

@@ -1,0 +1,23 @@
+ev(){ evince "$1" >/dev/null 2>&1 &! }
+eog(){ /usr/bin/eog "$1" >/dev/null 2>&1 &! }
+gmp(){ gimp "$1" >/dev/null 2>&1 &! }
+libre(){ libreoffice "$1" >/dev/null 2>&1 &! }
+man(){
+  LANG=en_US.UTF-8
+  env LESS_TERMCAP_mb=$'\E[01;31m' \
+  LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+  LESS_TERMCAP_me=$'\E[0m' \
+  LESS_TERMCAP_se=$'\E[0m' \
+  LESS_TERMCAP_so=$'\E[7m' \
+  LESS_TERMCAP_ue=$'\E[0m' \
+  LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+  man "$@"
+}
+pmver(){ perl -M$1 -E "say \$$1::VERSION" }
+u(){ cd ./$(git rev-parse --show-cdup) }
+tanlog_begin() { export TANLOG_LOGFILE=$(tmux-tanlog start $1) }
+tanlog_end() { tmux-tanlog end $TANLOG_LOGFILE }
+typeset -Uga preexec_functions
+typeset -Uga precmd_functions
+preexec_functions+=tanlog_begin
+precmd_functions+=tanlog_end

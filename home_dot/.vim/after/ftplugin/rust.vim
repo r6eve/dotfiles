@@ -1,0 +1,2 @@
+" わからん
+set matchpairs+=<:>

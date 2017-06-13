@@ -2,3 +2,19 @@ snippet #cr
 	#![crate_name = "${1}"]
 	#![crate_type = "${2}"]
 	${3}
+
+snippet errorln
+	macro_rules! errorln {
+		() => ({
+			writeln!(io::stderr(), "error").unwrap();
+			process::exit(1);
+		});
+		($fmt:expr) => ({
+			writeln!(io::stderr(), $fmt).unwrap();
+			process::exit(1);
+		});
+		($fmt:expr, $($arg:tt)*) => ({
+			writeln!(io::stderr(), $fmt, $($arg)*).unwrap();
+			process::exit(1);
+		});
+	}${0}

@@ -596,7 +596,7 @@ call submode#map('move-to-fold', 'n', '', 'j', 'zj')
 call submode#map('move-to-fold', 'n', '', 'k', 'zk')
 
 " kannokanno/previm{{{2
-autocmd Filetype markdown nmap <Leader>p :<C-u>PrevimOpen<CR>
+autocmd Filetype markdown,rst nmap <Leader>p :<C-u>PrevimOpen<CR>
 
 " osyo-manga/vim-anzu{{{2
 nmap n <Plug>(anzu-n-with-echo)

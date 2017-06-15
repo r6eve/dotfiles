@@ -3,7 +3,7 @@ let customSet = (command, shortcut) => { vimfx.set(`custom.mode.normal.${command
 vimfx.set('hints.chars', 'asdfghjkl;')
 vimfx.set('hints.sleep', -1)
 // vimfx.set('mode.normal.scroll_page_down', '<force><C-f>')
-// vimfx.set('mode.normal.scroll_page_up', '<force><C-b>')
+vimfx.set('mode.normal.scroll_page_up', 'b')
 vimfx.set('mode.normal.tab_select_previous', '<force><C-k>')
 vimfx.set('mode.normal.tab_select_next', '<force><C-j>')
 vimfx.set('mode.normal.history_back', '<force><C-h>')

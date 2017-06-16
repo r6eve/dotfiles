@@ -6,15 +6,15 @@ snippet #cr
 snippet errorln
 	macro_rules! errorln {
 		() => ({
-			writeln!(io::stderr(), "error").unwrap();
-			process::exit(1);
+			writeln!(::std::io::stderr(), "error").unwrap();
+			::std::process::exit(1);
 		});
 		($fmt:expr) => ({
-			writeln!(io::stderr(), $fmt).unwrap();
-			process::exit(1);
+			writeln!(::std::io::stderr(), $fmt).unwrap();
+			::std::process::exit(1);
 		});
 		($fmt:expr, $($arg:tt)*) => ({
-			writeln!(io::stderr(), $fmt, $($arg)*).unwrap();
-			process::exit(1);
+			writeln!(::std::io::stderr(), $fmt, $($arg)*).unwrap();
+			::std::process::exit(1);
 		});
 	}${0}

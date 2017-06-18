@@ -18,3 +18,16 @@ snippet errorln
 			::std::process::exit(1);
 		});
 	}${0}
+
+snippet print_flush
+	macro_rules! print_flush {
+		() => (());
+		($fmt:expr) => ({
+			print!($fmt);
+			::std::io::stdout().flush().unwrap();
+		});
+		($fmt:expr, $($arg:tt)*) => ({
+			print!($fmt, $($arg)*);
+			::std::io::stdout().flush().unwrap();
+		});
+	}

@@ -26,3 +26,6 @@ __pycache__
 # Executables
 a.out
 a.exe
+
+# Misc
+MISSION.md

@@ -270,6 +270,7 @@ if has('nvim')
   " let g:min_pattern_length = 3
   " let g:deoplete#sources#syntax#min_keyword_length = 3
   let g:deoplete#max_abbr_width = 0
+  let g:deoplete#max_menu_width = 0
   let g:deoplete#keyword_patterns = {}
   let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
   let g:deoplete#omni#input_patterns = {}

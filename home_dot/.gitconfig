@@ -11,7 +11,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	pager = less -R
-	editor = "LANG=en_US.UTF-8 vim"
+	editor = "nvim"
 [github]
 	user = r6eve
 [alias]

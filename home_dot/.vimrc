@@ -137,7 +137,7 @@ endfunction
 command! SyntaxInfo call s:get_syn_info()
 
 " key mapping{{{1
-nnoremap ; :
+noremap ; :
 " nnoremap <silent><Space> <PageDown>
 " nnoremap <silent><C-Space> <C-w>p<PageDown><C-w>p
 nnoremap <C-w>* <C-w>s*

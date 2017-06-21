@@ -176,12 +176,12 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/neocomplete.vim'
-endif
-Plug 'Shougo/neosnippet'
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/neocomplete.vim'
+" endif
+Plug 'Shougo/vimproc.vim' | Plug 'Shougo/neosnippet'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'fuenor/JpFormat.vim'
 Plug 'jeetsukumaran/vim-markology'
@@ -203,6 +203,7 @@ Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-surround'
 Plug 'tyru/capture.vim', { 'on' : 'Capture' }
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
+Plug 'Valloric/YouCompleteMe'
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
 " Haskell
@@ -260,53 +261,53 @@ call plug#end()
 
 " advanced settings{{{1
 " auto-complete{{{2
-if has('nvim')
-  " Shougo/deoplete.nvim
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#enable_smart_case = 1
-  " let g:min_pattern_length = 3
-  " let g:deoplete#sources#syntax#min_keyword_length = 3
-  let g:deoplete#max_abbr_width = 0
-  let g:deoplete#max_menu_width = 0
-  let g:deoplete#keyword_patterns = {}
-  let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
-  let g:deoplete#omni#input_patterns = {}
-  let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
-  let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
-  let g:deoplete#omni#functions = {}
-  let g:deoplete#omni#functions.javascript = 'tern#Complete'
-  autocmd FileType javascript call tern#Enable()
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
-  inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><C-e> deoplete#cancel_popup()
-else
-  " Shougo/neocomplete
-  let g:neocomplete#enable_at_startup = 1
-  let g:neocomplete#enable_smart_case = 1
-  let g:neocomplete#min_keyword_length = 3
-  let g:neocomplete#sources#syntax#min_keyword_length = 3
-  let g:neocomplete#auto_completion_start_length = 3
-  if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-  endif
-  let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-  let g:neocomplete#sources#dictionary#dictionaries = {
-  \  'default' : '',
-  \  'scheme' : $HOME.'/.gosh_completions',
-  \}
-  if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
-  endif
-  let g:neocomplete#force_omni_input_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
-  let g:neocomplete#sources#omni#functions = get(g:, 'neocomplete#sources#omni#functions', {})
-  let g:neocomplete#sources#omni#functions.javascript = 'tern#Complete'
-  autocmd FileType javascript call tern#Enable()
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
-  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><C-e> neocomplete#cancel_popup()
-endif
+" if has('nvim')
+"   " Shougo/deoplete.nvim
+"   let g:deoplete#enable_at_startup = 1
+"   let g:deoplete#enable_smart_case = 1
+"   " let g:min_pattern_length = 3
+"   " let g:deoplete#sources#syntax#min_keyword_length = 3
+"   let g:deoplete#max_abbr_width = 0
+"   let g:deoplete#max_menu_width = 0
+"   let g:deoplete#keyword_patterns = {}
+"   let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
+"   let g:deoplete#omni#input_patterns = {}
+"   let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
+"   let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
+"   let g:deoplete#omni#functions = {}
+"   let g:deoplete#omni#functions.javascript = 'tern#Complete'
+"   autocmd FileType javascript call tern#Enable()
+"   autocmd FileType javascript setlocal omnifunc=tern#Complete
+"   inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+"   inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
+"   inoremap <expr><C-e> deoplete#cancel_popup()
+" else
+"   " Shougo/neocomplete
+"   let g:neocomplete#enable_at_startup = 1
+"   let g:neocomplete#enable_smart_case = 1
+"   let g:neocomplete#min_keyword_length = 3
+"   let g:neocomplete#sources#syntax#min_keyword_length = 3
+"   let g:neocomplete#auto_completion_start_length = 3
+"   if !exists('g:neocomplete#keyword_patterns')
+"     let g:neocomplete#keyword_patterns = {}
+"   endif
+"   let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+"   let g:neocomplete#sources#dictionary#dictionaries = {
+"   \  'default' : '',
+"   \  'scheme' : $HOME.'/.gosh_completions',
+"   \}
+"   if !exists('g:neocomplete#force_omni_input_patterns')
+"     let g:neocomplete#force_omni_input_patterns = {}
+"   endif
+"   let g:neocomplete#force_omni_input_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
+"   let g:neocomplete#sources#omni#functions = get(g:, 'neocomplete#sources#omni#functions', {})
+"   let g:neocomplete#sources#omni#functions.javascript = 'tern#Complete'
+"   autocmd FileType javascript call tern#Enable()
+"   autocmd FileType javascript setlocal omnifunc=tern#Complete
+"   inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+"   inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+"   inoremap <expr><C-e> neocomplete#cancel_popup()
+" endif
 
 " Shougo/neosnippet{{{2
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -671,6 +672,10 @@ if has('unix')
   \  { 'name' : 'w3m', 'args' : ['{browser}', '{uri}'] },
   \]
 endif
+
+" Valloric/YouCompleteMe{{{2
+let g:ycm_key_list_select_completion = ['<C-n>']
+let g:ycm_key_list_previous_completion = ['<C-p>']
 
 " kana/vim-operator-replace{{{2
 map _ <Plug>(operator-replace)

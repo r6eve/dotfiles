@@ -191,21 +191,18 @@ Plug 'kana/vim-submode'
 Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 'rst'] }
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/caw.vim', { 'branch': 'add-feature-to-delete-doc-comments' }
-Plug 'rhysd/clever-f.vim'
-Plug 'rhysd/committia.vim'
+Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
+Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'rhysd/vim-gfm-syntax'
 Plug 'rhysd/vim-color-spring-night'
 Plug 'thinca/vim-prettyprint'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
-Plug 'thinca/vim-quickrun', { 'on' : 'QuickRun' }
-if has('gui_running')
-  Plug 'thinca/vim-singleton'
-endif
+Plug 'Shougo/vimproc.vim' | Plug 'thinca/vim-quickrun', { 'on' : 'QuickRun' }
 Plug 'thinca/vim-template'
 Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-surround'
 Plug 'tyru/capture.vim', { 'on' : 'Capture' }
-Plug 'tyru/open-browser.vim'
+Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
 " Haskell
@@ -659,12 +656,6 @@ let g:quickrun_config = {
   \  'st' : { 'command' : 'gst' },
   \  'scheme' : { 'command' : 'gosh' }
   \}
-
-" thinca/vim-singleton{{{2
-if has('gui_running')
-  call singleton#enable()
-  let g:singleton#opener = 'drop'
-endif
 
 " tyru/open-browser{{{2
 nmap <Leader>o <Plug>(openbrowser-smart-search)

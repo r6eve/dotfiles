@@ -83,6 +83,14 @@ vimfx.addCommand({
 customSet('rss', ',r')
 
 vimfx.addCommand({
+  name: 'githubsearch',
+  description: 'SearchCodeInGitHub',
+}, ({vim}) => {
+  vim.window.switchToTabHavingURI('https://github.com/search', true)
+})
+customSet('githubsearch', ',q')
+
+vimfx.addCommand({
   name: 'searchimg',
   description: 'SearchIMG',
 }, ({vim}) => {

@@ -90,6 +90,8 @@ if has('vim_starting') && has('reltime')
 endif
 autocmd WinEnter * checktime
 
+autocmd SwapExists * let v:swapchoice = 'o'
+
 augroup vimrc-misc
   autocmd!
   autocmd BufReadPost

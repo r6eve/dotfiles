@@ -56,7 +56,6 @@ alias Rscript='Rscript --vanilla'
 
 # Rust{{{1
 alias clippy='rustup run nightly cargo clippy'
-alias cbuild='RUSTC_WRAPPER=`which sccache` cargo build'
 
 # Scheme{{{1
 alias igosh='rlwrap gosh'

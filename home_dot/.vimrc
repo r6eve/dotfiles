@@ -156,6 +156,7 @@ inoremap <C-/> <ESC>
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 inoremap <C-r>+ <C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>
+inoremap <C-d> <C-o>x
 
 " filetype detect settings{{{1
 autocmd BufNewFile,BufRead *.dart set filetype=dart
@@ -408,7 +409,7 @@ call smartinput#define_rule({
 " call smartinput#define_rule({
 " \  'at' : '\%#',
 " \  'char': '<lt>',
-" \  'input': '<lt>><Left>',
+" \  'input': '<><Left>',
 " \  'filetype' : ['rust'],
 " \})
 " call smartinput#define_rule({

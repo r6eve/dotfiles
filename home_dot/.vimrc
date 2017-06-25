@@ -206,7 +206,7 @@ Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-surround'
 Plug 'tyru/capture.vim', { 'on' : 'Capture' }
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --clang-completer --tern-completer --racer-completer' }
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
 " Haskell
@@ -679,6 +679,8 @@ endif
 " Valloric/YouCompleteMe{{{2
 let g:ycm_key_list_select_completion = ['<C-n>']
 let g:ycm_key_list_previous_completion = ['<C-p>']
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_show_diagnostics_ui = 0
 
 " kana/vim-operator-replace{{{2
 map _ <Plug>(operator-replace)

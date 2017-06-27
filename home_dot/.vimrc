@@ -218,7 +218,7 @@ Plug 'mattn/emmet-vim', { 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'cs
 "Plug 'artur-shaik/vim-javacomplete2', { 'for' : 'java' }
 " JavaScript
 Plug 'jelera/vim-javascript-syntax'
-Plug 'marijnh/tern_for_vim', { 'for' : 'javascript', 'do' : 'npm install' }
+"Plug 'marijnh/tern_for_vim', { 'for' : 'javascript', 'do' : 'npm install' }
 " lighttpd
 Plug 'glensc/vim-syntax-lighttpd', { 'for' : 'lighttpd' }
 " OCaml

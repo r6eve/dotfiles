@@ -12,3 +12,5 @@ let () =
 (* #require "ppx_jane";;       *)
 (* #require "ctypes";;         *)
 (* #require "ctypes.foreign";; *)
+let printer ppf = Format.fprintf ppf "\"%s\"";;
+#install_printer printer

@@ -714,6 +714,7 @@ if executable('ocamlmerlin') && has('python')
   let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
   exec "set rtp+=" . g:opamshare . "/merlin/vim"
 end
+autocmd FileType ocaml set commentstring=(*%s*)
 autocmd FileType ocaml nnoremap <Leader>t :call OCamlType()<CR>
 autocmd FileType ocaml nnoremap <Leader>s :call OCamlSpot()<CR>
 autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo

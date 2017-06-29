@@ -688,8 +688,10 @@ endif
 " Valloric/YouCompleteMe{{{2
 let g:ycm_key_list_select_completion = ['<C-n>']
 let g:ycm_key_list_previous_completion = ['<C-p>']
+let g:ycm_key_detailed_diagnostics = ''
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_complete_in_comments = 1
 
 " kana/vim-operator-replace{{{2
 map _ <Plug>(operator-replace)

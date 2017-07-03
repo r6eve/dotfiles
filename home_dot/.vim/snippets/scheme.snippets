@@ -1,8 +1,5 @@
-snippet #!
-	#!/usr/bin/env gosh
-
-	${0}
-snippet #s
+snippet main
+abbr main
 	#!/usr/bin/env gosh
 
 	(define (usage program-name)
@@ -19,7 +16,8 @@ snippet #s
 							(lambda (p) (foo p))))
 					(cdr args)))
 		0)
-snippet #su
+snippet parse
+abbr parse
 	(use gauche.parseopt)
 
 	(define (usage prog)
@@ -56,6 +54,7 @@ snippet #su
 
 			0))
 snippet die
+abbr die
 	(define (die . args)
 		(apply format (current-error-port) args)
 		(newline)

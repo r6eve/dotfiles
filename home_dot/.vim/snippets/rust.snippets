@@ -1,9 +1,5 @@
-snippet #cr
-	#![crate_name = "${1}"]
-	#![crate_type = "${2}"]
-	${3}
-
 snippet errorln
+abbr errorln!
 	macro_rules! errorln {
 		() => ({
 			writeln!(::std::io::stderr(), "error").unwrap();
@@ -18,8 +14,8 @@ snippet errorln
 			::std::process::exit(1);
 		});
 	}${0}
-
 snippet print_flush
+abbr print_flush!
 	macro_rules! print_flush {
 		() => (());
 		($fmt:expr) => ({
@@ -30,4 +26,4 @@ snippet print_flush
 			print!($fmt, $($arg)*);
 			::std::io::stdout().flush().unwrap();
 		});
-	}
+	}${0}

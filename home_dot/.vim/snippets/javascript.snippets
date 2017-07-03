@@ -1,15 +1,6 @@
-snippet say
-	console.log(${0});
-snippet sn
-	${0}.sort(function (a, b) { return a - b });
-snippet ln
-	var lst = l.split(re).map(function (e) { return Number(e) });
-snippet emp
-	${0}.length == 0
-snippet has
-	if ({}.hasOwnProperty.call(obj, key))
 snippet rndrng
 	Math.floor(Math.random() * (max - min + 1)) + min;
+	${0}
 snippet cli
 	var readline = require('readline');
 	var rl = readline.createInterface({
@@ -18,9 +9,4 @@ snippet cli
 		terminal: false
 	});
 
-	var ret = 0;
-	rl.on('line', (l) => {
-		ret += Number(l);
-	}).on('close', () => {
-		console.log(ret);
-	});
+	${0}

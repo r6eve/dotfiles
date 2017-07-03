@@ -1,61 +1,25 @@
-snippet #i
-	#include <bits/stdc++.h>
-	using namespace std;
-
-	#define all(c) (c).begin(), (c).end()
-	#define rep(i, n) for (int i = 0; i < (int)(n); ++i)
-	#define iter(c) __typeof((c).begin())
-	#define tr(c, i) for (iter(c) i = (c).begin(), end = (c).end(); i != end; ++i)
-	#define present(c, e) ((c).find((e)) != (c).end())
-	#define cpresent(c, e) (find(all(c), (e)) != (c).end())
-
-	typedef long long ll;
-
-	int main() {
-		ios::sync_with_stdio(false);
-		cin.tie(0);
-		${0}
-	}
-snippet c
+snippet cinclude
+abbr include c header
 	#include <cstdio>
 	#include <cstdlib>
 	#include <cstring>
 	#include <cctype>
 	#include <cmath>
 	#include <cassert>
-snippet mm
-	int main(int argc, char **argv) {
-		${0}
-	}
-snippet array
-	std::array<${1:T}, ${2:N}> ${3};${4}
-snippet flist
-	std::forward_list<${1:T}> ${2};${3}
-snippet list
-	std::list<${1:T}> ${2};${3}
-snippet umset
-	std::unordered_multiset<${1:T}> ${2};${3}
-snippet ummap
-	std::unordered_multimap<${1:Key}, ${2:T}> ${3};${4}
-snippet pqueue
-	std::priority_queue<${1:T}> ${2};${3}
-## Lambdas
-# lamda (one line)
-snippet ld
-	[${1}](${2}){${3:/* code */}}${4}
-# lambda (multi-line)
-snippet lld
-	[${1}](${2}){
-		${3:/* code */}
-	}${4}
-snippet al
+
+	${0}
+snippet alen
+abbr array_length
 	#define array_length(x) ((int)(sizeof(x) / sizeof((x)[0])))
+
+	${0}
 snippet dump
+abbr dump output
 	#define dump(x)  cerr << #x << " = " << (x) << "\n";
 snippet debug
+abbr debug output
 	#define debug(x) cerr << #x << " = " << (x) << " (L" << __LINE__ << ")" << " " << __FILE__ << "\n";
-snippet say
-	cout << x << "\n";
 snippet cin
+abbr cin
 	ios::sync_with_stdio(false);
 	cin.tie(0);

@@ -1,10 +1,10 @@
-snippet #!
+snippet shebang
+abbr shebang
 	#!/usr/bin/Rscript --vanilla
 
 	${0}
-snippet chk
-	check.names=F
-snippet fs
+snippet myfunc
+abbr myfunc
 	# my functions
 	variance <- function(x) var(x)*(length(x)-1)/length(x)
 	std_dev  <- function(x) sqrt(variance(x))
@@ -15,6 +15,7 @@ snippet fs
 
 	${0}
 snippet usage
+abbr usage
 	args <- commandArgs(trailingOnly = T)
 	if (length(args) != 3) {
 		print('Usage: READ THE SOURCE CODE')

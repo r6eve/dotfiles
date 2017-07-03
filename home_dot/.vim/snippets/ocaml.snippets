@@ -1,4 +1,5 @@
 snippet gcdlcm
+abbr gcdlcm
 	let gcd m n =
 		let rec doit x y =
 			if y <= 0 then x else doit y (x mod y) in
@@ -7,13 +8,15 @@ snippet gcdlcm
 	let lcm m n = m * n / (gcd m n)
 	${0}
 snippet iota
+abbr iota
 	let iota ?(start=0) ?(step=1) cnt =
 		let rec doit i acc =
 			if i <= 0 then acc
 			else doit (i - 1) (start + step*(i - 1) :: acc) in
 		doit cnt []
 	${0}
-snippet lower_bound
+snippet lowerbound
+abbr lower_bound
 	let lower_bound a first last v =
 		let rec doit len first =
 			if len = 0 then first
@@ -25,22 +28,25 @@ snippet lower_bound
 		doit (last - first + 1) first
 	${0}
 snippet measure
+abbr measure
 	let measure f = let t = Sys.time () in f (); Sys.time () -. t
+	${0}
 snippet nthroot
+abbr nth_root
 	let nth_root x n =
 		let fx = float_of_int x in
 		let fn = float_of_int n in
 		if x < 0 && n mod 2 = 1 then (-. exp (log (-. fx) /. fn))
 		else exp (log fx /. fn)
 	${0}
-snippet onl
-	Str.split (Str.regexp " ") (read_line ())
-snippet pi
+snippet piutils
+abbr pi
 	let pi = 4. *. atan 1.
 
 	let degree_to_radian d = pi *. d /. 180.
 	${0}
 snippet split
+abbr split_on_char
 	let split_on_char sep s =
 		let open String in
 		let r = ref [] in
@@ -54,6 +60,7 @@ snippet split
 		sub s 0 !j :: !r
 	${0}
 snippet myary
+abbr my Array module
 	module Array = struct
 		include Array
 
@@ -72,6 +79,7 @@ snippet myary
 	end
 	${0}
 snippet mystr
+abbr my string module
 	module String = struct
 		include String
 
@@ -111,6 +119,7 @@ snippet mystr
 	end
 	${0}
 snippet mylst
+abbr my List module
 	module List = struct
 		include List
 

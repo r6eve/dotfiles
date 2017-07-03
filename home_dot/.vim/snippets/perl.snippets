@@ -1,37 +1,19 @@
-snippet #!
-	#!/usr/bin/env perl
-	use strict;
-	use warnings;
-	use autodie;
-	use feature qw(say);
-
-	${0}
-snippet #!s
-	#!/usr/bin/perl
-	use strict;
-	use warnings;
-	use autodie;
-	use feature qw(say);
-
-	${0}
-snippet #!m
-	#!/usr/bin/env perl
-	use Mojolicious::Lite;
-
-	${0}
 snippet utf8
+abbr utf8
 	use utf8;
 	binmode STDIN,  ':utf8';
 	binmode STDOUT, ':utf8';
 	binmode STDERR, ':utf8';
 	${0}
 snippet utf8e
+abbr utf8e
 	use utf8;
 	binmode STDIN,  ':encoding(utf8)';
 	binmode STDOUT, ':encoding(utf8)';
 	binmode STDERR, ':encoding(utf8)';
 	${0}
 snippet usage
+abbr usage
 	=head1 SYNOPSIS
 
 		# all strategies
@@ -63,6 +45,7 @@ snippet usage
 	}
 	${0}
 snippet any
+abbr any
 	sub any (&@) {
 		my $func = shift;
 		for (@_) {
@@ -74,6 +57,7 @@ snippet any
 	}
 	${0}
 snippet all
+abbr all
 	sub all (&@) {
 		my $func = shift;
 		for (@_) {
@@ -85,6 +69,7 @@ snippet all
 	}
 	${0}
 snippet none
+abbr none
 	sub none (&@) {
 		my $func = shift;
 		for (@_) {
@@ -96,6 +81,7 @@ snippet none
 	}
 	${0}
 snippet uniq
+abbr uniq
 	sub uniq {
 		my ($lst) = @_;
 		my %seen;
@@ -104,6 +90,7 @@ snippet uniq
 	}
 	${0}
 snippet union
+abbr union
 	sub union {
 		my ($x, $y) = @_;
 		my %cnt;
@@ -111,6 +98,7 @@ snippet union
 	}
 	${0}
 snippet intersection
+abbr intersection
 	sub intersection {
 		my ($x, $y) = @_;
 		my %cnt;
@@ -118,6 +106,7 @@ snippet intersection
 	}
 	${0}
 snippet difference
+abbr difference
 	sub difference {
 		my ($x, $y) = @_;
 		my %cnt;
@@ -126,6 +115,7 @@ snippet difference
 	}
 	${0}
 snippet zip
+abbr zip
 	sub zip {
 		my @args = @_;
 		my $ret;
@@ -141,6 +131,7 @@ snippet zip
 	}
 	${0}
 snippet dup
+abbr dup
 	sub dup {
 		my ($lst) = @_;
 		my %seen;
@@ -149,6 +140,7 @@ snippet dup
 	}
 	${0}
 snippet readfile
+abbr readfile
 	sub read_file {
 		with_file($_[0], '<', sub {
 			my ($hdl) = @_;
@@ -158,6 +150,7 @@ snippet readfile
 	}
 	${0}
 snippet withfile
+abbr with_file
 	sub with_file {
 		my ($file, $mode, $func) = @_;
 		open(my $fh, $mode, $file);
@@ -167,6 +160,7 @@ snippet withfile
 	}
 	${0}
 snippet withinput
+abbr withinput
 	sub with_input_from_file {
 		my ($path, $func) = @_;
 		open(my $tmp, '<&', \*STDIN);
@@ -179,6 +173,7 @@ snippet withinput
 	}
 	${0}
 snippet withoutput
+abbr withoutput
 	sub with_output_to_file {
 		my ($path, $func) = @_;
 		open(my $tmp, '>&', \*STDOUT);
@@ -191,6 +186,7 @@ snippet withoutput
 	}
 	${0}
 snippet dirlist
+abbr dirlist
 	sub dir_list {
 		my ($dir) = @_;
 		opendir(my $dh, $dir);
@@ -200,6 +196,7 @@ snippet dirlist
 	}
 	${0}
 snippet mktemp
+abbr mktemp
 	sub mktemp {
 		my ($func) = @_;
 		my ($fh, $filename) = tempfile();
@@ -209,6 +206,7 @@ snippet mktemp
 	}
 	${0}
 snippet withdb
+abbr withdb
 	sub with_db {
 		my ($db, $func) = @_;
 		my $dbh = DBI->connect("dbi:SQLite:dbname=$db", undef, undef,
@@ -219,13 +217,14 @@ snippet withdb
 		$ret;
 	}
 	${0}
-snippet p
+snippet dump
+abbr dump
 	use Data::Dumper;
 	$Data::Dumper::Sortkeys = 1;
 	sub p { print Dumper $_[0] }
 	${0}
-# useful settings
 snippet min
+abbr min
 	sub min {
 		my ($ns) = @_;
 		my $ret = $ns->[0];
@@ -238,6 +237,7 @@ snippet min
 	}
 	${0}
 snippet max
+abbr max
 	sub max {
 		my ($ns) = @_;
 		my $ret = $ns->[0];
@@ -250,6 +250,7 @@ snippet max
 	}
 	${0}
 snippet bins
+abbr bin_search
 	sub bin_search {
 		my ($lst, $x) = @_;
 		my $l = 0;
@@ -267,23 +268,16 @@ snippet bins
 		0;
 	}
 	${0}
-snippet whl
-	while (my $l = <>) {
-		chomp $l;
-		${0}
-	}
-snippet onl
-	chomp(my $l = <>);
-snippet buf
-	select((select($hdl), $|=1)[0]);
-	${0}
 snippet ipv4
+abbr ipv4
 	my $ipv4_rx = qr(^(?:(?:[1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}(?:[1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$);
 	${0}
 snippet ipv4zeropedding
+abbr ipv4zeropedding
 	my $ipv4_rx_zero_padding = qr(^(?:(?:[01]?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(?:[01]?[0-9][0-9]?|2[0-4][0-9]|25[0-5])$);
 	${0}
 snippet bench
+abbr benchmark
 	use Benchmark qw(timethese cmpthese);
 
 	sub timethese_report {

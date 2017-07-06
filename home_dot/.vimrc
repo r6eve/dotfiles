@@ -158,7 +158,6 @@ inoremap <C-b> <C-o>h
 inoremap <M-b> <C-o>b
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
-inoremap <C-k> <C-o>D
 inoremap <C-_> <ESC>
 inoremap <C-/> <ESC>
 inoremap <C-u> <C-g>u<C-u>
@@ -321,8 +320,8 @@ call plug#end()
 " endif
 
 " Shougo/neosnippet{{{2
-imap <C-t> <Plug>(neosnippet_expand_or_jump)
-smap <C-t> <Plug>(neosnippet_expand_or_jump)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 let g:neosnippet#disable_runtime_snippets = { '_' : 1 }
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 

@@ -197,6 +197,7 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 " endif
 Plug 'Shougo/vimproc.vim' | Plug 'Shougo/neosnippet'
 Plug 'AndrewRadev/linediff.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fuenor/JpFormat.vim'
 Plug 'jeetsukumaran/vim-markology'
 Plug 'kana/vim-smartinput'
@@ -331,6 +332,14 @@ let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 " AndrewRadev/linediff.vim{{{2
 vnoremap <silent><Leader>d :Linediff<CR>
+
+" ctrlpvim/ctrlp.vim{{{2
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = { 'dir': '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll|swp|pdf|DS_Store)$', }
+let g:ctrlp_max_files = 500
+let g:ctrlp_max_depth = 5
+let g:ctrlp_open_new_file = 'h'
+let g:ctrlp_tilde_homedir = 1
 
 " fuenor/JpFormat.vim{{{2
 set formatexpr=jpvim#formatexpr()

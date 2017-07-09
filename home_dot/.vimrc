@@ -55,6 +55,10 @@ set completeopt-=preview
 set nrformats=hex,alpha
 set lazyredraw
 set ttyfast
+set updatetime=300
+set timeoutlen=500
+set ttimeout
+set ttimeoutlen=50
 set display=lastline
 set statusline=%f%m%=\ %-14.(%l,%v%)\ %P
 " set pumheight=5

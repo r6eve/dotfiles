@@ -208,8 +208,9 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/caw.vim', { 'branch': 'add-feature-to-delete-doc-comments' }
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
-Plug 'rhysd/vim-gfm-syntax'
 Plug 'rhysd/vim-color-spring-night'
+Plug 'rhysd/vim-gfm-syntax'
+Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
 Plug 'thinca/vim-prettyprint'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
 Plug 'Shougo/vimproc.vim' | Plug 'thinca/vim-quickrun', { 'on' : 'QuickRun' }

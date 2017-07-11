@@ -13,11 +13,27 @@ man(){
   LESS_TERMCAP_us=$'\E[04;38;5;146m' \
   man "$@"
 }
+m(){
+  LANG=en_US.UTF-8
+  env LESS_TERMCAP_mb=$'\E[01;31m' \
+  LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+  LESS_TERMCAP_me=$'\E[0m' \
+  LESS_TERMCAP_se=$'\E[0m' \
+  LESS_TERMCAP_so=$'\E[7m' \
+  LESS_TERMCAP_ue=$'\E[0m' \
+  LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+  man "$@"
+  if [ $? -eq 16 ]; then
+    "$@" --help
+  else
+    true
+  fi
+}
 pmver(){ perl -M$1 -E "say \$$1::VERSION" }
 u(){ cd ./$(git rev-parse --show-cdup) }
 rg(){
   p='.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src';
-  grep $@ -r $HOME/$p/lib{std,core,collections} --color=always |perl -pse 's@$HOME/$p/@@' -- -HOME=$HOME -p=$p
+  grep $@ -r $HOME/$p/lib{alloc,std,core,collections} --color=always |perl -pse 's@$HOME/$p/@@' -- -HOME=$HOME -p=$p
 }
 
 tanlog_begin() { export TANLOG_LOGFILE=$(tmux-tanlog start $1) }

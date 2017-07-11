@@ -36,6 +36,7 @@ limit coredumpsize 100000
 # zshzle{{{1
 bindkey -e
 bindkey -r "^['"
+bindkey -r "^o"
 
 # Changing Directories{{{1
 setopt auto_cd

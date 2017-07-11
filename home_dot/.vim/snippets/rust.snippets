@@ -14,6 +14,11 @@ abbr errorln!
 			::std::process::exit(1);
 		});
 	}${0}
+snippet flush
+abbr flush
+	use std::io;
+	use std::io::prelude::*;
+	io::stdout().flush().unwrap();${0}
 snippet print_flush
 abbr print_flush!
 	macro_rules! print_flush {
@@ -27,3 +32,8 @@ abbr print_flush!
 			::std::io::stdout().flush().unwrap();
 		});
 	}${0}
+snippet sleep
+abbr sleep
+	use std::thread;
+	use std::time::Duration;
+	thread::sleep(Duration::from_secs(1));${0}

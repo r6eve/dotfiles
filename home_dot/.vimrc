@@ -215,6 +215,7 @@ Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
 Plug 'Shougo/vimproc.vim' | Plug 'thinca/vim-quickrun', { 'on' : 'QuickRun' }
 Plug 'thinca/vim-template'
 Plug 'thinca/vim-visualstar'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tyru/capture.vim', { 'on' : 'Capture' }
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
@@ -704,6 +705,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_complete_in_comments = 1
 let g:ycm_use_ultisnips_completer = 0
+let g:ycm_rust_src_path = $HOME.'/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 
 " kana/vim-operator-replace{{{2
 map _ <Plug>(operator-replace)

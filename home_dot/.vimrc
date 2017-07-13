@@ -661,6 +661,14 @@ endfunction
 " rhysd/vim-color-spring-night{{{2
 colorscheme spring-night
 
+" rhysd/vim-grammarous{{{2
+let g:grammarous#default_comments_only_filetypes = {
+            \ '*' : 1, 'help' : 0, 'markdown' : 0,
+            \ }
+let g:grammarous#disabled_rules = {
+            \ '*' : ['EN_QUOTES', 'UPPERCASE_SENTENCE_START', 'WHITESPACE_RULE'],
+            \ }
+
 " thinca/vim-quickrun{{{2
 nnoremap <silent><Leader>r :<C-u>QuickRun<CR>
 let g:quickrun_config = {

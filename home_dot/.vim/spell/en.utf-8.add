@@ -27,3 +27,6 @@ VimFx
 gif
 uninstall
 bytecode
+stdout
+stderr
+stdin

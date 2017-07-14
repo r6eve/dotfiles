@@ -135,8 +135,18 @@ abbr my List module
 		let break p lst =
 			let rec doit acc = function
 				| [] -> (List.rev acc, [])
-				| (x :: _ as xs) when p x -> (List.rev acc, xs)
-				| x :: xs -> doit (x :: acc) xs in
+				| x :: xs as l ->
+					if p x then (List.rev acc, l)
+					else doit (x :: acc) xs in
 			doit [] lst
-	end
-	${0}
+
+		let split_n n lst =
+			let rec doit n acc l =
+				if n = 0 then (List.rev acc, l)
+				else
+					match l with
+					| [] -> assert false
+					| hd :: tl -> doit (n - 1) (hd :: acc) tl in
+			doit n [] lst
+
+	end${0}

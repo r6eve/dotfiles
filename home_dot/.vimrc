@@ -236,7 +236,7 @@ Plug 'jelera/vim-javascript-syntax'
 " lighttpd
 Plug 'glensc/vim-syntax-lighttpd', { 'for' : 'lighttpd' }
 " OCaml
-Plug 'simonjbeaumont/vim-ocamlspot', { 'for' : 'ocaml' }
+"Plug 'simonjbeaumont/vim-ocamlspot', { 'for' : 'ocaml' }
 " Perl
 Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
 Plug 'vim-perl/vim-perl'
@@ -749,8 +749,8 @@ if executable('ocamlmerlin') && has('python')
   exec "set rtp+=" . g:opamshare . "/merlin/vim"
 end
 autocmd FileType ocaml set commentstring=(*%s*)
-autocmd FileType ocaml nnoremap <Leader>t :call OCamlType()<CR>
-autocmd FileType ocaml nnoremap <Leader>s :call OCamlSpot()<CR>
+"autocmd FileType ocaml nnoremap <Leader>t :call OCamlType()<CR>
+"autocmd FileType ocaml nnoremap <Leader>s :call OCamlSpot()<CR>
 autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo
 
 " R{{{2

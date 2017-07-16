@@ -30,3 +30,4 @@ bytecode
 stdout
 stderr
 stdin
+memoization

@@ -2,6 +2,7 @@ ev(){ evince "$1" >/dev/null 2>&1 &! }
 eog(){ /usr/bin/eog "$1" >/dev/null 2>&1 &! }
 gmp(){ gimp "$1" >/dev/null 2>&1 &! }
 libre(){ libreoffice "$1" >/dev/null 2>&1 &! }
+dic(){ git diff --color-words --no-index "$1" "$2" }
 man(){
   LANG=en_US.UTF-8
   env LESS_TERMCAP_mb=$'\E[01;31m' \

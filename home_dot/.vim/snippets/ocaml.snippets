@@ -150,3 +150,51 @@ abbr my List module
 			doit n [] lst
 
 	end${0}
+snippet binheap
+abbr binary heap
+	module MakeBinaryHeap (M : sig type t val compare : t -> t -> int end) = struct
+
+		type t = { node : M.t array; mutable size : int }
+
+		let make n (init : M.t) = { node = Array.make n init; size = 0 }
+
+		let empty_p t = if t.size = 0 then true else false
+
+		let pop t =
+			if t.size <= 0 then failwith "out of size" else
+			let rec max_heapify i =
+				let l = 2*i in
+				let r = 2*i + 1 in
+				let m = if l <= t.size && M.compare t.node.(l) t.node.(i) > 0 then l else i in
+				let m = if r <= t.size && M.compare t.node.(r) t.node.(m) > 0 then r else m in
+				if m = i then ()
+				else begin
+					let tmp = t.node.(i) in
+					t.node.(i) <- t.node.(m);
+					t.node.(m) <- tmp;
+					max_heapify m
+				end in
+			let ret = t.node.(1) in
+			t.node.(1) <- t.node.(t.size);
+			t.size <- t.size - 1;
+			max_heapify 1;
+			ret
+
+		let push x t =
+			let parent i = int_of_float (floor (float_of_int i) /. 2.) in
+			let rec doit i =
+				let p = parent i in
+				if i <= 1 || M.compare t.node.(p) t.node.(i) >= 0 then ()
+				else begin
+					let tmp = t.node.(i) in
+					t.node.(i) <- t.node.(p);
+					t.node.(p) <- tmp;
+					doit p
+				end in
+			t.size <- t.size + 1;
+			t.node.(t.size) <- x;
+			doit t.size
+
+	end
+
+	module H = MakeBinaryHeap(struct type t = int let compare x y = x - y end)${0}

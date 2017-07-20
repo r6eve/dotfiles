@@ -342,6 +342,7 @@ let g:ctrlp_max_files = 500
 let g:ctrlp_max_depth = 5
 let g:ctrlp_open_new_file = 'h'
 let g:ctrlp_tilde_homedir = 1
+let g:ctrlp_follow_symlinks = 2
 
 " fuenor/JpFormat.vim{{{2
 set formatexpr=jpvim#formatexpr()

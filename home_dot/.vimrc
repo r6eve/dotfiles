@@ -630,6 +630,16 @@ nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
 
+" r6eve/YouCompleteMe{{{2
+let g:ycm_key_list_select_completion = ['<C-n>']
+let g:ycm_key_list_previous_completion = ['<C-p>']
+let g:ycm_key_detailed_diagnostics = ''
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_complete_in_comments = 1
+let g:ycm_use_ultisnips_completer = 0
+let g:ycm_rust_src_path = $HOME.'/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+
 " r6eve/caw.vim{{{2
 let g:caw_no_default_keymappings = 1
 let g:caw_dollarpos_sp_left = ' '
@@ -707,21 +717,16 @@ if has('unix')
   \]
 endif
 
-" r6eve/YouCompleteMe{{{2
-let g:ycm_key_list_select_completion = ['<C-n>']
-let g:ycm_key_list_previous_completion = ['<C-p>']
-let g:ycm_key_detailed_diagnostics = ''
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_complete_in_comments = 1
-let g:ycm_use_ultisnips_completer = 0
-let g:ycm_rust_src_path = $HOME.'/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
-
 " kana/vim-operator-replace{{{2
 map _ <Plug>(operator-replace)
 
 " rhysd/vim-operator-filled-with-blank{{{2
 map <silent><Leader>b <Plug>(operator-filled-with-blank)
+
+" Cpp{{{2
+autocmd FileType cpp nmap <silent><Leader>t :YcmCompleter GoTo<CR>
+autocmd FileType cpp nmap <silent><Leader>s <C-w>s:YcmCompleter GoTo<CR>
+autocmd FileType cpp nmap <silent><Leader>v <C-w>v:YcmCompleter GoTo<CR>
 
 " Fortran{{{2
 let fortran_free_source=1

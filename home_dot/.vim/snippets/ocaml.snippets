@@ -45,6 +45,14 @@ abbr pi
 
 	let degree_to_radian d = pi *. d /. 180.
 	${0}
+snippet pow
+abbr pow
+	let pow x n =
+		let rec doit x n acc =
+			if n = 0 then acc
+			else if n mod 2 = 0 then doit (x * x) (n / 2) acc
+			else doit (x * x) (n / 2) (acc * x) in
+		doit x n 1
 snippet split
 abbr split_on_char
 	let split_on_char sep s =

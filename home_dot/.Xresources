@@ -47,6 +47,8 @@ URxvt*scrollWithBuffer: true
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
+URxvt.keysym.Shift-space: \033[5~
+
 URxvt.perl-ext-common: default,eval,url-select,keyboard-select,resize-font
 URxvt.keysym.M-c: eval:selection_to_clipboard
 URxvt.keysym.M-v: eval:paste_clipboard

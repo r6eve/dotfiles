@@ -45,6 +45,8 @@ alias esa='eslint -c airbnb'
 
 # OCaml{{{1
 alias iocaml='rlwrap ocaml'
+alias ocaml='ocaml -w +35'
+alias ocamlopt.opt='ocamlopt.opt -w +35'
 
 # Perl{{{1
 alias iperl='perl -de0'

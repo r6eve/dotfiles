@@ -269,7 +269,7 @@ abbr segment tree
 				end in
 			doit j
 
-		(* (a, b] *)
+		(* [a, b) *)
 		let walk s a b def f =
 			let rec doit k l r =
 				if r <= a || b <= l then def

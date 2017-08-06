@@ -195,7 +195,6 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 " else
 "   Plug 'Shougo/neocomplete.vim'
 " endif
-Plug 'Shougo/vimproc.vim' | Plug 'Shougo/neosnippet'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fuenor/JpFormat.vim'
@@ -211,6 +210,7 @@ Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
+Plug 'SirVer/ultisnips'
 Plug 'thinca/vim-prettyprint'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
 Plug 'Shougo/vimproc.vim' | Plug 'thinca/vim-quickrun', { 'on' : 'QuickRun' }
@@ -220,7 +220,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tyru/capture.vim', { 'on' : 'Capture' }
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
-Plug 'r6eve/YouCompleteMe', { 'branch': 'support-neosnippet', 'do' : './install.py --clang-completer --tern-completer --racer-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --clang-completer --tern-completer --racer-completer' }
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
 " Haskell
@@ -325,12 +325,6 @@ call plug#end()
 "   inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 "   inoremap <expr><C-e> neocomplete#cancel_popup()
 " endif
-
-" Shougo/neosnippet{{{2
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-let g:neosnippet#disable_runtime_snippets = { '_' : 1 }
-let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 " AndrewRadev/linediff.vim{{{2
 vnoremap <silent><Leader>d :Linediff<CR>
@@ -630,14 +624,13 @@ nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
 
-" r6eve/YouCompleteMe{{{2
+" Valloric/YouCompleteMe{{{2
 let g:ycm_key_list_select_completion = ['<C-n>']
 let g:ycm_key_list_previous_completion = ['<C-p>']
 let g:ycm_key_detailed_diagnostics = ''
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_complete_in_comments = 1
-let g:ycm_use_ultisnips_completer = 0
 let g:ycm_rust_src_path = $HOME.'/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 
 " r6eve/caw.vim{{{2
@@ -679,6 +672,12 @@ let g:grammarous#default_comments_only_filetypes = {
 let g:grammarous#disabled_rules = {
             \ '*' : ['EN_QUOTES', 'UPPERCASE_SENTENCE_START', 'WHITESPACE_RULE'],
             \ }
+
+" SirVer/ultisnips{{{2
+let g:UltiSnipsExpandTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 
 " thinca/vim-quickrun{{{2
 nnoremap <silent><Leader>r :<C-u>QuickRun<CR>

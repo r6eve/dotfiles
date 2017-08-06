@@ -1,0 +1,371 @@
+priority -50
+
+snippet iota
+let iota ?(start=0) ?(step=1) cnt =
+	let rec doit i acc =
+		if i <= 0 then acc
+		else doit (i - 1) (start + step*(i - 1) :: acc) in
+	doit cnt []
+endsnippet
+
+snippet lowerbound
+let lower_bound a first last v =
+	let rec doit len first =
+		if len = 0 then first
+		else
+			let half = len / 2 in
+			let mid = first + half in
+			if a.(mid) < v then doit (len - half - 1) (mid + 1)
+			else doit half first in
+	doit (last - first + 1) first
+endsnippet
+
+snippet max
+let max (x : int) y = if x > y then x else y
+endsnippet
+
+snippet measure
+let measure f = let t = Sys.time () in f (); Sys.time () -. t
+endsnippet
+
+snippet nthroot
+let nth_root x n =
+	let fx = float_of_int x in
+	let fn = float_of_int n in
+	if x < 0 && n mod 2 = 1 then (-. exp (log (-. fx) /. fn))
+	else exp (log fx /. fn)
+endsnippet
+
+snippet piutils
+let pi = 4. *. atan 1.
+
+let degree_to_radian d = pi *. d /. 180.
+endsnippet
+
+snippet pow
+let pow x n =
+	let rec doit x n acc =
+		if n = 0 then acc
+		else if n mod 2 = 0 then doit (x * x) (n / 2) acc
+		else doit (x * x) (n / 2) (acc * x) in
+	doit x n 1
+endsnippet
+
+snippet myio
+module IO = struct
+
+	(* @since 4.04.0 *)
+	let split_on_char sep s =
+		let open String in
+		let r = ref [] in
+		let j = ref (length s) in
+		for i = length s - 1 downto 0 do
+			if get s i = sep then begin
+				r := sub s (i + 1) (!j - i - 1) :: !r;
+				j := i
+			end
+		done;
+		sub s 0 !j :: !r
+
+	let read_ss () = read_line () |> split_on_char ' '
+
+	let read_ns () = read_line () |> split_on_char ' ' |> List.map int_of_string
+
+	let read_fs () = read_line () |> split_on_char ' ' |> List.map float_of_string
+
+end
+endsnippet
+
+snippet myary
+module Array = struct
+	include Array
+
+	let rev_iter f a =
+		let rec doit i =
+			if i < 0 then ()
+			else (f (Array.get a i); doit (i - 1)) in
+		doit (Array.length a - 1)
+
+	let rev_iteri f a =
+		let rec doit i =
+			if i < 0 then ()
+			else (f i (Array.get a i); doit (i - 1)) in
+		doit (Array.length a - 1)
+
+end
+endsnippet
+
+snippet mystr
+module String = struct
+	include String
+
+	let to_list str =
+		let rec doit i acc =
+			if i < 0 then acc
+			else doit (i - 1) (String.get str i :: acc) in
+		doit (String.length str - 1) []
+
+	let fold_left f init str =
+		let n = String.length str - 1 in
+		let rec doit i acc =
+			if i > n then acc
+			else doit (i + 1) (f acc str.[i]) in
+		doit 0 init
+
+end
+endsnippet
+
+snippet mylst
+module List = struct
+	include List
+
+	let take n lst =
+		let rec doit n lst acc =
+			if n <= 0 then List.rev acc
+			else
+				match lst with
+				| [] -> List.rev acc
+				| hd :: tl -> doit (n - 1) tl (hd :: acc) in
+		doit n lst []
+
+	let break p lst =
+		let rec doit acc = function
+			| [] -> (List.rev acc, [])
+			| x :: xs as l ->
+				if p x then (List.rev acc, l)
+				else doit (x :: acc) xs in
+		doit [] lst
+
+	let split_n n lst =
+		let rec doit n acc l =
+			if n = 0 then (List.rev acc, l)
+			else
+				match l with
+				| [] -> assert false
+				| hd :: tl -> doit (n - 1) (hd :: acc) tl in
+		doit n [] lst
+
+end
+endsnippet
+
+snippet binheap
+module MakeBinaryHeap (M : sig type t val compare : t -> t -> int end) = struct
+
+	type t = { node : M.t array; mutable size : int }
+
+	let make n (init : M.t) = { node = Array.make n init; size = 0 }
+
+	let empty_p t = if t.size = 0 then true else false
+
+	let pop t =
+		if t.size <= 0 then failwith "out of size" else
+		let rec max_heapify i =
+			let l = 2*i in
+			let r = 2*i + 1 in
+			let m = if l <= t.size && M.compare t.node.(l) t.node.(i) > 0 then l else i in
+			let m = if r <= t.size && M.compare t.node.(r) t.node.(m) > 0 then r else m in
+			if m = i then ()
+			else begin
+				let tmp = t.node.(i) in
+				t.node.(i) <- t.node.(m);
+				t.node.(m) <- tmp;
+				max_heapify m
+			end in
+		let ret = t.node.(1) in
+		t.node.(1) <- t.node.(t.size);
+		t.size <- t.size - 1;
+		max_heapify 1;
+		ret
+
+	let push x t =
+		let parent i = int_of_float (floor (float_of_int i) /. 2.) in
+		let rec doit i =
+			let p = parent i in
+			if i <= 1 || M.compare t.node.(p) t.node.(i) >= 0 then ()
+			else begin
+				let tmp = t.node.(i) in
+				t.node.(i) <- t.node.(p);
+				t.node.(p) <- tmp;
+				doit p
+			end in
+		t.size <- t.size + 1;
+		t.node.(t.size) <- x;
+		doit t.size
+
+end
+
+module H = MakeBinaryHeap(struct type t = int let compare x y = x - y end)${0}
+endsnippet
+
+snippet unionfind
+module UnionFind = struct
+
+	type t = { mutable parent : int; mutable rank : int }
+
+	let make n = Array.init n (fun i -> { parent = i; rank = 0 })
+
+	let find s x =
+		let rec doit x =
+			let p = s.(x).parent in
+			if x = p then x
+			else begin
+				s.(x).parent <- doit p;
+				s.(x).parent
+			end in
+		doit x
+
+	let unite s x y =
+		let px = find s x in
+		let py = find s y in
+		if s.(px).rank > s.(py).rank then s.(py).parent <- px
+		else begin
+			s.(px).parent <- py;
+			if s.(px).rank = s.(py).rank then s.(py).rank <- s.(py).rank + 1
+		end
+
+	let same_p s x y = find s x = find s y
+
+end
+
+module U = UnionFind
+endsnippet
+
+snippet segmenttree
+module SegmentTree = struct
+
+	let default_val = ref 0
+
+	let size = ref 0
+
+	let make n init =
+		default_val := init;
+		let rec pow_of_2 i =
+			if i >= n then i
+			else pow_of_2 (2 * i) in
+		size := pow_of_2 1;
+		Array.make (2 * (!size) - 1) init
+
+	let parent i = int_of_float ((float_of_int (i - 1)) /. 2.)
+
+	let left i = 2*i + 1
+
+	let right i = 2*i + 2
+
+	let update (s : int array) i x =
+		let j = !size + i - 1 in
+		s.(j) <- x;
+		let rec doit j =
+			if j <= 0 then () else
+			begin
+				let p = parent j in
+				let l = s.(left p) in
+				let r = s.(right p) in
+				s.(p) <- if l < r then l else r;
+				doit p
+			end in
+		doit j
+
+	let add s i x =
+		let j = !size + i - 1 in
+		s.(j) <- x + s.(j);
+		let rec doit j =
+			if j <= 0 then () else begin
+				let p = parent j in
+				s.(p) <- s.(left p) + s.(right p);
+				doit p
+			end in
+		doit j
+
+	(* [a, b) *)
+	let walk s a b def f =
+		let rec doit k l r =
+			if r <= a || b <= l then def
+			else if a <= l && r <= b then s.(k)
+			else begin
+				let m = (l + r) / 2 in
+				f (doit (left k) l m) (doit (right k) m r)
+			end in
+		doit 0 0 !size
+
+	let find_min s a b = walk s a b !default_val min
+
+	let sum s a b = walk s a b 0 (+)
+
+end
+
+module S = SegmentTree
+endsnippet
+
+snippet point
+module Point = struct
+
+	type t = { x : float; y : float }
+
+	let make x y = { x; y }
+
+	let eps = 1e-10
+
+	let equal_p a b = abs_float (a.x -. b.x) < eps && abs_float (a.y -. b.y) < eps
+
+	let sum a b = { x = a.x +. b.x; y = a.y +. b.y }
+
+	let diff a b = { x = a.x -. b.x; y = a.y -. b.y }
+
+	let multi p k = { x = p.x *. k; y = p.y *. k }
+
+	let div p k = { x = p.x /. k; y = p.y /. k }
+
+	let norm p = p.x *. p.x +. p.y *. p.y
+
+	let abs p = norm p |> sqrt
+
+	let dot a b = a.x *. b.x +. a.y *. b.y
+
+	let cross a b = a.x *. b.y -. a.y *. b.x
+
+	let project p1 p2 p =
+		let base = diff p2 p1 in
+		dot (diff p p1) base /. norm base |> multi base |> sum p1
+
+	let reflect p1 p2 p = multi (diff (project p1 p2 p) p) 2. |> sum p
+
+	let orthogonal_p (p0, p1) (p2, p3) = dot (diff p0 p1) (diff p2 p3) = 0.
+
+	let parallel_p (p0, p1) (p2, p3) = cross (diff p0 p1) (diff p2 p3) = 0.
+
+	let ccw p0 p1 p2 =
+		let a = diff p1 p0 in
+		let b = diff p2 p0 in
+		let c = cross a b in
+		if c > eps then 1 (* COUNTER_CLOCKWISE *)
+		else if c < (-. eps) then (-1) (* CLOCKWISE *)
+		else if dot a b < (-. eps) then 2 (* ONLINE_BACK *)
+		else if norm a < norm b then (-2) (* ONLINE_FRONT *)
+		else 0 (* ON_SEGMENT *)
+
+	let intersect_p (p0, p1) (p2, p3) =
+		ccw p0 p1 p2 * ccw p0 p1 p3 <= 0 && ccw p2 p3 p0 * ccw p2 p3 p1 <= 0
+
+	let cross_point (p0, p1) (p2, p3) =
+		let base = diff p3 p2 in
+		let d1 = diff p0 p2 |> cross base |> abs_float in
+		let d2 = diff p1 p2 |> cross base |> abs_float in
+		d1 /. (d1 +. d2) |> multi (diff p1 p0) |> sum p0
+
+	let distance s t =
+		if intersect_p s t then 0.
+		else
+			let p2p a b = diff a b |> abs in
+			let l2p (p0, p1) p =
+				cross (diff p1 p0) (diff p p0) /. p2p p1 p0 |> abs_float in
+			let s2p s p =
+				let (p0, p1) = s in
+				if dot (diff p1 p0) (diff p p0) < 0. then p2p p p0
+				else if dot (diff p0 p1) (diff p p1) < 0. then p2p p p1
+				else l2p s p in
+			let (p0, p1) = s in
+			let (p2, p3) = t in
+			min (min (s2p s p2) (s2p s p3)) (min (s2p t p0) (s2p t p1))
+endsnippet
+
+# vim:ft=snippets:

@@ -296,8 +296,8 @@ end
 module S = SegmentTree
 endsnippet
 
-snippet point
-module Point = struct
+snippet geo
+module Geometry = struct
 
 	type t = { x : float; y : float }
 
@@ -329,9 +329,9 @@ module Point = struct
 
 	let reflect p1 p2 p = multi (diff (project p1 p2 p) p) 2. |> sum p
 
-	let orthogonal_p (p0, p1) (p2, p3) = dot (diff p0 p1) (diff p2 p3) = 0.
+	let orthogonal_p (p0, p1) (p2, p3) = dot (diff p0 p1) (diff p2 p3) |> abs_float < eps
 
-	let parallel_p (p0, p1) (p2, p3) = cross (diff p0 p1) (diff p2 p3) = 0.
+	let parallel_p (p0, p1) (p2, p3) = cross (diff p0 p1) (diff p2 p3) |> abs_float < eps
 
 	let ccw p0 p1 p2 =
 		let a = diff p1 p0 in
@@ -366,6 +366,8 @@ module Point = struct
 			let (p0, p1) = s in
 			let (p2, p3) = t in
 			min (min (s2p s p2) (s2p s p3)) (min (s2p t p0) (s2p t p1))
+
+end
 endsnippet
 
 # vim:ft=snippets:

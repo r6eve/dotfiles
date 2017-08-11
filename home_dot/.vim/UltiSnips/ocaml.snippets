@@ -46,9 +46,22 @@ snippet pow
 let pow x n =
 	let rec doit x n acc =
 		if n = 0 then acc
-		else if n mod 2 = 0 then doit (x * x) (n / 2) acc
-		else doit (x * x) (n / 2) (acc * x) in
+		else doit (x * x) (n / 2) (if n mod 2 = 0 then acc else acc * x) in
 	doit x n 1
+endsnippet
+
+snippet prime
+let pow x n m =
+	let rec doit x n acc =
+		if n = 0 then acc
+		else doit (x * x mod m) (n / 2) (if n mod 2 = 0 then acc else acc * x mod m) in
+	doit x n 1
+
+let prime_p n =
+	if n == 2 then true
+	else if n < 2 || n mod 2 = 0 then false
+	else if pow 2 (n - 1) n = 1 then true
+	else false
 endsnippet
 
 snippet myio
@@ -69,9 +82,7 @@ module IO = struct
 
 	let read_ss () = read_line () |> split_on_char ' '
 
-	let read_ns () = read_line () |> split_on_char ' ' |> List.map int_of_string
-
-	let read_fs () = read_line () |> split_on_char ' ' |> List.map float_of_string
+	let read_ns () = read_ss () |> List.map int_of_string
 
 end
 endsnippet

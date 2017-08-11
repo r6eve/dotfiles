@@ -4,4 +4,8 @@ snippet log
 exec >/LOG-DIR/log.\`date +%Y-%m-%d\`.out 2>/LOG-DIR/log.\`date +%Y-%m-%d\`.err
 endsnippet
 
+snippet ulog
+exec >/LOG-DIR/log.\`date +%s\`.out 2>/LOG-DIR/log.\`date +%s\`.err
+endsnippet
+
 # vim:ft=snippets:

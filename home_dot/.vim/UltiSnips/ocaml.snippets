@@ -1,5 +1,15 @@
 priority -50
 
+snippet gcd
+let gcd x y =
+	let rec doit x y =
+		if y = 0 then x
+		else doit y (x mod y) in
+	doit (max x y) (min x y)
+
+let lcm x y = x / (gcd x y) * y
+endsnippet
+
 snippet iota
 let iota ?(start=0) ?(step=1) cnt =
 	let rec doit i acc =
@@ -109,6 +119,18 @@ endsnippet
 snippet mystr
 module String = struct
 	include String
+
+	(* @since 4.02.0 *)
+	let init n f =
+		let s = String.create n in
+		for i = 0 to n - 1 do
+			s.[i] <- f i
+		done;
+		s
+
+	let rev str =
+		let n = String.length str in
+		init n (fun i -> str.[n - 1 - i])
 
 	let to_list str =
 		let rec doit i acc =

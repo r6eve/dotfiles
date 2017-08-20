@@ -14,7 +14,7 @@ vimfx.addCommand({
   name: 'bitbucket',
   description: 'BitBucket',
 }, ({vim}) => {
-  vim.window.switchToTabHavingURI('https://bitbucket.org/?sort=-last_updated', true)
+  vim.window.switchToTabHavingURI('https://bitbucket.org/dashboard/repositories', true)
 })
 customSet('bitbucket', ',b')
 

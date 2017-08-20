@@ -1,6 +1,8 @@
 priority -50
 
 snippet errorln
+use std::io::Write;
+
 macro_rules! errorln {
 	() => ({
 		writeln!(::std::io::stderr(), "error").unwrap();

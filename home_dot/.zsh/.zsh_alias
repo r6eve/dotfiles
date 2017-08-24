@@ -24,6 +24,7 @@ alias v='nvim'
 # alias v='vim'
 alias cad="$HOME/repos/caddy/caddy.rb -l -dd"
 alias themis="$HOME/.vim/plugged/vim-themis/bin/themis"
+alias nclr="perl -pe 's/\x1b\x5b.*?[\x40-\x7e]//g'"
 
 # C{{{1
 alias gcc='gcc -std=c99 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'

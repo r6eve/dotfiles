@@ -82,7 +82,7 @@ autocmd ColorScheme * highlight Ignore cterm=none ctermfg=231 gui=none guifg=#ff
 autocmd ColorScheme * highlight EndOfBuffer cterm=none ctermfg=242 gui=none guifg=#fffeeb
 autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#3a4b5c
 autocmd ColorScheme * highlight ZenkakuSpace cterm=none ctermbg=9 gui=none guibg=#ff0000
-autocmd ColorScheme * highlight TabString cterm=none ctermbg=236 gui=none guibg=#303030
+autocmd ColorScheme * highlight TabString cterm=none ctermbg=238 gui=none guibg=#303030
 autocmd ColorScheme * highlight TrailingSpaces term=underline ctermbg=238 guibg=#444444
 autocmd VimEnter,WinEnter * let w:m1 = matchadd("TabString", '	')
 autocmd VimEnter,WinEnter * let w:m2 = matchadd("ZenkakuSpace", '　')

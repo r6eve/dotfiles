@@ -70,6 +70,8 @@ set mouse=
 set noshowcmd
 set conceallevel=0
 set concealcursor=
+set list
+set listchars=tab:>\･
 "set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 "autocmd VimLeave * set guicursor=a:block-blinkon1
 let g:python_host_prog = '/usr/bin/python2'

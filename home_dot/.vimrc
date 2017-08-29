@@ -709,10 +709,18 @@ command! OpenBrowserCurrent execute "OpenBrowser" "file:///" . expand('%:p:gs?\\
 nmap <Leader>O :<C-u>OpenBrowserCurrent<CR>
 if has('unix')
   let g:openbrowser_browser_commands = [
-  \  { 'name' : 'firefox-nightly', 'args' : ['{browser}', '{uri}'] },
-  \  { 'name' : 'xdg-open', 'args' : ['{browser}', '{uri}'] },
-  \  { 'name' : 'x-www-browser', 'args' : ['{browser}', '{uri}'] },
-  \  { 'name' : 'w3m', 'args' : ['{browser}', '{uri}'] },
+  \  { 'name' : 'firefox-nightly',
+  \    'cmd' : 'firefox-nightly',
+  \    'args' : ['{browser}', '{uri}'] },
+  \  { 'name' : 'xdg-open',
+  \    'cmd' : 'xdg-open',
+  \    'args' : ['{browser}', '{uri}'] },
+  \  { 'name' : 'x-www-browser',
+  \    'cmd' : 'x-www-browser',
+  \    'args' : ['{browser}', '{uri}'] },
+  \  { 'name' : 'w3m',
+  \    'cmd' : 'w3m',
+  \    'args' : ['{browser}', '{uri}'] },
   \]
 endif
 

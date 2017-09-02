@@ -179,6 +179,7 @@ autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd BufNewFile,BufRead *.{atd,mly} set filetype=ocaml
 autocmd BufNewFile,BufRead *.{cgi,t} set filetype=perl
 autocmd BufNewFile,BufRead *.scala set filetype=scala
+autocmd BufNewFile,BufRead *.test set filetype=text
 autocmd BufNewFile,BufRead *.ts set filetype=typescript
 autocmd BufNewFile,BufRead *.toml set filetype=toml
 

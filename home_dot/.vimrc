@@ -225,6 +225,8 @@ Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
 Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --clang-completer --tern-completer --racer-completer' }
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
+" Go
+Plug 'fatih/vim-go', { 'for' : 'go' }
 " Haskell
 "Plug 'eagletmt/neco-ghc', { 'for' : 'haskell' }
 "Plug 'ujihisa/ref-hoogle', { 'for' : 'haskell' }
@@ -729,10 +731,13 @@ map _ <Plug>(operator-replace)
 " rhysd/vim-operator-filled-with-blank{{{2
 map <silent><Leader>b <Plug>(operator-filled-with-blank)
 
-" Cpp{{{2
+" C++{{{2
 autocmd FileType cpp nmap <silent><Leader>t :YcmCompleter GoTo<CR>
 autocmd FileType cpp nmap <silent><Leader>s <C-w>s:YcmCompleter GoTo<CR>
 autocmd FileType cpp nmap <silent><Leader>v <C-w>v:YcmCompleter GoTo<CR>
+
+" Go{{{2
+autocmd FileType go nnoremap <silent><Leader>f :GoFmt<CR>
 
 " Fortran{{{2
 let fortran_free_source=1

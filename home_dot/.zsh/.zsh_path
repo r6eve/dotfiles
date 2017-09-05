@@ -25,10 +25,10 @@ if which plenv >/dev/null; then
 fi
 
 # Perl6
-export PATH="$HOME/.rakudobrew/bin:$PATH"
-if which rakudobrew >/dev/null; then
-  eval "$(rakudobrew init -)"
-fi
+# export PATH="$HOME/.rakudobrew/bin:$PATH"
+# if which rakudobrew >/dev/null; then
+#   eval "$(rakudobrew init -)"
+# fi
 
 # Python{{{1
 which pyenv >/dev/null && eval "$(pyenv init -)"

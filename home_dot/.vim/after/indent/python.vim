@@ -1,6 +1,6 @@
 setlocal nocindent
-setlocal shiftwidth=2
-setlocal softtabstop=2
+setlocal shiftwidth=4
+setlocal softtabstop=4
 
 if !exists('b:undo_indent')
   let b:undo_indent = ''

@@ -193,12 +193,19 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
-" if has('nvim')
-"   Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
-" else
-"   Plug 'Shougo/neocomplete.vim'
-" endif
+Plug 'Shougo/denite.nvim'
+Plug 'Shougo/neomru.vim'
+Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
+  Plug 'zchee/deoplete-clang', { 'for' : 'cpp' }
+  Plug 'zchee/deoplete-go', { 'for' : 'go', 'do': 'make' }
+  Plug 'zchee/deoplete-jedi', { 'for' : 'python' }
+else
+  Plug 'Shougo/neocomplete.vim'
+endif
 Plug 'AndrewRadev/linediff.vim'
+Plug 'autozimu/LanguageClient-neovim', { 'do ': ':UpdateRemotePlugins' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jeetsukumaran/vim-markology'
 Plug 'kana/vim-smartinput'
@@ -212,7 +219,8 @@ Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
-Plug 'SirVer/ultisnips'
+Plug 'Shougo/neosnippet.vim'
+" Plug 'SirVer/ultisnips'
 Plug 'thinca/vim-prettyprint'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
 Plug 'Shougo/vimproc.vim' | Plug 'thinca/vim-quickrun', { 'on' : 'QuickRun' }
@@ -222,7 +230,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tyru/capture.vim', { 'on' : 'Capture' }
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
-Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --clang-completer --tern-completer --racer-completer' }
+" Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --clang-completer --tern-completer --racer-completer' }
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
 " Go
@@ -248,7 +256,7 @@ Plug 'vim-perl/vim-perl'
 Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
 " Rust
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer', { 'for' : 'rust' }
+"Plug 'racer-rust/vim-racer', { 'for' : 'rust' }
 " Scala
 "Plug 'derekwyatt/vim-scala', { 'for' : 'scala' }
 " Scheme
@@ -276,62 +284,98 @@ Plug 'kana/vim-textobj-user' | Plug 'thinca/vim-textobj-between'
 " operators
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-operator-user' | Plug 'kana/vim-operator-replace'
-Plug 'kana/vim-operator-user' | Plug 'rhysd/vim-operator-filled-with-blank'
 
 call plug#end()
 
 " advanced settings{{{1
 " auto-complete{{{2
-" if has('nvim')
-"   " Shougo/deoplete.nvim
-"   let g:deoplete#enable_at_startup = 1
-"   let g:deoplete#enable_smart_case = 1
-"   " let g:min_pattern_length = 3
-"   " let g:deoplete#sources#syntax#min_keyword_length = 3
-"   let g:deoplete#max_abbr_width = 0
-"   let g:deoplete#max_menu_width = 0
-"   let g:deoplete#keyword_patterns = {}
-"   let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
-"   let g:deoplete#omni#input_patterns = {}
-"   let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
-"   let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
-"   let g:deoplete#omni#functions = {}
-"   let g:deoplete#omni#functions.javascript = 'tern#Complete'
-"   autocmd FileType javascript call tern#Enable()
-"   autocmd FileType javascript setlocal omnifunc=tern#Complete
-"   inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-"   inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
-"   inoremap <expr><C-e> deoplete#cancel_popup()
-" else
-"   " Shougo/neocomplete
-"   let g:neocomplete#enable_at_startup = 1
-"   let g:neocomplete#enable_smart_case = 1
-"   let g:neocomplete#min_keyword_length = 3
-"   let g:neocomplete#sources#syntax#min_keyword_length = 3
-"   let g:neocomplete#auto_completion_start_length = 3
-"   if !exists('g:neocomplete#keyword_patterns')
-"     let g:neocomplete#keyword_patterns = {}
-"   endif
-"   let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-"   let g:neocomplete#sources#dictionary#dictionaries = {
-"   \  'default' : '',
-"   \  'scheme' : $HOME.'/.gosh_completions',
-"   \}
-"   if !exists('g:neocomplete#force_omni_input_patterns')
-"     let g:neocomplete#force_omni_input_patterns = {}
-"   endif
-"   let g:neocomplete#force_omni_input_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
-"   let g:neocomplete#sources#omni#functions = get(g:, 'neocomplete#sources#omni#functions', {})
-"   let g:neocomplete#sources#omni#functions.javascript = 'tern#Complete'
-"   autocmd FileType javascript call tern#Enable()
-"   autocmd FileType javascript setlocal omnifunc=tern#Complete
-"   inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-"   inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-"   inoremap <expr><C-e> neocomplete#cancel_popup()
-" endif
+if has('nvim')
+  " Shougo/deoplete.nvim
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#enable_smart_case = 1
+  let g:deoplete#max_abbr_width = 0
+  let g:deoplete#max_menu_width = 0
+  let g:deoplete#keyword_patterns = {}
+  let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
+  let g:deoplete#omni#input_patterns = {}
+  let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
+  let g:deoplete#omni#functions = {}
+  inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><C-e> deoplete#cancel_popup()
+
+  " zchee/deoplete-clang
+  let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
+  let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+else
+  " Shougo/neocomplete
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#enable_smart_case = 1
+  let g:neocomplete#min_keyword_length = 3
+  let g:neocomplete#sources#syntax#min_keyword_length = 3
+  let g:neocomplete#auto_completion_start_length = 3
+  if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+  endif
+  let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+  let g:neocomplete#sources#dictionary#dictionaries = {
+  \  'default' : '',
+  \  'scheme' : $HOME.'/.gosh_completions',
+  \}
+  if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+  endif
+  let g:neocomplete#force_omni_input_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
+  let g:neocomplete#sources#omni#functions = get(g:, 'neocomplete#sources#omni#functions', {})
+  let g:neocomplete#sources#omni#functions.javascript = 'tern#Complete'
+  autocmd FileType javascript call tern#Enable()
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
+  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><C-e> neocomplete#cancel_popup()
+endif
+
+" Shougo/denite.nvim{{{2
+call denite#custom#map(
+  \ 'insert',
+  \ '<C-j>',
+  \ '<denite:move_to_next_line>',
+  \ 'noremap'
+  \)
+call denite#custom#map(
+  \ 'insert',
+  \ '<C-k>',
+  \ '<denite:move_to_previous_line>',
+  \ 'noremap'
+  \)
+call denite#custom#source(
+  \ 'file_mru', 'matchers', ['matcher_cpsm', 'matcher_fuzzy', 'matcher_project_files'])
+call denite#custom#source(
+  \ 'file_rec', 'matchers', ['matcher_cpsm'])
+call denite#custom#option('default', 'prompt', '>')
 
 " AndrewRadev/linediff.vim{{{2
 vnoremap <silent><Leader>d :Linediff<CR>
+
+" autozimu/LanguageClient-neovim{{{2
+"  \ 'cpp': ['clangd'],
+let g:LanguageClient_serverCommands = {
+  \ 'go': ['go-langserver'],
+  \ 'javascript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
+  \ 'typescript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
+  \ 'ocaml': ['ocaml-language-server', '--stdio'],
+  \ 'php': ['php', $HOME.'/.config/composer/vendor/bin/php-language-server.php'],
+  \ 'python': ['pyls'],
+  \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+  \ }
+
+let g:LanguageClient_autoStart = 1
+" :LanguageClientStarted<CR>
+
+nnoremap <silent>K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent><Leader>t :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
 
 " ctrlpvim/ctrlp.vim{{{2
 let g:ctrlp_show_hidden = 1
@@ -625,14 +669,14 @@ nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
 
-" Valloric/YouCompleteMe{{{2
-let g:ycm_key_list_select_completion = ['<C-n>']
-let g:ycm_key_list_previous_completion = ['<C-p>']
-let g:ycm_key_detailed_diagnostics = ''
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_complete_in_comments = 1
-let g:ycm_rust_src_path = $HOME.'/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+" " Valloric/YouCompleteMe{{{2
+" let g:ycm_key_list_select_completion = ['<C-n>']
+" let g:ycm_key_list_previous_completion = ['<C-p>']
+" let g:ycm_key_detailed_diagnostics = ''
+" let g:ycm_confirm_extra_conf = 0
+" let g:ycm_show_diagnostics_ui = 0
+" let g:ycm_complete_in_comments = 1
+" let g:ycm_rust_src_path = $HOME.'/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 
 " r6eve/caw.vim{{{2
 let g:caw_no_default_keymappings = 1
@@ -674,11 +718,17 @@ let g:grammarous#disabled_rules = {
             \ '*' : ['EN_QUOTES', 'UPPERCASE_SENTENCE_START', 'WHITESPACE_RULE'],
             \ }
 
-" SirVer/ultisnips{{{2
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
+" Shougo/neosnippet{{{2
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+let g:neosnippet#disable_runtime_snippets = { '_' : 1 }
+let g:neosnippet#snippets_directory='~/.vim/snippets'
+
+" " SirVer/ultisnips{{{2
+" let g:UltiSnipsExpandTrigger="<c-k>"
+" let g:UltiSnipsJumpForwardTrigger="<c-k>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+" let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 
 " thinca/vim-quickrun{{{2
 nnoremap <silent><Leader>r :<C-u>QuickRun<CR>
@@ -728,13 +778,10 @@ endif
 " kana/vim-operator-replace{{{2
 map _ <Plug>(operator-replace)
 
-" rhysd/vim-operator-filled-with-blank{{{2
-map <silent><Leader>b <Plug>(operator-filled-with-blank)
-
 " C++{{{2
-autocmd FileType cpp nmap <silent><Leader>t :YcmCompleter GoTo<CR>
-autocmd FileType cpp nmap <silent><Leader>s <C-w>s:YcmCompleter GoTo<CR>
-autocmd FileType cpp nmap <silent><Leader>v <C-w>v:YcmCompleter GoTo<CR>
+" autocmd FileType cpp nmap <silent><Leader>t :YcmCompleter GoTo<CR>
+" autocmd FileType cpp nmap <silent><Leader>s <C-w>s:YcmCompleter GoTo<CR>
+" autocmd FileType cpp nmap <silent><Leader>v <C-w>v:YcmCompleter GoTo<CR>
 
 " Go{{{2
 autocmd FileType go nnoremap <silent><Leader>f :GoFmt<CR>
@@ -781,13 +828,13 @@ endif
 autocmd FileType ruby call smartinput_endwise#define_default_rules()
 
 " Rust{{{2
-let g:racer_cmd = 'racer'
-let g:racer_insert_paren = 0
-let g:racer_experimental_completer = 1
 autocmd FileType rust nnoremap <silent><Leader>f :RustFmt<CR>
-autocmd FileType rust nmap <silent><Leader>t <Plug>(rust-def)
-autocmd FileType rust nmap <silent><Leader>s <Plug>(rust-def-split)
-autocmd FileType rust nmap <silent><Leader>v <Plug>(rust-def-vertical)
+" let g:racer_cmd = 'racer'
+" let g:racer_insert_paren = 0
+" let g:racer_experimental_completer = 1
+" autocmd FileType rust nmap <silent><Leader>t <Plug>(rust-def)
+" autocmd FileType rust nmap <silent><Leader>s <Plug>(rust-def-split)
+" autocmd FileType rust nmap <silent><Leader>v <Plug>(rust-def-vertical)
 
 " Scheme{{{2
 autocmd FileType scheme vmap <C-j> <Plug>(gosh_repl_send_block)

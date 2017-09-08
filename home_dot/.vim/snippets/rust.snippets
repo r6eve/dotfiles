@@ -1,0 +1,44 @@
+snippet errorln
+abbr errorln
+	use std::io::Write;
+
+	macro_rules! errorln {
+		() => ({
+			writeln!(::std::io::stderr(), "error").unwrap();
+			::std::process::exit(1);
+		});
+		($fmt:expr) => ({
+			writeln!(::std::io::stderr(), $fmt).unwrap();
+			::std::process::exit(1);
+		});
+		($fmt:expr, $($arg:tt)*) => ({
+			writeln!(::std::io::stderr(), $fmt, $($arg)*).unwrap();
+			::std::process::exit(1);
+		});
+	}
+
+snippet flush
+abbr flush
+	use std::io;
+	use std::io::prelude::*;
+	io::stdout().flush().unwrap();
+
+snippet print_flush
+abbr print_flush
+	macro_rules! print_flush {
+		() => (());
+		($fmt:expr) => ({
+			print!($fmt);
+			::std::io::stdout().flush().unwrap();
+		});
+		($fmt:expr, $($arg:tt)*) => ({
+			print!($fmt, $($arg)*);
+			::std::io::stdout().flush().unwrap();
+		});
+	}
+
+snippet sleep
+abbr sleep
+	use std::thread;
+	use std::time::Duration;
+	thread::sleep(Duration::from_secs(1));

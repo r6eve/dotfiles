@@ -1,0 +1,20 @@
+snippet myfunc
+abbr myfunc
+	# my functions
+	variance <- function(x) var(x)*(length(x)-1)/length(x)
+	std_dev  <- function(x) sqrt(variance(x))
+	se       <- function(x) sd(x)/sqrt(length(x))
+	statmode <- function(x) names(which.max(table(x)))
+	skewness <- function(x) mean( (x-mean(x))^3 ) / sd(x)^3
+	kurtosis <- function(x) mean( (x-mean(x))^4 ) / sd(x)^4
+
+snippet usage
+abbr usage
+	args <- commandArgs(trailingOnly = T)
+	if (length(args) != 3) {
+		print('Usage: READ THE SOURCE CODE')
+		q()
+	}
+
+	suppressPackageStartupMessages(library(ggplot2))
+	suppressPackageStartupMessages(library(reshape2))

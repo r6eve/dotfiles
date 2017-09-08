@@ -1,0 +1,7 @@
+snippet log
+abbr log
+	exec >/LOG-DIR/log.\`date +%Y-%m-%d\`.out 2>/LOG-DIR/log.\`date +%Y-%m-%d\`.err
+
+snippet ulog
+abbr ulog
+	exec >/LOG-DIR/log.\`date +%s\`.out 2>/LOG-DIR/log.\`date +%s\`.err

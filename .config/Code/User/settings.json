@@ -1,9 +1,22 @@
 {
-    "vim.enableNeovim": true,
+    "editor.minimap.enabled": false,
+    "files.insertFinalNewline": true,
     "vim.disableAnnoyingNeovimMessage": true,
+    "vim.enableNeovim": true,
     "vim.leader": ",",
+    "vim.showcmd": false,
     "vim.visualstar": true,
+    "vim.hlsearch": true,
     "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<Leader>", "n"],
+            "after": [],
+            "commands": [
+                {
+                    "command": ":nohl"
+                }
+            ]
+        },
         {
             "before": ["<Space>"],
             "after": ["<C-f>"]

@@ -1,0 +1,17 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "repl.action.acceptInput",
+        "when": "editorTextFocus && inDebugRepl"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+    }
+]

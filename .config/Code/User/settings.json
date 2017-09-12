@@ -1,0 +1,28 @@
+{
+    "vim.enableNeovim": true,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.leader": ",",
+    "vim.visualstar": true,
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<Space>"],
+            "after": ["<C-f>"]
+        },
+        {
+            "before": [";"],
+            "after": [":"]
+        },
+        {
+            "before": ["Y"],
+            "after": ["y", "$"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["g", "t"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["g", "T"]
+        }
+    ]
+}

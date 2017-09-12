@@ -240,11 +240,8 @@ Plug 'fatih/vim-go', { 'for' : 'go' }
 "Plug 'ujihisa/ref-hoogle', { 'for' : 'haskell' }
 " HTML
 Plug 'mattn/emmet-vim', { 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'css', 'scss', 'sass'] }
-" Java
-"Plug 'artur-shaik/vim-javacomplete2', { 'for' : 'java' }
 " JavaScript
 Plug 'jelera/vim-javascript-syntax'
-"Plug 'marijnh/tern_for_vim', { 'for' : 'javascript', 'do' : 'npm install' }
 " lighttpd
 Plug 'glensc/vim-syntax-lighttpd', { 'for' : 'lighttpd' }
 " OCaml
@@ -258,7 +255,7 @@ Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ru
 Plug 'rust-lang/rust.vim'
 "Plug 'racer-rust/vim-racer', { 'for' : 'rust' }
 " Scala
-"Plug 'derekwyatt/vim-scala', { 'for' : 'scala' }
+Plug 'derekwyatt/vim-scala', { 'for' : 'scala' }
 " Scheme
 Plug 'aharisu/vim_goshrepl', { 'for' : 'scheme' }
 " Shell script
@@ -327,9 +324,6 @@ else
   endif
   let g:neocomplete#force_omni_input_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
   let g:neocomplete#sources#omni#functions = get(g:, 'neocomplete#sources#omni#functions', {})
-  let g:neocomplete#sources#omni#functions.javascript = 'tern#Complete'
-  autocmd FileType javascript call tern#Enable()
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
   inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
   inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
   inoremap <expr><C-e> neocomplete#cancel_popup()
@@ -359,10 +353,10 @@ vnoremap <silent><Leader>d :Linediff<CR>
 
 " autozimu/LanguageClient-neovim{{{2
 "  \ 'cpp': ['clangd'],
+"  \ 'javascript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
+"  \ 'typescript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
 let g:LanguageClient_serverCommands = {
   \ 'go': ['go-langserver'],
-  \ 'javascript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
-  \ 'typescript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
   \ 'ocaml': ['ocaml-language-server', '--stdio'],
   \ 'php': ['php', $HOME.'/.config/composer/vendor/bin/php-language-server.php'],
   \ 'python': ['pyls'],
@@ -791,9 +785,6 @@ let fortran_free_source=1
 
 " HTML{{{2
 let g:html_indent_inctags = "html,body,head,tbody"
-
-" Java{{{2
-"let g:JavaComplete_EnableDefaultMappings = 0
 
 " Haskell{{{2
 "let s:bundle = neobundle#get("neco-ghc")

@@ -205,7 +205,7 @@ else
   Plug 'Shougo/neocomplete.vim'
 endif
 Plug 'AndrewRadev/linediff.vim'
-Plug 'autozimu/LanguageClient-neovim', { 'do ': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', { 'for' : ['go', 'ocaml', 'php', 'python', 'rust'], 'do' : ':UpdateRemotePlugins' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jeetsukumaran/vim-markology'
 Plug 'kana/vim-smartinput'
@@ -230,9 +230,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tyru/capture.vim', { 'on' : 'Capture' }
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
-" Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --clang-completer --tern-completer --racer-completer' }
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
+" D
+Plug 'landaire/deoplete-d', { 'for' : 'd' }
 " Go
 Plug 'fatih/vim-go', { 'for' : 'go' }
 " Haskell
@@ -362,6 +363,8 @@ let g:LanguageClient_serverCommands = {
   \ 'python': ['pyls'],
   \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
   \ }
+
+autocmd FileType go,ocaml,php,python,rust set signcolumn=yes
 
 let g:LanguageClient_autoStart = 1
 " :LanguageClientStarted<CR>
@@ -662,15 +665,6 @@ nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
-
-" " Valloric/YouCompleteMe{{{2
-" let g:ycm_key_list_select_completion = ['<C-n>']
-" let g:ycm_key_list_previous_completion = ['<C-p>']
-" let g:ycm_key_detailed_diagnostics = ''
-" let g:ycm_confirm_extra_conf = 0
-" let g:ycm_show_diagnostics_ui = 0
-" let g:ycm_complete_in_comments = 1
-" let g:ycm_rust_src_path = $HOME.'/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 
 " r6eve/caw.vim{{{2
 let g:caw_no_default_keymappings = 1

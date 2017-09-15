@@ -175,6 +175,7 @@ inoremap <C-d> <C-o>x
 autocmd BufNewFile,BufRead *.dart set filetype=dart
 autocmd BufNewFile,BufRead *.io set filetype=io
 autocmd BufNewFile,BufRead lighttpd.conf set filetype=lighttpd
+autocmd BufNewFile,BufRead *.m set filetype=objc
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd BufNewFile,BufRead *.{atd,mly} set filetype=ocaml
 autocmd BufNewFile,BufRead *.{cgi,t} set filetype=perl

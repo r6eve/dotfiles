@@ -5,17 +5,12 @@
         "command": "-workbench.action.togglePanel"
     },
     {
-        "key": "ctrl+j",
+        "key": "ctrl+i",
         "command": "repl.action.acceptInput",
         "when": "editorTextFocus && inDebugRepl"
     },
     {
-        "key": "ctrl+,",
-        "command": "editor.action.formatDocument",
-        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+j",
+        "key": "ctrl+i",
         "command": "acceptSelectedSuggestion",
         "when": "editorTextFocus && suggestWidgetVisible"
     },
@@ -28,5 +23,9 @@
         "key": "ctrl+p",
         "command": "selectPrevSuggestion",
         "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "-workbench.action.openGlobalSettings"
     }
 ]

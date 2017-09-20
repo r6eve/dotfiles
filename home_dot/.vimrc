@@ -221,7 +221,6 @@ Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
 Plug 'Shougo/neosnippet.vim'
-" Plug 'SirVer/ultisnips'
 Plug 'thinca/vim-prettyprint'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
 Plug 'Shougo/vimproc.vim' | Plug 'thinca/vim-quickrun', { 'on' : 'QuickRun' }

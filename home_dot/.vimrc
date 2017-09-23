@@ -206,7 +206,7 @@ else
   Plug 'Shougo/neocomplete.vim'
 endif
 Plug 'AndrewRadev/linediff.vim'
-Plug 'autozimu/LanguageClient-neovim', { 'for' : ['go', 'ocaml', 'php', 'python', 'rust'], 'do' : ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', { 'do' : ':UpdateRemotePlugins' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jeetsukumaran/vim-markology'
 Plug 'kana/vim-smartinput'

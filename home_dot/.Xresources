@@ -10,9 +10,9 @@ Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
-Xft.rgba: rgb
+! Xft.rgba: rgb
 
-URxvt.letterSpace: -2
+URxvt.letterSpace: -1
 
 URxvt*cursorColor: #886eff
 URxvt*cursorColor2: #000000

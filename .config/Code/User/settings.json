@@ -2,6 +2,7 @@
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
     "editor.renderLineHighlight": "gutter",
+    "editor.wordWrap": "on",
     "files.insertFinalNewline": true,
     "vim.disableAnnoyingNeovimMessage": true,
     "vim.enableNeovim": true,

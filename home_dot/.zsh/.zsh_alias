@@ -60,6 +60,7 @@ alias Rscript='Rscript --vanilla'
 # Rust{{{1
 alias clippy='rustup run nightly cargo clippy'
 alias bench='rustup run nightly cargo bench'
+alias cfmt='rustup run nightly cargo fmt'
 
 # Scheme{{{1
 alias igosh='rlwrap gosh'

@@ -42,3 +42,37 @@ abbr sleep
 	use std::thread;
 	use std::time::Duration;
 	thread::sleep(Duration::from_secs(1));
+
+snippet #!#
+abbr competitive
+	use std::io::{self, BufRead, Write};
+
+	fn solve<R: BufRead, W: Write>(mut input: R, mut output: W) {
+	}
+
+	fn main() {
+		let stdin = io::stdin();
+		let stdout = io::stdout();
+		solve(stdin.lock(), stdout.lock());
+	}
+
+	#[cfg(test)]
+	mod tests {
+		fn test(input: &str, output: &str) {
+			let mut v = Vec::new();
+			::solve(input.as_bytes(), &mut v);
+			assert_eq!(String::from_utf8(v).unwrap(), output);
+		}
+
+		#[test]
+		fn case1() {
+			test(
+				"\
+	__INPUT__
+	",
+				"\
+	__OUTPUT__
+	",
+			);
+		}
+	}

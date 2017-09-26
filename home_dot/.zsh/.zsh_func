@@ -34,7 +34,7 @@ pmver(){ perl -M$1 -E "say \$$1::VERSION" }
 u(){ cd ./$(git rev-parse --show-cdup) }
 rg(){
   p='.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src';
-  grep $@ -r $HOME/$p/lib{alloc,std,core,collections} --color=always |perl -pse 's@$HOME/$p/@@' -- -HOME=$HOME -p=$p
+  find $HOME/$p -name '*.rs' |xargs grep -n --color=always -- $@ |perl -pse 's@$HOME/$p/@@' -- -HOME=$HOME -p=$p
 }
 scut(){
   ls *_*.png |perl -pe 'print; s/^(\d+)_(\d+).+$/$1$2.png/' |parallel -N2 'convert -crop 1400x810+0+45 {1} {2}'

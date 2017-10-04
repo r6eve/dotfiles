@@ -1,7 +1,7 @@
 # OS{{{1
-alias -g C="|perl -pe 's/\n// if eof' |xsel --input --clipboard"
-alias -g L='|less'
-alias -g LR='--color=always |less -R'
+# alias -g C="|perl -pe 's/\n// if eof' |xsel --input --clipboard"
+# alias -g L='|less'
+# alias -g LR='--color=always |less -R'
 alias grep='grep -n --color=auto'
 alias egrep='egrep -n --color=auto'
 alias fgrep='fgrep -n --color=auto'

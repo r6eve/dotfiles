@@ -1,3 +1,5 @@
+include c.snippets
+
 snippet cinclude
 abbr cstdio, cstdlib, ..
 	#include <cstdio>
@@ -19,3 +21,22 @@ snippet cin
 abbr cin
 	ios::sync_with_stdio(false);
 	cin.tie(0);
+
+snippet split
+abbr split
+	vector<string> split_on_char(char sep, const string &str) {
+		vector<string> v;
+		string::const_iterator i = str.begin();
+		while (i != str.end()) {
+			string::const_iterator j = i;
+			while (j != str.end() && *j != sep) {
+				++j;
+			}
+			v.push_back(string(i, j));
+			if (j != str.end()) {
+				++j;
+			}
+			i = j;
+		}
+		return v;
+	}

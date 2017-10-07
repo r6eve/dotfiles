@@ -199,7 +199,7 @@ Plug 'Shougo/neomru.vim'
 Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
-  Plug 'zchee/deoplete-clang', { 'for' : 'cpp' }
+  " Plug 'zchee/deoplete-clang', { 'for' : 'cpp' }
   Plug 'zchee/deoplete-go', { 'for' : 'go', 'do': 'make' }
   Plug 'zchee/deoplete-jedi', { 'for' : 'python' }
 else
@@ -232,6 +232,7 @@ Plug 'tyru/capture.vim', { 'on' : 'Capture' }
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
+Plug 'rhysd/vim-clang-format', { 'for' : 'cpp' }
 " D
 Plug 'landaire/deoplete-d', { 'for' : 'd' }
 " Go
@@ -302,9 +303,9 @@ if has('nvim')
   inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
   inoremap <expr><C-e> deoplete#cancel_popup()
 
-  " zchee/deoplete-clang
-  let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
-  let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+  " " zchee/deoplete-clang
+  " let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
+  " let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
 else
   " Shougo/neocomplete
   let g:neocomplete#enable_at_startup = 1
@@ -353,10 +354,10 @@ call denite#custom#option('default', 'prompt', '>')
 vnoremap <silent><Leader>d :Linediff<CR>
 
 " autozimu/LanguageClient-neovim{{{2
-"  \ 'cpp': ['clangd'],
 "  \ 'javascript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
 "  \ 'typescript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
 let g:LanguageClient_serverCommands = {
+  \ 'cpp': ['clangd'],
   \ 'go': ['go-langserver'],
   \ 'ocaml': ['ocaml-language-server', '--stdio'],
   \ 'php': ['php', $HOME.'/.config/composer/vendor/bin/php-language-server.php'],
@@ -364,7 +365,7 @@ let g:LanguageClient_serverCommands = {
   \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
   \ }
 
-autocmd FileType go,ocaml,php,python,rust set signcolumn=yes
+autocmd FileType cpp,go,ocaml,php,python,rust set signcolumn=yes
 
 let g:LanguageClient_autoStart = 1
 " :LanguageClientStarted<CR>
@@ -767,6 +768,7 @@ endif
 map _ <Plug>(operator-replace)
 
 " C++{{{2
+autocmd FileType cpp nmap <silent><Leader>f :ClangFormat<CR>
 " autocmd FileType cpp nmap <silent><Leader>t :YcmCompleter GoTo<CR>
 " autocmd FileType cpp nmap <silent><Leader>s <C-w>s:YcmCompleter GoTo<CR>
 " autocmd FileType cpp nmap <silent><Leader>v <C-w>v:YcmCompleter GoTo<CR>

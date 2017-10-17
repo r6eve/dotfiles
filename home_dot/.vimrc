@@ -168,7 +168,7 @@ inoremap <C-_> <ESC>
 inoremap <C-/> <ESC>
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
-inoremap <C-r>+ <C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>
+" inoremap <C-r>+ <C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>
 inoremap <C-d> <C-o>x
 
 " filetype detect settings{{{1
@@ -803,6 +803,9 @@ autocmd FileType ocaml set commentstring=(*%s*)
 "autocmd FileType ocaml nnoremap <Leader>t :call OCamlType()<CR>
 "autocmd FileType ocaml nnoremap <Leader>s :call OCamlSpot()<CR>
 autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo
+
+" Python{{{2
+autocmd FileType python nnoremap <silent><Leader>f :0,$!yapf<CR>
 
 " R{{{2
 let vimrplugin_assign = 0

@@ -22,6 +22,15 @@ abbr cin
 	ios::sync_with_stdio(false);
 	cin.tie(0);
 
+snippet ends_with
+abbr endswith
+	bool ends_with(const string &str, const string &suffix) {
+		if (str.size() < suffix.size()) {
+			return false;
+		}
+		return equal(suffix.rbegin(), suffix.rend(), str.rbegin());
+	}
+
 snippet split
 abbr split
 	vector<string> split_on_char(char sep, const string &str) {

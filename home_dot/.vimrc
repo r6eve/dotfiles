@@ -671,6 +671,7 @@ nmap # <Plug>(anzu-sharp-with-echo)
 " r6eve/caw.vim{{{2
 let g:caw_no_default_keymappings = 1
 let g:caw_dollarpos_sp_left = ' '
+autocmd FileType python let g:caw_dollarpos_sp_left = '  '
 map gci <Plug>(caw:hatpos:comment)
 map gcui <Plug>(caw:hatpos:uncomment)
 map gca <Plug>(caw:dollarpos:comment)

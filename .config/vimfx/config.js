@@ -113,3 +113,11 @@ vimfx.addCommand({
   vim.window.switchToTabHavingURI('https://www.google.co.jp/search?q=京都%20天気', true)
 })
 customSet('weather', ',w')
+
+vimfx.addCommand({
+  name: 'line',
+  description: 'line',
+}, ({vim}) => {
+  vim.window.switchToTabHavingURI('https://transit.goo.ne.jp/', true)
+})
+customSet('line', ',x')

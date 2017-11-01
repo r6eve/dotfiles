@@ -202,7 +202,7 @@ if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
   " Plug 'zchee/deoplete-clang', { 'for' : 'cpp' }
   Plug 'zchee/deoplete-go', { 'for' : 'go', 'do': 'make' }
-  Plug 'zchee/deoplete-jedi', { 'for' : 'python' }
+  " Plug 'zchee/deoplete-jedi', { 'for' : 'python' }
 else
   Plug 'Shougo/neocomplete.vim'
 endif

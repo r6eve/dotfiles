@@ -369,7 +369,6 @@ let g:LanguageClient_serverCommands = {
 autocmd FileType cpp,go,ocaml,php,python,rust set signcolumn=yes
 
 let g:LanguageClient_autoStart = 1
-" :LanguageClientStarted<CR>
 
 nnoremap <silent>K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent><Leader>t :call LanguageClient_textDocument_definition()<CR>

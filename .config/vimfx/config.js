@@ -67,12 +67,12 @@ vimfx.addCommand({
 customSet('mail', ',m')
 
 vimfx.addCommand({
-  name: 'newsinlevels',
-  description: 'NewsInLevels',
+  name: 'ma',
+  description: 'ma',
 }, ({vim}) => {
-  vim.window.switchToTabHavingURI('https://www.newsinlevels.com/', true)
+  vim.window.switchToTabHavingURI('https://mail.google.com/mail/u/1/#all', true)
 })
-customSet('newsinlevels', ',n')
+customSet('ma', ',n')
 
 vimfx.addCommand({
   name: 'rss',

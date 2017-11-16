@@ -72,7 +72,8 @@ set conceallevel=0
 set concealcursor=
 set list
 set listchars=tab:>\･
-set synmaxcol=200
+"set synmaxcol=200
+set guicursor=
 "set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 "autocmd VimLeave * set guicursor=a:block-blinkon1
 let g:python_host_prog = '/usr/bin/python2'
@@ -85,6 +86,10 @@ autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=revers
 autocmd ColorScheme * highlight ZenkakuSpace cterm=none ctermbg=9 gui=none guibg=#ff0000
 autocmd ColorScheme * highlight TabString cterm=none ctermbg=238 gui=none guibg=#303030
 autocmd ColorScheme * highlight TrailingSpaces term=underline ctermbg=238 guibg=#444444
+" autocmd ColorScheme * highlight ALEError ctermbg=167 guibg=#ab6560
+autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#ab6560
+" autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=167 gui=bold guifg=#3a4b5c guibg=#ab6560
+autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=89 gui=bold guifg=#3a4b5c guibg=#ab6560
 autocmd VimEnter,WinEnter * let w:m1 = matchadd("TabString", '	')
 autocmd VimEnter,WinEnter * let w:m2 = matchadd("ZenkakuSpace", '　')
 autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/

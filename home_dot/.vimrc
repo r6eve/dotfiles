@@ -46,7 +46,7 @@ set shiftround
 set foldmethod=marker
 set foldlevel=0
 set formatoptions+=r
-set cinoptions=:0,(0,g0,t0
+set cinoptions=(0,g0,t0
 set keywordprg=:help
 set splitright
 set splitbelow
@@ -236,9 +236,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tyru/capture.vim', { 'on' : 'Capture' }
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
+Plug 'vim-scripts/gtags.vim'
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
-Plug 'rhysd/vim-clang-format', { 'for' : 'cpp' }
+Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 " D
 Plug 'landaire/deoplete-d', { 'for' : 'd' }
 " Go
@@ -375,10 +376,10 @@ autocmd FileType cpp,go,ocaml,php,python,rust set signcolumn=yes
 
 let g:LanguageClient_autoStart = 1
 
-nnoremap <silent>K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent><Leader>t :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
+autocmd FileType cpp,go,ocaml,php,python,rust nnoremap <silent>K :call LanguageClient_textDocument_hover()<CR>
+autocmd FileType cpp,go,ocaml,php,python,rust nnoremap <silent><Leader>t :call LanguageClient_textDocument_definition()<CR>
+autocmd FileType cpp,go,ocaml,php,python,rust nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
+autocmd FileType cpp,go,ocaml,php,python,rust nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
 
 " ctrlpvim/ctrlp.vim{{{2
 let g:ctrlp_show_hidden = 1
@@ -773,8 +774,8 @@ endif
 " kana/vim-operator-replace{{{2
 map _ <Plug>(operator-replace)
 
-" C++{{{2
-autocmd FileType cpp nmap <silent><Leader>f :ClangFormat<CR>
+" C/C++{{{2
+autocmd FileType c,cpp nmap <silent><Leader>f :ClangFormat<CR>
 " autocmd FileType cpp nmap <silent><Leader>t :YcmCompleter GoTo<CR>
 " autocmd FileType cpp nmap <silent><Leader>s <C-w>s:YcmCompleter GoTo<CR>
 " autocmd FileType cpp nmap <silent><Leader>v <C-w>v:YcmCompleter GoTo<CR>

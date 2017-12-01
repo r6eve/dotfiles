@@ -205,9 +205,7 @@ Plug 'Shougo/neomru.vim'
 Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
-  " Plug 'zchee/deoplete-clang', { 'for' : 'cpp' }
   Plug 'zchee/deoplete-go', { 'for' : 'go', 'do': 'make' }
-  " Plug 'zchee/deoplete-jedi', { 'for' : 'python' }
 else
   Plug 'Shougo/neocomplete.vim'
 endif
@@ -244,17 +242,12 @@ Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 Plug 'landaire/deoplete-d', { 'for' : 'd' }
 " Go
 Plug 'fatih/vim-go', { 'for' : 'go' }
-" Haskell
-"Plug 'eagletmt/neco-ghc', { 'for' : 'haskell' }
-"Plug 'ujihisa/ref-hoogle', { 'for' : 'haskell' }
 " HTML
 Plug 'mattn/emmet-vim', { 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'css', 'scss', 'sass'] }
 " JavaScript
 Plug 'jelera/vim-javascript-syntax'
 " lighttpd
 Plug 'glensc/vim-syntax-lighttpd', { 'for' : 'lighttpd' }
-" OCaml
-"Plug 'simonjbeaumont/vim-ocamlspot', { 'for' : 'ocaml' }
 " Perl
 Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
 Plug 'vim-perl/vim-perl'
@@ -262,15 +255,12 @@ Plug 'vim-perl/vim-perl'
 Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
 " Rust
 Plug 'rust-lang/rust.vim'
-"Plug 'racer-rust/vim-racer', { 'for' : 'rust' }
 " Scala
 Plug 'derekwyatt/vim-scala', { 'for' : 'scala' }
 " Scheme
 Plug 'aharisu/vim_goshrepl', { 'for' : 'scheme' }
 " Shell script
 Plug 'vim-scripts/sh.vim', { 'for' : 'sh' }
-" Smalltalk
-"Plug 'st.vim', { 'for' : 'st' }
 " TOML
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
 " Vim Script
@@ -309,10 +299,6 @@ if has('nvim')
   inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
   inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
   inoremap <expr><C-e> deoplete#cancel_popup()
-
-  " " zchee/deoplete-clang
-  " let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
-  " let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
 else
   " Shougo/neocomplete
   let g:neocomplete#enable_at_startup = 1
@@ -720,12 +706,6 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 let g:neosnippet#disable_runtime_snippets = { '_' : 1 }
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
-" " SirVer/ultisnips{{{2
-" let g:UltiSnipsExpandTrigger="<c-k>"
-" let g:UltiSnipsJumpForwardTrigger="<c-k>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-" let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
-
 " thinca/vim-quickrun{{{2
 nnoremap <silent><Leader>r :<C-u>QuickRun<CR>
 let g:quickrun_config = {
@@ -776,9 +756,6 @@ map _ <Plug>(operator-replace)
 
 " C/C++{{{2
 autocmd FileType c,cpp nmap <silent><Leader>f :ClangFormat<CR>
-" autocmd FileType cpp nmap <silent><Leader>t :YcmCompleter GoTo<CR>
-" autocmd FileType cpp nmap <silent><Leader>s <C-w>s:YcmCompleter GoTo<CR>
-" autocmd FileType cpp nmap <silent><Leader>v <C-w>v:YcmCompleter GoTo<CR>
 
 " Go{{{2
 autocmd FileType go nnoremap <silent><Leader>f :GoFmt<CR>
@@ -788,13 +765,6 @@ let fortran_free_source=1
 
 " HTML{{{2
 let g:html_indent_inctags = "html,body,head,tbody"
-
-" Haskell{{{2
-"let s:bundle = neobundle#get("neco-ghc")
-"function! s:bundle.hooks.on_source(bundle)
-"  let g:necoghc_enable_detailed_browse = 1
-"endfunction
-"unlet s:bundle
 
 " LaTeX{{{2
 let g:tex_conceal=""
@@ -807,8 +777,6 @@ if executable('ocamlmerlin') && has('python')
   exec "set rtp+=" . g:opamshare . "/merlin/vim"
 end
 autocmd FileType ocaml set commentstring=(*%s*)
-"autocmd FileType ocaml nnoremap <Leader>t :call OCamlType()<CR>
-"autocmd FileType ocaml nnoremap <Leader>s :call OCamlSpot()<CR>
 autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo
 
 " Python{{{2

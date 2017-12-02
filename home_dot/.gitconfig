@@ -29,4 +29,5 @@
 	lop = log -p
 	mg = merge
 	mgn = merge --no-ff
+	ps = push
 	st = status -sb

@@ -361,6 +361,7 @@ let g:LanguageClient_serverCommands = {
 autocmd FileType cpp,go,ocaml,php,python,rust set signcolumn=yes
 
 let g:LanguageClient_autoStart = 1
+let g:LanguageClient_diagnosticsList = "location"
 
 autocmd FileType cpp,go,ocaml,php,python,rust nnoremap <silent>K :call LanguageClient_textDocument_hover()<CR>
 autocmd FileType cpp,go,ocaml,php,python,rust nnoremap <silent><Leader>t :call LanguageClient_textDocument_definition()<CR>
@@ -753,6 +754,9 @@ endif
 
 " kana/vim-operator-replace{{{2
 map _ <Plug>(operator-replace)
+
+" vim-scripts/gtags.vim{{{2
+autocmd FileType c,cpp nmap <silent><Leader>g :Gtags -f %<CR>
 
 " C/C++{{{2
 autocmd FileType c,cpp nmap <silent><Leader>f :ClangFormat<CR>

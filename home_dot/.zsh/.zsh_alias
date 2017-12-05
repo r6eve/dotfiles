@@ -1,7 +1,4 @@
 # OS{{{1
-# alias -g C="|perl -pe 's/\n// if eof' |xsel --input --clipboard"
-# alias -g L='|less'
-# alias -g LR='--color=always |less -R'
 alias grep='grep -n --color=auto'
 alias egrep='egrep -n --color=auto'
 alias fgrep='fgrep -n --color=auto'
@@ -37,9 +34,6 @@ alias clang++='clang++ -std=c++11 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstric
 # Common Lisp{{{1
 alias isbcl='rlwrap sbcl --noinform'
 alias sbcl='sbcl --noinform'
-
-# Haskell{{{1
-alias hinfo='hoogle --info'
 
 # JavaScript{{{1
 alias esa='eslint -c airbnb'

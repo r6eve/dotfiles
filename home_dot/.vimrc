@@ -212,6 +212,7 @@ endif
 Plug 'AndrewRadev/linediff.vim'
 Plug 'autozimu/LanguageClient-neovim', { 'do' : ':UpdateRemotePlugins' }
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'jeetsukumaran/vim-markology'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
@@ -376,6 +377,9 @@ let g:ctrlp_max_depth = 5
 let g:ctrlp_open_new_file = 'h'
 let g:ctrlp_tilde_homedir = 1
 let g:ctrlp_follow_symlinks = 2
+
+" haya14busa/vim-open-googletranslate{{{2
+let g:opengoogletranslate#default_lang = 'ja'
 
 " jeetsukumaran/vim-markology{{{2
 let g:markology_enable = 0

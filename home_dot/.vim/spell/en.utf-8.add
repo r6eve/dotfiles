@@ -39,3 +39,4 @@ bool
 iostream
 clippy
 codecov
+gitignore

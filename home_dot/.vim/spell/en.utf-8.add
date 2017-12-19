@@ -40,3 +40,4 @@ iostream
 clippy
 codecov
 gitignore
+rustfmt

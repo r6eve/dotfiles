@@ -41,3 +41,5 @@ clippy
 codecov
 gitignore
 rustfmt
+OSX
+macOS

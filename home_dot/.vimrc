@@ -264,6 +264,8 @@ Plug 'aharisu/vim_goshrepl', { 'for' : 'scheme' }
 Plug 'vim-scripts/sh.vim', { 'for' : 'sh' }
 " TOML
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
+" TypeScript
+Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
 " Vim Script
 Plug 'kannokanno/vmock', { 'for' : 'vim' }
 Plug 'thinca/vim-themis', { 'for' : 'vim' }
@@ -348,26 +350,26 @@ call denite#custom#option('default', 'prompt', '>')
 vnoremap <silent><Leader>d :Linediff<CR>
 
 " autozimu/LanguageClient-neovim{{{2
-"  \ 'javascript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
-"  \ 'typescript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
 let g:LanguageClient_serverCommands = {
   \ 'cpp': ['clangd'],
   \ 'go': ['go-langserver'],
+  \ 'javascript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
+  \ 'typescript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
   \ 'ocaml': ['ocaml-language-server', '--stdio'],
   \ 'php': ['php', $HOME.'/.config/composer/vendor/bin/php-language-server.php'],
   \ 'python': ['pyls'],
   \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
   \ }
 
-autocmd FileType cpp,go,ocaml,php,python,rust set signcolumn=yes
+autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript set signcolumn=yes
 
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_diagnosticsList = "location"
 
-autocmd FileType cpp,go,ocaml,php,python,rust nnoremap <silent>K :call LanguageClient_textDocument_hover()<CR>
-autocmd FileType cpp,go,ocaml,php,python,rust nnoremap <silent><Leader>t :call LanguageClient_textDocument_definition()<CR>
-autocmd FileType cpp,go,ocaml,php,python,rust nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
-autocmd FileType cpp,go,ocaml,php,python,rust nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
+autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent>K :call LanguageClient_textDocument_hover()<CR>
+autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>t :call LanguageClient_textDocument_definition()<CR>
+autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
+autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
 
 " ctrlpvim/ctrlp.vim{{{2
 let g:ctrlp_show_hidden = 1
@@ -815,6 +817,9 @@ autocmd FileType scheme vmap <C-j> <Plug>(gosh_repl_send_block)
 
 " Shell script{{{2
 let g:sh_indent_case_labels=1
+
+" TypeScript{{{2
+autocmd FileType typescript nnoremap <silent><Leader>f :!tsfmt --replace %<CR>
 
 " __END__{{{1
 " vim: foldmethod=marker

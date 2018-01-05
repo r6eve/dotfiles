@@ -69,3 +69,7 @@ JSDoc
 eval
 ReferenceError
 forEach
+iterable
+NodeList
+ES2016
+falsy

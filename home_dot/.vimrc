@@ -225,6 +225,7 @@ Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
+Plug 'sbdchd/neoformat', { 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
 Plug 'Shougo/neosnippet.vim'
 Plug 'thinca/vim-prettyprint'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
@@ -707,6 +708,9 @@ let g:grammarous#disabled_rules = {
             \ '*' : ['EN_QUOTES', 'UPPERCASE_SENTENCE_START', 'WHITESPACE_RULE'],
             \ }
 
+" sbdchd/neoformat{{{2
+autocmd FileType javascript,typescript,css,less,scss,json,graphql,markdown nnoremap <silent><Leader>f :Neoformat<CR>
+
 " Shougo/neosnippet{{{2
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -817,9 +821,6 @@ autocmd FileType scheme vmap <C-j> <Plug>(gosh_repl_send_block)
 
 " Shell script{{{2
 let g:sh_indent_case_labels=1
-
-" TypeScript{{{2
-autocmd FileType typescript nnoremap <silent><Leader>f :!tsfmt --replace %<CR>
 
 " __END__{{{1
 " vim: foldmethod=marker

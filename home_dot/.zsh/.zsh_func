@@ -39,6 +39,9 @@ rg(){
 scut(){
   ls *_*.png |perl -pe 'print; s/^(\d+)_(\d+).+$/$1$2.png/' |parallel -N2 'convert -crop 1400x810+0+45 {1} {2}'
 }
+sscut(){
+  ls *_*.png |perl -pe 'print; s/^(\d+)_(\d+).+$/$1$2.png/' |parallel -N2 'convert -crop 1440x810+0+45 {1} {2}'
+}
 cpy(){ cat $1 |perl -pe 's/\n// if eof' |xsel --input --clipboard }
 ytc(){
   n=`echo "$1" |perl -ne 's/^[^\d]+(\d+)$/printf("%03d\n", $1)/e'`;

@@ -186,6 +186,7 @@ autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd BufNewFile,BufRead *.{atd,mly} set filetype=ocaml
 autocmd BufNewFile,BufRead *.{cgi,t} set filetype=perl
 autocmd BufNewFile,BufRead *.scala set filetype=scala
+autocmd BufNewFile,BufRead *.swift set filetype=swift
 autocmd BufNewFile,BufRead *.test set filetype=text
 autocmd BufNewFile,BufRead *.ts set filetype=typescript
 autocmd BufNewFile,BufRead *.toml set filetype=toml
@@ -263,6 +264,8 @@ Plug 'derekwyatt/vim-scala', { 'for' : 'scala' }
 Plug 'aharisu/vim_goshrepl', { 'for' : 'scheme' }
 " Shell script
 Plug 'vim-scripts/sh.vim', { 'for' : 'sh' }
+" Swift
+Plug 'Keithbsmiley/swift.vim', { 'for' : 'swift' }
 " TOML
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
 " TypeScript

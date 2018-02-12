@@ -168,7 +168,7 @@ inoremap <C-f> <C-o>l
 inoremap <M-f> <C-o>w
 inoremap <C-b> <C-o>h
 inoremap <M-b> <C-o>b
-inoremap <C-a> <C-o>^
+" inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 inoremap <C-_> <ESC>
 inoremap <C-/> <ESC>
@@ -221,6 +221,7 @@ Plug 'kana/vim-submode'
 Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 'rst'] }
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/caw.vim', { 'branch': 'add-feature-to-delete-doc-comments' }
+Plug 'r6eve/tcvime'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'rhysd/vim-color-spring-night'
@@ -383,6 +384,16 @@ let g:ctrlp_max_depth = 5
 let g:ctrlp_open_new_file = 'h'
 let g:ctrlp_tilde_homedir = 1
 let g:ctrlp_follow_symlinks = 2
+
+" r6eve/tcvime{{{2
+" let tcvime_keymap = 'tcode'
+let tcvime_keymap = 'gcode'
+let tcvime_no_default_key_mappings = 1
+imap <unique> <silent> <C-a>q <Plug>TcvimeIStart
+imap <unique> <silent> <C-a><Space> <Plug>TcvimeIConvOrStart
+imap <unique> <silent> <C-a>a <Plug>TcvimeIDisableKeymap
+nmap <unique> <silent> <C-a>? <Plug>TcvimeNHelp
+" let plugin_tcvime_disable = 1
 
 " haya14busa/vim-open-googletranslate{{{2
 let g:opengoogletranslate#default_lang = 'ja'

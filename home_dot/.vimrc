@@ -93,6 +93,7 @@ autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=89 g
 autocmd VimEnter,WinEnter * let w:m1 = matchadd("TabString", '	')
 autocmd VimEnter,WinEnter * let w:m2 = matchadd("ZenkakuSpace", '　')
 autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+autocmd VimEnter,WinEnter *.py syntax keyword Special self
 if has('vim_starting') && has('reltime')
   let g:startuptime = reltime()
   augroup vimrc-startuptime

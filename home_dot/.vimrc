@@ -213,7 +213,7 @@ else
 endif
 Plug 'AndrewRadev/linediff.vim'
 Plug 'autozimu/LanguageClient-neovim', { 'do' : ':UpdateRemotePlugins' }
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'jeetsukumaran/vim-markology'
 Plug 'kana/vim-smartinput'
@@ -378,13 +378,13 @@ autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <si
 autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
 
 " ctrlpvim/ctrlp.vim{{{2
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = { 'dir': '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll|swp|pdf|DS_Store)$', }
-let g:ctrlp_max_files = 500
-let g:ctrlp_max_depth = 5
-let g:ctrlp_open_new_file = 'h'
-let g:ctrlp_tilde_homedir = 1
-let g:ctrlp_follow_symlinks = 2
+" let g:ctrlp_show_hidden = 1
+" let g:ctrlp_custom_ignore = { 'dir': '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll|swp|pdf|DS_Store)$', }
+" let g:ctrlp_max_files = 500
+" let g:ctrlp_max_depth = 5
+" let g:ctrlp_open_new_file = 'h'
+" let g:ctrlp_tilde_homedir = 1
+" let g:ctrlp_follow_symlinks = 2
 
 " r6eve/tcvime{{{2
 " let tcvime_keymap = 'tcode'

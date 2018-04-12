@@ -77,3 +77,8 @@ MPEG
 keymap
 Tangleton
 config
+MeCab
+TreeTagger
+MPlayer
+SQLite
+YAML

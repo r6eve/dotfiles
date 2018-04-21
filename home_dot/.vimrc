@@ -60,7 +60,7 @@ set timeoutlen=500
 set ttimeout
 set ttimeoutlen=50
 set display=lastline
-set statusline=%f%m%=\ %-14.(%l,%v%)\ %P
+set statusline=%f%m%=\ %{shina#face()}%-14.(%l,%v%)\ %P
 " set pumheight=5
 set spelllang+=cjk
 set matchpairs+=（:）,「:」,『:』,＜:＞,【:】
@@ -223,6 +223,7 @@ Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/caw.vim', { 'branch': 'add-feature-to-delete-doc-comments' }
 Plug 'r6eve/tcvime'
+Plug 'r6eve/vim-shina'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'rhysd/vim-color-spring-night'

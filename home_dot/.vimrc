@@ -221,7 +221,6 @@ Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
 Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 'rst'] }
 Plug 'osyo-manga/vim-anzu'
-Plug 'r6eve/caw.vim', { 'branch': 'add-feature-to-delete-doc-comments' }
 Plug 'r6eve/tcvime'
 Plug 'r6eve/vim-shina'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
@@ -239,6 +238,8 @@ Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tyru/capture.vim', { 'on' : 'Capture' }
+" Plug 'r6eve/caw.vim', { 'branch': 'add-feature-to-delete-doc-comments' }
+Plug 'tyru/caw.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
 Plug 'vim-scripts/gtags.vim'
 " C++
@@ -683,7 +684,7 @@ nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
 
-" r6eve/caw.vim{{{2
+" tyru/caw.vim{{{2
 let g:caw_no_default_keymappings = 1
 let g:caw_dollarpos_sp_left = ' '
 autocmd FileType python let g:caw_dollarpos_sp_left = '  '

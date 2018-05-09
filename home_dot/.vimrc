@@ -214,9 +214,9 @@ else
 endif
 Plug 'AndrewRadev/linediff.vim'
 Plug 'autozimu/LanguageClient-neovim', { 'do' : ':UpdateRemotePlugins' }
-" Plug 'ctrlpvim/ctrlp.vim'
-Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
-Plug 'jeetsukumaran/vim-markology'
+"Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
+"Plug 'jeetsukumaran/vim-markology'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
@@ -228,18 +228,18 @@ Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
-Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
+"Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
 Plug 'sbdchd/neoformat', { 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
 Plug 'Shougo/neosnippet.vim'
-Plug 'thinca/vim-prettyprint'
+"Plug 'thinca/vim-prettyprint'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
 Plug 'Shougo/vimproc.vim' | Plug 'thinca/vim-quickrun', { 'on' : 'QuickRun' }
 Plug 'thinca/vim-template'
 Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tyru/capture.vim', { 'on' : 'Capture' }
-" Plug 'r6eve/caw.vim', { 'branch': 'add-feature-to-delete-doc-comments' }
+"Plug 'tyru/capture.vim', { 'on' : 'Capture' }
+"Plug 'r6eve/caw.vim', { 'branch': 'add-feature-to-delete-doc-comments' }
 Plug 'tyru/caw.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
 Plug 'vim-scripts/gtags.vim'
@@ -247,37 +247,39 @@ Plug 'vim-scripts/gtags.vim'
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
 Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 " D
-Plug 'landaire/deoplete-d', { 'for' : 'd' }
+"Plug 'landaire/deoplete-d', { 'for' : 'd' }
 " Go
-Plug 'fatih/vim-go', { 'for' : 'go' }
+"Plug 'fatih/vim-go', { 'for' : 'go' }
 " HTML
 Plug 'mattn/emmet-vim', { 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'css', 'scss', 'sass'] }
 " JavaScript
-Plug 'jelera/vim-javascript-syntax'
+"Plug 'jelera/vim-javascript-syntax', { 'for' : ['javascript'] }
+Plug 'posva/vim-vue', { 'for': ['javascript'] }
+Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript'] }
 " lighttpd
-Plug 'glensc/vim-syntax-lighttpd', { 'for' : 'lighttpd' }
+"Plug 'glensc/vim-syntax-lighttpd', { 'for' : 'lighttpd' }
 " Perl
 Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
 Plug 'vim-perl/vim-perl'
 " Ruby
-Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
+"Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
 " Rust
-Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
 " Scala
-Plug 'derekwyatt/vim-scala', { 'for' : 'scala' }
+"Plug 'derekwyatt/vim-scala', { 'for' : 'scala' }
 " Scheme
-Plug 'aharisu/vim_goshrepl', { 'for' : 'scheme' }
+"Plug 'aharisu/vim_goshrepl', { 'for' : 'scheme' }
 " Shell script
 Plug 'vim-scripts/sh.vim', { 'for' : 'sh' }
 " Swift
-Plug 'Keithbsmiley/swift.vim', { 'for' : 'swift' }
+"Plug 'Keithbsmiley/swift.vim', { 'for' : 'swift' }
 " TOML
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
 " TypeScript
-Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
+"Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
 " Vim Script
-Plug 'kannokanno/vmock', { 'for' : 'vim' }
-Plug 'thinca/vim-themis', { 'for' : 'vim' }
+"Plug 'kannokanno/vmock', { 'for' : 'vim' }
+"Plug 'thinca/vim-themis', { 'for' : 'vim' }
 
 " textobjs
 Plug 'kana/vim-textobj-user'
@@ -380,7 +382,7 @@ autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <si
 autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
 autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
 
-" ctrlpvim/ctrlp.vim{{{2
+"" ctrlpvim/ctrlp.vim{{{2
 " let g:ctrlp_show_hidden = 1
 " let g:ctrlp_custom_ignore = { 'dir': '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll|swp|pdf|DS_Store)$', }
 " let g:ctrlp_max_files = 500
@@ -399,14 +401,14 @@ imap <unique> <silent> <C-a>a <Plug>TcvimeIDisableKeymap
 nmap <unique> <silent> <C-a>? <Plug>TcvimeNHelp
 " let plugin_tcvime_disable = 1
 
-" haya14busa/vim-open-googletranslate{{{2
-let g:opengoogletranslate#default_lang = 'ja'
+"" haya14busa/vim-open-googletranslate{{{2
+"let g:opengoogletranslate#default_lang = 'ja'
 
-" jeetsukumaran/vim-markology{{{2
-let g:markology_enable = 0
-let g:markology_disable_mappings = 1
-nmap <silent>m! <Plug>MarkologyToggle
-nmap <silent>m? <Plug>MarkologyLocationList
+"" jeetsukumaran/vim-markology{{{2
+"let g:markology_enable = 0
+"let g:markology_disable_mappings = 1
+"nmap <silent>m! <Plug>MarkologyToggle
+"nmap <silent>m? <Plug>MarkologyLocationList
 
 " kana/vim-smartinput{{{2
 call smartinput#map_to_trigger('i', '<C-h>', '<BS>', '<C-h>')
@@ -718,13 +720,13 @@ endfunction
 " rhysd/vim-color-spring-night{{{2
 colorscheme spring-night
 
-" rhysd/vim-grammarous{{{2
-let g:grammarous#default_comments_only_filetypes = {
-            \ '*' : 1, 'help' : 0, 'markdown' : 0,
-            \ }
-let g:grammarous#disabled_rules = {
-            \ '*' : ['EN_QUOTES', 'UPPERCASE_SENTENCE_START', 'WHITESPACE_RULE'],
-            \ }
+"" rhysd/vim-grammarous{{{2
+"let g:grammarous#default_comments_only_filetypes = {
+"            \ '*' : 1, 'help' : 0, 'markdown' : 0,
+"            \ }
+"let g:grammarous#disabled_rules = {
+"            \ '*' : ['EN_QUOTES', 'UPPERCASE_SENTENCE_START', 'WHITESPACE_RULE'],
+"            \ }
 
 " sbdchd/neoformat{{{2
 autocmd FileType javascript,typescript,css,less,scss,json,graphql,markdown nnoremap <silent><Leader>f :Neoformat<CR>
@@ -838,7 +840,7 @@ autocmd FileType rust nnoremap <silent><Leader>f :RustFmt<CR>
 " autocmd FileType rust nmap <silent><Leader>v <Plug>(rust-def-vertical)
 
 " Scheme{{{2
-autocmd FileType scheme vmap <C-j> <Plug>(gosh_repl_send_block)
+"autocmd FileType scheme vmap <C-j> <Plug>(gosh_repl_send_block)
 
 " Shell script{{{2
 let g:sh_indent_case_labels=1

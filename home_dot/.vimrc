@@ -208,7 +208,7 @@ Plug 'Shougo/neomru.vim'
 Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
-  Plug 'zchee/deoplete-go', { 'for' : 'go', 'do': 'make' }
+  "Plug 'zchee/deoplete-go', { 'for' : 'go', 'do': 'make' }
 else
   Plug 'Shougo/neocomplete.vim'
 endif
@@ -254,8 +254,8 @@ Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 Plug 'mattn/emmet-vim', { 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'css', 'scss', 'sass'] }
 " JavaScript
 "Plug 'jelera/vim-javascript-syntax', { 'for' : ['javascript'] }
-Plug 'posva/vim-vue', { 'for': ['javascript'] }
-Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript'] }
+Plug 'posva/vim-vue', { 'for': ['javascript', 'html'] }
+Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }
 " lighttpd
 "Plug 'glensc/vim-syntax-lighttpd', { 'for' : 'lighttpd' }
 " Perl

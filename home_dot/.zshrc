@@ -1,5 +1,5 @@
 # zshparam{{{1
-PROMPT="%B%K{blue}%F{white}( l_l )%f%k%b "
+PROMPT="%B%K{blue}%F{white}%(?..[%?] )( l_l )%f%k%b "
 # PROMPT="%B%K{blue}%F{white}( '-')%f%k%b "
 #PROMPT="%B%F{magenta}§(•̀ㅁ•́ §)〻%f%b "
 #PROMPT='%K{blue}%F{white}%n@%m%(!.#.$)%f%k '

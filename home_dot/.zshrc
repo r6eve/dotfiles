@@ -1,5 +1,5 @@
 # zshparam{{{1
-PROMPT="%B%K{blue}%F{white}%(?..[%?] )( l_l )%f%k%b "
+PROMPT="%B%K{blue}%F{white}( l_l )%f%k%b "
 # PROMPT="%B%K{blue}%F{white}( '-')%f%k%b "
 #PROMPT="%B%F{magenta}§(•̀ㅁ•́ §)〻%f%b "
 #PROMPT='%K{blue}%F{white}%n@%m%(!.#.$)%f%k '
@@ -103,7 +103,7 @@ precmd() {
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-RPROMPT='%1(v|%F{white}%1v%f|)%K{blue}%F{white}[%39<...<%~]%f%k'
+RPROMPT='%1(v|%F{white}%1v%f|)%K{red}%F{white}%(?..[%?])%f%k%K{blue}%F{white}[%39<...<%~]%f%k'
 
 # other settings{{{1
 source $HOME/.zsh/.zsh_alias

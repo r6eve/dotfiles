@@ -830,7 +830,7 @@ endif
 autocmd FileType ruby call smartinput_endwise#define_default_rules()
 
 " Rust{{{2
-let g:rustfmt_command = 'rustup run nightly rustfmt'
+" let g:rustfmt_command = 'rustup run nightly rustfmt'
 autocmd FileType rust nnoremap <silent><Leader>f :RustFmt<CR>
 " let g:racer_cmd = 'racer'
 " let g:racer_insert_paren = 0

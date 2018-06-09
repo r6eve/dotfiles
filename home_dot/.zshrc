@@ -1,10 +1,5 @@
 # zshparam{{{1
 PROMPT="%B%K{blue}%F{white}( l_l )%f%k%b "
-# PROMPT="%B%K{blue}%F{white}( '-')%f%k%b "
-#PROMPT="%B%F{magenta}§(•̀ㅁ•́ §)〻%f%b "
-#PROMPT='%K{blue}%F{white}%n@%m%(!.#.$)%f%k '
-#PROMPT2='%B%_>%b'
-# PROMPT2="%B%K{red}%F{white}( '-')%f%k%b "
 PROMPT2="%B%K{red}%F{white}( l_l )%f%k%b "
 SPROMPT='Correct> '''%r''' [Yes No Abort Edit]?'
 stty 115200

@@ -159,3 +159,6 @@ destructuring
 Refactor
 metadata
 backticks
+arity
+arities
+varargs

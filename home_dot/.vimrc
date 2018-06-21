@@ -263,7 +263,7 @@ Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }
 Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
 Plug 'vim-perl/vim-perl'
 " Ruby
-"Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
+Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
 " Rust
 "Plug 'rust-lang/rust.vim'
 " Scala

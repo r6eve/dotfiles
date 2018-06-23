@@ -64,7 +64,7 @@ bg_color terminal
 mark_color cyan
 form_color red
 image_color green
-anchor_color blue
+anchor_color yellow
 basic_color terminal
 color 1
 show_srch_str 1

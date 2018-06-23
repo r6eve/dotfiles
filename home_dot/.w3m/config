@@ -36,7 +36,7 @@ extbrowser /usr/bin/firefox
 mailer
 editor /usr/bin/nvim
 mailcap /etc/mailcap
-mime_types /etc/mime.types
+mime_types ~/.w3m/mime.types /etc/mime.types
 index_file
 cgi_bin
 personal_document_root

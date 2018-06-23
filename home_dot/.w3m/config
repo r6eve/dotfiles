@@ -53,8 +53,8 @@ nextpage_topline 0
 label_topline 0
 mark 1
 confirm_qq 0
-save_hist 1
-history 100
+save_hist 0
+# history 100
 pagerline 10000
 visited_color magenta
 visited_anchor 1

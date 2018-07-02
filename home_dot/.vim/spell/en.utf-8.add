@@ -165,3 +165,6 @@ varargs
 namespaces
 DevOps
 w3m
+rustup
+cljfmt
+plugins

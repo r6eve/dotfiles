@@ -17,6 +17,7 @@ _lein() {
       "check[Check syntax and warn on reflection.]" \
       "classpath[Print the classpath of the current project.]" \
       "clean[Remove all files from project's target-path.]" \
+      "cljfmt[Format Clojure code.]" \
       "compile[Compile Clojure source into .class files.]" \
       "deploy[Build and deploy jar to remote repository.]" \
       "deps[Download all dependencies.]" \
@@ -43,6 +44,12 @@ _lein() {
       "version[Print version for Leiningen and the current JVM.]" \
       "with-profile[Apply the given task with the profile(s) specified.]"
   fi
+}
+
+_lein_cljfmt() {
+  _values "lein cljfmt commands" \
+    "check[Check the formatting of your source files.]" \
+    "fix[Do formatting.]"
 }
 
 _lein_plugin() {

@@ -155,7 +155,7 @@ command! SyntaxInfo call s:get_syn_info()
 
 " key mapping{{{1
 noremap ; :
-nnoremap <silent><Space> <PageDown>
+"nnoremap <silent><Space> <PageDown>
 nnoremap <silent><C-Space> <C-w>p<PageDown><C-w>p
 nnoremap <C-w>* <C-w>s*
 nnoremap <C-w># <C-w>s#
@@ -247,6 +247,9 @@ Plug 'vim-scripts/gtags.vim'
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
 Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
+" Clojure
+Plug 'tpope/vim-salve', { 'for' : 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
 " D
 "Plug 'landaire/deoplete-d', { 'for' : 'd' }
 " Go

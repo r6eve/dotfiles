@@ -168,3 +168,4 @@ w3m
 rustup
 cljfmt
 plugins
+cpplint

@@ -230,7 +230,7 @@ Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 "Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
-Plug 'sbdchd/neoformat', { 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
+Plug 'sbdchd/neoformat', { 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'ocaml'] }
 Plug 'Shougo/neosnippet.vim'
 "Plug 'thinca/vim-prettyprint'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
@@ -733,7 +733,12 @@ colorscheme spring-night
 "            \ }
 
 " sbdchd/neoformat{{{2
-autocmd FileType javascript,typescript,css,less,scss,json,graphql,markdown nnoremap <silent><Leader>f :Neoformat<CR>
+let g:neoformat_ocaml_ocamlformat = {}
+let g:neoformat_ocaml_ocamlformat.exe = 'ocamlformat'
+let g:neoformat_ocaml_ocamlformat.args = ['--inplace']
+let g:neoformat_ocaml_ocamlformat.replace = 1
+let g:neoformat_enabled_ocaml = ['ocamlformat']
+autocmd FileType javascript,typescript,css,less,scss,json,graphql,ocaml nnoremap <silent><Leader>f :Neoformat<CR>
 
 " Shougo/neosnippet{{{2
 imap <C-k> <Plug>(neosnippet_expand_or_jump)

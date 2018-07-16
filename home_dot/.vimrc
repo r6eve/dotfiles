@@ -231,6 +231,7 @@ Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 "Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
 Plug 'sbdchd/neoformat', { 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'ocaml'] }
+Plug 'sgur/vim-editorconfig'
 Plug 'Shougo/neosnippet.vim'
 "Plug 'thinca/vim-prettyprint'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }

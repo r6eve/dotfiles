@@ -1,10 +1,10 @@
 # OS{{{1
-alias grep='grep -n --color=auto'
-alias egrep='egrep -n --color=auto'
-alias fgrep='fgrep -n --color=auto'
-alias algrep='grep -n --color=always'
-alias alegrep='egrep -n --color=always'
-alias alfgrep='fgrep -n --color=always'
+# alias grep='grep -n --color=auto'
+# alias egrep='egrep -n --color=auto'
+# alias fgrep='fgrep -n --color=auto'
+# alias algrep='grep -n --color=always'
+# alias alegrep='egrep -n --color=always'
+# alias alfgrep='fgrep -n --color=always'
 alias cp='cp -p'
 alias ls='ls -F --color=auto'
 alias la='ls -AF --color=auto'
@@ -19,10 +19,9 @@ alias parallel='parallel --no-notice'
 alias q='exit'
 alias time='/usr/bin/time'
 alias v='nvim'
-# alias v='vim'
 alias cad="$HOME/repos/caddy/caddy.rb -l -n -dd"
-alias themis="$HOME/.vim/plugged/vim-themis/bin/themis"
-alias nclr="perl -pe 's/\x1b\x5b.*?[\x40-\x7e]//g'"
+# alias themis="$HOME/.vim/plugged/vim-themis/bin/themis"
+# alias nclr="perl -pe 's/\x1b\x5b.*?[\x40-\x7e]//g'"
 
 # C{{{1
 alias gcc='gcc -std=c99 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'

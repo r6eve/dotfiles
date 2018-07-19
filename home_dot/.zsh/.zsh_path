@@ -14,7 +14,7 @@ if which go >/dev/null; then
 fi
 
 # Haskell{{{1
-PATH="$HOME/.cabal/bin:$PATH"
+# PATH="$HOME/.cabal/bin:$PATH"
 
 # Perl{{{1
 # Perl5
@@ -42,8 +42,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH="$HOME/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/"
 
 # Scala{{{1
-which scalaenv >/dev/null && eval "$(scalaenv init -)"
-which sbtenv >/dev/null && eval "$(sbtenv init -)"
+# which scalaenv >/dev/null && eval "$(scalaenv init -)"
+# which sbtenv >/dev/null && eval "$(sbtenv init -)"
 
 # set unique path{{{1
 typeset -U PATH

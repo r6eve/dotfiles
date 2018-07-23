@@ -38,10 +38,6 @@ alias splint='splint +charindex -type -compdef -usedef -retvalother -casebreak'
 alias g++='g++ -std=c++11 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
 alias clang++='clang++ -std=c++11 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
 
-# Common Lisp{{{1
-alias isbcl='rlwrap sbcl --noinform'
-alias sbcl='sbcl --noinform'
-
 # JavaScript{{{1
 alias esa='eslint -c airbnb'
 
@@ -63,6 +59,3 @@ alias clippy='rustup run nightly cargo clippy'
 alias bench='rustup run nightly cargo bench'
 alias cfmt='rustup run nightly cargo fmt'
 
-# Scheme{{{1
-alias igosh='rlwrap gosh'
-alias isagi='rlwrap sagittarius'

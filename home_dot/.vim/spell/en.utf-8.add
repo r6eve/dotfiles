@@ -170,3 +170,4 @@ cljfmt
 plugins
 cpplint
 autographic
+Leiningen

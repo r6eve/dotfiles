@@ -12,6 +12,7 @@
 # alias algrep='grep -n --color=always'
 # alias alegrep='egrep -n --color=always'
 # alias alfgrep='fgrep -n --color=always'
+alias ag='ag -U'
 alias cp='cp -p'
 alias ls='ls -F --color=auto'
 alias la='ls -AF --color=auto'

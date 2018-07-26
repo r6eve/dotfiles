@@ -171,3 +171,5 @@ plugins
 cpplint
 autographic
 Leiningen
+BRAF
+SVG

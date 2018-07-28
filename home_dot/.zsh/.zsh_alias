@@ -7,6 +7,7 @@
 # alias alfgrep='fgrep -n --color=always'
 alias ag='ag -U'
 alias cp='cp -p'
+alias fd='fd --no-ignore-vcs'
 alias ls='ls -F --color=auto'
 alias la='ls -AF --color=auto'
 alias ll='ls -AFl --color=auto'

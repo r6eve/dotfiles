@@ -1,11 +1,4 @@
 # OS{{{1
-# case $OSTYPE in
-#   darwin*)
-#     ;;
-#   linux*)
-#     ;;
-# esac
-
 # alias grep='grep -n --color=auto'
 # alias egrep='egrep -n --color=auto'
 # alias fgrep='fgrep -n --color=auto'

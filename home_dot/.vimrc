@@ -249,7 +249,6 @@ Plug 'vim-scripts/gtags.vim'
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
 Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 " Clojure
-Plug 'vim-scripts/VimClojure', { 'for' : 'clojure' }
 Plug 'tpope/vim-salve', { 'for' : 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for' : 'clojure' }

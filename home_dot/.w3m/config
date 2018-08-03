@@ -45,7 +45,7 @@ preserve_timestamp 1
 decode_cte 0
 clear_buffer 1
 reverse_mouse 0
-use_mouse 1
+use_mouse 0
 ignorecase_search 1
 wrap_search 1
 vi_prec_num 1

@@ -48,9 +48,11 @@ ytc(){
   n=`echo "$1" |perl -ne 's/^[^\d]+(\d+)$/printf("%03d\n", $1)/e'`;
   yukitocaddy "$1" -o no$n.test
 }
-# tanlog_begin() { export TANLOG_LOGFILE=$(tmux-tanlog start $1) }
-# tanlog_end() { tmux-tanlog end $TANLOG_LOGFILE }
-# typeset -Uga preexec_functions
-# typeset -Uga precmd_functions
-# preexec_functions+=tanlog_begin
-# precmd_functions+=tanlog_end
+
+# tmux-tanlog
+tanlog_begin() { export TANLOG_LOGFILE=$(tmux-tanlog start $1) }
+tanlog_end() { tmux-tanlog end $TANLOG_LOGFILE }
+typeset -Uga preexec_functions
+typeset -Uga precmd_functions
+preexec_functions+=tanlog_begin
+precmd_functions+=tanlog_end

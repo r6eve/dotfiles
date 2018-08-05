@@ -270,7 +270,7 @@ Plug 'vim-perl/vim-perl'
 " Ruby
 Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
 " Rust
-"Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 " Scala
 "Plug 'derekwyatt/vim-scala', { 'for' : 'scala' }
 " Scheme

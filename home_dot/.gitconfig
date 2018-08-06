@@ -1,6 +1,8 @@
 [user]
 	name = r6eve
 	email = r6eve179f@gmail.com
+[includeIf "gitdir:~/workspace/"]
+	path = ~/workspace/.gitconfig
 [color]
 	ui = auto
 # [color "status"]

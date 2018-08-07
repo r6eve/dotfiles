@@ -1,9 +1,5 @@
 # zshparam{{{1
-PROMPT="%B%K{blue}%F{white}( l_l )%f%k%b "
-PROMPT2="%B%K{red}%F{white}( l_l )%f%k%b "
-SPROMPT='Correct> '''%r''' [Yes No Abort Edit]?'
 stty 115200
-setopt PROMPT_SUBST
 export WORDCHARS=
 export EDITOR=nvim
 export LANG=en_US.UTF-8
@@ -98,7 +94,11 @@ precmd() {
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-RPROMPT='%1(v|%F{white}%1v%f|)%K{red}%F{white}%(?..[%?])%f%k%K{blue}%F{white}[%39<...<%~]%f%k'
+setopt PROMPT_SUBST
+NEWLINE=$'\n'
+PROMPT="%B%K{blue}%F{white}@%m%k%b%f%K{blue}%F{white}[%39<...<%~]%f%k%1(v|%F{white}%1v%f|)%K{red}%F{white}%(?..[%?])%f%k${NEWLINE}%B%K{blue}%F{white}( l_l )%f%k%b "
+PROMPT2="%B%K{red}%F{white}@%m%k%b%f%K{red}%F{white}[%39<...<%~]%f%k%1(v|%F{white}%1v%f|)%K{red}%F{white}%(?..[%?])%f%k${NEWLINE}%B%K{red}%F{white}( l_l )%f%k%b "
+SPROMPT='Correct> '''%r''' [Yes No Abort Edit]?'
 
 # other settings{{{1
 source $HOME/.zsh/.zsh_alias

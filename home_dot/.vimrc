@@ -30,6 +30,7 @@ set ruler
 set laststatus=2
 set notitle
 set noequalalways
+set iskeyword+=\-
 set backspace=indent,eol,start
 set history=100
 set autoread

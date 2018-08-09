@@ -6,7 +6,7 @@ export PATH="$HOME/repos/twe/bin:$PATH"
 # wtools
 export PATH="$HOME/repos/wtools:$PATH"
 alias wa='wag -U --hidden --ignore-dir .git'
-alias wf='wfind'
+wf(){ wfind "$@" -not -path '*/.git/*' -a -not -path '*/target/*' -a -type f }
 
 # Go{{{1
 if which go >/dev/null; then

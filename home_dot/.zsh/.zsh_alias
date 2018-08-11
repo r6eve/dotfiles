@@ -5,7 +5,7 @@
 # alias algrep='grep -n --color=always'
 # alias alegrep='egrep -n --color=always'
 # alias alfgrep='fgrep -n --color=always'
-alias ag='ag -U'
+alias ag='ag -U --hidden --ignore-dir .git'
 alias cp='cp -p'
 alias fd='fd --no-ignore-vcs'
 alias ls='ls -F --color=auto'

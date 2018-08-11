@@ -255,6 +255,7 @@ Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 Plug 'tpope/vim-salve', { 'for' : 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for' : 'clojure' }
+Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }
 " D
 "Plug 'landaire/deoplete-d', { 'for' : 'd' }
 " Go
@@ -316,8 +317,8 @@ if has('nvim')
   let g:deoplete#max_menu_width = 0
   let g:deoplete#keyword_patterns = {}
   let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
+  let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
   let g:deoplete#omni#input_patterns = {}
-  let g:deoplete#omni#input_patterns.clojure = ['[^. *\t]\.\w*', '[^/ *\t]\/\w*', '[a-zA-Z_]\w*']
   let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
   let g:deoplete#omni#functions = {}
   inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"

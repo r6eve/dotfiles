@@ -315,6 +315,7 @@ if has('nvim')
   let g:deoplete#keyword_patterns = {}
   let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
   let g:deoplete#omni#input_patterns = {}
+  let g:deoplete#omni#input_patterns.clojure = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
   let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
   let g:deoplete#omni#functions = {}
   inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
@@ -338,6 +339,7 @@ else
   if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
   endif
+  let g:neocomplete#force_omni_input_patterns.clojure = '[^. *\t]\.\w*\|\h\w*|#'
   let g:neocomplete#force_omni_input_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
   let g:neocomplete#sources#omni#functions = get(g:, 'neocomplete#sources#omni#functions', {})
   inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"

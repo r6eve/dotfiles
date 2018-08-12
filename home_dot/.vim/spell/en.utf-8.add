@@ -176,3 +176,5 @@ SVG
 SHA512
 UUID4
 DNS
+lein
+uberjar

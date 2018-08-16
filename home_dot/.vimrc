@@ -157,6 +157,7 @@ endfunction
 command! SyntaxInfo call s:get_syn_info()
 
 " key mapping{{{1
+set pastetoggle=<F2>
 noremap ; :
 "nnoremap <silent><Space> <PageDown>
 nnoremap <silent><C-Space> <C-w>p<PageDown><C-w>p

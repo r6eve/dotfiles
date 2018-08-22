@@ -22,6 +22,7 @@ alias q='exit'
 alias time='/usr/bin/time'
 alias v='nvim'
 alias cad="$HOME/repos/caddy/caddy.rb -l -n -dd"
+alias cljam="$HOME/repos/cljam/target/cljam"
 # alias themis="$HOME/.vim/plugged/vim-themis/bin/themis"
 # alias nclr="perl -pe 's/\x1b\x5b.*?[\x40-\x7e]//g'"
 

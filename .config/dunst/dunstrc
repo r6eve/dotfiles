@@ -2,7 +2,7 @@
 font = IPAGothic 14
 markup = yes
 plain_text = no
-format = "<b>%s</b>"
+format = "<b>%s</b>\n%b"
 sort = no
 indicate_hidden = yes
 alignment = center

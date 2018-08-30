@@ -4,7 +4,8 @@ export PATH="$HOME/repos/junks/target/release:$PATH"
 export PATH="$HOME/repos/twe/bin:$PATH"
 
 # wtools
-export PATH="$HOME/repos/wtools:$PATH"
+# export PATH="$HOME/repos/wtools:$PATH"
+export PATH="$HOME/repos/o-wtools/bin:$PATH"
 alias wa='wag -U --hidden --ignore-dir .git --ignore-dir _build'
 wf(){ wfind "$@" -not -path '*/.git/*' -a -not -path '*/target/*' -a -type f }
 

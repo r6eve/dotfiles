@@ -188,3 +188,5 @@ FASTQ
 NGS
 deserialized
 arg
+BAM
+indel

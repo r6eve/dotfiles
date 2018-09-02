@@ -253,10 +253,12 @@ Plug 'vim-scripts/gtags.vim'
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
 Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 " Clojure
+Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }
 Plug 'tpope/vim-salve', { 'for' : 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for' : 'clojure' }
-Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }
+Plug 'venantius/vim-eastwood', { 'for' : 'clojure' }
+Plug 'vim-syntastic/syntastic', { 'for' : 'clojure' }
 " D
 "Plug 'landaire/deoplete-d', { 'for' : 'd' }
 " Go
@@ -816,6 +818,14 @@ autocmd FileType c,cpp nmap <silent><Leader>f :ClangFormat<CR>
 " venantius/vim-cljfmt
 autocmd FileType clojure nmap <silent><Leader>f :Cljfmt<CR>
 let g:clj_fmt_autosave = 0
+
+" vim-syntastic/syntastic
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_clojure_checkers = ['eastwood']
+autocmd FileType clojure set signcolumn=yes
 
 " Go{{{2
 autocmd FileType go nnoremap <silent><Leader>f :GoFmt<CR>

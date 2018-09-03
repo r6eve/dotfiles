@@ -219,7 +219,9 @@ else
   Plug 'Shougo/neocomplete.vim'
 endif
 Plug 'AndrewRadev/linediff.vim'
-Plug 'autozimu/LanguageClient-neovim', { 'do' : ':UpdateRemotePlugins' }
+if has('nvim')
+  Plug 'autozimu/LanguageClient-neovim', { 'do' : ':UpdateRemotePlugins' }
+endif
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 "Plug 'jeetsukumaran/vim-markology'
@@ -377,26 +379,28 @@ call denite#custom#option('default', 'prompt', '>')
 vnoremap <silent><Leader>d :Linediff<CR>
 
 " autozimu/LanguageClient-neovim{{{2
-let g:LanguageClient_serverCommands = {
-  \ 'cpp': ['clangd'],
-  \ 'go': ['go-langserver'],
-  \ 'javascript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
-  \ 'typescript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
-  \ 'ocaml': ['ocaml-language-server', '--stdio'],
-  \ 'php': ['php', $HOME.'/.config/composer/vendor/bin/php-language-server.php'],
-  \ 'python': ['pyls'],
-  \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-  \ }
+if has('nvim')
+  let g:LanguageClient_serverCommands = {
+    \ 'cpp': ['clangd'],
+    \ 'go': ['go-langserver'],
+    \ 'javascript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ 'typescript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ 'php': ['php', $HOME.'/.config/composer/vendor/bin/php-language-server.php'],
+    \ 'python': ['pyls'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ }
 
-autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript set signcolumn=yes
+  autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript set signcolumn=yes
 
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_diagnosticsList = "location"
+  let g:LanguageClient_autoStart = 1
+  let g:LanguageClient_diagnosticsList = "location"
 
-autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent>K :call LanguageClient_textDocument_hover()<CR>
-autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>t :call LanguageClient_textDocument_definition()<CR>
-autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
-autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
+  autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent>K :call LanguageClient_textDocument_hover()<CR>
+  autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>t :call LanguageClient_textDocument_definition()<CR>
+  autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
+  autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
+endif
 
 "" ctrlpvim/ctrlp.vim{{{2
 " let g:ctrlp_show_hidden = 1

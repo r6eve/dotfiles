@@ -213,13 +213,13 @@ abbr my List
 					| hd :: tl -> doit (n - 1) (hd :: acc) tl in
 			doit n [] lst
 
-	let last l =
-		let rec doit l =
-			match l with
-			| [] -> failwith "last"
-			| [a] -> a
-			| _ :: l -> doit l in
-		doit l
+		let last l =
+			let rec doit l =
+				match l with
+				| [] -> failwith "last"
+				| [a] -> a
+				| _ :: l -> doit l in
+			doit l
 
 	end
 

@@ -220,7 +220,10 @@ else
 endif
 Plug 'AndrewRadev/linediff.vim'
 if has('nvim')
-  Plug 'autozimu/LanguageClient-neovim', { 'do' : ':UpdateRemotePlugins' }
+  Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \}
 endif
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 "Plug 'jeetsukumaran/vim-markology'

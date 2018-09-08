@@ -396,7 +396,7 @@ if has('nvim')
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
     \ 'php': ['php', $HOME.'/.config/composer/vendor/bin/php-language-server.php'],
     \ 'python': ['pyls'],
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ }
 
   autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript set signcolumn=yes

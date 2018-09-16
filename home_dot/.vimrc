@@ -227,6 +227,7 @@ if has('nvim')
     \}
 endif
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
+Plug 'haya14busa/vim-asterisk'
 "Plug 'jeetsukumaran/vim-markology'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
@@ -410,6 +411,16 @@ if has('nvim')
   autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
   autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
 endif
+
+" haya14busa/vim-asterisk{{{2
+map *   <Plug>(asterisk-g*)<Plug>(anzu-update-search-status-with-echo)
+map #   <Plug>(asterisk-g#)<Plug>(anzu-update-search-status-with-echo)
+map g*  <Plug>(asterisk-*)<Plug>(anzu-update-search-status-with-echo)
+map g#  <Plug>(asterisk-#)<Plug>(anzu-update-search-status-with-echo)
+map z*  <Plug>(asterisk-gz*)<Plug>(anzu-update-search-status-with-echo)
+map gz* <Plug>(asterisk-z*)<Plug>(anzu-update-search-status-with-echo)
+map z#  <Plug>(asterisk-gz#)<Plug>(anzu-update-search-status-with-echo)
+map gz# <Plug>(asterisk-z#)<Plug>(anzu-update-search-status-with-echo)
 
 "" ctrlpvim/ctrlp.vim{{{2
 " let g:ctrlp_show_hidden = 1
@@ -713,8 +724,6 @@ autocmd Filetype markdown,rst nmap <Leader>p :<C-u>PrevimOpen<CR>
 " osyo-manga/vim-anzu{{{2
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
-nmap * <Plug>(anzu-star-with-echo)
-nmap # <Plug>(anzu-sharp-with-echo)
 
 " tyru/caw.vim{{{2
 let g:caw_no_default_keymappings = 1

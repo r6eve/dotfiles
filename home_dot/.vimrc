@@ -859,7 +859,8 @@ endif
 autocmd FileType go nnoremap <silent><Leader>f :GoFmt<CR>
 
 " Fortran{{{2
-let fortran_free_source=1
+let g:fortran_fixed_source=1
+let g:fortran_more_precise=1
 
 " HTML{{{2
 let g:html_indent_inctags = "html,body,head,tbody"

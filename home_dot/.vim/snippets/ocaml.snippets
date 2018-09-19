@@ -187,6 +187,11 @@ abbr my List
 	module List = struct
 		include List
 
+		let is_empty l =
+			match l with
+			| [] -> true
+			| _ -> false
+
 		let take n lst =
 			let rec doit n lst acc =
 				if n <= 0 then List.rev acc

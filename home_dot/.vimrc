@@ -422,6 +422,8 @@ map gz* <Plug>(asterisk-z*)<Plug>(anzu-update-search-status-with-echo)
 map z#  <Plug>(asterisk-gz#)<Plug>(anzu-update-search-status-with-echo)
 map gz# <Plug>(asterisk-z#)<Plug>(anzu-update-search-status-with-echo)
 
+let g:asterisk#keeppos = 1
+
 "" ctrlpvim/ctrlp.vim{{{2
 " let g:ctrlp_show_hidden = 1
 " let g:ctrlp_custom_ignore = { 'dir': '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll|swp|pdf|DS_Store)$', }

@@ -885,6 +885,14 @@ autocmd FileType python nnoremap <silent><Leader>f :0,$!yapf<CR>
 
 " R{{{2
 let vimrplugin_assign = 0
+let g:tagbar_type_r = {
+    \ 'ctagstype' : 'r',
+    \ 'kinds'     : [
+        \ 'f:Functions',
+        \ 'g:GlobalVariables',
+        \ 'v:FunctionVariables',
+    \ ]
+\ }
 
 " Ruby{{{2
 let g:ruby_path = ""

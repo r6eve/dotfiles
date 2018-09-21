@@ -6,8 +6,8 @@ export PATH="$HOME/repos/twe/bin:$PATH"
 # wtools
 # export PATH="$HOME/repos/wtools:$PATH"
 export PATH="$HOME/repos/owtools/bin:$PATH"
-alias wa='MAX_LENGTH=300 wag -U --hidden --ignore-dir .git --ignore-dir _build --ignore-dir target'
-wf(){ wfind "$@" -not -path '*/.git/*' -a -not -path '*/target/*' -a -not -path "*/_build/*" -a -type f }
+alias wa='MAX_LENGTH=300 wag -U --hidden --ignore-dir .git --ignore-dir _build --ignore-dir build --ignore-dir target'
+wf(){ wfind "$@" -not -path '*/.git/*' -a -not -path '*/target/*' -a -not -path '*/_build/*' -a -not -path '*/build/*' -a -type f }
 
 # Go{{{1
 if which go >/dev/null; then

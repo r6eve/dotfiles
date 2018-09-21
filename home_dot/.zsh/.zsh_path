@@ -56,5 +56,5 @@ if which opam >/dev/null; then
   # export OCAMLPARAM="_,bin-annot=1"
   export OPAMKEEPBUILDDIR=1
   . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true;
-  eval `opam config env`
+  eval $(opam env)
 fi

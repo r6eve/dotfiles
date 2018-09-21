@@ -1,6 +1,6 @@
 setlocal cinoptions+=j1
-setlocal shiftwidth=4
-setlocal softtabstop=4
+setlocal shiftwidth=2
+setlocal softtabstop=2
 
 if !exists('b:undo_indent')
   let b:undo_indent = ''

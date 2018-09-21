@@ -389,6 +389,7 @@ call denite#custom#option('default', 'prompt', '>')
 vnoremap <silent><Leader>d :Linediff<CR>
 
 " autozimu/LanguageClient-neovim{{{2
+" \ 'clojure': ['bash', '-c', 'clojure-lsp'],
 if has('nvim')
   let g:LanguageClient_serverCommands = {
     \ 'cpp': ['clangd'],

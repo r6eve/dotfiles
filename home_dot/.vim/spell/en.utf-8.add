@@ -208,3 +208,6 @@ args
 java
 CNV
 src
+leiningen
+figwheel
+nashorn

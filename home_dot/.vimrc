@@ -856,6 +856,8 @@ if has('nvim')
 else
   " liquidz/vim-iced
   let g:iced_enable_default_key_mappings = v:true
+  let g:iced#lint#linters = ['all']
+  let g:iced_enable_auto_linting = v:true
 endif
 
 " Go{{{2

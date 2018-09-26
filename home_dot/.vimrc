@@ -854,6 +854,9 @@ if has('nvim')
   let g:syntastic_clojure_checkers = ['eastwood']
   autocmd FileType clojure set signcolumn=yes
 else
+  " guns/vim-sexp
+  let g:sexp_mappings = {'sexp_indent': '', 'sexp_indent_top': ''}
+
   " liquidz/vim-iced
   let g:iced#buffer#stdout#file = '/tmp/vim-iced.clj'
 

@@ -855,10 +855,46 @@ if has('nvim')
   autocmd FileType clojure set signcolumn=yes
 else
   " liquidz/vim-iced
-  let g:iced_enable_default_key_mappings = v:true
   let g:iced#lint#linters = ['all']
   let g:iced_enable_auto_linting = v:true
-  silent! nmap <buffer> <Leader>ts <Plug>(iced_toggle_src_and_test)
+
+  autocmd FileType clojure silent! nmap <buffer><Leader>' <Plug>(iced_connect)
+  autocmd FileType clojure silent! nmap <buffer><Leader>ei <Plug>(iced_eval)<Plug>(sexp_inner_element)``
+  autocmd FileType clojure silent! nmap <buffer><Leader>ee <Plug>(iced_eval)<Plug>(sexp_outer_list)``
+  autocmd FileType clojure silent! nmap <buffer><Leader>et <Plug>(iced_eval_outer_top_list)
+  autocmd FileType clojure silent! nmap <buffer><Leader>er <Plug>(iced_eval_repl)<Plug>(sexp_outer_top_list)``
+  autocmd FileType clojure silent! nmap <buffer><Leader>en <Plug>(iced_eval_ns)
+  autocmd FileType clojure silent! nmap <buffer><Leader>ep <Plug>(iced_print_last)
+  autocmd FileType clojure silent! nmap <buffer><Leader>eb <Plug>(iced_require)
+  autocmd FileType clojure silent! nmap <buffer><Leader>eB <Plug>(iced_require_all)
+  autocmd FileType clojure silent! nmap <buffer><Leader>eu <Plug>(iced_undef)
+  autocmd FileType clojure silent! nmap <buffer><Leader>eM <Plug>(iced_macroexpand_outer_list)
+  autocmd FileType clojure silent! nmap <buffer><Leader>em <Plug>(iced_macroexpand_1_outer_list)
+  autocmd FileType clojure silent! nmap <buffer><Leader>tt <Plug>(iced_test_under_cursor)
+  autocmd FileType clojure silent! nmap <buffer><Leader>to <Plug>(iced_test_buffer_open)
+  autocmd FileType clojure silent! nmap <buffer><Leader>tn <Plug>(iced_test_ns)
+  autocmd FileType clojure silent! nmap <buffer><Leader>tp <Plug>(iced_test_all)
+  autocmd FileType clojure silent! nmap <buffer><Leader>tr <Plug>(iced_test_redo)
+  autocmd FileType clojure silent! nmap <buffer><Leader>ss <Plug>(iced_stdout_buffer_open)
+  autocmd FileType clojure silent! nmap <buffer><Leader>sl <Plug>(iced_stdout_buffer_clear)
+  autocmd FileType clojure silent! nmap <buffer><Leader>sq <Plug>(iced_stdout_buffer_close)
+  autocmd FileType clojure silent! nmap <buffer><Leader>rcn <Plug>(iced_clean_ns)
+  autocmd FileType clojure silent! nmap <buffer><Leader>ram <Plug>(iced_add_missing)
+  autocmd FileType clojure silent! nmap <buffer><Leader>ran <Plug>(iced_add_ns)
+  autocmd FileType clojure silent! nmap <buffer><Leader>rtf <Plug>(iced_thread_first)
+  autocmd FileType clojure silent! nmap <buffer><Leader>rtl <Plug>(iced_thread_last)
+  autocmd FileType clojure silent! nmap <buffer><Leader>hs <Plug>(iced_source_show)
+  autocmd FileType clojure silent! nmap <buffer><Leader>hg <Plug>(iced_grimoire_open)
+  autocmd FileType clojure silent! nmap <buffer><Leader>bn <Plug>(iced_browse_namespace)
+  autocmd FileType clojure silent! nmap <buffer><Leader>bf <Plug>(iced_browse_function)
+  autocmd FileType clojure silent! nmap <buffer><Leader>bs <Plug>(iced_browse_spec)
+  autocmd FileType clojure silent! nmap <buffer><Leader>* <Plug>(iced_iced)
+  autocmd FileType clojure silent! nmap <buffer><Leader>/ :<C-u>IcedGrep<Space>
+  autocmd FileType clojure silent! nmap <buffer><C-]> <Plug>(iced_def_jump)
+  autocmd FileType clojure silent! nmap <buffer><C-t> <Plug>(iced_def_back)
+  autocmd FileType clojure silent! nmap <buffer>K <Plug>(iced_document_open)
+  autocmd FileType clojure silent! nmap <buffer>== <Plug>(iced_format)
+  autocmd FileType clojure silent! nmap <buffer><Leader>ts <Plug>(iced_toggle_src_and_test)
 endif
 
 " Go{{{2

@@ -9,6 +9,9 @@ export PATH="$HOME/repos/owtools/bin:$PATH"
 alias wa='MAX_LENGTH=300 wag -U --hidden --ignore-dir .git --ignore-dir _build --ignore-dir build --ignore-dir target'
 wf(){ wfind "$@" -not -path '*/.git/*' -a -not -path '*/target/*' -a -not -path '*/_build/*' -a -not -path '*/build/*' -a -type f }
 
+# Clojure{{{1
+export PATH=$HOME/.vim/plugged/vim-iced/bin:$PATH
+
 # Go{{{1
 if which go >/dev/null; then
   if [ ! -d "$HOME/.go" ]; then

@@ -857,6 +857,7 @@ else
   " liquidz/vim-iced
   let g:iced#lint#linters = ['all']
   let g:iced_enable_auto_linting = v:true
+  autocmd FileType clojure set signcolumn=yes
 
   let g:iced_enable_default_key_mappings = v:true
   autocmd FileType clojure silent! nmap <buffer><Leader>ts <Plug>(iced_toggle_src_and_test)

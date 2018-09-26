@@ -858,6 +858,7 @@ else
   let g:iced_enable_default_key_mappings = v:true
   let g:iced#lint#linters = ['all']
   let g:iced_enable_auto_linting = v:true
+  silent! nmap <buffer> <Leader>ts <Plug>(iced_toggle_src_and_test)
 endif
 
 " Go{{{2

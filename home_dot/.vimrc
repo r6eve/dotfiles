@@ -226,7 +226,7 @@ if has('nvim')
     \ 'do': 'bash install.sh',
     \}
 else
-  Plug 'w0rp/ale'
+  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'css', 'ocaml', 'python', 'rust'] }
 endif
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'haya14busa/vim-asterisk'

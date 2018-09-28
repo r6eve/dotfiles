@@ -225,6 +225,8 @@ if has('nvim')
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \}
+else
+  Plug 'w0rp/ale'
 endif
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'haya14busa/vim-asterisk'
@@ -412,6 +414,25 @@ if has('nvim')
   autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
   autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
 endif
+
+" w0rp/ale{{{2
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_completion_enabled = 1
+let g:ale_set_balloons = 0
+let g:ale_sign_column_always = 1
+
+let g:ale_fixers = {
+ \ 'c': ['clang-format'],
+ \ 'cpp': ['clang-format'],
+ \ 'css': ['prettier'],
+ \ 'ocaml': ['ocamlformat'],
+ \ 'python': ['yapf'],
+ \ 'rust': ['rustfmt'],
+ \ }
+
+autocmd FileType c,cpp,ocaml,python,rust nmap <silent>K <Plug>(ale_find_references)
+autocmd FileType c,cpp,ocaml,python,rust nmap <silent><Leader>t <Plug>(ale_go_to_definition)
+autocmd FileType c,cpp,ocaml,python,rust nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
 
 " haya14busa/vim-asterisk{{{2
 map *   <Plug>(asterisk-g*)<Plug>(anzu-update-search-status-with-echo)

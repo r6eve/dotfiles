@@ -221,7 +221,7 @@ if has('nvim')
     \ 'do': 'bash install.sh',
     \}
 else
-  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'css', 'ocaml', 'python', 'rust'] }
+  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'ocaml', 'python', 'rust'] }
 endif
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'haya14busa/vim-asterisk'
@@ -360,9 +360,10 @@ call denite#custom#option('default', 'prompt', '>')
 " AndrewRadev/linediff.vim{{{2
 vnoremap <silent><Leader>d :Linediff<CR>
 
-" autozimu/LanguageClient-neovim{{{2
-" \ 'clojure': ['bash', '-c', 'clojure-lsp'],
+" Language Server Protocol{{{2
 if has('nvim')
+  " autozimu/LanguageClient-neovim
+  " \ 'clojure': ['bash', '-c', 'clojure-lsp'],
   let g:LanguageClient_serverCommands = {
     \ 'cpp': ['clangd'],
     \ 'go': ['go-langserver'],
@@ -383,26 +384,34 @@ if has('nvim')
   autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>t :call LanguageClient_textDocument_definition()<CR>
   autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
   autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
+else
+  " w0rp/ale
+  let g:ale_lint_on_text_changed = 'normal'
+  let g:ale_completion_enabled = 1
+  let g:ale_set_balloons = 0
+  let g:airline#extensions#ale#enabled = 0
+  let g:ale_set_highlights = 0
+  " Rust
+  let g:ale_rust_rls_toolchain = 'stable'
+
+  " let g:ale_sign_column_always = 1 " Too slow.
+  autocmd FileType c,cpp,cmake,css,ocaml,python,rust set signcolumn=yes
+
+  let g:ale_fixers = {
+    \ 'c': ['clang-format'],
+    \ 'cpp': ['clang-format'],
+    \ 'cmake': ['cmakelint'],
+    \ 'css': ['prettier'],
+    \ 'ocaml': ['ocamlformat'],
+    \ 'python': ['yapf'],
+    \ 'rust': ['rustfmt'],
+    \ }
+
+  autocmd FileType c,cpp,cmake,css,ocaml,python,rust nmap <silent>K <Plug>(ale_find_references)
+  autocmd FileType c,cpp,cmake,css,ocaml,python,rust nmap <silent><Leader>f <Plug>(ale_fix)
+  autocmd FileType c,cpp,cmake,css,ocaml,python,rust nmap <silent><Leader>t <Plug>(ale_go_to_definition)
+  autocmd FileType c,cpp,cmake,css,ocaml,python,rust nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
 endif
-
-" w0rp/ale{{{2
-let g:ale_lint_on_text_changed = 'normal'
-let g:ale_completion_enabled = 1
-let g:ale_set_balloons = 0
-let g:ale_sign_column_always = 1
-
-let g:ale_fixers = {
- \ 'c': ['clang-format'],
- \ 'cpp': ['clang-format'],
- \ 'css': ['prettier'],
- \ 'ocaml': ['ocamlformat'],
- \ 'python': ['yapf'],
- \ 'rust': ['rustfmt'],
- \ }
-
-autocmd FileType c,cpp,ocaml,python,rust nmap <silent>K <Plug>(ale_find_references)
-autocmd FileType c,cpp,ocaml,python,rust nmap <silent><Leader>t <Plug>(ale_go_to_definition)
-autocmd FileType c,cpp,ocaml,python,rust nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
 
 " haya14busa/vim-asterisk{{{2
 map *   <Plug>(asterisk-g*)<Plug>(anzu-update-search-status-with-echo)
@@ -902,16 +911,6 @@ if !exists('loaded_matchit')
   runtime macros/matchit.vim
 endif
 autocmd FileType ruby call smartinput_endwise#define_default_rules()
-
-" Rust{{{2
-" let g:rustfmt_command = 'rustup run nightly rustfmt'
-autocmd FileType rust nnoremap <silent><Leader>f :RustFmt<CR>
-" let g:racer_cmd = 'racer'
-" let g:racer_insert_paren = 0
-" let g:racer_experimental_completer = 1
-" autocmd FileType rust nmap <silent><Leader>t <Plug>(rust-def)
-" autocmd FileType rust nmap <silent><Leader>s <Plug>(rust-def-split)
-" autocmd FileType rust nmap <silent><Leader>v <Plug>(rust-def-vertical)
 
 " Scheme{{{2
 "autocmd FileType scheme vmap <C-j> <Plug>(gosh_repl_send_block)

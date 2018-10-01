@@ -221,7 +221,7 @@ if has('nvim')
     \ 'do': 'bash install.sh',
     \}
 else
-  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'ocaml', 'python', 'rust', 'r'] }
+  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'ocaml', 'python', 'rust', 'r', 'sh'] }
 endif
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'haya14busa/vim-asterisk'
@@ -240,7 +240,7 @@ Plug 'rhysd/vim-gfm-syntax'
 "Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'sbdchd/neoformat', { 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'ocaml'] }
+Plug 'sbdchd/neoformat', { 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 Plug 'sgur/vim-editorconfig'
 Plug 'Shougo/neosnippet.vim'
 "Plug 'thinca/vim-prettyprint'
@@ -395,7 +395,7 @@ else
   let g:ale_rust_rls_toolchain = 'stable'
 
   " let g:ale_sign_column_always = 1 " Too slow.
-  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust set signcolumn=yes
+  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust,sh set signcolumn=yes
 
   let g:ale_fixers = {
     \ 'c': ['clang-format'],
@@ -405,12 +405,13 @@ else
     \ 'ocaml': ['ocamlformat'],
     \ 'python': ['yapf'],
     \ 'rust': ['rustfmt'],
+    \ 'sh': ['shfmt'],
     \ }
 
-  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust nmap <silent>K <Plug>(ale_find_references)
-  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust nmap <silent><Leader>f <Plug>(ale_fix)
-  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust nmap <silent><Leader>t <Plug>(ale_go_to_definition)
-  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
+  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust,sh nmap <silent>K <Plug>(ale_find_references)
+  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust,sh nmap <silent><Leader>f <Plug>(ale_fix)
+  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust,sh nmap <silent><Leader>t <Plug>(ale_go_to_definition)
+  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust,sh nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
 endif
 
 " haya14busa/vim-asterisk{{{2
@@ -770,12 +771,7 @@ colorscheme spring-night
 "            \ }
 
 " sbdchd/neoformat{{{2
-let g:neoformat_ocaml_ocamlformat = {}
-let g:neoformat_ocaml_ocamlformat.exe = 'ocamlformat'
-let g:neoformat_ocaml_ocamlformat.args = ['--inplace']
-let g:neoformat_ocaml_ocamlformat.replace = 1
-let g:neoformat_enabled_ocaml = ['ocamlformat']
-autocmd FileType javascript,typescript,css,less,scss,json,graphql,ocaml nnoremap <silent><Leader>f :Neoformat<CR>
+autocmd FileType javascript,typescript,css,less,scss,json,graphql nnoremap <silent><Leader>f :Neoformat<CR>
 
 " Shougo/neosnippet{{{2
 imap <C-k> <Plug>(neosnippet_expand_or_jump)

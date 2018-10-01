@@ -221,7 +221,7 @@ if has('nvim')
     \ 'do': 'bash install.sh',
     \}
 else
-  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'ocaml', 'python', 'rust'] }
+  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'ocaml', 'python', 'rust', 'r'] }
 endif
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'haya14busa/vim-asterisk'
@@ -395,7 +395,7 @@ else
   let g:ale_rust_rls_toolchain = 'stable'
 
   " let g:ale_sign_column_always = 1 " Too slow.
-  autocmd FileType c,cpp,cmake,css,ocaml,python,rust set signcolumn=yes
+  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust set signcolumn=yes
 
   let g:ale_fixers = {
     \ 'c': ['clang-format'],
@@ -407,10 +407,10 @@ else
     \ 'rust': ['rustfmt'],
     \ }
 
-  autocmd FileType c,cpp,cmake,css,ocaml,python,rust nmap <silent>K <Plug>(ale_find_references)
-  autocmd FileType c,cpp,cmake,css,ocaml,python,rust nmap <silent><Leader>f <Plug>(ale_fix)
-  autocmd FileType c,cpp,cmake,css,ocaml,python,rust nmap <silent><Leader>t <Plug>(ale_go_to_definition)
-  autocmd FileType c,cpp,cmake,css,ocaml,python,rust nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
+  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust nmap <silent>K <Plug>(ale_find_references)
+  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust nmap <silent><Leader>f <Plug>(ale_fix)
+  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust nmap <silent><Leader>t <Plug>(ale_go_to_definition)
+  autocmd FileType c,cpp,cmake,css,ocaml,python,r,rust nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
 endif
 
 " haya14busa/vim-asterisk{{{2

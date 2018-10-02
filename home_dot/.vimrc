@@ -240,7 +240,6 @@ Plug 'rhysd/vim-gfm-syntax'
 "Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'sbdchd/neoformat', { 'for' : ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 Plug 'sgur/vim-editorconfig'
 Plug 'Shougo/neosnippet.vim'
 "Plug 'thinca/vim-prettyprint'
@@ -769,9 +768,6 @@ colorscheme spring-night
 "let g:grammarous#disabled_rules = {
 "            \ '*' : ['EN_QUOTES', 'UPPERCASE_SENTENCE_START', 'WHITESPACE_RULE'],
 "            \ }
-
-" sbdchd/neoformat{{{2
-autocmd FileType javascript,typescript,css,less,scss,json,graphql nnoremap <silent><Leader>f :Neoformat<CR>
 
 " Shougo/neosnippet{{{2
 imap <C-k> <Plug>(neosnippet_expand_or_jump)

@@ -68,9 +68,8 @@ anchor_color yellow
 basic_color terminal
 color 1
 show_srch_str 1
-show_lnum 0
+show_lnum 1
 show_srch_str 1
-show_lnum 0
 fold_line 0
 view_unseenobject 1
 ignore_null_img_alt 1

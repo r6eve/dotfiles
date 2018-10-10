@@ -221,7 +221,7 @@ if has('nvim')
     \ 'do': 'bash install.sh',
     \}
 else
-  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'java', 'ocaml', 'python', 'rust', 'r', 'sh'] }
+  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'go', 'java', 'ocaml', 'python', 'rust', 'r', 'sh'] }
 endif
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'haya14busa/vim-asterisk'
@@ -389,17 +389,23 @@ else
   let g:ale_set_balloons = 0
   let g:airline#extensions#ale#enabled = 0
   let g:ale_set_highlights = 0
+
+  " Java
+  " FIX: Does not work.
+  " let g:ale_java_javalsp_jar = "/path/to/out/fat-jar.jar"
+
   " Rust
   let g:ale_rust_rls_toolchain = 'stable'
 
   " let g:ale_sign_column_always = 1 " Too slow.
-  autocmd FileType c,cpp,cmake,css,java,ocaml,python,r,rust,sh set signcolumn=yes
+  autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh set signcolumn=yes
 
   let g:ale_fixers = {
     \ 'c': ['clang-format'],
     \ 'cpp': ['clang-format'],
     \ 'cmake': ['cmakelint'],
     \ 'css': ['prettier'],
+    \ 'go': ['gofmt'],
     \ 'java': ['google_java_format'],
     \ 'ocaml': ['ocamlformat'],
     \ 'python': ['yapf'],
@@ -407,10 +413,10 @@ else
     \ 'sh': ['shfmt'],
     \ }
 
-  autocmd FileType c,cpp,cmake,css,java,ocaml,python,r,rust,sh nmap <silent>K <Plug>(ale_find_references)
-  autocmd FileType c,cpp,cmake,css,java,ocaml,python,r,rust,sh nmap <silent><Leader>f <Plug>(ale_fix)
-  autocmd FileType c,cpp,cmake,css,java,ocaml,python,r,rust,sh nmap <silent><Leader>t <Plug>(ale_go_to_definition)
-  autocmd FileType c,cpp,cmake,css,java,ocaml,python,r,rust,sh nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
+  autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent>K <Plug>(ale_find_references)
+  autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent><Leader>f <Plug>(ale_fix)
+  autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent><Leader>t <Plug>(ale_go_to_definition)
+  autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
 endif
 
 " haya14busa/vim-asterisk{{{2
@@ -859,9 +865,6 @@ else
   let g:iced_enable_default_key_mappings = v:true
   autocmd FileType clojure silent! nmap <buffer><Leader>ts <Plug>(iced_toggle_src_and_test)
 endif
-
-" Go{{{2
-autocmd FileType go nnoremap <silent><Leader>f :GoFmt<CR>
 
 " Fortran{{{2
 let g:fortran_fixed_source=1

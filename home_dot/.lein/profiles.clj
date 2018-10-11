@@ -1,7 +1,7 @@
 {:user {:dependencies [[cljfmt "0.5.7"]
                        [cider/orchard "0.3.0"]
                        [nrepl "0.4.5"]
-                       [iced-nrepl "0.1.6"]
+                       [iced-nrepl "0.1.11"]
                        [cider/cider-nrepl "0.18.0"]
                        [jonase/eastwood "0.2.9"
                         :exclusions [org.clojure/clojure]]]

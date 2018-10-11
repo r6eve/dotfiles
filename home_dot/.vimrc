@@ -421,8 +421,9 @@ else
 
   autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent>K <Plug>(ale_find_references)
   autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent><Leader>f <Plug>(ale_fix)
-  autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent><Leader>t <Plug>(ale_go_to_definition)
+  autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent><C-]> <Plug>(ale_go_to_definition)
   autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
+  autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent><C-T> <C-O>
 endif
 
 " haya14busa/vim-asterisk{{{2

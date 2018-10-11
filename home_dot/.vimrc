@@ -276,6 +276,8 @@ endif
 "Plug 'fatih/vim-go', { 'for' : 'go' }
 " HTML
 Plug 'mattn/emmet-vim', { 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'css', 'scss', 'sass'] }
+" Java
+"Plug 'artur-shaik/vim-javacomplete2', { 'for' : 'java' }
 " JavaScript
 "Plug 'jelera/vim-javascript-syntax', { 'for' : ['javascript'] }
 Plug 'posva/vim-vue', { 'for': ['javascript', 'html'] }
@@ -865,6 +867,9 @@ else
   let g:iced_enable_default_key_mappings = v:true
   autocmd FileType clojure silent! nmap <buffer><Leader>ts <Plug>(iced_toggle_src_and_test)
 endif
+
+" Java{{{2
+" let g:JavaComplete_EnableDefaultMappings = 0
 
 " Fortran{{{2
 let g:fortran_fixed_source=1

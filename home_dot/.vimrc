@@ -415,6 +415,10 @@ else
     \ 'sh': ['shfmt'],
     \ }
 
+  let g:ale_linters = {
+    \ 'python': ['pyls'],
+    \ }
+
   autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent>K <Plug>(ale_find_references)
   autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent><Leader>f <Plug>(ale_fix)
   autocmd FileType c,cpp,cmake,css,go,java,ocaml,python,r,rust,sh nmap <silent><Leader>t <Plug>(ale_go_to_definition)

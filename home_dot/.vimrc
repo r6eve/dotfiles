@@ -891,9 +891,6 @@ end
 autocmd FileType ocaml set commentstring=(*%s*)
 autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo
 
-" Python{{{2
-autocmd FileType python nnoremap <silent><Leader>f :0,$!yapf<CR>
-
 " R{{{2
 let vimrplugin_assign = 0
 let g:tagbar_type_r = {

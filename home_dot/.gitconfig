@@ -12,7 +12,7 @@
 # 	old = cyan
 [core]
 	excludesfile = ~/.gitignore
-	pager = less -R
+	pager = less --ignore-case --RAW-CONTROL-CHARS
 	editor = "vim"
 [github]
 	user = r6eve

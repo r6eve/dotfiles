@@ -1,6 +1,6 @@
 # script{{{1
 export PATH="$HOME/prog/bin:$PATH"
-export PATH="$HOME/repos/junks-rust/target/release:$PATH"
+export PATH="$HOME/repos/gomi-rust/target/release:$PATH"
 export PATH="$HOME/repos/twe/bin:$PATH"
 # export PATH="$HOME/repos/graalvm-ce-1.0.0-rc7/bin:$PATH"
 

@@ -287,6 +287,8 @@ Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }
 " Perl
 Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
 Plug 'vim-perl/vim-perl'
+" Python
+Plug 'vim-scripts/python_match.vim', { 'for' : 'python' }
 " Ruby
 Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
 " Rust

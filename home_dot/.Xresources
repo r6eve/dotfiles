@@ -14,7 +14,7 @@ Xft.antialias: 1
 
 URxvt.letterSpace: -1
 
-URxvt*cursorColor: #aa6eff
+URxvt*cursorColor: #17b12b
 URxvt*cursorColor2: #000000
 URxvt.cursorBlink: true
 URxvt.foreground: #BABABA

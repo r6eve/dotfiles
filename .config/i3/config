@@ -117,7 +117,8 @@ exec --no-startup-id xset -b
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 exec --no-startup-id xset r rate 500 100
-exec --no-startup-id feh --bg-fill /home/r6eve/picts/bg.png
+#exec --no-startup-id feh --bg-fill /home/r6eve/picts/bg.png
+exec --no-startup-id feh --bg-fill /home/r6eve/picts/android-purple-mountains-nexus-5.jpg
 # exec --no-startup-id feh --bg-fill /home/r6eve/picts/wp_niki_mo_kitai_00_16_9_edit.png
 #exec --no-startup-id feh --bg-fill /home/r6eve/picts/wp_starchaser_00_16_9_l_edit.png
 # exec --no-startup-id feh --bg-max /home/r6eve/picts/wp_niki_mo_kitai_00_16_9.png

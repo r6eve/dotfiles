@@ -99,6 +99,13 @@ autocmd VimEnter,WinEnter * let w:m1 = matchadd("TabString", '	')
 autocmd VimEnter,WinEnter * let w:m2 = matchadd("ZenkakuSpace", '　')
 autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 autocmd VimEnter,WinEnter *.py syntax keyword Special self
+
+augroup vimrc-todo
+  autocmd!
+  autocmd Syntax * syn match myTodo /\v<(HACK|NB):?/ containedin=.*Comment
+augroup END
+highlight def link myTodo Todo
+
 if has('vim_starting') && has('reltime')
   let g:startuptime = reltime()
   augroup vimrc-startuptime

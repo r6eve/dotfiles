@@ -6,7 +6,6 @@
 # alias alegrep='egrep -n --color=always'
 # alias alfgrep='fgrep -n --color=always'
 alias ag='ag -U --hidden --ignore-dir .git --ignore-dir _build'
-alias cp='cp -p'
 alias fd='fd --no-ignore-vcs'
 alias ls='ls -F --color=auto'
 alias la='ls -AF --color=auto'
@@ -20,7 +19,7 @@ alias jobs='jobs -l'
 alias parallel='parallel --no-notice'
 alias q='exit'
 alias time='/usr/bin/time'
-# alias v='nvim'
+alias n='nvim'
 alias v='vim'
 alias cad="$HOME/repos/caddy/caddy.rb -l -n -dd"
 # alias cljam="$HOME/repos/cljam/target/cljam"

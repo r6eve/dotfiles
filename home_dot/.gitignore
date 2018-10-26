@@ -22,6 +22,7 @@ __pycache__
 *.cmt
 *.cmti
 *.cmx
+.m2
 
 # Executables
 a.out

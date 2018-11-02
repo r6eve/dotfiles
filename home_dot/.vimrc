@@ -193,6 +193,15 @@ inoremap <C-w> <C-g>u<C-w>
 " inoremap <C-r>+ <C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>
 inoremap <C-d> <C-o>x
 
+function! ToggleSigncolumn() abort
+  if &signcolumn == 'yes'
+    let &signcolumn = 'no'
+  else
+    let &signcolumn = 'yes'
+  endif
+endfunction
+nnoremap <F1> :call ToggleSigncolumn()<CR>
+
 " filetype detect settings{{{1
 autocmd BufNewFile,BufRead *.dart set filetype=dart
 autocmd BufNewFile,BufRead *.io set filetype=io

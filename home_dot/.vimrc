@@ -883,7 +883,9 @@ else
   " liquidz/vim-iced
   let g:iced#buffer#stdout#file = '/tmp/vim-iced.clj'
 
-  let g:iced#lint#linters = ['all']
+  let g:iced#eastwood#option = {
+      \ 'linters': ['all'],
+      \ }
   let g:iced_enable_auto_linting = v:true
   autocmd FileType clojure set signcolumn=yes
 

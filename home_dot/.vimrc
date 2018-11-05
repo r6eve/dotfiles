@@ -883,6 +883,10 @@ else
   " liquidz/vim-iced
   let g:iced#buffer#stdout#file = '/tmp/vim-iced.clj'
 
+  let g:iced#format#rule = {
+      \ 'merr.core/let': '[[:block 2] [:inner 1]]',
+      \ }
+
   let g:iced#eastwood#option = {
       \ 'linters': ['all'],
       \ }

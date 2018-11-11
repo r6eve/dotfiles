@@ -6,7 +6,7 @@ export PATH="$HOME/repos/twe/bin:$PATH"
 
 # wtools
 export PATH="$HOME/repos/owtools/bin:$PATH"
-alias wa='MAX_LENGTH=300 wag -U --hidden --ignore-dir .git --ignore-dir _build --ignore-dir build --ignore-dir target'
+alias wa='MAX_LENGTH=300 wag -U --hidden --ignore-dir .git --ignore-dir _build --ignore-dir build --ignore-dir target --ignore tags'
 wf(){
   wfind "$@" -not -path '*/.git/*' \
     -a -not -path '*/target/*' \

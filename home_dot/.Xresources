@@ -36,6 +36,7 @@ URxvt.color12: #7799FF
 URxvt.color13: #FF54FF
 URxvt.color14: #54FFFF
 URxvt.color15: #FFFFFF
+URxvt.colorUL: #4682B4
 
 URxvt.fading: 10
 URxvt.fadeColor: [0]black

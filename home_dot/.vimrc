@@ -87,10 +87,10 @@ autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=revers
 autocmd ColorScheme * highlight ZenkakuSpace cterm=none ctermbg=9 gui=none guibg=#ff0000
 autocmd ColorScheme * highlight TabString cterm=none ctermbg=238 gui=none guibg=#303030
 autocmd ColorScheme * highlight TrailingSpaces term=underline ctermbg=238 guibg=#444444
-autocmd ColorScheme * highlight IncSearch cterm=none ctermfg=7 gui=none guifg=#555555
+" autocmd ColorScheme * highlight IncSearch cterm=none ctermfg=7 gui=none guifg=#555555
 autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 gui=underline guifg=#fd8489 guisp=#fd8489
 autocmd ColorScheme * highlight Visual ctermbg=132 guibg=#a9667a
-autocmd ColorScheme * highlight Search cterm=underline ctermbg=132 guibg=#a9667a
+" autocmd ColorScheme * highlight Search cterm=underline ctermbg=132 guibg=#a9667a
 " autocmd ColorScheme * highlight ALEError ctermbg=167 guibg=#ab6560
 autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#ab6560
 " autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=167 gui=bold guifg=#3a4b5c guibg=#ab6560

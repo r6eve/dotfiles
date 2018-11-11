@@ -125,6 +125,7 @@ exec --no-startup-id feh --bg-fill /home/r6eve/picts/android-purple-mountains-ne
 exec --no-startup-id fcitx-autostart
 exec --no-startup-id dropbox-cli start
 exec --no-startup-id dunst
+exec --no-startup-id nm-applet
 
 # switch to workspace
 bindsym $mod+1 workspace 1

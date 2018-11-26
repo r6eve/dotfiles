@@ -39,7 +39,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-" set tabstop=2
+set tabstop=2
 set softtabstop=2
 set expandtab
 set shiftwidth=2
@@ -85,7 +85,7 @@ autocmd ColorScheme * highlight Ignore cterm=none ctermfg=231 gui=none guifg=#ff
 autocmd ColorScheme * highlight EndOfBuffer cterm=none ctermfg=242 gui=none guifg=#fffeeb
 autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#3a4b5c
 autocmd ColorScheme * highlight ZenkakuSpace cterm=none ctermbg=9 gui=none guibg=#ff0000
-autocmd ColorScheme * highlight TabString cterm=none ctermbg=238 gui=none guibg=#303030
+autocmd ColorScheme * highlight TabString cterm=none ctermfg=239 ctermbg=none gui=none guibg=#303030
 autocmd ColorScheme * highlight TrailingSpaces term=underline ctermbg=238 guibg=#444444
 " autocmd ColorScheme * highlight IncSearch cterm=none ctermfg=7 gui=none guifg=#555555
 autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 gui=underline guifg=#fd8489 guisp=#fd8489

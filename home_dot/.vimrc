@@ -320,7 +320,8 @@ Plug 'vim-scripts/sh.vim', { 'for' : 'sh' }
 " TOML
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
 " TypeScript
-"Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
+"Plug 'Quramy/tsuquyomi', { 'for' : 'typescript' }
+Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
 " Vim Script
 "Plug 'kannokanno/vmock', { 'for' : 'vim' }
 "Plug 'thinca/vim-themis', { 'for' : 'vim' }

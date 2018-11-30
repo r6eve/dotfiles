@@ -240,3 +240,6 @@ EOF
 gradlew
 smartphones
 VCF
+polynucleotide
+biallelic
+multiallelic

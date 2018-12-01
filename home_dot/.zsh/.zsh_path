@@ -16,6 +16,9 @@ wf(){
     -a -type f
 }
 
+# bin for temporary use
+export PATH="$HOME/bin/x86_64:$PATH"
+
 # Clojure{{{1
 export PATH=$HOME/.vim/plugged/vim-iced/bin:$PATH
 

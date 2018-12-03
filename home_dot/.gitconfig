@@ -8,8 +8,9 @@
 # [color "status"]
 # 	changed = cyan
 # 	untracked = cyan
-# [color "diff"]
-# 	old = cyan
+[color "diff"]
+	old = 203
+	new = 149
 [core]
 	excludesfile = ~/.gitignore
 	pager = less --ignore-case --RAW-CONTROL-CHARS

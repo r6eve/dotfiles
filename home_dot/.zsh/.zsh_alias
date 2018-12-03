@@ -28,6 +28,8 @@ alias firefox='firefox --private-window'
 # alias themis="$HOME/.vim/plugged/vim-themis/bin/themis"
 # alias nclr="perl -pe 's/\x1b\x5b.*?[\x40-\x7e]//g'"
 
+alias -g TOSTDOUT="/tmp/tmp_for_stdout; cat /tmp/tmp_for_stdout; rm /tmp/tmp_for_stdout"
+
 # C{{{1
 alias gcc='gcc -std=c99 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
 alias splint='splint +charindex -type -compdef -usedef -retvalother -casebreak'

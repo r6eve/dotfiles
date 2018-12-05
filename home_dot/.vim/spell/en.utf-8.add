@@ -245,3 +245,9 @@ biallelic
 multiallelic
 TOML
 unplace
+GPG
+Emscripten
+Pragma
+SFINAE
+LLVM
+GCC

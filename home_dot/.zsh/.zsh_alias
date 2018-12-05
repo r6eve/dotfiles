@@ -38,6 +38,9 @@ alias splint='splint +charindex -type -compdef -usedef -retvalother -casebreak'
 alias g++='g++ -std=c++11 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
 alias clang++='clang++ -std=c++11 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
 
+# Java{{{1
+alias jdb='rlwrap jdb'
+
 # JavaScript{{{1
 alias esa='eslint -c airbnb'
 

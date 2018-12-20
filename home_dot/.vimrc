@@ -897,6 +897,8 @@ else
   let g:iced_enable_auto_linting = v:true
   autocmd FileType clojure set signcolumn=yes
 
+  autocmd FileType clojure silent! nmap <buffer><Leader>st <Plug>(iced_toggle_src_and_test)
+
   let g:iced_enable_default_key_mappings = v:true
 endif
 

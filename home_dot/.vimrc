@@ -251,6 +251,7 @@ Plug 'r6eve/tcvime'
 Plug 'r6eve/vim-shina'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
+Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 "Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }

@@ -278,3 +278,7 @@ memoizes
 antitarget
 antitargets
 GC
+noncanonical
+contigs
+telomeres
+centromeres

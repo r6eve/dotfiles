@@ -267,7 +267,6 @@ Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 "Plug 'tyru/capture.vim', { 'on' : 'Capture' }
-"Plug 'r6eve/caw.vim', { 'branch': 'add-feature-to-delete-doc-comments' }
 Plug 'tyru/caw.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
 Plug 'vim-scripts/gtags.vim'

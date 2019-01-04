@@ -48,6 +48,7 @@ fi
 
 # Python{{{1
 which pyenv >/dev/null && eval "$(pyenv init -)"
+export PATH="$HOME/.local/bin:$PATH"  # pip install --user
 
 # Ruby{{{1
 export PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"

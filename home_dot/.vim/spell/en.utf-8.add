@@ -302,3 +302,7 @@ hetero
 ploidy
 translocation
 RepeatMasker
+trendline
+biweight
+overdispersion
+reweighting

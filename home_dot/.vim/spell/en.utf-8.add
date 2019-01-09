@@ -306,3 +306,8 @@ trendline
 biweight
 overdispersion
 reweighting
+log10
+knowledgebase
+pacman
+stringify
+JDBC

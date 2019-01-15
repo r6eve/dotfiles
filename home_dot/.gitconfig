@@ -34,3 +34,8 @@
 	mgn = merge --no-ff
 	ps = push
 	st = status -sb
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

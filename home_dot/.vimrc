@@ -440,6 +440,8 @@ else
     \ 'python': ['pyls'],
     \ }
 
+  let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}
+
   autocmd FileType c,cpp,cmake,css,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent>K <Plug>(ale_find_references)
   autocmd FileType c,cpp,cmake,css,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>f <Plug>(ale_fix)
   autocmd FileType cpp,cmake,css,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-]> <Plug>(ale_go_to_definition)

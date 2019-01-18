@@ -229,7 +229,11 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neomru.vim'
 Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
-Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+endif
 Plug 'AndrewRadev/linediff.vim'
 if has('nvim')
   Plug 'autozimu/LanguageClient-neovim', {

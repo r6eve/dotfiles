@@ -243,6 +243,7 @@ if has('nvim')
 else
   Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'go', 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'] }
 endif
+Plug 'broadinstitute/vim-wdl', { 'for' : 'wdl' }
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'haya14busa/vim-asterisk'
 "Plug 'jeetsukumaran/vim-markology'

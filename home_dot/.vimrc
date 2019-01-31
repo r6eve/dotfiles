@@ -102,7 +102,7 @@ autocmd VimEnter,WinEnter *.py syntax keyword Special self
 
 augroup vimrc-todo
   autocmd!
-  autocmd Syntax * syn match myTodo /\C\v<(DONE|HACK|NB):/ containedin=.*Comment
+  autocmd Syntax * syn match myTodo /\C\v<(DONE|HACK|NB|WIP):/ containedin=.*Comment
 augroup END
 highlight def link myTodo Todo
 

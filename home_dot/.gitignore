@@ -23,6 +23,7 @@ __pycache__
 *.cmti
 *.cmx
 .m2
+.eastwood
 
 # Executables
 a.out

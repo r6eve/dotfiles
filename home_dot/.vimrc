@@ -244,6 +244,7 @@ else
   Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'go', 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'] }
 endif
 Plug 'broadinstitute/vim-wdl', { 'for' : 'wdl' }
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ElmCast/elm-vim', { 'for' : 'elm' }
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'haya14busa/vim-asterisk'
@@ -288,7 +289,6 @@ if has('nvim')
   Plug 'venantius/vim-eastwood', { 'for' : 'clojure' }
   Plug 'vim-syntastic/syntastic', { 'for' : 'clojure' }
 else
-  Plug 'ctrlpvim/ctrlp.vim', { 'for' : 'clojure' }
   Plug 'guns/vim-sexp', {'for': 'clojure' }
   Plug 'liquidz/vim-iced', {'for': 'clojure' }
 endif

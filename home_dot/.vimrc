@@ -232,7 +232,7 @@ Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
 else
-  Plug 'Shougo/deoplete.nvim', { 'tag' : '4.1' }
+  Plug 'Shougo/deoplete.nvim'
 endif
 Plug 'AndrewRadev/linediff.vim'
 if has('nvim')

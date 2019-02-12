@@ -198,6 +198,17 @@ function! ToggleSigncolumn() abort
 endfunction
 nnoremap <F1> :call ToggleSigncolumn()<CR>
 
+function! s:on_FileType_qf_define_mappings() abort
+  nnoremap <buffer><silent> q :<C-u>cclose<CR>
+  nnoremap <buffer><silent> j :<C-u>cnext<CR>:copen<CR>
+  nnoremap <buffer><silent> k :<C-u>cprevious<CR>:copen<CR>
+  nnoremap <buffer><silent> J :<C-u>cnfile<CR>:copen<CR>
+  nnoremap <buffer><silent> K :<C-u>cpfile<CR>:copen<CR>
+  nnoremap <buffer><silent> l :<C-u>clist<CR>
+  nnoremap <buffer><CR> <CR>
+endfunction
+autocmd FileType qf call s:on_FileType_qf_define_mappings()
+
 " filetype detect settings{{{1
 autocmd BufNewFile,BufRead *.dart set filetype=dart
 autocmd BufNewFile,BufRead *.io set filetype=io

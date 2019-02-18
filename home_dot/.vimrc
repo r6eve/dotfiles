@@ -236,11 +236,13 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neomru.vim'
 Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-endif
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
 Plug 'AndrewRadev/linediff.vim'
 if has('nvim')
   Plug 'autozimu/LanguageClient-neovim', {
@@ -269,8 +271,6 @@ Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 "Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'sgur/vim-editorconfig'
 Plug 'Shougo/neosnippet.vim'
 "Plug 'thinca/vim-prettyprint'
@@ -357,19 +357,19 @@ call plug#end()
 
 " advanced settings{{{1
 " Shougo/deoplete.nvim{{{2
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#max_abbr_width = 0
-let g:deoplete#max_menu_width = 0
-let g:deoplete#keyword_patterns = {}
-let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
-let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
-let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
-let g:deoplete#omni#functions = {}
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-e> deoplete#cancel_popup()
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_smart_case = 1
+" let g:deoplete#max_abbr_width = 0
+" let g:deoplete#max_menu_width = 0
+" let g:deoplete#keyword_patterns = {}
+" let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
+" let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
+" let g:deoplete#omni#input_patterns = {}
+" let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
+" let g:deoplete#omni#functions = {}
+" inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-e> deoplete#cancel_popup()
 
 " Shougo/denite.nvim{{{2
 call denite#custom#map(

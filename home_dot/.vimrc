@@ -61,7 +61,7 @@ set timeoutlen=500
 set ttimeout
 set ttimeoutlen=50
 set display=lastline
-set statusline=%f%m%=\ %{shina#face()}%-14.(%l,%v%)\ %P
+set statusline=%f%m%=\ %{shina#face()}%-14.(%l/%L,%v%)\ %P
 " set pumheight=5
 set spelllang+=cjk
 set matchpairs+=（:）,「:」,『:』,＜:＞,【:】

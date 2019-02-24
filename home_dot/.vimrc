@@ -79,7 +79,9 @@ set guicursor=
 "autocmd VimLeave * set guicursor=a:block-blinkon1
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
-set pyx=3
+if !has('nvim')
+  set pyx=3
+endif
 syntax enable
 autocmd ColorScheme * highlight Normal cterm=none ctermfg=231 ctermbg=none gui=none guifg=#fffeeb guibg=#020814
 autocmd ColorScheme * highlight Ignore cterm=none ctermfg=231 gui=none guifg=#fffeeb

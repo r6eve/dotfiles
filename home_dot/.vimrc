@@ -271,6 +271,8 @@ Plug 'r6eve/vim-shina'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
+" Plug 'rhysd/reply.vim'
+Plug 'r6eve/reply.vim', { 'branch' : 'feature/utop-for-ocaml' }
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 "Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
@@ -809,6 +811,11 @@ function! g:committia_hooks.edit_open(info)
   imap <buffer><C-n> <Plug>(committia-scroll-diff-down-half)
   imap <buffer><C-p> <Plug>(committia-scroll-diff-up-half)
 endfunction
+
+" rhysd/reply.vim{{{2
+let g:reply_repls = {
+ \ 'ocaml': ['utop']
+ \}
 
 " rhysd/vim-color-spring-night{{{2
 colorscheme spring-night

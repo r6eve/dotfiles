@@ -1,5 +1,6 @@
 {:user {:dependencies [[cljfmt "0.6.3"]
                        [com.clojure-goes-fast/clj-async-profiler "0.3.0"]
+                       [criterium "0.4.4"]
                        [jonase/eastwood "0.3.3"
                         :exclusions [org.clojure/clojure]]]
         :plugins [[jonase/eastwood "0.3.3"]

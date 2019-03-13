@@ -342,3 +342,6 @@ backend
 Clojars
 CircleCI
 CDN
+testsuite
+LRR
+BAF

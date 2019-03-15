@@ -324,6 +324,7 @@ Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
 Plug 'vim-perl/vim-perl'
 " Python
 Plug 'vim-scripts/python_match.vim', { 'for' : 'python' }
+Plug 'szymonmaszke/vimpyter'
 " Ruby
 Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
 " Rust
@@ -949,6 +950,9 @@ if executable('ocamlmerlin') && has('python')
 end
 autocmd FileType ocaml set commentstring=(*%s*)
 autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo
+
+" Python{{{2
+autocmd Filetype ipynb nmap <silent><Leader>p :VimpyterStartJupyter<CR>
 
 " R{{{2
 let vimrplugin_assign = 0

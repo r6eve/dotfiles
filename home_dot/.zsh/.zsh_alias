@@ -65,4 +65,3 @@ alias Rscript='Rscript --vanilla'
 alias clippy='rustup run nightly cargo clippy'
 alias bench='rustup run nightly cargo bench'
 alias cfmt='rustup run nightly cargo fmt'
-

@@ -115,7 +115,7 @@ focus_on_window_activation focus
 
 # startup commands
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
-exec --no-startup-id compton -CGb --no-fading-openclose
+exec --no-startup-id xcompmgr -cC
 exec --no-startup-id xset -b
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off

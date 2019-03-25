@@ -64,7 +64,7 @@ set display=lastline
 set statusline=%f%m%=\ %{shina#face()}%-14.(%l/%L,%v%)\ %P
 " set pumheight=5
 set spelllang+=cjk
-set matchpairs+=（:）,「:」,『:』,＜:＞,【:】
+set matchpairs+=（:）,「:」,『:』,＜:＞,【:】,⥹:⥻
 set hidden
 set clipboard=unnamed
 set mouse=

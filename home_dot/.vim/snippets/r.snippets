@@ -17,6 +17,10 @@ abbr myfunc
 	skewness <- function(x) mean( (x-mean(x))^3 ) / sd(x)^3
 	kurtosis <- function(x) mean( (x-mean(x))^4 ) / sd(x)^4
 
+snippet printf
+abbr printf
+	args <- commandArgs(trailingOnly = T)
+
 snippet usage
 abbr usage
 	args <- commandArgs(trailingOnly = T)

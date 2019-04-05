@@ -3,9 +3,10 @@
 	email = r6eve179f@gmail.com
 [color]
 	ui = auto
-# [color "status"]
-# 	changed = cyan
-# 	untracked = cyan
+[color "status"]
+	added = 149
+	changed = 203
+	untracked = 203
 [color "diff"]
 	old = 203
 	new = 149

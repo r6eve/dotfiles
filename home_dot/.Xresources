@@ -17,7 +17,7 @@ URxvt.letterSpace: -1
 URxvt*cursorColor: #17b12b
 URxvt*cursorColor2: #000000
 URxvt.cursorBlink: true
-URxvt.foreground: #BABABA
+URxvt.foreground: #54fe54
 URxvt.depth: 32
 URxvt*background: [84]#020814
 URxvt.color0: #000000

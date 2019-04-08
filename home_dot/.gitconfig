@@ -7,6 +7,8 @@
 	added = 149
 	changed = 203
 	untracked = 203
+	localBranch = 149
+	remoteBranch = 203
 [color "diff"]
 	old = 203
 	new = 149

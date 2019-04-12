@@ -19,7 +19,7 @@ abbr myfunc
 
 snippet printf
 abbr printf
-	args <- commandArgs(trailingOnly = T)
+	printf <- function(...) cat(sprintf(...))
 
 snippet usage
 abbr usage

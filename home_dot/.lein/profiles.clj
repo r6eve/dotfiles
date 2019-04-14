@@ -7,5 +7,7 @@
                   [lein-ancient "0.6.15"]
                   [lein-bikeshed "0.5.1"]
                   [lein-cloverage "1.0.13"]
+                  [lein-codox "0.10.6"]
                   [lein-kibit "0.1.6"]
+                  [lein-pprint "1.2.0"]
                   [lein-typed "0.4.6"]]}}

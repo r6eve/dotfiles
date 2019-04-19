@@ -253,7 +253,7 @@ if has('nvim')
     \ 'do': 'bash install.sh',
     \}
 else
-  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'go', 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'] }
+  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'go', 'haskell', 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'] }
 endif
 Plug 'broadinstitute/vim-wdl', { 'for' : 'wdl' }
 Plug 'ctrlpvim/ctrlp.vim'
@@ -439,7 +439,7 @@ else
   let g:ale_rust_rls_toolchain = 'stable'
 
   " let g:ale_sign_column_always = 1 " Too slow.
-  autocmd FileType c,cpp,cmake,css,go,java,javascript,ocaml,python,r,rust,scss,sh set signcolumn=yes
+  autocmd FileType c,cpp,cmake,css,go,haskell,java,javascript,ocaml,python,r,rust,scss,sh set signcolumn=yes
 
   let g:ale_fixers = {
     \ 'c': ['clang-format'],
@@ -447,6 +447,7 @@ else
     \ 'cmake': ['cmakelint'],
     \ 'css': ['prettier'],
     \ 'go': ['gofmt'],
+    \ 'haskell': ['stylish-haskell'],
     \ 'java': ['google_java_format'],
     \ 'javascript': ['prettier'],
     \ 'ocaml': ['ocamlformat'],
@@ -462,11 +463,11 @@ else
 
   let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}
 
-  autocmd FileType c,cpp,cmake,css,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent>K <Plug>(ale_find_references)
-  autocmd FileType c,cpp,cmake,css,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>f <Plug>(ale_fix)
-  autocmd FileType cpp,cmake,css,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-]> <Plug>(ale_go_to_definition)
-  autocmd FileType cpp,cmake,css,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
-  autocmd FileType cpp,cmake,css,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-T> <C-O>
+  autocmd FileType c,cpp,cmake,css,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent>K <Plug>(ale_find_references)
+  autocmd FileType c,cpp,cmake,css,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>f <Plug>(ale_fix)
+  autocmd FileType cpp,cmake,css,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-]> <Plug>(ale_go_to_definition)
+  autocmd FileType cpp,cmake,css,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
+  autocmd FileType cpp,cmake,css,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-T> <C-O>
 endif
 
 " haya14busa/vim-asterisk{{{2

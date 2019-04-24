@@ -452,6 +452,7 @@ else
     \ 'javascript': ['prettier'],
     \ 'ocaml': ['ocamlformat'],
     \ 'python': ['yapf'],
+    \ 'r': ['styler'],
     \ 'rust': ['rustfmt'],
     \ 'scss': ['prettier'],
     \ 'sh': ['shfmt'],

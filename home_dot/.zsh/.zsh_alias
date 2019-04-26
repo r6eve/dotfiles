@@ -54,9 +54,6 @@ alias ocamlopt.opt='ocamlopt.opt -w +35'
 alias iperl='perl -de0'
 alias plint='perl -MO=Lint,all'
 
-# Python{{{1
-alias python='python -q'
-
 # R{{{1
 alias R='R --vanilla -q'
 alias Rscript='Rscript --vanilla'

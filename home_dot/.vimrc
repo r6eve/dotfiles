@@ -260,7 +260,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ElmCast/elm-vim', { 'for' : 'elm' }
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'haya14busa/vim-asterisk'
-Plug 'jceb/vim-orgmode', { 'for' : 'org' }
+"Plug 'jceb/vim-orgmode', { 'for' : 'org' }
 "Plug 'jeetsukumaran/vim-markology'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'

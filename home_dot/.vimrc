@@ -276,6 +276,7 @@ Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
 Plug 'r6eve/reply.vim', { 'branch' : 'feature/utop-for-ocaml' }
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
+Plug 'rhysd/vim-github-actions', { 'for' : 'ghaworkflow' }
 "Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
 Plug 'sgur/vim-editorconfig'
 Plug 'Shougo/neosnippet.vim'

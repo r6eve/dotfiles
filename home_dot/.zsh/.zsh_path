@@ -47,8 +47,10 @@ fi
 # fi
 
 # Python{{{1
-which pyenv >/dev/null && eval "$(pyenv init -)"
+# which pyenv >/dev/null && eval "$(pyenv init -)"
 export PATH="$HOME/.local/bin:$PATH"  # pip install --user
+# miniconda
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
 # Ruby{{{1
 export PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"

@@ -1,7 +1,12 @@
 # Editors' backup files
 *~
 *.sw?
+
+# Tag files
 tags
+GPATH
+GRTAGS
+GTAGS
 
 # Platform-dependant data
 .DS_Store

@@ -451,7 +451,7 @@ else
     \ 'haskell': ['stylish-haskell'],
     \ 'java': ['google_java_format'],
     \ 'javascript': ['prettier'],
-    \ 'ocaml': ['ocamlformat'],
+    \ 'ocaml': ['ocp-indent'],
     \ 'python': ['yapf'],
     \ 'r': ['styler'],
     \ 'rust': ['rustfmt'],
@@ -464,6 +464,8 @@ else
     \ }
 
   let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}
+
+  let g:ale_ocaml_ocp_indent_config = "JaneStreet"
 
   autocmd FileType c,cpp,cmake,css,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent>K <Plug>(ale_find_references)
   autocmd FileType c,cpp,cmake,css,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>f <Plug>(ale_fix)

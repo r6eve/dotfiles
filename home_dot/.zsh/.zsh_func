@@ -1,8 +1,8 @@
-ev(){ evince "$1" >/dev/null 2>&1 &! }
-eog(){ /usr/bin/eog "$1" >/dev/null 2>&1 &! }
-gmp(){ gimp "$1" >/dev/null 2>&1 &! }
-md(){ $HOME/.wine/drive_c/Program\ Files/Medibang/MediBang\ Paint\ Pro/MediBangPaintPro.exe "$1" >/dev/null 2>&1 &! }
-libre(){ libreoffice "$1" >/dev/null 2>&1 &! }
+ev(){ evince "$@" >/dev/null 2>&1 &! }
+eog(){ /usr/bin/eog "$@" >/dev/null 2>&1 &! }
+gmp(){ gimp "$@" >/dev/null 2>&1 &! }
+md(){ $HOME/.wine/drive_c/Program\ Files/Medibang/MediBang\ Paint\ Pro/MediBangPaintPro.exe "$@" >/dev/null 2>&1 &! }
+libre(){ libreoffice "$@" >/dev/null 2>&1 &! }
 dic(){ git diff --color-words --no-index "$1" "$2" }
 man(){
   LANG=en_US.UTF-8

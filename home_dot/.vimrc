@@ -307,6 +307,8 @@ else
 endif
 " D
 "Plug 'landaire/deoplete-d', { 'for' : 'd' }
+" Dot
+Plug 'wannesm/wmgraphviz.vim', { 'for' : 'dot' }
 " Go
 "Plug 'fatih/vim-go', { 'for' : 'go' }
 " HTML
@@ -932,6 +934,11 @@ else
 
   let g:iced_enable_default_key_mappings = v:true
 endif
+
+" Dot{{{2
+let g:WMGraphviz_output = 'png'
+let g:WMGraphviz_viewer = 'firefox'
+let g:WMGraphviz_shelloptions = '-Gdpi=300'
 
 " Java{{{2
 " let g:JavaComplete_EnableDefaultMappings = 0

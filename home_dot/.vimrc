@@ -510,12 +510,6 @@ nmap <unique> <silent> <C-a>? <Plug>TcvimeNHelp
 "" haya14busa/vim-open-googletranslate{{{2
 "let g:opengoogletranslate#default_lang = 'ja'
 
-"" jeetsukumaran/vim-markology{{{2
-"let g:markology_enable = 0
-"let g:markology_disable_mappings = 1
-"nmap <silent>m! <Plug>MarkologyToggle
-"nmap <silent>m? <Plug>MarkologyLocationList
-
 " kana/vim-smartinput{{{2
 call smartinput#map_to_trigger('i', '<C-h>', '<BS>', '<C-h>')
 call smartinput#map_to_trigger('i', '<BS>', '<BS>', '<BS>')

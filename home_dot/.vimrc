@@ -261,6 +261,7 @@ Plug 'ElmCast/elm-vim', { 'for' : 'elm' }
 "Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'haya14busa/vim-asterisk'
 "Plug 'jceb/vim-orgmode', { 'for' : 'org' }
+Plug 'inkarkat/vim-ingo-library' | Plug 'inkarkat/vim-mark'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
@@ -509,6 +510,12 @@ nmap <unique> <silent> <C-a>? <Plug>TcvimeNHelp
 
 "" haya14busa/vim-open-googletranslate{{{2
 "let g:opengoogletranslate#default_lang = 'ja'
+
+" inkarkat/vim-mark{{{2
+let g:mw_no_mappings = 1
+nmap <silent><Leader>m <Plug>MarkSet
+xmap <silent><Leader>m <Plug>MarkSet
+nmap <silent><Leader>n <Plug>MarkAllClear
 
 " kana/vim-smartinput{{{2
 call smartinput#map_to_trigger('i', '<C-h>', '<BS>', '<C-h>')

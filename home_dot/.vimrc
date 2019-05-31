@@ -215,6 +215,7 @@ autocmd FileType qf call s:on_FileType_qf_define_mappings()
 " filetype detect settings{{{1
 autocmd BufNewFile,BufRead *.dart set filetype=dart
 autocmd BufNewFile,BufRead *.io set filetype=io
+autocmd BufNewFile,BufRead *.jnlp set filetype=html
 autocmd BufNewFile,BufRead lighttpd.conf set filetype=lighttpd
 autocmd BufNewFile,BufRead *.m set filetype=objc
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown

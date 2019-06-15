@@ -1,5 +1,5 @@
 {:user {:dependencies [[cljfmt "0.6.3"]
-                       [com.clojure-goes-fast/clj-async-profiler "0.3.0"]
+                       [com.clojure-goes-fast/clj-async-profiler "0.3.1"]
                        [criterium "0.4.4"]
                        [jonase/eastwood "0.3.3"
                         :exclusions [org.clojure/clojure]]]
@@ -10,4 +10,5 @@
                   [lein-codox "0.10.6"]
                   [lein-kibit "0.1.6"]
                   [lein-pprint "1.2.0"]
-                  [lein-typed "0.4.6"]]}}
+                  [lein-typed "0.4.6"]]
+        :eastwood {:linters [:all]}}}

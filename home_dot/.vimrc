@@ -166,6 +166,8 @@ command! SyntaxInfo call s:get_syn_info()
 set pastetoggle=<F2>
 nnoremap <F3> :setlocal spell! spell?<CR>
 inoremap <F3> <C-o>:setlocal spell! spell?<CR>
+nnoremap <F4> :setlocal list! list?<CR>
+inoremap <F4> <C-o>:setlocal list! list?<CR>
 noremap ; :
 "nnoremap <silent><Space> <PageDown>
 nnoremap <silent><C-Space> <C-w>p<PageDown><C-w>p

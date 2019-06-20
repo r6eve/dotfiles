@@ -219,15 +219,15 @@ autocmd BufNewFile,BufRead *.dart set filetype=dart
 autocmd BufNewFile,BufRead *.io set filetype=io
 autocmd BufNewFile,BufRead *.jnlp set filetype=html
 autocmd BufNewFile,BufRead lighttpd.conf set filetype=lighttpd
-autocmd BufNewFile,BufRead *.m set filetype=objc
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+autocmd BufNewFile,BufRead *.m set filetype=objc
 autocmd BufNewFile,BufRead *.{atd,mly,mlt} set filetype=ocaml
 autocmd BufNewFile,BufRead *.{cgi,t} set filetype=perl
 autocmd BufNewFile,BufRead *.scala set filetype=scala
 autocmd BufNewFile,BufRead *.swift set filetype=swift
 autocmd BufNewFile,BufRead *.test set filetype=text
-autocmd BufNewFile,BufRead *.ts set filetype=typescript
 autocmd BufNewFile,BufRead *.toml set filetype=toml
+autocmd BufNewFile,BufRead *.ts set filetype=typescript
 
 " vim-plug{{{1
 if empty(glob('~/.vim/autoload/plug.vim'))

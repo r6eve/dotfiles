@@ -418,3 +418,5 @@ misassemblies
 telomerase
 midvariance
 fallback
+segfault
+unsafety

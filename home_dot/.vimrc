@@ -337,6 +337,8 @@ Plug 'szymonmaszke/vimpyter'
 Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
 " Rust
 Plug 'rust-lang/rust.vim'
+" SATySFi
+Plug 'qnighy/satysfi.vim', { 'for' : 'satysfi' }
 " Scala
 "Plug 'derekwyatt/vim-scala', { 'for' : 'scala' }
 " Scheme

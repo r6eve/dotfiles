@@ -225,7 +225,6 @@ autocmd BufNewFile,BufRead *.m set filetype=objc
 autocmd BufNewFile,BufRead *.{atd,mly,mlt} set filetype=ocaml
 autocmd BufNewFile,BufRead *.{cgi,t} set filetype=perl
 autocmd BufNewFile,BufRead *.scala set filetype=scala
-autocmd BufNewFile,BufRead *.swift set filetype=swift
 autocmd BufNewFile,BufRead *.test set filetype=text
 autocmd BufNewFile,BufRead *.toml set filetype=toml
 autocmd BufNewFile,BufRead *.ts set filetype=typescript
@@ -345,8 +344,6 @@ Plug 'qnighy/satysfi.vim', { 'for' : 'satysfi' }
 "Plug 'aharisu/vim_goshrepl', { 'for' : 'scheme' }
 " Shell script
 Plug 'vim-scripts/sh.vim', { 'for' : 'sh' }
-" Swift
-"Plug 'Keithbsmiley/swift.vim', { 'for' : 'swift' }
 " TOML
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
 " TypeScript
@@ -413,7 +410,6 @@ vnoremap <silent><Leader>d :Linediff<CR>
 " Language Server Protocol{{{2
 if has('nvim')
   " autozimu/LanguageClient-neovim
-  " \ 'clojure': ['bash', '-c', 'clojure-lsp'],
   let g:LanguageClient_serverCommands = {
     \ 'cpp': ['clangd'],
     \ 'go': ['go-langserver'],

@@ -421,3 +421,6 @@ fallback
 segfault
 unsafety
 SATySFi
+lexer
+tokenizer
+Elasticsearch

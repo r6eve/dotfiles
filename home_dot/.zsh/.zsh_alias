@@ -28,6 +28,7 @@ alias cljam="$HOME/repos/cljam/target/cljam"
 alias firefox='firefox --private-window'
 # alias themis="$HOME/.vim/plugged/vim-themis/bin/themis"
 # alias nclr="perl -pe 's/\x1b\x5b.*?[\x40-\x7e]//g'"
+alias rga="rga --line-number"
 
 alias -g TOSTDOUT="/tmp/tmp_for_stdout; cat /tmp/tmp_for_stdout; rm /tmp/tmp_for_stdout"
 

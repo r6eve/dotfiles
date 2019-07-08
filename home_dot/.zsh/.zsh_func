@@ -1,4 +1,5 @@
 # Make process and disown
+dockerun(){ docker run --rm -ti -u $(id -u):$(id -g) -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -v /etc/shadow:/etc/shadow:ro -v /etc/sudoers.d:/etc/sudoers.d:ro "$@" }
 eog(){ /usr/bin/eog "$@" >/dev/null 2>&1 &! }
 ev(){ evince "$@" >/dev/null 2>&1 &! }
 gmp(){ gimp "$@" >/dev/null 2>&1 &! }

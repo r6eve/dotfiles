@@ -53,6 +53,40 @@ ytc(){
   yukitocaddy "$1" -o no$n.test
 }
 
+# https://github.com/rhysd/dogfiles/blob/4e9d5a575e6cb3ecb2580089be86205aba6e0d81/zshrc#L112
+update-zfunc() {
+  local zfunc="$HOME/.zfunc"
+  # Old : https://raw.githubusercontent.com/technomancy/leiningen/master/zsh_completion.zsh
+  urls=(
+    https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose
+    https://raw.githubusercontent.com/esc/conda-zsh-completion/master/_conda
+  )
+
+  for url in $urls; do
+    local file="$zfunc/${url:t}"
+    echo "Downloading complation definition '${file}'"
+    if curl -f -L "$url" > "$file"; then
+      chmod +x "$file"
+    else
+      echo "Failed to download ${url}"
+      rm -rf $file
+    fi
+    echo
+  done
+
+  if which rustup > /dev/null; then
+    echo "Setting up completion definitions for rust toolchain"
+    rustup completions zsh > "$zfunc/_rustup" && chmod +x "$zfunc/_rustup"
+
+    local toolchain="$(rustup toolchain list | grep ' (default)')"
+    toolchain="${toolchain%% \(default\)}"
+    if [[ "$toolchain" != "" ]]; then
+      rm -f "$zfunc/_cargo"
+      cp "$HOME/.rustup/toolchains/$toolchain/share/zsh/site-functions/_cargo" "$zfunc/_cargo"
+    fi
+  fi
+}
+
 # tmux-tanlog
 tanlog_begin() { export TANLOG_LOGFILE=$(tmux-tanlog start $1) }
 tanlog_end() { tmux-tanlog end $TANLOG_LOGFILE }

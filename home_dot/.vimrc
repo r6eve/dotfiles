@@ -256,7 +256,7 @@ if has('nvim')
     \ 'do': 'bash install.sh',
     \}
 else
-  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'go', 'haskell', 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'] }
+  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'dockerfile', 'go', 'haskell', 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'] }
 endif
 Plug 'broadinstitute/vim-wdl', { 'for' : 'wdl' }
 Plug 'ctrlpvim/ctrlp.vim'
@@ -445,7 +445,7 @@ else
   let g:ale_rust_rls_toolchain = 'stable'
 
   " let g:ale_sign_column_always = 1 " Too slow.
-  autocmd FileType c,cpp,cmake,css,go,haskell,java,javascript,ocaml,python,r,rust,scss,sh set signcolumn=yes
+  autocmd FileType c,cpp,cmake,css,dockerfile,go,haskell,java,javascript,ocaml,python,r,rust,scss,sh set signcolumn=yes
 
   let g:ale_fixers = {
     \ 'c': ['clang-format'],

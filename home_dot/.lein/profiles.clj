@@ -3,7 +3,8 @@
                        [criterium "0.4.5"]
                        [jonase/eastwood "0.3.6"
                         :exclusions [org.clojure/clojure]]]
-        :plugins [[jonase/eastwood "0.3.6"]
+        :plugins [[com.clojure-goes-fast/clj-java-decompiler "0.3.0-SNAPSHOT"]
+                  [jonase/eastwood "0.3.6"]
                   [lein-ancient "0.6.15"]
                   [lein-bikeshed "0.5.2"]
                   [lein-cloverage "1.1.1"]

@@ -1,9 +1,9 @@
 URxvt.termName: urxvt
 
-URxvt.font:xft:Hack:size=12,xft:IPAGothic:size=12,xft:Symbola:size=12
-URxvt.boldFont:xft:Hack:bold:size=12,xft:IPAGothic:bold:size=12,xft:Symbola:bold:size=12
-URxvt.italicFont: xft:Hack:size=12
-URxvt.boldItalicFont: xft:Hack:bold:size=12
+URxvt.font:xft:Hack:size=11,xft:IPAGothic:size=11,xft:Symbola:size=11
+URxvt.boldFont:xft:Hack:bold:size=11,xft:IPAGothic:bold:size=11,xft:Symbola:bold:size=11
+URxvt.italicFont: xft:Hack:size=11
+URxvt.boldItalicFont: xft:Hack:bold:size=11
 
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault

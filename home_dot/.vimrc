@@ -467,12 +467,13 @@ else
     \ }
 
   let g:ale_linters = {
-    \ 'elixir': ['mix'],
+    \ 'elixir': ['elixir-ls', 'mix'],
     \ 'python': ['pyls'],
     \ }
 
   let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}
 
+  let g:ale_elixir_elixir_ls_release = $HOME . '/repos/elixir-ls/rel'
   let g:ale_ocaml_ocp_indent_config = "JaneStreet"
 
   autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent>K <Plug>(ale_find_references)

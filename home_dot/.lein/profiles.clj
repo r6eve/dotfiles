@@ -9,7 +9,7 @@
                   [lein-bikeshed "0.5.2"]
                   [lein-cloverage "1.1.1"]
                   [lein-codox "0.10.7"]
-                  [lein-kibit "0.1.6"]
+                  [lein-kibit "0.1.7"]
                   [lein-pprint "1.2.0"]
                   [lein-typed "0.4.6"]]
         :eastwood {:linters [:all]}}}

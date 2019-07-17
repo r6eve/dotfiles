@@ -52,7 +52,6 @@ set keywordprg=:help
 set splitright
 set splitbelow
 set completeopt-=preview
-"set virtualedit+=block
 set nrformats=hex,alpha
 set lazyredraw
 set ttyfast
@@ -62,7 +61,6 @@ set ttimeout
 set ttimeoutlen=50
 set display=lastline
 set statusline=%f%m%=\ %{shina#face()}%-14.(%l/%L,%v%)\ %P
-" set pumheight=5
 set spelllang+=cjk
 set matchpairs+=（:）,「:」,『:』,＜:＞,【:】,⥹:⥻
 set hidden
@@ -73,10 +71,7 @@ set conceallevel=0
 set concealcursor=
 set list
 set listchars=tab:>\･
-"set synmaxcol=200
 set guicursor=
-"set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
-"autocmd VimLeave * set guicursor=a:block-blinkon1
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 if !has('nvim')
@@ -169,7 +164,6 @@ inoremap <F3> <C-o>:setlocal spell! spell?<CR>
 nnoremap <F4> :setlocal list! list?<CR>
 inoremap <F4> <C-o>:setlocal list! list?<CR>
 noremap ; :
-"nnoremap <silent><Space> <PageDown>
 nnoremap <silent><C-Space> <C-w>p<PageDown><C-w>p
 nnoremap <C-w>* <C-w>s*
 nnoremap <C-w># <C-w>s#
@@ -185,13 +179,11 @@ inoremap <C-f> <C-o>l
 inoremap <M-f> <C-o>w
 inoremap <C-b> <C-o>h
 inoremap <M-b> <C-o>b
-" inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 inoremap <C-_> <ESC>
 inoremap <C-/> <ESC>
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
-" inoremap <C-r>+ <C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>
 inoremap <C-d> <C-o>x
 
 function! ToggleSigncolumn() abort
@@ -219,7 +211,6 @@ autocmd BufNewFile,BufRead *.clje set filetype=clojure
 autocmd BufNewFile,BufRead *.dart set filetype=dart
 autocmd BufNewFile,BufRead *.io set filetype=io
 autocmd BufNewFile,BufRead *.jnlp set filetype=html
-autocmd BufNewFile,BufRead lighttpd.conf set filetype=lighttpd
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd BufNewFile,BufRead *.m set filetype=objc
 autocmd BufNewFile,BufRead *.{atd,mly,mlt} set filetype=ocaml
@@ -256,47 +247,54 @@ if has('nvim')
     \ 'do': 'bash install.sh',
     \}
 else
-  Plug 'w0rp/ale', { 'for' : ['c', 'cpp', 'cmake', 'css', 'dockerfile', 'elixir', 'go', 'haskell', 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'] }
+  Plug 'w0rp/ale', {
+    \ 'for' : [
+      \ 'c', 'cpp', 'cmake', 'css', 'dockerfile', 'elixir', 'go', 'haskell',
+      \ 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'
+      \]
+    \}
 endif
-Plug 'broadinstitute/vim-wdl', { 'for' : 'wdl' }
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ElmCast/elm-vim', { 'for' : 'elm' }
-"Plug 'haya14busa/vim-open-googletranslate', { 'on' : 'OpenGoogleTranslate' }
 Plug 'haya14busa/vim-asterisk'
-"Plug 'jceb/vim-orgmode', { 'for' : 'org' }
 Plug 'inkarkat/vim-ingo-library' | Plug 'inkarkat/vim-mark'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
-Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 'rst'] }
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/tcvime'
 Plug 'r6eve/vim-shina'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
-Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
-" Plug 'rhysd/reply.vim'
 Plug 'r6eve/reply.vim', { 'branch' : 'feature/utop-for-ocaml' }
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
-Plug 'rhysd/vim-github-actions', { 'for' : 'ghaworkflow' }
-"Plug 'rhysd/vim-grammarous', { 'on' : 'GrammarousCheck' }
 Plug 'sgur/vim-editorconfig'
 Plug 'Shougo/neosnippet.vim'
-"Plug 'thinca/vim-prettyprint'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
-Plug 'Shougo/vimproc.vim' | Plug 'thinca/vim-quickrun', { 'on' : 'QuickRun' }
 Plug 'thinca/vim-template'
 Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-"Plug 'tyru/capture.vim', { 'on' : 'Capture' }
 Plug 'tyru/caw.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
 Plug 'vim-scripts/gtags.vim'
+" Textobjs
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-user' | Plug 'glts/vim-textobj-comment'
+Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-datetime'
+Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-fold'
+Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-user' | Plug 'sgur/vim-textobj-parameter'
+Plug 'kana/vim-textobj-user' | Plug 'thinca/vim-textobj-between'
+" Operators
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-operator-user' | Plug 'kana/vim-operator-replace'
+
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
 Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
+
 " Clojure
 if has('nvim')
   Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }
@@ -309,65 +307,60 @@ else
   Plug 'guns/vim-sexp', {'for': 'clojure' }
   Plug 'liquidz/vim-iced', {'for': 'clojure' }
 endif
-" D
-"Plug 'landaire/deoplete-d', { 'for' : 'd' }
+
 " Dot
 Plug 'wannesm/wmgraphviz.vim', { 'for' : 'dot' }
+
 " Elixir
 Plug 'elixir-editors/vim-elixir', { 'for' : 'elixir' }
-" Go
-"Plug 'fatih/vim-go', { 'for' : 'go' }
+
+" Elm
+Plug 'ElmCast/elm-vim', { 'for' : 'elm' }
+
 " HTML
-Plug 'mattn/emmet-vim', { 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'css', 'scss', 'sass'] }
-" Java
-"Plug 'artur-shaik/vim-javacomplete2', { 'for' : 'java' }
+Plug 'mattn/emmet-vim', {
+  \ 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'css', 'scss', 'sass']
+  \}
+
 " JavaScript
-"Plug 'jelera/vim-javascript-syntax', { 'for' : ['javascript'] }
 Plug 'posva/vim-vue', { 'for': ['javascript', 'html'] }
 Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }
-" lighttpd
-"Plug 'glensc/vim-syntax-lighttpd', { 'for' : 'lighttpd' }
+
+" Markdown
+Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 'rst'] }
+Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
+
 " Perl
 Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
 Plug 'vim-perl/vim-perl'
+
 " Python
 Plug 'Yggdroot/indentLine', { 'for' : 'python' }
 Plug 'vim-scripts/python_match.vim', { 'for' : 'python' }
-Plug 'szymonmaszke/vimpyter'
+
 " Ruby
 Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
+
 " Rust
 Plug 'rust-lang/rust.vim'
+
 " SATySFi
 Plug 'qnighy/satysfi.vim', { 'for' : 'satysfi' }
-" Scala
-"Plug 'derekwyatt/vim-scala', { 'for' : 'scala' }
-" Scheme
-"Plug 'aharisu/vim_goshrepl', { 'for' : 'scheme' }
+
 " Shell script
 Plug 'vim-scripts/sh.vim', { 'for' : 'sh' }
+
 " TOML
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
+
 " TypeScript
-"Plug 'Quramy/tsuquyomi', { 'for' : 'typescript' }
 Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
-" Vim Script
-"Plug 'kannokanno/vmock', { 'for' : 'vim' }
-"Plug 'thinca/vim-themis', { 'for' : 'vim' }
 
-" textobjs
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-user' | Plug 'glts/vim-textobj-comment'
-Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-datetime'
-Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-fold'
-Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-user' | Plug 'sgur/vim-textobj-parameter'
-Plug 'kana/vim-textobj-user' | Plug 'thinca/vim-textobj-between'
+" WDL
+Plug 'broadinstitute/vim-wdl', { 'for' : 'wdl' }
 
-" operators
-Plug 'kana/vim-operator-user'
-Plug 'kana/vim-operator-user' | Plug 'kana/vim-operator-replace'
+" Workflow with GitHub Actions
+Plug 'rhysd/vim-github-actions', { 'for' : 'ghaworkflow' }
 
 call plug#end()
 
@@ -495,17 +488,7 @@ map gz# <Plug>(asterisk-z#)<Plug>(anzu-update-search-status-with-echo)
 
 let g:asterisk#keeppos = 1
 
-"" ctrlpvim/ctrlp.vim{{{2
-" let g:ctrlp_show_hidden = 1
-" let g:ctrlp_custom_ignore = { 'dir': '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll|swp|pdf|DS_Store)$', }
-" let g:ctrlp_max_files = 500
-" let g:ctrlp_max_depth = 5
-" let g:ctrlp_open_new_file = 'h'
-" let g:ctrlp_tilde_homedir = 1
-" let g:ctrlp_follow_symlinks = 2
-
 " r6eve/tcvime{{{2
-" let tcvime_keymap = 'tcode'
 let tcvime_keymap = 'gcode'
 let tcvime_no_default_key_mappings = 1
 imap <unique> <silent> <C-a>q <Plug>TcvimeIStart
@@ -513,9 +496,6 @@ imap <unique> <silent> <C-a><Space> <Plug>TcvimeIConvOrStart
 imap <unique> <silent> <C-a>a <Plug>TcvimeIDisableKeymap
 nmap <unique> <silent> <C-a>? <Plug>TcvimeNHelp
 " let plugin_tcvime_disable = 1
-
-"" haya14busa/vim-open-googletranslate{{{2
-"let g:opengoogletranslate#default_lang = 'ja'
 
 " inkarkat/vim-mark{{{2
 let g:mw_no_mappings = 1
@@ -791,9 +771,6 @@ call submode#enter_with('move-to-fold', 'n', '', 'zk', 'zk')
 call submode#map('move-to-fold', 'n', '', 'j', 'zj')
 call submode#map('move-to-fold', 'n', '', 'k', 'zk')
 
-" kannokanno/previm{{{2
-autocmd Filetype markdown,rst nmap <Leader>p :<C-u>PrevimOpen<CR>
-
 " osyo-manga/vim-anzu{{{2
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
@@ -836,41 +813,11 @@ let g:reply_repls = {
 " rhysd/vim-color-spring-night{{{2
 colorscheme spring-night
 
-"" rhysd/vim-grammarous{{{2
-"let g:grammarous#default_comments_only_filetypes = {
-"            \ '*' : 1, 'help' : 0, 'markdown' : 0,
-"            \ }
-"let g:grammarous#disabled_rules = {
-"            \ '*' : ['EN_QUOTES', 'UPPERCASE_SENTENCE_START', 'WHITESPACE_RULE'],
-"            \ }
-
 " Shougo/neosnippet{{{2
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 let g:neosnippet#disable_runtime_snippets = { '_' : 1 }
-let g:neosnippet#snippets_directory='~/.vim/snippets'
-
-" thinca/vim-quickrun{{{2
-nnoremap <silent><Leader>r :<C-u>QuickRun<CR>
-let g:quickrun_config = {
-  \  '_' : {
-  \    'runner' : 'vimproc',
-  \    'runner/vimproc/updatetime' : 500
-  \  },
-  \  'c' : {
-  \    'cmdopt' : '-std=c99 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
-  \  },
-  \  'cpp' : {
-  \    'cmdopt' : '-std=c++11 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
-  \  },
-  \  'lisp' : { 'command' : 'sbcl' },
-  \  'r': {
-  \    'command': 'Rscript',
-  \    'exec' : '%c %o --no-save --slave %s %a'
-  \  },
-  \  'st' : { 'command' : 'gst' },
-  \  'scheme' : { 'command' : 'gosh' }
-  \}
+let g:neosnippet#snippets_directory = '~/.vim/snippets'
 
 " tyru/open-browser{{{2
 nmap <Leader>o <Plug>(openbrowser-smart-search)
@@ -903,9 +850,6 @@ map _ <Plug>(operator-replace)
 
 " vim-scripts/gtags.vim{{{2
 autocmd FileType c,cpp nmap <silent><Leader>g :Gtags -f %<CR>
-
-" C/C++{{{2
-autocmd FileType c,cpp nmap <silent><Leader>f :ClangFormat<CR>
 
 " Clojure{{{2
 if has('nvim')
@@ -947,20 +891,20 @@ let g:WMGraphviz_output = 'png'
 let g:WMGraphviz_viewer = 'firefox'
 let g:WMGraphviz_shelloptions = '-Gdpi=300'
 
-" Java{{{2
-" let g:JavaComplete_EnableDefaultMappings = 0
-
 " Fortran{{{2
-let g:fortran_fixed_source=1
-let g:fortran_more_precise=1
+let g:fortran_fixed_source = 1
+let g:fortran_more_precise = 1
 
 " HTML{{{2
 let g:html_indent_inctags = "html,body,head,tbody"
 
 " LaTeX{{{2
-let g:tex_conceal=""
-let g:tex_flavor='latex'
+let g:tex_conceal = ""
+let g:tex_flavor = 'latex'
 autocmd FileType tex set spell
+
+" Markdown{{{2
+autocmd Filetype markdown,rst nmap <Leader>p :<C-u>PrevimOpen<CR>
 
 " OCaml{{{2
 if executable('ocamlmerlin') && has('python')
@@ -970,19 +914,16 @@ end
 autocmd FileType ocaml set commentstring=(*%s*)
 autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo
 
-" Python{{{2
-autocmd Filetype ipynb nmap <silent><Leader>p :VimpyterStartJupyter<CR>
-
 " R{{{2
 let vimrplugin_assign = 0
 let g:tagbar_type_r = {
-    \ 'ctagstype' : 'r',
-    \ 'kinds'     : [
-        \ 'f:Functions',
-        \ 'g:GlobalVariables',
-        \ 'v:FunctionVariables',
-    \ ]
-\ }
+  \ 'ctagstype' : 'r',
+  \ 'kinds' : [
+    \ 'f:Functions',
+    \ 'g:GlobalVariables',
+    \ 'v:FunctionVariables',
+    \]
+\}
 
 " Ruby{{{2
 let g:ruby_path = ""
@@ -990,9 +931,6 @@ if !exists('loaded_matchit')
   runtime macros/matchit.vim
 endif
 autocmd FileType ruby call smartinput_endwise#define_default_rules()
-
-" Scheme{{{2
-"autocmd FileType scheme vmap <C-j> <Plug>(gosh_repl_send_block)
 
 " Shell script{{{2
 let g:sh_indent_case_labels=1

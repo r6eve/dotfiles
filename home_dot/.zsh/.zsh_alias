@@ -7,7 +7,7 @@
 # alias alfgrep='fgrep -n --color=always'
 alias ag='ag -U --hidden --ignore-dir .git --ignore-dir _build'
 alias fd='fd --no-ignore-vcs'
-alias i3lock='i3lock --color=c0dbb1'
+alias i3lock='i3lock --color=54fe54'
 alias ls='ls -F --color=auto'
 alias sl='ls -F --color=auto'
 alias la='ls -AF --color=auto'

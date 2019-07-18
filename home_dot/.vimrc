@@ -295,6 +295,9 @@ Plug 'kana/vim-operator-user' | Plug 'kana/vim-operator-replace'
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
 Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 
+" CWL
+Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
+
 " Clojure
 if has('nvim')
   Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }

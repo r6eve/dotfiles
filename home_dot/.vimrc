@@ -308,7 +308,9 @@ if has('nvim')
   Plug 'vim-syntastic/syntastic', { 'for' : 'clojure' }
 else
   Plug 'guns/vim-sexp', {'for' : 'clojure' }
+  " Plug 'prabirshrestha/asyncomplete.vim', {'for' : 'clojure' }
   Plug 'liquidz/vim-iced', {'for' : 'clojure' }
+  " Plug 'liquidz/vim-iced-asyncomplete', {'for' : 'clojure'}
 endif
 
 " Dot

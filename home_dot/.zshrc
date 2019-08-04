@@ -96,8 +96,8 @@ precmd() {
 }
 setopt PROMPT_SUBST
 NEWLINE=$'\n'
-PROMPT="%B%K{blue}%F{green}@%m%k%b%f%B%K{blue}%F{green}[%39<...<%~]%*%f%k%f%1(v|%F{green}%1v%f|)%K{red}%F{green}%(?..[%?])%f%k${NEWLINE}%B%K{blue}%F{green}( l_l )%f%k%b "
-PROMPT2="%B%K{red}%F{green}@%m%k%b%f%B%K{red}%F{green}[%39<...<%~]%*%f%k%f%1(v|%F{green}%1v%f|)%K{red}%F{green}%(?..[%?])%f%k${NEWLINE}%B%K{red}%F{green}( l_l )%f%k%b "
+PROMPT="%B%K{blue}%F{green}@%m%k%b%f%B%K{blue}%F{green}[%39<...<%~]%D{%H:%M:%S}%f%k%f%1(v|%F{green}%1v%f|)%K{red}%F{green}%(?..[%?])%f%k${NEWLINE}%B%K{blue}%F{green}( l_l )%f%k%b "
+PROMPT2="%B%K{red}%F{green}@%m%k%b%f%B%K{red}%F{green}[%39<...<%~]%D{%H:%M:%S}%f%k%f%1(v|%F{green}%1v%f|)%K{red}%F{green}%(?..[%?])%f%k${NEWLINE}%B%K{red}%F{green}( l_l )%f%k%b "
 SPROMPT='Correct> '''%r''' [Yes No Abort Edit]?'
 TMOUT=1
 TRAPALRM() {

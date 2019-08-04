@@ -307,8 +307,8 @@ if has('nvim')
   Plug 'venantius/vim-eastwood', { 'for' : 'clojure' }
   Plug 'vim-syntastic/syntastic', { 'for' : 'clojure' }
 else
-  Plug 'guns/vim-sexp', {'for': 'clojure' }
-  Plug 'liquidz/vim-iced', {'for': 'clojure' }
+  Plug 'guns/vim-sexp', {'for' : 'clojure' }
+  Plug 'liquidz/vim-iced', {'for' : 'clojure' }
 endif
 
 " Dot
@@ -326,7 +326,7 @@ Plug 'mattn/emmet-vim', {
   \}
 
 " JavaScript
-Plug 'posva/vim-vue', { 'for': ['javascript', 'html'] }
+Plug 'posva/vim-vue', { 'for' : ['javascript', 'html'] }
 Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }
 
 " Markdown

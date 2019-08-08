@@ -125,7 +125,6 @@ exec --no-startup-id fcitx-autostart
 exec --no-startup-id /home/r6eve/.dropbox-dist/dropboxd
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
-exec --no-startup-id eval $(ssh-agent)
 exec --no-startup-id gpg-agent --daemon
 
 # switch to workspace

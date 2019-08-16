@@ -941,5 +941,16 @@ autocmd FileType ruby call smartinput_endwise#define_default_rules()
 " Shell script{{{2
 let g:sh_indent_case_labels=1
 
+" development settings{{{1
+" Vim の開発中のプラグインをON/OFFする方法 — KaoriYa https://www.kaoriya.net/blog/2015/12/01/vim-switch-developing-plugin/
+let dirs = [ $HOME.'/repos', $HOME.'/workspace' ]
+for pattern in [ 'vim-*', '*-vim' ]
+  for path in globpath(join(dirs, ','), pattern, 0, 1)
+    if isdirectory(path) && filereadable(path . '/VIM_AUTO_RTP')
+      let &runtimepath = &runtimepath.','.path
+    end
+  endfor
+endfor
+
 " __END__{{{1
 " vim: foldmethod=marker

@@ -62,7 +62,7 @@ alias iperl='perl -de0'
 alias plint='perl -MO=Lint,all'
 
 # R{{{1
-alias R='R --vanilla -q'
+alias R='R --no-save --no-restore --no-site-file --no-environ -q'
 alias Rscript='Rscript --vanilla'
 
 # Rust{{{1

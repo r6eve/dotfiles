@@ -301,7 +301,7 @@ Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
 
 " Clojure
 if has('nvim')
-  Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }
+  " Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }
   Plug 'tpope/vim-salve', { 'for' : 'clojure' }
   Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
   Plug 'venantius/vim-cljfmt', { 'for' : 'clojure' }
@@ -378,7 +378,8 @@ let g:deoplete#max_abbr_width = 0
 let g:deoplete#max_menu_width = 0
 let g:deoplete#keyword_patterns = {}
 let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
-let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
+" Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }
+" let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 let g:deoplete#omni#input_patterns = {}
 let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
 let g:deoplete#omni#functions = {}

@@ -46,4 +46,6 @@
 [include]
 	path = ~/.gitconfig.private
 [includeIf "gitdir:~/workspace/"]
-	path = ~/workspace/.gitconfig
+	path = ~/.gitconfig.work
+[includeIf "gitdir:/mnt/"]
+	path = ~/.gitconfig.mnt

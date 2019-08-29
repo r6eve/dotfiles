@@ -1,0 +1,44 @@
+if !1 | finish | endif
+
+" -u ~/.min_vimrc
+
+" basic settings{{{1
+set nocompatible
+set encoding=utf-8
+scriptencoding utf-8
+set fileencoding=utf-8
+language message C
+language time C
+set langmenu=none
+let g:mapleader = ','
+set t_Co=256
+set vb t_vb=
+set nobackup
+set mouse=
+
+" vim-plug{{{1
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+call plug#end()
+
+" advanced settings{{{1
+
+" development settings{{{1
+" Vim の開発中のプラグインをON/OFFする方法 — KaoriYa https://www.kaoriya.net/blog/2015/12/01/vim-switch-developing-plugin/
+let dirs = [ $HOME.'/repos', $HOME.'/workspace' ]
+for pattern in [ 'vim-*', '*-vim' ]
+  for path in globpath(join(dirs, ','), pattern, 0, 1)
+    if isdirectory(path) && filereadable(path . '/VIM_AUTO_RTP')
+      let &runtimepath = &runtimepath.','.path
+    end
+  endfor
+endfor
+
+" __END__{{{1
+" vim: foldmethod=marker

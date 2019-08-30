@@ -21,6 +21,7 @@ alias di='colordiff -uw'
 alias diff='colordiff'
 alias gdb='gdb -quiet'
 alias jobs='jobs -l'
+alias ltool="java -jar $HOME/.vim/plugged/vim-grammarous/misc/LanguageTool-4.6/languagetool-commandline.jar --language en --disable 'ARROWS,COMMA_PARENTHESIS_WHITESPACE,DASH_RULE,DOUBLE_PUNCTUATION,ENGLISH_WORD_REPEAT_RULE,EN_QUOTES,EN_UNPAIRED_BRACKETS,I_LOWERCASE,MULTIPLICATION_SIGN,PLUS_MINUS,SENTENCE_WHITESPACE,THE_PUNCT,WHITESPACE_RULE,WORD_CONTAINS_UNDERSCORE,UNLIKELY_OPENING_PUNCTUATION,UPPERCASE_SENTENCE_START'"
 alias parallel='parallel --no-notice'
 alias q='exit'
 alias time='/usr/bin/time'

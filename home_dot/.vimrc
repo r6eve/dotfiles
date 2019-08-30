@@ -269,6 +269,7 @@ Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'r6eve/reply.vim', { 'branch' : 'feature/utop-for-ocaml' }
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
+Plug 'rhysd/vim-grammarous'
 Plug 'sgur/vim-editorconfig'
 Plug 'Shougo/neosnippet.vim'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
@@ -819,6 +820,11 @@ let g:reply_repls = {
 
 " rhysd/vim-color-spring-night{{{2
 colorscheme spring-night
+
+" rhysd/vim-grammarous{{{2
+let g:grammarous#default_comments_only_filetypes = {
+\ '*' : 1, 'help' : 0,
+\ }
 
 " Shougo/neosnippet{{{2
 imap <C-k> <Plug>(neosnippet_expand_or_jump)

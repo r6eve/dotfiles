@@ -220,6 +220,7 @@ autocmd BufNewFile,BufRead *.scala set filetype=scala
 autocmd BufNewFile,BufRead *.test set filetype=text
 autocmd BufNewFile,BufRead *.toml set filetype=toml
 autocmd BufNewFile,BufRead *.ts set filetype=typescript
+autocmd BufNewFile,BufRead *.vimspec set filetype=vim
 
 " vim-plug{{{1
 if empty(glob('~/.vim/autoload/plug.vim'))

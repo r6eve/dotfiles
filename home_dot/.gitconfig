@@ -34,6 +34,7 @@
 	loc = log -p --color-words
 	lon = log --name-status
 	lop = log -p
+	los = log --stat
 	mg = merge
 	mgn = merge --no-ff
 	ps = push

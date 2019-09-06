@@ -249,7 +249,7 @@ if has('nvim')
     \ 'do': 'bash install.sh',
     \}
 else
-  Plug 'w0rp/ale', {
+  Plug 'dense-analysis/ale', {
     \ 'for' : [
       \ 'c', 'cpp', 'cmake', 'css', 'dockerfile', 'elixir', 'go', 'haskell',
       \ 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'
@@ -435,7 +435,7 @@ if has('nvim')
   autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
   autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
 else
-  " w0rp/ale
+  " dense-analysis/ale
   let g:ale_lint_on_text_changed = 'normal'
   let g:ale_set_balloons = 0
   let g:airline#extensions#ale#enabled = 0

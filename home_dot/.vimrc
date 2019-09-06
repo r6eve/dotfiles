@@ -243,19 +243,12 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'AndrewRadev/linediff.vim'
-if has('nvim')
-  Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \}
-else
-  Plug 'dense-analysis/ale', {
-    \ 'for' : [
-      \ 'c', 'cpp', 'cmake', 'css', 'dockerfile', 'elixir', 'go', 'haskell',
-      \ 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'
-      \]
-    \}
-endif
+Plug 'dense-analysis/ale', {
+  \ 'for' : [
+    \ 'c', 'cpp', 'cmake', 'css', 'dockerfile', 'elixir', 'go', 'haskell',
+    \ 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'
+    \]
+  \}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'inkarkat/vim-ingo-library' | Plug 'inkarkat/vim-mark'
@@ -302,19 +295,17 @@ Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
 
 " Clojure
-if has('nvim')
-  " Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }
-  Plug 'tpope/vim-salve', { 'for' : 'clojure' }
-  Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
-  Plug 'venantius/vim-cljfmt', { 'for' : 'clojure' }
-  Plug 'venantius/vim-eastwood', { 'for' : 'clojure' }
-  Plug 'vim-syntastic/syntastic', { 'for' : 'clojure' }
-else
-  Plug 'guns/vim-sexp', {'for' : 'clojure' }
-  " Plug 'prabirshrestha/asyncomplete.vim', {'for' : 'clojure' }
-  Plug 'liquidz/vim-iced', {'for' : 'clojure' }
-  " Plug 'liquidz/vim-iced-asyncomplete', {'for' : 'clojure'}
-endif
+Plug 'guns/vim-sexp', {'for' : 'clojure' }
+" Plug 'prabirshrestha/asyncomplete.vim', {'for' : 'clojure' }
+Plug 'liquidz/vim-iced', {'for' : 'clojure' }
+" Plug 'liquidz/vim-iced-asyncomplete', {'for' : 'clojure'}
+"
+" " vim-fireplace
+" Plug 'tpope/vim-salve', { 'for' : 'clojure' }
+" Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
+" Plug 'venantius/vim-cljfmt', { 'for' : 'clojure' }
+" Plug 'venantius/vim-eastwood', { 'for' : 'clojure' }
+" Plug 'vim-syntastic/syntastic', { 'for' : 'clojure' }
 
 " Dot
 Plug 'wannesm/wmgraphviz.vim', { 'for' : 'dot' }
@@ -411,79 +402,54 @@ call denite#custom#option('default', 'prompt', '>')
 " AndrewRadev/linediff.vim{{{2
 vnoremap <silent><Leader>d :Linediff<CR>
 
-" Language Server Protocol{{{2
-if has('nvim')
-  " autozimu/LanguageClient-neovim
-  let g:LanguageClient_serverCommands = {
-    \ 'cpp': ['clangd'],
-    \ 'go': ['go-langserver'],
-    \ 'javascript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
-    \ 'typescript': ['/usr/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
-    \ 'ocaml': ['ocaml-language-server', '--stdio'],
-    \ 'php': ['php', $HOME.'/.config/composer/vendor/bin/php-language-server.php'],
-    \ 'python': ['pyls'],
-    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-    \ }
+" dense-analysis/ale{{{2
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_set_balloons = 0
+let g:airline#extensions#ale#enabled = 0
+let g:ale_set_highlights = 0
 
-  autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript set signcolumn=yes
+" Java
+" FIX: Does not work.
+" let g:ale_java_javalsp_jar = "/path/to/out/fat-jar.jar"
 
-  let g:LanguageClient_autoStart = 1
-  let g:LanguageClient_diagnosticsList = "location"
+" Rust
+let g:ale_rust_rls_toolchain = 'stable'
 
-  autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent>K :call LanguageClient_textDocument_hover()<CR>
-  autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>t :call LanguageClient_textDocument_definition()<CR>
-  autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>s <C-w>s:call LanguageClient_textDocument_definition()<CR>
-  autocmd FileType cpp,go,javascript,ocaml,php,python,rust,typescript nnoremap <silent><Leader>b :call LanguageClient_textDocument_documentSymbol()<CR>:Denite documentSymbol<CR>
-else
-  " dense-analysis/ale
-  let g:ale_lint_on_text_changed = 'normal'
-  let g:ale_set_balloons = 0
-  let g:airline#extensions#ale#enabled = 0
-  let g:ale_set_highlights = 0
+" let g:ale_sign_column_always = 1 " Too slow.
+autocmd FileType c,cpp,cmake,css,dockerfile,elixir,go,haskell,java,javascript,ocaml,python,r,rust,scss,sh set signcolumn=yes
 
-  " Java
-  " FIX: Does not work.
-  " let g:ale_java_javalsp_jar = "/path/to/out/fat-jar.jar"
+let g:ale_fixers = {
+  \ 'c': ['clang-format'],
+  \ 'cpp': ['clang-format'],
+  \ 'cmake': ['cmakelint'],
+  \ 'css': ['prettier'],
+  \ 'go': ['gofmt'],
+  \ 'haskell': ['stylish-haskell'],
+  \ 'java': ['google_java_format'],
+  \ 'javascript': ['prettier'],
+  \ 'ocaml': ['ocp-indent'],
+  \ 'python': ['yapf'],
+  \ 'r': ['styler'],
+  \ 'rust': ['rustfmt'],
+  \ 'scss': ['prettier'],
+  \ 'sh': ['shfmt'],
+  \ }
 
-  " Rust
-  let g:ale_rust_rls_toolchain = 'stable'
+let g:ale_linters = {
+  \ 'elixir': ['elixir-ls', 'mix'],
+  \ 'python': ['pyls'],
+  \ }
 
-  " let g:ale_sign_column_always = 1 " Too slow.
-  autocmd FileType c,cpp,cmake,css,dockerfile,elixir,go,haskell,java,javascript,ocaml,python,r,rust,scss,sh set signcolumn=yes
+let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}
 
-  let g:ale_fixers = {
-    \ 'c': ['clang-format'],
-    \ 'cpp': ['clang-format'],
-    \ 'cmake': ['cmakelint'],
-    \ 'css': ['prettier'],
-    \ 'go': ['gofmt'],
-    \ 'haskell': ['stylish-haskell'],
-    \ 'java': ['google_java_format'],
-    \ 'javascript': ['prettier'],
-    \ 'ocaml': ['ocp-indent'],
-    \ 'python': ['yapf'],
-    \ 'r': ['styler'],
-    \ 'rust': ['rustfmt'],
-    \ 'scss': ['prettier'],
-    \ 'sh': ['shfmt'],
-    \ }
+let g:ale_elixir_elixir_ls_release = $HOME . '/repos/elixir-ls/rel'
+let g:ale_ocaml_ocp_indent_config = "JaneStreet"
 
-  let g:ale_linters = {
-    \ 'elixir': ['elixir-ls', 'mix'],
-    \ 'python': ['pyls'],
-    \ }
-
-  let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}
-
-  let g:ale_elixir_elixir_ls_release = $HOME . '/repos/elixir-ls/rel'
-  let g:ale_ocaml_ocp_indent_config = "JaneStreet"
-
-  autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent>K <Plug>(ale_find_references)
-  autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>f <Plug>(ale_fix)
-  autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-]> <Plug>(ale_go_to_definition)
-  autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
-  autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-T> <C-O>
-endif
+autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent>K <Plug>(ale_find_references)
+autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>f <Plug>(ale_fix)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-]> <Plug>(ale_go_to_definition)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-T> <C-O>
 
 " haya14busa/vim-asterisk{{{2
 map *   <Plug>(asterisk-g*)<Plug>(anzu-update-search-status-with-echo)
@@ -863,39 +829,34 @@ map _ <Plug>(operator-replace)
 autocmd FileType c,cpp nmap <silent><Leader>g :Gtags -f %<CR>
 
 " Clojure{{{2
-if has('nvim')
-  " venantius/vim-cljfmt
-  autocmd FileType clojure nmap <silent><Leader>f :Cljfmt<CR>
-  let g:clj_fmt_autosave = 0
+" guns/vim-sexp
+let g:sexp_mappings = {'sexp_indent': '', 'sexp_indent_top': ''}
 
-  " vim-syntastic/syntastic
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 1
-  let g:syntastic_always_populate_loc_list = 0
-  let g:syntastic_auto_loc_list = 0
-  let g:syntastic_clojure_checkers = ['eastwood']
-  autocmd FileType clojure set signcolumn=yes
-else
-  " guns/vim-sexp
-  let g:sexp_mappings = {'sexp_indent': '', 'sexp_indent_top': ''}
+" liquidz/vim-iced
+let g:iced#buffer#stdout#file = '/tmp/vim-iced.clj'
+let g:iced#eastwood#option = {
+    \ 'linters': ['all'],
+    \ }
+let g:iced#format#rule = {
+    \ 'merr.core/let': '[[:block 2] [:inner 1]]',
+    \ }
+let g:iced_enable_auto_linting = v:true
+let g:iced_enable_default_key_mappings = v:true
 
-  " liquidz/vim-iced
-  let g:iced#buffer#stdout#file = '/tmp/vim-iced.clj'
+autocmd FileType clojure set signcolumn=yes
+autocmd FileType clojure silent! nmap <buffer><Leader>st <Plug>(iced_toggle_src_and_test)
 
-  let g:iced#format#rule = {
-      \ 'merr.core/let': '[[:block 2] [:inner 1]]',
-      \ }
-
-  let g:iced#eastwood#option = {
-      \ 'linters': ['all'],
-      \ }
-  let g:iced_enable_auto_linting = v:true
-  autocmd FileType clojure set signcolumn=yes
-
-  autocmd FileType clojure silent! nmap <buffer><Leader>st <Plug>(iced_toggle_src_and_test)
-
-  let g:iced_enable_default_key_mappings = v:true
-endif
+" " vim-fireplace
+" " venantius/vim-cljfmt
+" autocmd FileType clojure nmap <silent><Leader>f :Cljfmt<CR>
+" let g:clj_fmt_autosave = 0
+" " vim-syntastic/syntastic
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 1
+" let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_clojure_checkers = ['eastwood']
+" autocmd FileType clojure set signcolumn=yes
 
 " Dot{{{2
 let g:WMGraphviz_output = 'png'

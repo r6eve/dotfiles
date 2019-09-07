@@ -5,7 +5,7 @@ set mail_check = 60
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
 set include
-set editor = "vim %s"
+set editor = "nvim %s"
 set tilde = yes
 set delete = yes
 set pager_stop

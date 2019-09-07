@@ -1,7 +1,7 @@
 # zshparam{{{1
 stty 115200
 export WORDCHARS=
-export EDITOR=vim
+export EDITOR=nvim
 export LANG=en_US.UTF-8
 export LC_COLLATE=C
 export TERM=xterm-256color

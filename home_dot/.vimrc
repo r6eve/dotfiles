@@ -73,6 +73,7 @@ set concealcursor=
 set list
 set listchars=tab:>\･
 set guicursor=
+autocmd VimLeave * set guicursor=
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 if !has('nvim')
@@ -296,9 +297,8 @@ Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
 
 " Clojure
 Plug 'guns/vim-sexp', {'for' : 'clojure' }
-" Plug 'prabirshrestha/asyncomplete.vim', {'for' : 'clojure' }
 Plug 'liquidz/vim-iced', {'for' : 'clojure' }
-" Plug 'liquidz/vim-iced-asyncomplete', {'for' : 'clojure'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'} | Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 "
 " " vim-fireplace
 " Plug 'tpope/vim-salve', { 'for' : 'clojure' }

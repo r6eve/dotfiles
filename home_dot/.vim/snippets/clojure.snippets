@@ -4,3 +4,13 @@ abbr pprint
 snippet mprint
 abbr mpprint
 	(#(do (clojure.pprint/pprint %) %))
+snippet dump-method
+abbr dump-method
+	(defn- dump-method!
+		[x]
+		(->> x
+		     clojure.reflect/reflect
+		     :members
+		     (sort-by :name)
+		     (clojure.pprint/print-table
+		      [:name :flags :parameter-types :return-type])))

@@ -27,8 +27,11 @@ __pycache__
 *.cmt
 *.cmti
 *.cmx
-.m2
-.eastwood
+/.m2
+/.eastwood
+/.classpath
+/.project
+/.settings
 
 # Executables
 a.out

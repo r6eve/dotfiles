@@ -72,6 +72,7 @@ set conceallevel=0
 set concealcursor=
 set list
 set listchars=tab:>\･
+set wildignore=*.a,*.class,*.cma,*.cmt,*.cmti,*.cmxa,*.cmxs,*.exe
 set guicursor=
 autocmd VimLeave * set guicursor=
 let g:python_host_prog = '/usr/bin/python2'

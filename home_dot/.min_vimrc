@@ -16,6 +16,9 @@ set vb t_vb=
 set nobackup
 set mouse=
 
+" key mapping{{{1
+noremap ; :
+
 " vim-plug{{{1
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs

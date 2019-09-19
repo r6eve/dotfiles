@@ -61,7 +61,7 @@ set timeoutlen=500
 set ttimeout
 set ttimeoutlen=50
 set display=lastline
-set statusline=%f%m%=\ %{shina#face()}%-14.(%l/%L,%v%)\ %P
+set statusline=%f%m%=\ %-14.(%l/%L,%v%)\ %P
 set spelllang+=cjk
 set matchpairs+=（:）,「:」,『:』,＜:＞,【:】,⥹:⥻
 set hidden
@@ -259,7 +259,6 @@ Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/tcvime'
-Plug 'r6eve/vim-shina'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'r6eve/reply.vim', { 'branch' : 'feature/utop-for-ocaml' }

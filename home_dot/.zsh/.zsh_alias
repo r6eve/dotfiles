@@ -70,7 +70,3 @@ alias plint='perl -MO=Lint,all'
 alias R='R --no-save --no-restore --no-site-file --no-environ -q'
 alias Rscript='Rscript --vanilla'
 
-# Rust{{{1
-alias clippy='rustup run nightly cargo clippy'
-alias bench='rustup run nightly cargo bench'
-alias cfmt='rustup run nightly cargo fmt'

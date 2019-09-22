@@ -36,6 +36,7 @@ set history=100
 set autoread
 set wildmenu
 set incsearch
+set inccommand=nosplit
 set hlsearch
 set ignorecase
 set smartcase

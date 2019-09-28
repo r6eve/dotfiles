@@ -15,16 +15,16 @@ set vb t_vb=
 set nobackup
 set backupskip=/tmp/*,/private/tmp/*
 set swapfile
-if !isdirectory($HOME . '/.vim_swap')
-  call mkdir($HOME . '/.vim_swap', 'p')
-endif
 set directory=~/.vim_swap
+if !isdirectory(&directory)
+  call mkdir(&directory, 'p')
+endif
 if has('persistent_undo')
-  if !isdirectory($HOME . '/.vim_undo')
-    call mkdir($HOME . '/.vim_undo', 'p')
-  endif
-  set undodir=~/.vim_undo
   set undofile
+  set undodir=~/.vim_undo
+  if !isdirectory(&undodir)
+    call mkdir(&undodir, 'p')
+  endif
 endif
 set ruler
 set laststatus=2

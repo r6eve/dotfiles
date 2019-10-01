@@ -262,7 +262,6 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/tcvime'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
-Plug 'r6eve/reply.vim', { 'branch' : 'feature/utop-for-ocaml' }
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 Plug 'rhysd/vim-grammarous'

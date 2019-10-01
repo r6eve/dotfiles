@@ -82,7 +82,7 @@ if !has('nvim')
   set pyx=3
 endif
 syntax enable
-autocmd ColorScheme * highlight Normal cterm=none ctermfg=Green ctermbg=none gui=none guifg=#fffeeb guibg=#020814
+autocmd ColorScheme * highlight Normal cterm=none ctermfg=14 ctermbg=none gui=none guifg=#fffeeb guibg=#020814
 autocmd ColorScheme * highlight Ignore cterm=none ctermfg=231 gui=none guifg=#fffeeb
 autocmd ColorScheme * highlight EndOfBuffer cterm=none ctermfg=242 gui=none guifg=#fffeeb
 autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#3a4b5c

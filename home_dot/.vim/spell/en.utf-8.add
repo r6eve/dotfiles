@@ -450,3 +450,8 @@ transducible
 transducing
 transduce
 automagically
+toplevel
+mutex
+SRFI
+multibyte
+builtin

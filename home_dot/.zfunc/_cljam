@@ -1,0 +1,39 @@
+#compdef cljam
+
+zstyle -T ':completion:*:*:cljam:*' tag-order && \
+  zstyle ':completion:*:*:cljam:*' tag-order 'common-commands'
+
+_cljam() {
+  local context state state_descr line
+  typeset -A opt_args
+
+  _arguments \
+      '(- 1 *)'{-h,--help}'[Show help]' \
+      '1: :->command' \
+      '*:: :->args'
+
+  case $state in
+    command)
+      _alternative 'common-commands:common:_cljam_cmds'
+      ;;
+  esac
+}
+
+_cljam_cmds() {
+  local -a commands
+  commands=(
+    'view:Extract/print all or sub alignments in SAM or BAM format.'
+    'convert:Convert file format based on the file extension.'
+    'normalize:Normalize references of alignments.'
+    'sort:Sort alignments by leftmost coordinates.'
+    'index:Index sorted alignment for fast random access.'
+    'pileup:Generate pileup for the BAM file.'
+    'faidx:Index reference sequence in the FASTA format.'
+    'dict:Create a FASTA sequence dictionary file.'
+    'level:Add level of alignments.'
+    'version:Print version number.'
+  )
+  _describe -t common-commands 'common commands' commands
+}
+
+_cljam

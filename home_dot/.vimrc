@@ -52,6 +52,7 @@ set cinoptions=(0,g0,t0
 set keywordprg=:help
 set splitright
 set splitbelow
+set nostartofline
 autocmd BufNewFile,BufRead *.{md,tsv} set nostartofline
 set completeopt-=preview
 set nrformats=hex,alpha

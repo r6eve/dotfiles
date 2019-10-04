@@ -5,7 +5,6 @@ zstyle -T ':completion:*:*:cljam:*' tag-order && \
 
 _cljam() {
   local state
-  typeset -A opt_args
 
   _arguments \
     '(- 1 *)'{-h,--help}'[Show help]' \
@@ -17,7 +16,7 @@ _cljam() {
       _alternative 'common-commands:common:_cljam_cmds'
       ;;
     args)
-      case "$words[1]" in
+      case "${words[1]}" in
         convert)
           _arguments \
             '(-t, --thread)'{-t,--thread}'[Number of threads (0 is auto)]' \

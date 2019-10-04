@@ -1,0 +1,46 @@
+#compdef iced
+
+zstyle -T ':completion:*:*:iced:*' tag-order && \
+  zstyle ':completion:*:*:iced:*' tag-order 'common-commands'
+
+_iced() {
+  local state
+
+  _arguments \
+    '(- 1 *)'{-h,--help}'[Show help]' \
+    '1: :->command' \
+    '*:: :->args'
+
+  case "$state" in
+    command)
+      _alternative 'common-commands:common:_iced_cmds'
+      ;;
+    args)
+      case "${words[1]}" in
+        repl)
+          _arguments \
+            '--with-cljs[Enables ClojureScript features]' \
+            '--without-cljs[Disables ClojureScript features]' \
+            '--with-kaocha[Enables testing with Kaocha features]' \
+            '--dependency[Adds extra dependency]' \
+            '--middleware[Adds extra nrepl middleware]' \
+            '--force-boot[Force to use Boot]' \
+            '--force-clojure-cli[Force to use Clojure CLI]' \
+            '--instant[Launch instant REPL via Clojure CLI]' \
+            '(-h, --help)'{-h,--help}'[Print help]' \
+            ;;
+      esac
+      ;;
+  esac
+}
+
+_iced_cmds() {
+  local -a commands
+  commands=(
+    'repl:Start repl'
+    'version:Print vim-iced version'
+  )
+  _describe -t common-commands 'common commands' commands
+}
+
+_iced

@@ -59,7 +59,7 @@ export PATH="$HOME/.local/bin:$PATH"  # pip install --user
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
 # Ruby{{{1
-export PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
 # Rust{{{1
 export PATH="$HOME/.cargo/bin:$PATH"

@@ -67,7 +67,7 @@ _cljam() {
             '(-s, --simple)'{-s,--simple}'[Output only pileup count.]' \
             '(-r, --region)'{-r,--region}'[Only pileup in region. (e.g. chr6:1000-2000)]' \
             '(-t, --thread)'{-t,--thread}'[Number of threads (0 is auto)]' \
-            '(-f, --ref)'{-f,--ref}'[Reference file in the FASTA format. (defaults to nil)]: :_files -/' \
+            '(-f, --ref)'{-f,--ref}'[Reference file in the FASTA format. (defaults to nil)]' \
             '(-h, --help)'{-h,--help}'[Print help]' \
             '*: :_files -/'
             ;;

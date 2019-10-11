@@ -26,67 +26,67 @@ _cljam() {
       case "${words[1]}" in
         convert)
           _arguments \
-            '(-t, --thread)'{-t,--thread}'[Number of threads (0 is auto)]' \
-            '(-h, --help)'{-h,--help}'[Print help]' \
-            '*: :_files -/'
+            '(-t,--thread)'{-t,--thread}'[Number of threads (0 is auto)]' \
+            '(-h,--help)'{-h,--help}'[Print help]' \
+            '*: :_files'
             ;;
 
         dict)
           _arguments \
-            '(-h, --help)'{-h,--help}'[Print help]' \
-            '*: :_files -/'
+            '(-h,--help)'{-h,--help}'[Print help]' \
+            '*: :_files'
             ;;
 
         faidx)
           _arguments \
-            '(-h, --help)'{-h,--help}'[Print help]' \
-            '*: :_files -/'
+            '(-h,--help)'{-h,--help}'[Print help]' \
+            '*: :_files'
             ;;
 
         index)
           _arguments \
-            '(-t, --thread)'{-t,--thread}'[Number of threads (0 is auto)]' \
-            '(-h, --help)'{-h,--help}'[Print help]' \
-            '*: :_files -/'
+            '(-t,--thread)'{-t,--thread}'[Number of threads (0 is auto)]' \
+            '(-h,--help)'{-h,--help}'[Print help]' \
+            '*: :_files'
             ;;
 
         level)
           _arguments \
-            '(-h, --help)'{-h,--help}'[Print help]' \
-            '*: :_files -/'
+            '(-h,--help)'{-h,--help}'[Print help]' \
+            '*: :_files'
             ;;
 
         normalize)
           _arguments \
-            '(-h, --help)'{-h,--help}'[Print help]' \
-            '*: :_files -/'
+            '(-h,--help)'{-h,--help}'[Print help]' \
+            '*: :_files'
             ;;
 
         pileup)
           _arguments \
-            '(-s, --simple)'{-s,--simple}'[Output only pileup count.]' \
-            '(-r, --region)'{-r,--region}'[Only pileup in region. (e.g. chr6:1000-2000)]' \
-            '(-t, --thread)'{-t,--thread}'[Number of threads (0 is auto)]' \
-            '(-f, --ref)'{-f,--ref}'[Reference file in the FASTA format. (defaults to nil)]' \
-            '(-h, --help)'{-h,--help}'[Print help]' \
-            '*: :_files -/'
+            '(-s,--simple)'{-s,--simple}'[Output only pileup count.]' \
+            '(-r,--region)'{-r,--region}'[Only pileup in region. (e.g. chr6:1000-2000)]' \
+            '(-t,--thread)'{-t,--thread}'[Number of threads (0 is auto)]' \
+            '(-f,--ref)'{-f,--ref}'[Reference file in the FASTA format. (defaults to nil)]' \
+            '(-h,--help)'{-h,--help}'[Print help]' \
+            '*: :_files'
             ;;
 
         sort)
           _arguments \
-            '(-o, --order)'{-o,--order}'[Sorting order of alignments <coordinate|queryname> (defaults to coordinate)]' \
-            '(-c, --chunk)'{-c,--chunk}'[Maximum number of alignments sorted per thread. (defaults to 1500000)]' \
-            '(-h, --help)'{-h,--help}'[Print help]' \
-            '*: :_files -/'
+            '(-o,--order)'{-o,--order}'[Sorting order of alignments <coordinate|queryname> (defaults to coordinate)]' \
+            '(-c,--chunk)'{-c,--chunk}'[Maximum number of alignments sorted per thread. (defaults to 1500000)]' \
+            '(-h,--help)'{-h,--help}'[Print help]' \
+            '*: :_files'
             ;;
 
         view)
           _arguments \
             '--header[Include header]' \
-            '(-f, --format)'{-f,--format}':input file format option:(auto sam bam)' \
-            '(-r, --region)'{-r,--region}'[Only pileup in region. (e.g. chr6:1000-2000)]' \
-            '(-h, --help)'{-h,--help}'[Print help]' \
-            '*: :_files -/'
+            '(-f,--format)'{-f,--format}':input file format option:(auto sam bam)' \
+            '(-r,--region)'{-r,--region}'[Only pileup in region. (e.g. chr6:1000-2000)]' \
+            '(-h,--help)'{-h,--help}'[Print help]' \
+            '*: :_files'
             ;;
       esac
       ;;

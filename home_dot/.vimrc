@@ -36,7 +36,9 @@ set history=100
 set autoread
 set wildmenu
 set incsearch
-set inccommand=nosplit
+if has('nvim')
+  set inccommand=nosplit
+endif
 set hlsearch
 set ignorecase
 set smartcase

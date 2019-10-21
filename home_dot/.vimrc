@@ -455,6 +455,12 @@ autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,
 autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
 autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-T> <C-O>
 
+" ctrlpvim/ctrlp.vim{{{2
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(o|exe|so|dll|gitkeep|png|gif|jpg)$',
+  \ }
+
 " haya14busa/vim-asterisk{{{2
 map *   <Plug>(asterisk-g*)<Plug>(anzu-update-search-status-with-echo)
 map #   <Plug>(asterisk-g#)<Plug>(anzu-update-search-status-with-echo)

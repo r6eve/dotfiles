@@ -268,6 +268,7 @@ Plug 'rhysd/vim-gfm-syntax'
 Plug 'rhysd/vim-grammarous'
 Plug 'sgur/vim-editorconfig'
 Plug 'Shougo/neosnippet.vim'
+Plug 'thinca/vim-localrc'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
 Plug 'thinca/vim-template'
 Plug 'thinca/vim-visualstar'

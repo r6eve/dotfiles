@@ -12,6 +12,9 @@ GTAGS
 .DS_Store
 Thumbs.db
 
+# Local configuration file
+.local.vimrc
+
 # Libraries & Objects
 *.lib
 *.o
@@ -36,6 +39,3 @@ __pycache__
 # Executables
 a.out
 a.exe
-
-# Misc
-MISSION.md

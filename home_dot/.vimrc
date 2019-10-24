@@ -251,8 +251,9 @@ endif
 Plug 'AndrewRadev/linediff.vim'
 Plug 'dense-analysis/ale', {
   \ 'for' : [
-    \ 'c', 'cpp', 'cmake', 'css', 'dockerfile', 'elixir', 'go', 'haskell',
-    \ 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss', 'sh'
+    \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
+    \ 'haskell', 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss',
+    \ 'sh'
     \]
   \}
 Plug 'ctrlpvim/ctrlp.vim'
@@ -420,7 +421,7 @@ let g:ale_set_highlights = 0
 let g:ale_rust_rls_toolchain = 'stable'
 
 " let g:ale_sign_column_always = 1 " Too slow.
-autocmd FileType c,cpp,cmake,css,dockerfile,elixir,go,haskell,java,javascript,ocaml,python,r,rust,scss,sh set signcolumn=yes
+autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,ocaml,python,r,rust,scss,sh set signcolumn=yes
 
 let g:ale_fixers = {
   \ 'c': ['clang-format'],
@@ -440,6 +441,7 @@ let g:ale_fixers = {
   \ }
 
 let g:ale_linters = {
+  \ 'clojure': ['clj-kondo'],
   \ 'elixir': ['elixir-ls', 'mix'],
   \ 'python': ['pyls'],
   \ }
@@ -853,7 +855,6 @@ let g:iced#format#rule = {
 let g:iced_enable_auto_linting = v:true
 let g:iced_enable_default_key_mappings = v:true
 
-autocmd FileType clojure set signcolumn=yes
 autocmd FileType clojure silent! nmap <buffer><Leader>st <Plug>(iced_toggle_src_and_test)
 
 " " vim-fireplace

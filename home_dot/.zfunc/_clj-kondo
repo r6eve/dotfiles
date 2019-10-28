@@ -1,0 +1,26 @@
+#compdef clj-kondo
+
+##
+##           Copyright r6eve 2019 -
+##  Distributed under the Boost Software License, Version 1.0.
+##     (See accompanying file LICENSE_1_0.txt or copy at
+##           https://www.boost.org/LICENSE_1_0.txt)
+##
+
+zstyle -T ':completion:*:*:clj-kondo:*' tag-order && \
+  zstyle ':completion:*:*:clj-kondo:*' tag-order 'common-commands'
+
+_clj-kondo() {
+  local state
+
+  _arguments \
+    '(- 1 *)--lint[a file can either be a normal file, directory or classpath]' \
+    '(- 1 *)--lang[if lang cannot be derived from the file extension this option will be used]' \
+    '(- 1 *)--cache-dir[when this option is provided, the cache will be resolved to this directory]' \
+    '(- 1 *)--cache[if false, won\''t use cache]' \
+    '(- 1 *)--config[config may be a file or an EDN expression]' \
+    '1: :->command' \
+    '*:: :->args'
+}
+
+_clj-kondo

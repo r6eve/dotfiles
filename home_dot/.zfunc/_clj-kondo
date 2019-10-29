@@ -7,13 +7,15 @@
 ##           https://www.boost.org/LICENSE_1_0.txt)
 ##
 
-zstyle -T ':completion:*:*:clj-kondo:*' tag-order && \
+zstyle -T ':completion:*:*:clj-kondo:*' tag-order &&
   zstyle ':completion:*:*:clj-kondo:*' tag-order 'common-commands'
 
 _clj-kondo() {
   local state
 
   _arguments \
+    '(- 1 *)--help' \
+    '(- 1 *)--version' \
     '(- 1 *)--lint[a file can either be a normal file, directory or classpath]' \
     '(- 1 *)--lang[if lang cannot be derived from the file extension this option will be used]' \
     '(- 1 *)--cache-dir[when this option is provided, the cache will be resolved to this directory]' \
@@ -21,6 +23,25 @@ _clj-kondo() {
     '(- 1 *)--config[config may be a file or an EDN expression]' \
     '1: :->command' \
     '*:: :->args'
+
+  case "$state" in
+  command)
+    _alternative 'common-commands:common:_clj-kondo_cmds'
+    ;;
+  args)
+    case "${words[1]}" in
+
+    esac
+    ;;
+  esac
+}
+
+_clj-kondo_cmds() {
+  local -a commands
+  commands=(
+
+  )
+  _describe -t common-commands 'common commands' commands
 }
 
 _clj-kondo

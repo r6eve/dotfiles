@@ -462,6 +462,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(o|exe|so|dll|gitkeep|png|gif|jpg)$',
   \ }
+let g:ctrlp_switch_buffer = 0
 
 " haya14busa/vim-asterisk{{{2
 map *   <Plug>(asterisk-g*)<Plug>(anzu-update-search-status-with-echo)

@@ -16,11 +16,11 @@ _clj-kondo() {
   _arguments \
     '(- 1 *)--help' \
     '(- 1 *)--version' \
-    '(- 1 *)--lint[a file can either be a normal file, directory or classpath]' \
+    '(- 1 *)--lint[a file can either be a normal file, directory or classpath]: :_files' \
     '(- 1 *)--lang[if lang cannot be derived from the file extension this option will be used]' \
-    '(- 1 *)--cache-dir[when this option is provided, the cache will be resolved to this directory]' \
+    '(- 1 *)--cache-dir[when this option is provided, the cache will be resolved to this directory]: :_files' \
     '(- 1 *)--cache[if false, won'\''t use cache]' \
-    '(- 1 *)--config[config may be a file or an EDN expression]' \
+    '(- 1 *)--config[config may be a file or an EDN expression]: :_files' \
     '1: :->command' \
     '*:: :->args'
 

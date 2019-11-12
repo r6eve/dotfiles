@@ -35,6 +35,7 @@ __pycache__
 /.classpath
 /.project
 /.settings
+/.cpcache
 
 # Executables
 a.out

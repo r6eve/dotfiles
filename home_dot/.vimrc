@@ -303,9 +303,9 @@ Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
 
 " Clojure
-Plug 'guns/vim-sexp', {'for' : 'clojure' }
-Plug 'liquidz/vim-iced', {'for' : 'clojure' }
-" Plug 'neoclide/coc.nvim', {'branch': 'release'} | Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
+Plug 'guns/vim-sexp', { 'for' : 'clojure' }
+Plug 'liquidz/vim-iced', { 'for' : 'clojure' }
+" Plug 'neoclide/coc.nvim', {'branch': 'release'} | Plug 'liquidz/vim-iced-coc-source', { 'for': 'clojure'}
 "
 " " vim-fireplace
 " Plug 'tpope/vim-salve', { 'for' : 'clojure' }

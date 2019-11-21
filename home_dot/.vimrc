@@ -381,7 +381,7 @@ let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
 " Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }
 " let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
+" let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
 let g:deoplete#omni#functions = {}
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
@@ -899,6 +899,11 @@ if executable('ocamlmerlin') && has('python')
 end
 autocmd FileType ocaml set commentstring=(*%s*)
 autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo
+" call lsp#add_filetype_config({
+"  \ 'filetype' : 'ocaml',
+"  \ 'name' : 'ocamlmerlin-lsp',
+"  \ 'cmd' : 'opam config exec -- ocamlmerlin-lsp',
+"  \})
 
 " R{{{2
 let vimrplugin_assign = 0

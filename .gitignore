@@ -1,4 +1,5 @@
 repl-history
+/home_dot/.lein/credentials.clj.gpg
 /home_dot/.lein/self-installs
 /home_dot/.vim/view
 /home_dot/.w3m/w3m*

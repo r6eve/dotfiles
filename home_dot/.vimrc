@@ -858,7 +858,14 @@ let g:iced#format#rule = {
 let g:iced_enable_auto_linting = v:true
 let g:iced_enable_default_key_mappings = v:true
 
-autocmd FileType clojure silent! nmap <buffer><Leader>st <Plug>(iced_cycle_src_and_test)
+augroup MyClojureSetting
+  autocmd!
+  autocmd FileType clojure silent! nmap <buffer><Leader>st <Plug>(iced_cycle_src_and_test)
+  autocmd FileType clojure nmap <buffer> <Leader>epe
+      \ <Plug>(iced_eval_and_print)<Plug>(sexp_outer_list)``
+  autocmd FileType clojure nmap <buffer> <Leader>ept
+      \ <Plug>(iced_eval_and_print)<Plug>(sexp_outer_top_list)``
+augroup END
 
 " " vim-fireplace
 " " venantius/vim-cljfmt

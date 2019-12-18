@@ -461,7 +461,7 @@ autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,
 
 " ctrlpvim/ctrlp.vim{{{2
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/](\.(git|hg|svn)|resources|test-resources)$',
+  \ 'dir': '\v[\/](\.(git|hg|svn)|resources|target|test-resources)$',
   \ 'file': '\v\.(o|exe|so|dll|gitkeep|png|gif|jpg)$',
   \ }
 let g:ctrlp_switch_buffer = 0

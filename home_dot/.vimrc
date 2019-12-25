@@ -259,7 +259,7 @@ Plug 'dense-analysis/ale', {
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'inkarkat/vim-ingo-library' | Plug 'inkarkat/vim-mark'
-Plug 'itchyny/vim-cursorword'
+" Plug 'itchyny/vim-cursorword' " a little too heavy
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'

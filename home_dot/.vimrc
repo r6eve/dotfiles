@@ -216,6 +216,7 @@ autocmd FileType qf call s:on_FileType_qf_define_mappings()
 " filetype detect settings{{{1
 autocmd BufNewFile,BufRead *.clje set filetype=clojure
 autocmd BufNewFile,BufRead *.dart set filetype=dart
+autocmd BufNewFile,BufRead *.gnu set filetype=gnuplot
 autocmd BufNewFile,BufRead *.io set filetype=io
 autocmd BufNewFile,BufRead *.jnlp set filetype=html
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown

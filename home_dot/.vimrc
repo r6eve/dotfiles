@@ -314,6 +314,9 @@ Plug 'liquidz/vim-iced', { 'for' : 'clojure' }
 " Plug 'venantius/vim-cljfmt', { 'for' : 'clojure' }
 " Plug 'venantius/vim-eastwood', { 'for' : 'clojure' }
 " Plug 'vim-syntastic/syntastic', { 'for' : 'clojure' }
+"
+" " acid.nvim
+" Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Dot
 Plug 'wannesm/wmgraphviz.vim', { 'for' : 'dot' }

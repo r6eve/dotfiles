@@ -28,6 +28,9 @@ if [ -d "$HOME/.asdf" ]; then
   . $HOME/.asdf/completions/asdf.bash
 fi
 
+# F#{{{1
+export DOTNET_ROOT="/opt/dotnet"
+
 # Go{{{1
 if which go >/dev/null; then
   if [ ! -d "$HOME/.go" ]; then

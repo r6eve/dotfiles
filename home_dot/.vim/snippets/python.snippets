@@ -1,13 +1,8 @@
+snippet pprint
+abbr pprint
+	from pprint import pprint
+	pprint(vars(${0}))
 snippet pdprint
 abbr pdprint
 	import pandas as pb
 	print(pb.Series(${0}))
-snippet nm
-abbr nm
-	if __name__ == '__main__':
-		main()
-snippet doctest
-abbr doctest
-	if __name__ == '__main__':
-		import doctest
-		doctest.testmod()

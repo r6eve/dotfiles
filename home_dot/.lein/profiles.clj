@@ -4,7 +4,7 @@
                        [jonase/eastwood "0.3.6"
                         :exclusions [org.clojure/clojure]]]
         :plugins [[com.clojure-goes-fast/clj-java-decompiler "0.3.0-SNAPSHOT"]
-                  [jonase/eastwood "0.3.6"]
+                  [jonase/eastwood "0.3.7"]
                   [lein-ancient "0.6.15"]
                   [lein-bikeshed "0.5.2"]
                   [lein-cloverage "1.1.2"]

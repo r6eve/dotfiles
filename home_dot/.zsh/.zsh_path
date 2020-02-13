@@ -76,7 +76,9 @@ export PATH="$HOME/.local/bin:$PATH"  # pip install --user
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
 # Ruby{{{1
-export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+if which gem >/dev/null; then
+  export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
 
 # Rust{{{1
 export PATH="$HOME/.cargo/bin:$PATH"

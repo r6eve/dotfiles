@@ -305,6 +305,7 @@ Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
 
 " Clojure
 Plug 'guns/vim-sexp', { 'for' : 'clojure' }
+" Plug '~/repos/vim-iced', { 'for' : 'clojure' }
 Plug 'liquidz/vim-iced', { 'for' : 'clojure' }
 " Plug 'neoclide/coc.nvim', {'branch': 'release'} | Plug 'liquidz/vim-iced-coc-source', { 'for': 'clojure'}
 "
@@ -861,6 +862,8 @@ let g:iced#format#rule = {
     \ }
 let g:iced_enable_auto_linting = v:true
 let g:iced_enable_default_key_mappings = v:true
+
+" let g:iced_formatter = 'cljstyle'
 
 augroup MyClojureSetting
   autocmd!

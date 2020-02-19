@@ -333,6 +333,9 @@ Plug 'mattn/emmet-vim', {
   \ 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'css', 'scss', 'sass']
   \}
 
+" Haxe
+Plug 'jdonaldson/vaxe', { 'for' : ['haxe'] }
+
 " JavaScript
 Plug 'posva/vim-vue', { 'for' : ['javascript', 'html'] }
 Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }

@@ -343,6 +343,8 @@ Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }
 " Markdown
 Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 'rst'] }
 Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
+Plug 'godlygeek/tabular', { 'for' : ['markdown'] }
+Plug 'plasticboy/vim-markdown', { 'for' : ['markdown'] }
 
 " Perl
 Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
@@ -908,6 +910,14 @@ autocmd FileType tex set spell
 
 " Markdown{{{2
 autocmd Filetype markdown,rst nmap <Leader>p :<C-u>PrevimOpen<CR>
+
+" plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
 
 " OCaml{{{2
 if executable('ocamlmerlin') && has('python')

@@ -223,6 +223,7 @@ autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd BufNewFile,BufRead *.m set filetype=objc
 autocmd BufNewFile,BufRead *.{atd,mly,mlt} set filetype=ocaml
 autocmd BufNewFile,BufRead *.{cgi,t} set filetype=perl
+autocmd BufNewFile,BufRead *.re set filetype=reason
 autocmd BufNewFile,BufRead *.scala set filetype=scala
 autocmd BufNewFile,BufRead *.test set filetype=text
 autocmd BufNewFile,BufRead *.toml set filetype=toml
@@ -354,6 +355,9 @@ Plug 'vim-perl/vim-perl'
 Plug 'Yggdroot/indentLine', { 'for' : 'python' }
 Plug 'vim-scripts/python_match.vim', { 'for' : 'python' }
 
+" ReasonML
+Plug 'reasonml-editor/vim-reason-plus', { 'for' : 'reason' }
+
 " Ruby
 Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
 
@@ -462,6 +466,7 @@ let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}
 
 let g:ale_elixir_elixir_ls_release = $HOME . '/repos/elixir-ls/rel'
 let g:ale_ocaml_ocp_indent_config = "JaneStreet"
+let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'
 
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent>K <Plug>(ale_find_references)
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>f <Plug>(ale_fix)

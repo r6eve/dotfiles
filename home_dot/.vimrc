@@ -254,8 +254,8 @@ Plug 'AndrewRadev/linediff.vim'
 Plug 'dense-analysis/ale', {
   \ 'for' : [
     \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
-    \ 'haskell', 'java', 'javascript', 'ocaml', 'python', 'rust', 'r', 'scss',
-    \ 'sh'
+    \ 'haskell', 'java', 'javascript', 'json', 'ocaml', 'python', 'rust', 'r',
+    \ 'scss', 'sh'
     \]
   \}
 Plug 'ctrlpvim/ctrlp.vim'
@@ -437,7 +437,7 @@ let g:ale_set_highlights = 0
 let g:ale_rust_rls_toolchain = 'stable'
 
 " let g:ale_sign_column_always = 1 " Too slow.
-autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,ocaml,python,r,rust,scss,sh set signcolumn=yes
+autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,ocaml,python,r,rust,scss,sh set signcolumn=yes
 
 let g:ale_fixers = {
   \ 'c': ['clang-format'],
@@ -448,6 +448,7 @@ let g:ale_fixers = {
   \ 'haskell': ['stylish-haskell'],
   \ 'java': ['google_java_format'],
   \ 'javascript': ['prettier'],
+  \ 'json': ['fixjson'],
   \ 'ocaml': ['ocp-indent'],
   \ 'python': ['yapf'],
   \ 'r': ['styler'],
@@ -459,6 +460,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
   \ 'clojure': ['clj-kondo'],
   \ 'elixir': ['elixir-ls', 'mix'],
+  \ 'json': ['jsonlint'],
   \ 'python': ['pyls'],
   \ }
 
@@ -469,7 +471,7 @@ let g:ale_ocaml_ocp_indent_config = "JaneStreet"
 let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'
 
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent>K <Plug>(ale_find_references)
-autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>f <Plug>(ale_fix)
+autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,ocaml,python,r,rust,scss,sh nmap <silent><Leader>f <Plug>(ale_fix)
 autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-]> <Plug>(ale_go_to_definition)
 autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
 autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh nmap <silent><C-T> <C-O>

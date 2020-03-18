@@ -29,6 +29,7 @@ limit coredumpsize 100000
 # zshzle{{{1
 bindkey -e
 bindkey -r "^['"
+bindkey -r "^[h"
 bindkey -r "^o"
 
 # Changing Directories{{{1

@@ -461,7 +461,7 @@ let g:ale_linters = {
   \ 'clojure': ['clj-kondo'],
   \ 'elixir': ['elixir-ls', 'mix'],
   \ 'json': ['jsonlint'],
-  \ 'python': ['pyls'],
+  \ 'python': ['pylint', 'pyls'],
   \ }
 
 let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}

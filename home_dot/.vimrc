@@ -352,7 +352,6 @@ Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
 Plug 'vim-perl/vim-perl'
 
 " Python
-Plug 'Yggdroot/indentLine', { 'for' : 'python' }
 Plug 'vim-scripts/python_match.vim', { 'for' : 'python' }
 
 " ReasonML

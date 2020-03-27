@@ -458,6 +458,7 @@ let g:ale_fixers = {
 
 let g:ale_linters = {
   \ 'clojure': ['clj-kondo'],
+  \ 'dockerfile': ['hadolint'],
   \ 'elixir': ['elixir-ls', 'mix'],
   \ 'json': ['jsonlint'],
   \ 'python': ['pylint', 'pyls'],

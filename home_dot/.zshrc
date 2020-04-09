@@ -85,6 +85,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' disable-patterns "/mnt/*"
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:*' unstagedstr '-'

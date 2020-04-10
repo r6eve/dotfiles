@@ -1,10 +1,10 @@
 {:user {:dependencies [[cljfmt "0.6.7"]
-                       [com.clojure-goes-fast/clj-async-profiler "0.4.0"]
+                       [com.clojure-goes-fast/clj-async-profiler "0.4.1"]
                        [criterium "0.4.5"]
-                       [jonase/eastwood "0.3.10"
+                       [jonase/eastwood "0.3.11"
                         :exclusions [org.clojure/clojure]]]
         :plugins [[com.clojure-goes-fast/clj-java-decompiler "0.3.0"]
-                  [jonase/eastwood "0.3.10"]
+                  [jonase/eastwood "0.3.11"]
                   [lein-ancient "0.6.15"]
                   [lein-bikeshed "0.5.2"]
                   [lein-cloverage "1.1.2"]

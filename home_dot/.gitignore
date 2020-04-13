@@ -36,6 +36,7 @@ __pycache__
 /.project
 /.settings
 /.cpcache
+/.elixir_ls
 
 # Executables
 a.out

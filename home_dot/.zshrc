@@ -31,6 +31,7 @@ bindkey -e
 bindkey -r "^['"
 bindkey -r "^[h"
 bindkey -r "^o"
+bindkey -r "^t"
 
 # Changing Directories{{{1
 setopt auto_cd

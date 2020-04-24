@@ -7,6 +7,7 @@
                   [jonase/eastwood "0.3.11"]
                   [lein-ancient "0.6.15"]
                   [lein-bikeshed "0.5.2"]
+                  [lein-cljfmt "0.6.7"]
                   [lein-cloverage "1.1.2"]
                   [lein-codox "0.10.7"]
                   [lein-kibit "0.1.8"]

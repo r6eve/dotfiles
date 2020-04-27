@@ -386,16 +386,17 @@ call plug#end()
 " advanced settings{{{1
 " Shougo/deoplete.nvim{{{2
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
 let g:deoplete#max_abbr_width = 0
 let g:deoplete#max_menu_width = 0
-let g:deoplete#keyword_patterns = {}
-let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\w*'
+call deoplete#custom#option('smart_case', v:true)
+call deoplete#custom#option('keyword_patterns', {
+\ '_': '[a-zA-Z_]\w*',
+\})
 " Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }
 " let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
-let g:deoplete#omni#input_patterns = {}
+call deoplete#custom#var('omni', 'input_patterns', {})
 " let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
-let g:deoplete#omni#functions = {}
+call deoplete#custom#var('omni', 'functions', {})
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-e> deoplete#cancel_popup()

@@ -243,13 +243,6 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neomru.vim'
 Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 Plug 'AndrewRadev/linediff.vim'
 Plug 'dense-analysis/ale', {
   \ 'for' : [
@@ -266,6 +259,7 @@ Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
 Plug 'mbbill/undotree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/tcvime'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
@@ -308,7 +302,7 @@ Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
 Plug 'guns/vim-sexp', { 'for' : 'clojure' }
 " Plug '~/repos/vim-iced', { 'for' : 'clojure' }
 Plug 'liquidz/vim-iced', { 'for' : 'clojure' }
-" Plug 'neoclide/coc.nvim', {'branch': 'release'} | Plug 'liquidz/vim-iced-coc-source', { 'for': 'clojure'}
+Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 "
 " " vim-fireplace
 " Plug 'tpope/vim-salve', { 'for' : 'clojure' }
@@ -384,23 +378,6 @@ Plug 'rhysd/vim-github-actions', { 'for' : 'ghaworkflow' }
 call plug#end()
 
 " advanced settings{{{1
-" Shougo/deoplete.nvim{{{2
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#max_abbr_width = 0
-let g:deoplete#max_menu_width = 0
-call deoplete#custom#option('smart_case', v:true)
-call deoplete#custom#option('keyword_patterns', {
-\ '_': '[a-zA-Z_]\w*',
-\})
-" Plug 'clojure-vim/async-clj-omni', { 'for' : 'clojure' }
-" let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
-call deoplete#custom#var('omni', 'input_patterns', {})
-" let g:deoplete#omni#input_patterns.ocaml = ['[^. *\t]\.\w*', '[a-zA-Z_]\w*']
-call deoplete#custom#var('omni', 'functions', {})
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-e> deoplete#cancel_popup()
-
 " Shougo/denite.nvim{{{2
 call denite#custom#map(
   \ 'insert',
@@ -782,6 +759,8 @@ call submode#enter_with('move-to-fold', 'n', '', 'zj', 'zj')
 call submode#enter_with('move-to-fold', 'n', '', 'zk', 'zk')
 call submode#map('move-to-fold', 'n', '', 'j', 'zj')
 call submode#map('move-to-fold', 'n', '', 'k', 'zk')
+
+" neoclide/coc.nvim{{{2
 
 " osyo-manga/vim-anzu{{{2
 nmap n <Plug>(anzu-n-with-echo)

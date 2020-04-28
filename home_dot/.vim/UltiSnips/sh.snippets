@@ -8,4 +8,19 @@ snippet ulog
 exec >/LOG-DIR/log.\`date +%s\`.out 2>/LOG-DIR/log.\`date +%s\`.err
 endsnippet
 
+snippet array_contains
+array_contains () {
+	local a="\$1[@]"
+	local x=\$2
+	local in=1
+	for e in "${!a}"; do
+		if [[ "$e" == "$x" ]]; then
+			in=0
+			break
+		fi
+	done
+	return $in
+}
+endsnippet
+
 # vim:ft=snippets:

@@ -68,6 +68,7 @@ set display=lastline
 set statusline=%f%m%=\ %-14.(%l/%L,%v%)\ %P
 set spelllang+=cjk
 set matchpairs+=（:）,「:」,『:』,＜:＞,【:】,⥹:⥻
+set pumheight=12
 set hidden
 set clipboard=unnamed
 set mouse=
@@ -268,7 +269,7 @@ Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 Plug 'rhysd/vim-grammarous'
 Plug 'sgur/vim-editorconfig'
-Plug 'Shougo/neosnippet.vim'
+Plug 'SirVer/ultisnips'
 Plug 'thinca/vim-localrc'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
 Plug 'thinca/vim-template'
@@ -761,6 +762,8 @@ call submode#map('move-to-fold', 'n', '', 'j', 'zj')
 call submode#map('move-to-fold', 'n', '', 'k', 'zk')
 
 " neoclide/coc.nvim{{{2
+" :CocInstall coc-snippets
+" ~/.config/coc/extensions/node_modules/coc-snippets
 
 " osyo-manga/vim-anzu{{{2
 nmap n <Plug>(anzu-n-with-echo)
@@ -806,11 +809,10 @@ let g:grammarous#default_comments_only_filetypes = {
 \ '*' : 1, 'help' : 0,
 \ }
 
-" Shougo/neosnippet{{{2
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-let g:neosnippet#disable_runtime_snippets = { '_' : 1 }
-let g:neosnippet#snippets_directory = '~/.vim/snippets'
+" SirVer/ultisnips{{{2
+let g:UltiSnipsExpandTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 " tyru/open-browser{{{2
 nmap <Leader>o <Plug>(openbrowser-smart-search)

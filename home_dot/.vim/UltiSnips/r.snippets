@@ -14,6 +14,14 @@ skewness <- function(x) mean( (x-mean(x))^3 ) / sd(x)^3
 kurtosis <- function(x) mean( (x-mean(x))^4 ) / sd(x)^4
 endsnippet
 
+snippet printf
+printf <- function(...) cat(sprintf(...))
+endsnippet
+
+snippet args
+args <- commandArgs(trailingOnly = T)
+endsnippet
+
 snippet usage
 args <- commandArgs(trailingOnly = T)
 if (length(args) != 3) {

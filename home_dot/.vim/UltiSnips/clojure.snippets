@@ -1,0 +1,22 @@
+priority -50
+
+snippet pprint
+(clojure.pprint/pprint $1)
+endsnippet
+
+snippet mpprint
+(#(do (clojure.pprint/pprint %) %))
+endsnippet
+
+snippet dump-method
+(defn- dump-method!
+	[x]
+	(->> x
+	     clojure.reflect/reflect
+	     :members
+	     (sort-by :name)
+	     (clojure.pprint/print-table
+	      [:name :flags :parameter-types :return-type])))
+endsnippet
+
+# vim:ft=snippets:

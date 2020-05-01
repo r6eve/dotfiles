@@ -465,6 +465,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(o|exe|so|dll|gitkeep|png|gif|jpg)$',
   \ }
 let g:ctrlp_switch_buffer = 0
+let g:ctrlp_max_files = 1000
 
 " haya14busa/vim-asterisk{{{2
 map *   <Plug>(asterisk-g*)<Plug>(anzu-update-search-status-with-echo)

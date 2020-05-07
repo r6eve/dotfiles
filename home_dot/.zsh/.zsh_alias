@@ -76,5 +76,5 @@ alias plint='perl -MO=Lint,all'
 alias python='python -q'
 
 # R{{{1
-alias R='R --no-save --no-restore --no-site-file --no-environ -q'
+alias R='rlwrap R --no-save --no-restore --no-site-file --no-environ -q'
 alias Rscript='Rscript --vanilla'

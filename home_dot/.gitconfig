@@ -21,6 +21,8 @@
 	editor = "nvim"
 [github]
 	user = r6eve
+[pull]
+	rebase = true
 [alias]
 	br = branch
 	cmv = commit -v

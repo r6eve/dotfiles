@@ -221,7 +221,7 @@ endsnippet
 snippet dump
 use Data::Dumper;
 $Data::Dumper::Sortkeys = 1;
-sub p { print Dumper $_[0] }
+sub p { print STDERR Dumper $_[0] }
 endsnippet
 
 snippet min

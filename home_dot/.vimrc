@@ -249,7 +249,7 @@ Plug 'dense-analysis/ale', {
   \ 'for' : [
     \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
     \ 'haskell', 'java', 'javascript', 'json', 'ocaml', 'python', 'rust', 'r',
-    \ 'scss', 'sh'
+    \ 'scss', 'sh', 'vim'
     \]
   \}
 Plug 'ctrlpvim/ctrlp.vim'
@@ -415,7 +415,7 @@ let g:ale_set_highlights = 0
 let g:ale_rust_rls_toolchain = 'stable'
 
 " let g:ale_sign_column_always = 1 " Too slow.
-autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,ocaml,python,r,rust,scss,sh set signcolumn=yes
+autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,ocaml,python,r,rust,scss,sh,vim set signcolumn=yes
 
 let g:ale_fixers = {
   \ 'c': ['clang-format'],
@@ -441,6 +441,7 @@ let g:ale_linters = {
   \ 'elixir': ['elixir-ls', 'mix'],
   \ 'json': ['jsonlint'],
   \ 'python': ['pylint', 'pyls'],
+  \ 'vim': ['vint'],
   \ }
 
 let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}

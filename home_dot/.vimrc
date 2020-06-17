@@ -11,7 +11,7 @@ set langmenu=none
 let g:mapleader = ','
 set t_Co=256
 set cindent
-set vb t_vb=
+set visualbell t_vb=
 set nobackup
 set backupskip=/tmp/*,/private/tmp/*
 set swapfile

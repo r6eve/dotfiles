@@ -195,7 +195,7 @@ inoremap <C-w> <C-g>u<C-w>
 inoremap <C-d> <C-o>x
 
 function! ToggleSigncolumn() abort
-  if &signcolumn == 'yes'
+  if &signcolumn ==# 'yes'
     let &signcolumn = 'no'
   else
     let &signcolumn = 'yes'

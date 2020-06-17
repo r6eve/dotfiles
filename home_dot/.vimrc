@@ -97,8 +97,8 @@ autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 
 autocmd ColorScheme * highlight Visual ctermbg=132 guibg=#a9667a
 autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#ab6560
 autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=89 gui=bold guifg=#3a4b5c guibg=#ab6560
-autocmd VimEnter,WinEnter * let w:m1 = matchadd("TabString", '	')
-autocmd VimEnter,WinEnter * let w:m2 = matchadd("ZenkakuSpace", '　')
+autocmd VimEnter,WinEnter * let w:m1 = matchadd('TabString', '	')
+autocmd VimEnter,WinEnter * let w:m2 = matchadd('ZenkakuSpace', '　')
 autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 autocmd VimEnter,WinEnter *.py syntax keyword Special self
 
@@ -128,7 +128,7 @@ augroup vimrc-misc
 augroup END
 
 function! s:get_syn_id(transparent)
-  let synid = synID(line("."), col("."), 1)
+  let synid = synID(line('.'), col('.'), 1)
   if a:transparent
     return synIDtrans(synid)
   else
@@ -136,32 +136,32 @@ function! s:get_syn_id(transparent)
   endif
 endfunction
 function! s:get_syn_attr(synid)
-  let name = synIDattr(a:synid, "name")
-  let ctermfg = synIDattr(a:synid, "fg", "cterm")
-  let ctermbg = synIDattr(a:synid, "bg", "cterm")
-  let guifg = synIDattr(a:synid, "fg", "gui")
-  let guibg = synIDattr(a:synid, "bg", "gui")
+  let name = synIDattr(a:synid, 'name')
+  let ctermfg = synIDattr(a:synid, 'fg', 'cterm')
+  let ctermbg = synIDattr(a:synid, 'bg', 'cterm')
+  let guifg = synIDattr(a:synid, 'fg', 'gui')
+  let guibg = synIDattr(a:synid, 'bg', 'gui')
   return {
-        \ "name": name,
-        \ "ctermfg": ctermfg,
-        \ "ctermbg": ctermbg,
-        \ "guifg": guifg,
-        \ "guibg": guibg}
+        \ 'name': name,
+        \ 'ctermfg': ctermfg,
+        \ 'ctermbg': ctermbg,
+        \ 'guifg': guifg,
+        \ 'guibg': guibg}
 endfunction
 function! s:get_syn_info()
   let baseSyn = s:get_syn_attr(s:get_syn_id(0))
-  echo "name: " . baseSyn.name .
-        \ " ctermfg: " . baseSyn.ctermfg .
-        \ " ctermbg: " . baseSyn.ctermbg .
-        \ " guifg: " . baseSyn.guifg .
-        \ " guibg: " . baseSyn.guibg
+  echo 'name: ' . baseSyn.name .
+        \ ' ctermfg: ' . baseSyn.ctermfg .
+        \ ' ctermbg: ' . baseSyn.ctermbg .
+        \ ' guifg: ' . baseSyn.guifg .
+        \ ' guibg: ' . baseSyn.guibg
   let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
-  echo "link to"
-  echo "name: " . linkedSyn.name .
-        \ " ctermfg: " . linkedSyn.ctermfg .
-        \ " ctermbg: " . linkedSyn.ctermbg .
-        \ " guifg: " . linkedSyn.guifg .
-        \ " guibg: " . linkedSyn.guibg
+  echo 'link to'
+  echo 'name: ' . linkedSyn.name .
+        \ ' ctermfg: ' . linkedSyn.ctermfg .
+        \ ' ctermbg: ' . linkedSyn.ctermbg .
+        \ ' guifg: ' . linkedSyn.guifg .
+        \ ' guibg: ' . linkedSyn.guibg
 endfunction
 command! SyntaxInfo call s:get_syn_info()
 
@@ -450,7 +450,7 @@ let g:ale_elixir_elixir_ls_release = $HOME . '/repos/elixir-ls/rel'
 let g:ale_elixir_elixir_ls_config = {
   \ 'elixirLS': {'dialyzerEnabled': v:false}
   \ }
-let g:ale_ocaml_ocp_indent_config = "JaneStreet"
+let g:ale_ocaml_ocp_indent_config = 'JaneStreet'
 let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'
 let g:ale_sh_shfmt_options = '-s -i 2 -ci'
 
@@ -812,9 +812,9 @@ let g:grammarous#default_comments_only_filetypes = {
 \ }
 
 " SirVer/ultisnips{{{2
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+let g:UltiSnipsExpandTrigger='<c-k>'
+let g:UltiSnipsJumpForwardTrigger='<c-k>'
+let g:UltiSnipsJumpBackwardTrigger='<c-p>'
 
 " tyru/open-browser{{{2
 nmap <Leader>o <Plug>(openbrowser-smart-search)
@@ -896,10 +896,10 @@ let g:fortran_fixed_source = 1
 let g:fortran_more_precise = 1
 
 " HTML{{{2
-let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_inctags = 'html,body,head,tbody'
 
 " LaTeX{{{2
-let g:tex_conceal = ""
+let g:tex_conceal = ''
 let g:tex_flavor = 'latex'
 autocmd FileType tex set spell
 
@@ -917,7 +917,7 @@ let g:vim_markdown_new_list_item_indent = 0
 " OCaml{{{2
 if executable('ocamlmerlin') && has('python')
   let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-  exec "set rtp+=" . g:opamshare . "/merlin/vim"
+  exec 'set rtp+=' . g:opamshare . '/merlin/vim'
 end
 autocmd FileType ocaml set commentstring=(*%s*)
 autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo
@@ -939,7 +939,7 @@ let g:tagbar_type_r = {
 \}
 
 " Ruby{{{2
-let g:ruby_path = ""
+let g:ruby_path = ''
 if !exists('loaded_matchit')
   runtime macros/matchit.vim
 endif

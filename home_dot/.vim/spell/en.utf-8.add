@@ -493,3 +493,4 @@ deserializing
 RDB
 dockerize
 WIP
+bgzip

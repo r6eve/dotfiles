@@ -6,6 +6,7 @@
 # alias alegrep='egrep -n --color=always'
 # alias alfgrep='fgrep -n --color=always'
 alias ag='ag -U --hidden --ignore-dir .git --ignore-dir _build'
+alias agp='ag -U --hidden --ignore-dir .git --ignore-dir _build --nonumber'
 alias fd='fd --no-ignore-vcs'
 alias i3lock='i3lock --color=6df7fe'
 alias ls='ls -F --color=auto'

@@ -227,6 +227,7 @@ autocmd BufNewFile,BufRead *.{cgi,t} set filetype=perl
 autocmd BufNewFile,BufRead *.re set filetype=reason
 autocmd BufNewFile,BufRead *.scala set filetype=scala
 autocmd BufNewFile,BufRead *.test set filetype=text
+autocmd BufNewFile,BufRead *.tf set filetype=terraform
 autocmd BufNewFile,BufRead *.toml set filetype=toml
 autocmd BufNewFile,BufRead *.ts set filetype=typescript
 autocmd BufNewFile,BufRead *.vimspec set filetype=vim
@@ -249,7 +250,7 @@ Plug 'dense-analysis/ale', {
   \ 'for' : [
     \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
     \ 'haskell', 'java', 'javascript', 'json', 'ocaml', 'python', 'rust', 'r',
-    \ 'scss', 'sh', 'vim'
+    \ 'scss', 'sh', 'terraform', 'vim'
     \]
   \}
 Plug 'ctrlpvim/ctrlp.vim'
@@ -367,6 +368,9 @@ Plug 'vim-scripts/sh.vim', { 'for' : 'sh' }
 " TOML
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
 
+" Terraform
+Plug 'hashivim/vim-terraform', { 'for' : 'terraform' }
+
 " TypeScript
 Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
 
@@ -415,7 +419,7 @@ let g:ale_set_highlights = 0
 let g:ale_rust_rls_toolchain = 'stable'
 
 " let g:ale_sign_column_always = 1 " Too slow.
-autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,ocaml,python,r,rust,scss,sh,vim set signcolumn=yes
+autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,ocaml,python,r,rust,scss,sh,terraform,vim set signcolumn=yes
 
 let g:ale_fixers = {
   \ 'c': ['clang-format'],
@@ -433,6 +437,7 @@ let g:ale_fixers = {
   \ 'rust': ['rustfmt'],
   \ 'scss': ['prettier'],
   \ 'sh': ['shfmt'],
+  \ 'terraform': ['terraform'],
   \ }
 
 let g:ale_linters = {
@@ -441,6 +446,7 @@ let g:ale_linters = {
   \ 'elixir': ['elixir-ls', 'mix'],
   \ 'json': ['jsonlint'],
   \ 'python': ['pylint', 'pyls'],
+  \ 'terraform': ['terraform_lsp', 'tflint'],
   \ 'vim': ['vimls', 'vint'],
   \ }
 
@@ -454,11 +460,11 @@ let g:ale_ocaml_ocp_indent_config = 'JaneStreet'
 let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'
 let g:ale_sh_shfmt_options = '-s -i 2 -ci'
 
-autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh,vim nmap <silent>K <Plug>(ale_find_references)
-autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,ocaml,python,r,rust,scss,sh,vim nmap <silent><Leader>f <Plug>(ale_fix)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh,vim nmap <silent><C-]> <Plug>(ale_go_to_definition)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh,vim nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh,vim nmap <silent><C-T> <C-O>
+autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,python,r,rust,scss,sh,terraform,vim nmap <silent>K <Plug>(ale_find_references)
+autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,ocaml,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>f <Plug>(ale_fix)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh,terraform,vim nmap <silent><C-]> <Plug>(ale_go_to_definition)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,python,r,rust,scss,sh,terraform,vim nmap <silent><C-T> <C-O>
 
 " ctrlpvim/ctrlp.vim{{{2
 let g:ctrlp_custom_ignore = {

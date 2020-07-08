@@ -1,6 +1,0 @@
-(loop for (mode . ext) in '((clojure-mode . "\\.clj$")
-                            (emacs-lisp-mode . "\\.el$")
-                            (lisp-mode . "\\.\\(cl\\|lisp\\)$")
-                            (perl-model . "\\.\\(pl\\|t\\|psgi\\)$")
-                            (scheme-mode . "\\.scm$"))
-  do (add-to-list 'auto-mode-alist (cons ext mode)))

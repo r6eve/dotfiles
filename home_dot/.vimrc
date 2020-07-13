@@ -341,7 +341,7 @@ Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }
 Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 'rst'] }
 Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
 Plug 'godlygeek/tabular', { 'for' : ['markdown'] }
-Plug 'plasticboy/vim-markdown', { 'for' : ['markdown'] }
+" Plug 'plasticboy/vim-markdown', { 'for' : ['markdown'] } " odd behavior when saving
 
 " Perl
 Plug 'c9s/perlomni.vim', { 'for' : 'perl' }

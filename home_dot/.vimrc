@@ -79,7 +79,7 @@ set list
 set listchars=tab:>\･
 set wildignore=*.a,*.class,*.cma,*.cmt,*.cmti,*.cmxa,*.cmxs,*.exe
 set guicursor=
-autocmd VimLeave * set guicursor=
+autocmd VimLeave,VimSuspend * set guicursor=
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 if !has('nvim')

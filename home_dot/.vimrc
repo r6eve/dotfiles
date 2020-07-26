@@ -447,6 +447,7 @@ let g:ale_linters = {
   \ 'elixir': ['elixir-ls', 'mix'],
   \ 'json': ['jsonlint'],
   \ 'python': ['pylint', 'pyls'],
+  \ 'rust': ['analyzer'],
   \ 'terraform': ['terraform_lsp', 'tflint'],
   \ 'vim': ['vimls', 'vint'],
   \ }

@@ -250,7 +250,7 @@ Plug 'AndrewRadev/linediff.vim'
 Plug 'dense-analysis/ale', {
   \ 'for' : [
     \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
-    \ 'haskell', 'java', 'javascript', 'json', 'ocaml', 'perl', 'python',
+    \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
     \ 'rust', 'r', 'scss', 'sh', 'terraform', 'vim'
     \]
   \}
@@ -422,7 +422,7 @@ let g:ale_set_highlights = 0
 let g:ale_rust_rls_toolchain = 'stable'
 
 " let g:ale_sign_column_always = 1 " Too slow.
-autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,ocaml,perl,python,r,rust,scss,sh,terraform,vim set signcolumn=yes
+autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim set signcolumn=yes
 
 let g:ale_fixers = {
   \ 'c': ['clang-format'],
@@ -449,6 +449,7 @@ let g:ale_linters = {
   \ 'dockerfile': ['hadolint'],
   \ 'elixir': ['elixir-ls', 'mix'],
   \ 'json': ['jsonlint'],
+  \ 'lua': ['luacheck'],
   \ 'perl': ['perl', 'perlcritic'],
   \ 'python': ['pylint', 'pyls'],
   \ 'rust': ['analyzer'],

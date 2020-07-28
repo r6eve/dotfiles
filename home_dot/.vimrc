@@ -452,7 +452,7 @@ let g:ale_linters = {
   \ 'perl': ['perl', 'perlcritic'],
   \ 'python': ['pylint', 'pyls'],
   \ 'rust': ['analyzer'],
-  \ 'sh': ['language_server'],
+  \ 'sh': ['language_server', 'shellcheck'],
   \ 'terraform': ['terraform_lsp', 'tflint'],
   \ 'vim': ['vimls', 'vint'],
   \ }

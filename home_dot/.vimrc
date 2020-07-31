@@ -465,7 +465,7 @@ let g:ale_elixir_elixir_ls_config = {
   \ 'elixirLS': {'dialyzerEnabled': v:false}
   \ }
 let g:ale_ocaml_ocp_indent_config = 'JaneStreet'
-let g:ale_perl_perltidy_options = '-ce'
+let g:ale_perl_perltidy_options = '-i=2 -ce'
 let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'
 let g:ale_sh_shfmt_options = '-s -i 2 -ci'
 

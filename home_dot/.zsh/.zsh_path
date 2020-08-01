@@ -21,6 +21,9 @@ if which aws >/dev/null; then
   source /usr/bin/aws_zsh_completer.sh
 fi
 
+# bspwm{{{1
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Clojure{{{1
 # export PATH=$HOME/repos/vim-iced/bin:$PATH
 export PATH=$HOME/.vim/plugged/vim-iced/bin:$PATH

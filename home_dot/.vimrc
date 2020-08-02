@@ -251,7 +251,7 @@ Plug 'dense-analysis/ale', {
   \ 'for' : [
     \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
     \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
-    \ 'rust', 'r', 'scss', 'sh', 'terraform', 'vim'
+    \ 'rust', 'r', 'scss', 'sh', 'terraform', 'vim', 'yaml.ansible'
     \]
   \}
 Plug 'ctrlpvim/ctrlp.vim'
@@ -293,6 +293,8 @@ Plug 'kana/vim-textobj-user' | Plug 'thinca/vim-textobj-between'
 " Operators
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-operator-user' | Plug 'kana/vim-operator-replace'
+
+Plug 'pearofducks/ansible-vim', { 'for' : 'yaml.ansible' }
 
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
@@ -422,7 +424,7 @@ let g:ale_set_highlights = 0
 let g:ale_rust_rls_toolchain = 'stable'
 
 " let g:ale_sign_column_always = 1 " Too slow.
-autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim set signcolumn=yes
+autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim,yaml.ansible set signcolumn=yes
 
 let g:ale_fixers = {
   \ 'c': ['clang-format'],
@@ -456,6 +458,7 @@ let g:ale_linters = {
   \ 'sh': ['language_server', 'shellcheck'],
   \ 'terraform': ['terraform_lsp', 'tflint'],
   \ 'vim': ['vimls', 'vint'],
+  \ 'yaml.ansible': ['ansible-lint'],
   \ }
 
 let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}

@@ -457,7 +457,7 @@ let g:ale_linters = {
   \ 'rust': ['analyzer'],
   \ 'sh': ['language_server', 'shellcheck'],
   \ 'terraform': ['terraform_lsp', 'tflint'],
-  \ 'vim': ['vimls', 'vint'],
+  \ 'vim': ['vint'],
   \ 'xml': ['xmllint'],
   \ 'yaml.ansible': ['ansible-lint'],
   \ }

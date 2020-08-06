@@ -248,6 +248,7 @@ Plug 'Shougo/neomru.vim'
 Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
 Plug 'AndrewRadev/linediff.vim'
 Plug 'dense-analysis/ale', {
+  \ 'tag' : 'v2.7.0',
   \ 'for' : [
     \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
     \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
@@ -457,7 +458,7 @@ let g:ale_linters = {
   \ 'rust': ['analyzer'],
   \ 'sh': ['language_server', 'shellcheck'],
   \ 'terraform': ['terraform_lsp', 'tflint'],
-  \ 'vim': ['vint'],
+  \ 'vim': ['vimls', 'vint'],
   \ 'xml': ['xmllint'],
   \ 'yaml.ansible': ['ansible-lint'],
   \ }

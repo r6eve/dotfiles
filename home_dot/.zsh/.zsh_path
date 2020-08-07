@@ -52,7 +52,7 @@ if which npm >/dev/null; then
     mkdir -p $HOME/.npm-packages
   fi
   export PATH="$HOME/.npm-packages/bin:$PATH"
-  export MANPATH="${MANPATH-$(manpath)}:$HOME/.npm-packages/share/man"
+  export MANPATH=":${MANPATH-$(manpath)}:$HOME/.npm-packages/share/man"
 fi
 
 # Perl{{{1

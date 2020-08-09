@@ -248,7 +248,6 @@ Plug 'Shougo/neomru.vim'
 Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
 Plug 'AndrewRadev/linediff.vim'
 Plug 'dense-analysis/ale', {
-  \ 'tag' : 'v2.7.0',
   \ 'for' : [
     \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
     \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
@@ -416,6 +415,7 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_set_balloons = 0
 let g:airline#extensions#ale#enabled = 0
 let g:ale_set_highlights = 0
+let g:ale_hover_cursor = 0
 
 " Java
 " FIX: Does not work.

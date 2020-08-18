@@ -417,16 +417,6 @@ let g:airline#extensions#ale#enabled = 0
 let g:ale_set_highlights = 0
 let g:ale_hover_cursor = 0
 
-" Java
-" FIX: Does not work.
-" let g:ale_java_javalsp_jar = "/path/to/out/fat-jar.jar"
-
-" Rust
-let g:ale_rust_rls_toolchain = 'stable'
-
-" let g:ale_sign_column_always = 1 " Too slow.
-autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim,xml,yaml.ansible set signcolumn=yes
-
 let g:ale_fixers = {
   \ 'c': ['clang-format'],
   \ 'cpp': ['clang-format'],
@@ -451,6 +441,7 @@ let g:ale_linters = {
   \ 'clojure': ['clj-kondo'],
   \ 'dockerfile': ['hadolint'],
   \ 'elixir': ['elixir-ls', 'mix'],
+  \ 'java': ['javalsp'],
   \ 'json': ['jsonlint'],
   \ 'lua': ['luacheck'],
   \ 'perl': ['perl', 'perlcritic'],
@@ -463,16 +454,19 @@ let g:ale_linters = {
   \ 'yaml.ansible': ['ansible-lint'],
   \ }
 
-let g:ale_pattern_options = {'\.java$': {'ale_enabled': 0}}
-
 let g:ale_elixir_elixir_ls_release = $HOME . '/repos/elixir-ls/rel'
 let g:ale_elixir_elixir_ls_config = {
   \ 'elixirLS': {'dialyzerEnabled': v:false}
   \ }
+let g:ale_java_javalsp_executable = '/usr/share/java/java-language-server/lang_server_linux.sh'
 let g:ale_ocaml_ocp_indent_config = 'JaneStreet'
 let g:ale_perl_perltidy_options = '-bbt=2 -bt=2 -ce -i=2 -iscl -naws -nhsc -nolc -noll -nolq -novalign -pt=2'
 let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'
+let g:ale_rust_rls_toolchain = 'stable'
 let g:ale_sh_shfmt_options = '-s -i 2 -ci'
+
+" let g:ale_sign_column_always = 1 " Too slow.
+autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim,xml,yaml.ansible set signcolumn=yes
 
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent>K <Plug>(ale_find_references)
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>f <Plug>(ale_fix)

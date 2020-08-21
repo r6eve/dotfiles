@@ -441,7 +441,7 @@ let g:ale_linters = {
   \ 'clojure': ['clj-kondo'],
   \ 'dockerfile': ['hadolint'],
   \ 'elixir': ['elixir-ls', 'mix'],
-  \ 'java': ['javalsp'],
+  \ 'java': ['checkstyle', 'javalsp'],
   \ 'json': ['jsonlint'],
   \ 'lua': ['luacheck'],
   \ 'perl': ['perl', 'perlcritic'],

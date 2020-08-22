@@ -441,7 +441,7 @@ let g:ale_linters = {
   \ 'clojure': ['clj-kondo'],
   \ 'dockerfile': ['hadolint'],
   \ 'elixir': ['elixir-ls', 'mix'],
-  \ 'java': ['checkstyle', 'javalsp'],
+  \ 'java': ['checkstyle', 'eclipselsp'],
   \ 'json': ['jsonlint'],
   \ 'lua': ['luacheck'],
   \ 'perl': ['perl', 'perlcritic'],
@@ -458,7 +458,8 @@ let g:ale_elixir_elixir_ls_release = $HOME . '/repos/elixir-ls/rel'
 let g:ale_elixir_elixir_ls_config = {
   \ 'elixirLS': {'dialyzerEnabled': v:false}
   \ }
-let g:ale_java_javalsp_executable = '/usr/share/java/java-language-server/lang_server_linux.sh'
+" let g:ale_java_javalsp_executable = '/usr/share/java/java-language-server/lang_server_linux.sh'
+let g:ale_java_eclipselsp_path = '/home/r6eve/repos/eclipse.jdt.ls'
 let g:ale_ocaml_ocp_indent_config = 'JaneStreet'
 let g:ale_perl_perltidy_options = '-bbt=2 -bt=2 -ce -i=2 -iscl -naws -nhsc -nolc -noll -nolq -novalign -pt=2'
 let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'

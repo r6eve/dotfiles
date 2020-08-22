@@ -460,6 +460,7 @@ let g:ale_elixir_elixir_ls_config = {
   \ }
 " let g:ale_java_javalsp_executable = '/usr/share/java/java-language-server/lang_server_linux.sh'
 let g:ale_java_eclipselsp_path = $HOME . '/repos/eclipse.jdt.ls'
+let g:ale_java_eclipselsp_javaagent = $HOME . '/repos/lombok/lombok.jar'
 let g:ale_ocaml_ocp_indent_config = 'JaneStreet'
 let g:ale_perl_perltidy_options = '-bbt=2 -bt=2 -ce -i=2 -iscl -naws -nhsc -nolc -noll -nolq -novalign -pt=2'
 let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'

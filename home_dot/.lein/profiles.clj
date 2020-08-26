@@ -8,7 +8,7 @@
                   [lein-ancient "0.6.15"]
                   [lein-bikeshed "0.5.2"]
                   [lein-cljfmt "0.6.8"]
-                  [lein-cloverage "1.1.2"]
+                  [lein-cloverage "1.2.0"]
                   [lein-codox "0.10.7"]
                   [lein-kibit "0.1.8"]
                   [lein-pprint "1.3.2"]

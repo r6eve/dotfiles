@@ -48,8 +48,6 @@
 	path = ~/.gitconfig.private
 [includeIf "gitdir:~/repos/patriot/"]
 	path = ~/.gitconfig.patriot
-[includeIf "gitdir:~/ojiki/"]
-	path = ~/.gitconfig.ojiki
 [includeIf "gitdir:~/workspace/"]
 	path = ~/.gitconfig.work
 [includeIf "gitdir:/mnt/"]

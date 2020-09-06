@@ -280,6 +280,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tyru/caw.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
+Plug 'tyru/open-browser.vim' | Plug 'tyru/open-browser-github.vim'
 Plug 'vim-scripts/gtags.vim'
 " Textobjs
 Plug 'kana/vim-textobj-user'

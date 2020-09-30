@@ -46,7 +46,7 @@
 	required = true
 [include]
 	path = ~/.gitconfig.private
-[includeIf "gitdir:~/repos/patriot/"]
+[includeIf "gitdir:~/patriot/"]
 	path = ~/.gitconfig.patriot
 [includeIf "gitdir:~/workspace/"]
 	path = ~/.gitconfig.work

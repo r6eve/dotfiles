@@ -319,6 +319,9 @@ Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 "
 " " acid.nvim
 " Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' }
+"
+" " conjure
+" Plug 'Olical/conjure',  { 'for' : 'clojure' }
 
 " Dot
 Plug 'wannesm/wmgraphviz.vim', { 'for' : 'dot' }

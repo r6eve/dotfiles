@@ -329,6 +329,9 @@ Plug 'elixir-editors/vim-elixir', { 'for' : 'elixir' }
 " Elm
 Plug 'ElmCast/elm-vim', { 'for' : 'elm' }
 
+" Fennel
+Plug 'bakpakin/fennel.vim', { 'for' : 'fennel' }
+
 " HTML
 Plug 'mattn/emmet-vim', {
   \ 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'css', 'scss', 'sass']

@@ -309,6 +309,7 @@ Plug 'guns/vim-sexp', { 'for' : 'clojure' }
 " Plug '~/repos/vim-iced', { 'for' : 'clojure' }
 Plug 'liquidz/vim-iced', { 'for' : 'clojure' }
 Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
+Plug 'liquidz/vim-iced-multi-session', {'for': 'clojure'}
 "
 " " vim-fireplace
 " Plug 'tpope/vim-salve', { 'for' : 'clojure' }

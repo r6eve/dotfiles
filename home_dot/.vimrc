@@ -254,6 +254,14 @@ Plug 'dense-analysis/ale', {
     \ 'rust', 'r', 'scss', 'sh', 'terraform', 'vim', 'xml', 'yaml.ansible'
     \]
   \}
+" Plug 'r6eve/ale', {
+"   \ 'branch' : 'fix/r-options',
+"   \ 'for' : [
+"     \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
+"     \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
+"     \ 'rust', 'r', 'scss', 'sh', 'terraform', 'vim', 'xml', 'yaml.ansible'
+"     \]
+"   \}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'inkarkat/vim-ingo-library' | Plug 'inkarkat/vim-mark'

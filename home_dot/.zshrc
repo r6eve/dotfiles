@@ -113,6 +113,10 @@ TRAPALRM() {
   ! [[ "$WIDGET" =~ ^(complete-word|expand-or-complete|.*beginning-search)$ ]] && zle reset-prompt
 }
 
+# other completions{{{1
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+
 # other settings{{{1
 source $HOME/.zsh/.zsh_alias
 source $HOME/.zsh/.zsh_func

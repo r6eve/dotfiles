@@ -903,6 +903,8 @@ let g:iced#buffer#stdout#enable_notify = v:false
 augroup MyClojureSetting
   autocmd!
   autocmd FileType clojure silent! nmap <buffer><Leader>st <Plug>(iced_cycle_src_and_test)
+  autocmd FileType clojure nmap <buffer> <Leader>ec
+      \ <Plug>(iced_eval_and_comment)<Plug>(sexp_outer_list)``
   autocmd FileType clojure nmap <buffer> <Leader>epe
       \ <Plug>(iced_eval_and_print)<Plug>(sexp_outer_list)``
   autocmd FileType clojure nmap <buffer> <Leader>ept

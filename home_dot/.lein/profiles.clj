@@ -1,14 +1,14 @@
 {:user {:dependencies [[cljfmt "0.7.0"]
                        [com.clojure-goes-fast/clj-async-profiler "0.5.0"]
                        [criterium "0.4.6"]
-                       [jonase/eastwood "0.3.12"
+                       [jonase/eastwood "0.3.13"
                         :exclusions [org.clojure/clojure]]]
         :plugins [[com.clojure-goes-fast/clj-java-decompiler "0.3.0"]
-                  [jonase/eastwood "0.3.12"]
-                  [lein-ancient "0.6.15"]
+                  [jonase/eastwood "0.3.13"]
+                  [lein-ancient "0.7.0"]
                   [lein-bikeshed "0.5.2"]
                   [lein-cljfmt "0.7.0"]
-                  [lein-cloverage "1.2.1"]
+                  [lein-cloverage "1.2.2"]
                   [lein-codox "0.10.7"]
                   [lein-kibit "0.1.8"]
                   [lein-pprint "1.3.2"]

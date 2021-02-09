@@ -37,6 +37,11 @@ __pycache__
 /.settings
 /.cpcache
 /.elixir_ls
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
 
 # Executables
 a.out

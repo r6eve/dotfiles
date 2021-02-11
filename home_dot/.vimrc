@@ -898,6 +898,7 @@ let g:iced#nrepl#skip_evaluation_when_buffer_size_is_exceeded = v:true
 let g:iced_enable_clj_kondo_analysis = v:true
 let g:iced_enable_clj_kondo_local_analysis = v:true
 let g:iced#buffer#stdout#enable_notify = v:false
+let g:iced#navigate#prefer_local_jump = v:true
 
 " let g:iced_formatter = 'cljstyle'
 

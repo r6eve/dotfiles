@@ -116,6 +116,7 @@ TRAPALRM() {
 # other completions{{{1
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+complete -o nospace -C /usr/bin/aws_completer aws
 
 # other settings{{{1
 source $HOME/.zsh/.zsh_alias

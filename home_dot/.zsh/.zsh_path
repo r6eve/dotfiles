@@ -16,11 +16,6 @@ wf(){
     -a -type f
 }
 
-# aws-cli
-if which aws >/dev/null; then
-  source /usr/bin/aws_zsh_completer.sh
-fi
-
 # bspwm{{{1
 export XDG_CONFIG_HOME="$HOME/.config"
 

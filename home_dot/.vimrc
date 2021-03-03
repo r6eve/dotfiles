@@ -820,6 +820,7 @@ map gcO <Plug>(caw:jump:comment-prev)
 let g:clever_f_across_no_line = 1
 let g:clever_f_smart_case = 1
 let g:clever_f_use_migemo = 1
+let g:clever_f_highlight_timeout_ms = 5000
 
 " rhysd/committia.vim{{{2
 let g:committia_hooks = {}

@@ -901,7 +901,7 @@ let g:iced_enable_clj_kondo_local_analysis = v:true
 let g:iced#buffer#stdout#enable_notify = v:false
 let g:iced#navigate#prefer_local_jump = v:true
 
-" let g:iced_formatter = 'cljstyle'
+let g:iced_formatter = 'cljstyle'
 
 augroup MyClojureSetting
   autocmd!

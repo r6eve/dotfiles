@@ -105,7 +105,7 @@ autocmd VimEnter,WinEnter *.py syntax keyword Special self
 
 augroup vimrc-todo
   autocmd!
-  autocmd Syntax * syn match myTodo /\C\v<(DEBUG|DONE|FIXME|HACK|NB|NOTE|OPTIMIZE|REVIEW|WIP):/ containedin=.*Comment
+  autocmd Syntax * syn match myTodo /\C\v<(DEBUG|DONE|FIXME|HACK|NB|NOTE|OPTIMIZE|REVIEW|WIP|XXX):/ containedin=.*Comment
 augroup END
 highlight def link myTodo Todo
 
@@ -461,6 +461,7 @@ let g:ale_linters = {
   \ 'json': ['jsonlint'],
   \ 'lua': ['luacheck'],
   \ 'perl': ['perl', 'perlcritic'],
+  \ 'r': ['lintr'],
   \ 'python': ['pylint', 'pyls'],
   \ 'rust': ['analyzer'],
   \ 'sh': ['language_server', 'shellcheck'],
@@ -478,7 +479,7 @@ let g:ale_elixir_elixir_ls_config = {
 let g:ale_java_eclipselsp_path = $HOME . '/repos/eclipse.jdt.ls'
 let g:ale_java_eclipselsp_javaagent = $HOME . '/repos/lombok/lombok.jar'
 let g:ale_ocaml_ocp_indent_config = 'JaneStreet'
-let g:ale_perl_perltidy_options = '-bbt=2 -bt=2 -ce -i=2 -iscl -naws -nhsc -nolc -noll -nolq -novalign -pt=2'
+let g:ale_perl_perltidy_options = '-bbt=2 -bt=2 -ce -i=2 -iscl -naws -nhsc -nolc -noll -nolq -novalign -pt=2 -fbl'
 let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'
 let g:ale_rust_rls_toolchain = 'stable'
 let g:ale_sh_shfmt_options = '-s -i 2 -ci'
@@ -896,12 +897,12 @@ let g:iced#format#rule = {
 let g:iced_enable_auto_linting = v:true
 let g:iced_enable_default_key_mappings = v:true
 let g:iced#nrepl#skip_evaluation_when_buffer_size_is_exceeded = v:true
-let g:iced_enable_clj_kondo_analysis = v:true
-let g:iced_enable_clj_kondo_local_analysis = v:true
+" let g:iced_enable_clj_kondo_analysis = v:true
+" let g:iced_enable_clj_kondo_local_analysis = v:true
 let g:iced#buffer#stdout#enable_notify = v:false
-let g:iced#navigate#prefer_local_jump = v:true
+" let g:iced#navigate#prefer_local_jump = v:true
 
-let g:iced_formatter = 'cljstyle'
+" let g:iced_formatter = 'cljstyle'
 
 augroup MyClojureSetting
   autocmd!

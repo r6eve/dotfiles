@@ -84,10 +84,32 @@ endsnippet
 
 snippet uniq
 sub uniq {
-	my ($lst) = @_;
+	my ($to_obj, $xs) = @_;
 	my %seen;
-	@$lst = grep { ++$seen{$_} == 1 } @$lst;
-	$lst;
+	@$xs = grep {++$seen{$to_obj->($_)} == 1} @$xs;
+	$xs;
+}
+endsnippet
+
+snippet groupby
+sub group_by {
+	my ($f, $xs) = @_;
+	my $ret = {};
+	# stable
+	for my $x (@$xs) {
+		push(@{$ret->{$f->($x)}}, $x);
+	}
+	$ret;
+}
+endsnippet
+
+snippet mean
+sub mean {
+	my ($xs) = @_;
+	return 'NA' if (!defined $xs || scalar @$xs == 0);
+	my $ret = 0;
+	$ret += $_ for (@$xs);
+	$ret / scalar @$xs;
 }
 endsnippet
 

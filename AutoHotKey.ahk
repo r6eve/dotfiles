@@ -26,8 +26,8 @@ LWin & Tab::AltTab
 LWin & h::ShiftAltTab
 
 F9::Send,{Volume_Mute}
-F10::Send,{Volume_Down 2}
-F11::Send,{Volume_Up 2}
+F10::Send,{Volume_Down 1}
+F11::Send,{Volume_Up 1}
 
 ; Switch Input Methods
 ^m::Send,#{Space}

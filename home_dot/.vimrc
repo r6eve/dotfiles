@@ -935,6 +935,7 @@ let g:WMGraphviz_shelloptions = '-Gdpi=300'
 " Fortran{{{2
 let g:fortran_fixed_source = 1
 let g:fortran_more_precise = 1
+let g:fortran_indent_less = 1
 
 " HTML{{{2
 let g:html_indent_inctags = 'html,body,head,tbody'

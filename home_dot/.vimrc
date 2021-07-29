@@ -958,7 +958,7 @@ let g:vim_markdown_new_list_item_indent = 0
 
 " OCaml{{{2
 if executable('ocamlmerlin') && has('python')
-  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+  let g:opamshare = substitute(system('opam var share'),'\n$','','''')
   exec 'set rtp+=' . g:opamshare . '/merlin/vim'
 end
 autocmd FileType ocaml set commentstring=(*%s*)

@@ -384,6 +384,9 @@ Plug 'qnighy/satysfi.vim', { 'for' : 'satysfi' }
 " Shell script
 Plug 'vim-scripts/sh.vim', { 'for' : 'sh' }
 
+" Standard ML
+Plug 'jez/vim-better-sml', { 'for' : 'sml' }
+
 " TOML
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
 
@@ -989,6 +992,10 @@ autocmd FileType ruby call smartinput_endwise#define_default_rules()
 
 " Shell script{{{2
 let g:sh_indent_case_labels=1
+
+" Standard ML{{{2
+let g:sml_smlnj_executable = '/usr/bin/smlnj'
+let g:sml_mlton_executable = '/usr/bin/mlton'
 
 " development settings{{{1
 " Vim の開発中のプラグインをON/OFFする方法 — KaoriYa https://www.kaoriya.net/blog/2015/12/01/vim-switch-developing-plugin/

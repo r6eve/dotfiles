@@ -1,0 +1,48 @@
+# Editors' backup files
+*~
+*.sw?
+
+# Tag files
+tags
+GPATH
+GRTAGS
+GTAGS
+
+# Platform-dependant data
+.DS_Store
+Thumbs.db
+
+# Local configuration file
+.local.vimrc
+
+# Libraries & Objects
+*.lib
+*.o
+*.a
+*.dll
+*.dylib
+*.so
+*.hi
+*.class
+*.pyc
+__pycache__
+*.cmi
+*.cmt
+*.cmti
+*.cmx
+/.m2
+/.eastwood
+/.classpath
+/.project
+/.settings
+/.cpcache
+/.elixir_ls
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+
+# Executables
+a.out
+a.exe

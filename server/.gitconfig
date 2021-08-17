@@ -1,0 +1,48 @@
+[user]
+	name = r6eve
+	email = r6eve@acm.org
+[color]
+	ui = auto
+[color "branch"]
+	current = 149
+	remote = 203
+[color "diff"]
+	old = 203
+	new = 149
+[color "status"]
+	added = 149
+	changed = 203
+	untracked = 203
+	localBranch = 149
+	remoteBranch = 203
+[core]
+	excludesfile = ~/.gitignore
+	pager = less --ignore-case --RAW-CONTROL-CHARS
+	editor = vim
+[github]
+	user = r6eve
+[pull]
+	rebase = true
+[alias]
+	br = branch
+	cmv = commit -v
+	co = checkout
+	di = diff
+	dic = diff --color-words
+	dij = diff --word-diff-regex='\\w+'
+	dis = diff --stat
+	lo = log --graph --pretty=format:'%C(Yellow)%h %C(White)%ad %s%C(Green)%d %C(Cyan)[%an]' --date=short
+	loc = log -p --color-words
+	lon = log --name-status
+	lop = log -p
+	los = log --stat
+	ps = push
+	ss = show --stat
+	st = status -sb
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[include]
+	path = ~/.gitconfig.work

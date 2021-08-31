@@ -466,7 +466,7 @@ let g:ale_linters = {
   \ 'perl': ['perl', 'perlcritic'],
   \ 'r': ['lintr'],
   \ 'python': ['pylint', 'pyls'],
-  \ 'rust': ['analyzer'],
+  \ 'rust': ['analyzer', 'cargo'],
   \ 'sh': ['language_server', 'shellcheck'],
   \ 'terraform': ['terraform_lsp', 'tflint'],
   \ 'vim': ['vimls', 'vint'],
@@ -484,6 +484,7 @@ let g:ale_java_eclipselsp_javaagent = $HOME . '/repos/lombok/lombok.jar'
 let g:ale_ocaml_ocp_indent_config = 'JaneStreet'
 let g:ale_perl_perltidy_options = '-bbt=2 -bt=2 -ce -i=2 -iscl -naws -nhsc -nolc -noll -nolq -novalign -pt=2 -fbl'
 let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'
+let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 let g:ale_rust_rls_toolchain = 'stable'
 let g:ale_sh_shfmt_options = '-s -i 2 -ci'
 

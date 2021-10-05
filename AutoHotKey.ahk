@@ -22,8 +22,8 @@ $+8::SendRaw,8
 $+9::SendRaw,9
 $+0::SendRaw,0
 
-LWin & Tab::AltTab
-LWin & h::ShiftAltTab
+LWin & f::AltTab
+LWin & b::ShiftAltTab
 
 F9::Send,{Volume_Mute}
 F10::Send,{Volume_Down 1}

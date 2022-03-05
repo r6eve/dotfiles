@@ -251,8 +251,7 @@ Plug 'dense-analysis/ale', {
   \ 'for' : [
     \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
     \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
-    \ 'rust', 'r', 'scss', 'sh', 'sql', 'terraform', 'vim', 'xml',
-    \ 'yaml.ansible'
+    \ 'rust', 'r', 'scss', 'sh', 'terraform', 'vim', 'xml', 'yaml.ansible'
     \]
   \}
 " Plug 'r6eve/ale', {
@@ -271,16 +270,12 @@ Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
 Plug 'mbbill/undotree'
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'clojure'}
 Plug 'osyo-manga/vim-anzu'
-Plug 'r6eve/tcvime'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
 Plug 'rhysd/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
-Plug 'rhysd/vim-grammarous'
 Plug 'sgur/vim-editorconfig'
-Plug 'SirVer/ultisnips'
 Plug 'thinca/vim-localrc'
 Plug 'thinca/vim-qfreplace', { 'on' : 'Qfreplace' }
 Plug 'thinca/vim-template'
@@ -306,20 +301,20 @@ Plug 'kana/vim-operator-user' | Plug 'kana/vim-operator-replace'
 
 Plug 'pearofducks/ansible-vim', { 'for' : 'yaml.ansible' }
 
-" C++
-Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
-Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
+" " C++
+" Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
+" Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 
-" CWL
-Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
+" " CWL
+" Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
 
-" Clojure
-Plug 'guns/vim-sexp', { 'for' : 'clojure' }
-" Plug '~/repos/vim-iced', { 'for' : 'clojure' }
-Plug 'liquidz/vim-iced', { 'for' : 'clojure' }
-Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
-Plug 'liquidz/vim-iced-multi-session', {'for': 'clojure'}
-"
+" " Clojure
+" Plug 'guns/vim-sexp', { 'for' : 'clojure' }
+" " Plug '~/repos/vim-iced', { 'for' : 'clojure' }
+" Plug 'liquidz/vim-iced', { 'for' : 'clojure' }
+" Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
+" Plug 'liquidz/vim-iced-multi-session', {'for': 'clojure'}
+
 " " vim-fireplace
 " Plug 'tpope/vim-salve', { 'for' : 'clojure' }
 " Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
@@ -336,26 +331,26 @@ Plug 'liquidz/vim-iced-multi-session', {'for': 'clojure'}
 " Dot
 Plug 'wannesm/wmgraphviz.vim', { 'for' : 'dot' }
 
-" Elixir
-Plug 'elixir-editors/vim-elixir', { 'for' : 'elixir' }
+" " Elixir
+" Plug 'elixir-editors/vim-elixir', { 'for' : 'elixir' }
 
-" Elm
-Plug 'ElmCast/elm-vim', { 'for' : 'elm' }
+" " Elm
+" Plug 'ElmCast/elm-vim', { 'for' : 'elm' }
 
-" Fennel
-Plug 'bakpakin/fennel.vim', { 'for' : 'fennel' }
+" " Fennel
+" Plug 'bakpakin/fennel.vim', { 'for' : 'fennel' }
 
 " HTML
 Plug 'mattn/emmet-vim', {
   \ 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'css', 'scss', 'sass']
   \}
 
-" Haxe
-Plug 'jdonaldson/vaxe', { 'for' : ['haxe'] }
+" " Haxe
+" Plug 'jdonaldson/vaxe', { 'for' : ['haxe'] }
 
-" JavaScript
-Plug 'posva/vim-vue', { 'for' : ['javascript', 'html'] }
-Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }
+" " JavaScript
+" Plug 'posva/vim-vue', { 'for' : ['javascript', 'html'] }
+" Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }
 
 " Markdown
 Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 'rst'] }
@@ -363,45 +358,45 @@ Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
 Plug 'godlygeek/tabular', { 'for' : ['markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for' : ['markdown'] }
 
-" Perl
-Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
-Plug 'vim-perl/vim-perl'
+" " Perl
+" Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
+" Plug 'vim-perl/vim-perl'
 
 " Python
 Plug 'vim-scripts/python_match.vim', { 'for' : 'python' }
 
-" ReasonML
-Plug 'reasonml-editor/vim-reason-plus', { 'for' : 'reason' }
+" " ReasonML
+" Plug 'reasonml-editor/vim-reason-plus', { 'for' : 'reason' }
 
 " Ruby
 Plug 'kana/vim-smartinput' | Plug 'cohama/vim-smartinput-endwise', { 'for' : 'ruby' }
 
-" Rust
-Plug 'rust-lang/rust.vim'
+" " Rust
+" Plug 'rust-lang/rust.vim'
 
-" SATySFi
-Plug 'qnighy/satysfi.vim', { 'for' : 'satysfi' }
+" " SATySFi
+" Plug 'qnighy/satysfi.vim', { 'for' : 'satysfi' }
 
 " Shell script
 Plug 'vim-scripts/sh.vim', { 'for' : 'sh' }
 
-" Standard ML
-Plug 'jez/vim-better-sml', { 'for' : 'sml' }
+" " Standard ML
+" Plug 'jez/vim-better-sml', { 'for' : 'sml' }
 
-" TOML
-Plug 'cespare/vim-toml', { 'for' : 'toml' }
+" " TOML
+" Plug 'cespare/vim-toml', { 'for' : 'toml' }
 
 " Terraform
 Plug 'hashivim/vim-terraform', { 'for' : 'terraform' }
 
-" TypeScript
-Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
+" " TypeScript
+" Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
 
-" WDL
-Plug 'broadinstitute/vim-wdl', { 'for' : 'wdl' }
+" " WDL
+" Plug 'broadinstitute/vim-wdl', { 'for' : 'wdl' }
 
-" Workflow with GitHub Actions
-Plug 'rhysd/vim-github-actions', { 'for' : 'ghaworkflow' }
+" " Workflow with GitHub Actions
+" Plug 'rhysd/vim-github-actions', { 'for' : 'ghaworkflow' }
 
 call plug#end()
 
@@ -454,7 +449,6 @@ let g:ale_fixers = {
   \ 'rust': ['rustfmt'],
   \ 'scss': ['prettier'],
   \ 'sh': ['shfmt'],
-  \ 'sql': ['sqlformat'],
   \ 'terraform': ['terraform'],
   \ }
 
@@ -467,7 +461,7 @@ let g:ale_linters = {
   \ 'lua': ['luacheck'],
   \ 'perl': ['perl', 'perlcritic'],
   \ 'r': ['lintr'],
-  \ 'python': ['pylint', 'pylsp'],
+  \ 'python': ['pylint', 'pyls'],
   \ 'rust': ['analyzer', 'cargo'],
   \ 'sh': ['language_server', 'shellcheck'],
   \ 'terraform': ['terraform_lsp', 'tflint'],
@@ -491,10 +485,10 @@ let g:ale_rust_rls_toolchain = 'stable'
 let g:ale_sh_shfmt_options = '-s -i 2 -ci'
 
 " let g:ale_sign_column_always = 1 " Too slow.
-autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim,xml,yaml.ansible set signcolumn=yes
+autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim,xml,yaml.ansible set signcolumn=yes
 
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent>K <Plug>(ale_find_references)
-autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim nmap <silent><Leader>f <Plug>(ale_fix)
+autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>f <Plug>(ale_fix)
 autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-]> <Plug>(ale_go_to_definition)
 autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
 autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-T> <C-O>
@@ -518,15 +512,6 @@ map z#  <Plug>(asterisk-gz#)<Plug>(anzu-update-search-status-with-echo)
 map gz# <Plug>(asterisk-z#)<Plug>(anzu-update-search-status-with-echo)
 
 let g:asterisk#keeppos = 1
-
-" r6eve/tcvime{{{2
-let tcvime_keymap = 'gcode'
-let tcvime_no_default_key_mappings = 1
-imap <unique> <silent> <C-a>q <Plug>TcvimeIStart
-imap <unique> <silent> <C-a><Space> <Plug>TcvimeIConvOrStart
-imap <unique> <silent> <C-a>a <Plug>TcvimeIDisableKeymap
-nmap <unique> <silent> <C-a>? <Plug>TcvimeNHelp
-" let plugin_tcvime_disable = 1
 
 " inkarkat/vim-mark{{{2
 let g:mw_no_mappings = 1
@@ -802,10 +787,6 @@ call submode#enter_with('move-to-fold', 'n', '', 'zk', 'zk')
 call submode#map('move-to-fold', 'n', '', 'j', 'zj')
 call submode#map('move-to-fold', 'n', '', 'k', 'zk')
 
-" neoclide/coc.nvim{{{2
-" :CocInstall coc-snippets
-" ~/.config/coc/extensions/node_modules/coc-snippets
-
 " osyo-manga/vim-anzu{{{2
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
@@ -846,16 +827,6 @@ let g:reply_repls = {
 " rhysd/vim-color-spring-night{{{2
 colorscheme spring-night
 
-" rhysd/vim-grammarous{{{2
-let g:grammarous#default_comments_only_filetypes = {
-\ '*' : 1, 'help' : 0,
-\ }
-
-" SirVer/ultisnips{{{2
-let g:UltiSnipsExpandTrigger='<c-k>'
-let g:UltiSnipsJumpForwardTrigger='<c-k>'
-let g:UltiSnipsJumpBackwardTrigger='<c-p>'
-
 " tyru/open-browser{{{2
 nmap <Leader>o <Plug>(openbrowser-smart-search)
 vmap <Leader>o <Plug>(openbrowser-smart-search)
@@ -888,60 +859,10 @@ map _ <Plug>(operator-replace)
 " vim-scripts/gtags.vim{{{2
 autocmd FileType c,cpp nmap <silent><Leader>g :Gtags -f %<CR>
 
-" Clojure{{{2
-" guns/vim-sexp
-let g:sexp_mappings = {'sexp_indent': '', 'sexp_indent_top': ''}
-
-" liquidz/vim-iced
-let g:iced#buffer#stdout#file = '/tmp/vim-iced.clj'
-let g:iced#eastwood#option = {
-    \ 'linters': ['all'],
-    \ }
-let g:iced#format#rule = {
-    \ 'merr.core/let': '[[:block 2] [:inner 1]]',
-    \ }
-let g:iced_enable_auto_linting = v:true
-let g:iced_enable_default_key_mappings = v:true
-let g:iced#nrepl#skip_evaluation_when_buffer_size_is_exceeded = v:true
-" let g:iced_enable_clj_kondo_analysis = v:true
-" let g:iced_enable_clj_kondo_local_analysis = v:true
-let g:iced#buffer#stdout#enable_notify = v:false
-" let g:iced#navigate#prefer_local_jump = v:true
-
-" let g:iced_formatter = 'cljstyle'
-
-augroup MyClojureSetting
-  autocmd!
-  autocmd FileType clojure silent! nmap <buffer><Leader>st <Plug>(iced_cycle_src_and_test)
-  autocmd FileType clojure nmap <buffer> <Leader>ec
-      \ <Plug>(iced_eval_and_comment)<Plug>(sexp_outer_list)``
-  autocmd FileType clojure nmap <buffer> <Leader>epe
-      \ <Plug>(iced_eval_and_print)<Plug>(sexp_outer_list)``
-  autocmd FileType clojure nmap <buffer> <Leader>ept
-      \ <Plug>(iced_eval_and_print)<Plug>(sexp_outer_top_list)``
-augroup END
-
-" " vim-fireplace
-" " venantius/vim-cljfmt
-" autocmd FileType clojure nmap <silent><Leader>f :Cljfmt<CR>
-" let g:clj_fmt_autosave = 0
-" " vim-syntastic/syntastic
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 1
-" let g:syntastic_always_populate_loc_list = 0
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_clojure_checkers = ['eastwood']
-" autocmd FileType clojure set signcolumn=yes
-
 " Dot{{{2
 let g:WMGraphviz_output = 'png'
 let g:WMGraphviz_viewer = 'firefox'
 let g:WMGraphviz_shelloptions = '-Gdpi=300'
-
-" Fortran{{{2
-let g:fortran_fixed_source = 1
-let g:fortran_more_precise = 1
-let g:fortran_indent_less = 1
 
 " HTML{{{2
 let g:html_indent_inctags = 'html,body,head,tbody'
@@ -961,19 +882,6 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
-
-" OCaml{{{2
-if executable('ocamlmerlin') && has('python')
-  let g:opamshare = substitute(system('opam var share'),'\n$','','''')
-  exec 'set rtp+=' . g:opamshare . '/merlin/vim'
-end
-autocmd FileType ocaml set commentstring=(*%s*)
-autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo
-" call lsp#add_filetype_config({
-"  \ 'filetype' : 'ocaml',
-"  \ 'name' : 'ocamlmerlin-lsp',
-"  \ 'cmd' : 'opam config exec -- ocamlmerlin-lsp',
-"  \})
 
 " R{{{2
 let vimrplugin_assign = 0
@@ -995,21 +903,6 @@ autocmd FileType ruby call smartinput_endwise#define_default_rules()
 
 " Shell script{{{2
 let g:sh_indent_case_labels=1
-
-" Standard ML{{{2
-let g:sml_smlnj_executable = '/usr/bin/smlnj'
-let g:sml_mlton_executable = '/usr/bin/mlton'
-
-" development settings{{{1
-" Vim の開発中のプラグインをON/OFFする方法 — KaoriYa https://www.kaoriya.net/blog/2015/12/01/vim-switch-developing-plugin/
-let dirs = [ $HOME.'/repos', $HOME.'/workspace' ]
-for pattern in [ 'vim-*', '*-vim' ]
-  for path in globpath(join(dirs, ','), pattern, 0, 1)
-    if isdirectory(path) && filereadable(path . '/VIM_AUTO_RTP')
-      let &runtimepath = &runtimepath.','.path
-    end
-  endfor
-endfor
 
 " __END__{{{1
 " vim: foldmethod=marker

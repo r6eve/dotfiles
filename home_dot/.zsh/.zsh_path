@@ -5,7 +5,7 @@ export PATH="$HOME/repos/twe/bin:$PATH"
 # export PATH="$HOME/repos/graalvm-ce-1.0.0-rc7/bin:$PATH"
 
 # wtools
-alias wa='MAX_LENGTH=300 wag -U --hidden --ignore-dir .git --ignore-dir _build --ignore-dir build --ignore-dir target --ignore tags'
+alias wa='MAX_LENGTH=300 wag -U --hidden --ignore-dir .git --ignore-dir _build --ignore-dir build --ignore-dir target --ignore tags --ignore .cpcache --ignore .clj-kondo --ignore .pytest_cache'
 wf(){
   wfind "$@" -not -path '*/.git/*' \
     -a -not -path '*/target/*' \

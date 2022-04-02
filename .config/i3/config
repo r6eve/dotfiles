@@ -123,7 +123,6 @@ exec --no-startup-id xset s off
 exec --no-startup-id xset r rate 400 100
 exec --no-startup-id feh --bg-fill /home/r6eve/picts/bg.png
 exec --no-startup-id fcitx-autostart
-exec --no-startup-id /home/r6eve/.dropbox-dist/dropboxd
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id gpg-agent --daemon

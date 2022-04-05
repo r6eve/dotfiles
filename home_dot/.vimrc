@@ -49,7 +49,7 @@ set shiftwidth=2
 set shiftround
 set foldmethod=marker
 set foldlevel=0
-set formatoptions+=r
+set formatoptions+=rmM
 set cinoptions=(0,g0,t0
 set keywordprg=:help
 set splitright

@@ -75,6 +75,10 @@ if which gem >/dev/null; then
   export PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
+if which bundle >/dev/null; then
+  export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
+fi
+
 # Rust{{{1
 export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH="$HOME/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/"

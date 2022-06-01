@@ -271,7 +271,7 @@ Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
 Plug 'mbbill/undotree'
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': 'clojure'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/tcvime'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'

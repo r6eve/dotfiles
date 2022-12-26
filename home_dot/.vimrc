@@ -436,6 +436,7 @@ let g:ale_set_balloons = 0
 let g:airline#extensions#ale#enabled = 0
 let g:ale_set_highlights = 0
 let g:ale_hover_cursor = 0
+let g:ale_virtualtext_cursor = 'disabled'
 
 let g:ale_fixers = {
   \ 'c': ['clang-format'],

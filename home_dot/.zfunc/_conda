@@ -1,11 +1,11 @@
-#compdef conda
+#compdef conda mamba
 #description:conda package manager
 #
 # ZSH Completion for conda (http://conda.pydata.org/)
 #
 # Author: Valentin Haenel <valentin@haenel.co>  (https://github.com/esc/)
 # Licence: WTFPL (http://sam.zoy.org/wtfpl/)
-# Version: 0.9-dev
+# Version: 0.10-dev
 # Homepage: https://github.com/esc/conda-zsh-completion
 # Demo: https://asciinema.org/a/16516
 #
@@ -25,11 +25,14 @@
 # just add it to your $fpath before calling the OMZ or Prezto initialization
 # functions. For example:
 #
-#     git clone https://github.com/esc/conda-zsh-completion ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+#     git clone https://github.com/esc/conda-zsh-completion ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
 #
 # And add lines in `.zshrc`
 #     plugins=(… conda-zsh-completion)
 #     autoload -U compinit && compinit
+#
+# If you use oh-my-zsh, you might have to move the "autoload" line to after you sourced
+# oh-my-zsh.sh.
 #
 # To activate the completion cache for packages, add the following to your
 # '.zshrc':
@@ -40,6 +43,26 @@
 # '.zshrc':
 #
 #    zstyle ":conda_zsh_completion:*" use-groups true
+#
+# To display unnamed environments and prefixes of environments, add the following
+# to your '.zshrc':
+#
+#    zstyle ":conda_zsh_completion:*" show-unnamed true
+#
+# To display environments autocompletion sorted in creation order add the following
+# to your '.zshrc':
+#
+#    zstyle ":conda_zsh_completion:*" sort-envs-by-time true
+# 
+# The completion will display both global environments (envs located in conda_dir/envs and base env)
+# and local environments (located in ~/.conda/envs).
+# If enables sort-envs-by-time, it will display local environments first.
+# To display global environments first, add the following to your '.zshrc':
+#
+#    zstyle ":conda_zsh_completion:*" show-global-envs-first true
+# 
+# If not enables sort-envs-by-time, then all environments will be sorted by alphabetical order,
+# and this option is useless.
 #
 # To forcefully clean the completion cache, look in '~/.zcompcache' and remove
 # file starting with 'conda_'. And/or do 'rm ~/.zcompdump*'.
@@ -54,9 +77,15 @@
 #
 # CHANGELOG
 # ---------
+# * v0.10
+#
+#   * Search environments in custom environments paths, thanks to Thomas G. (coldfix).
+#
 # * v0.9
 #
-#   * XXX
+#   * Improved the completion speed for completing environments, thanks to
+#     Niels Mündler.
+#   * Various minor improvements and documentation upgrades
 #
 # * v0.8
 #
@@ -124,9 +153,45 @@ local state line context
 local -A opt_args
 
 __conda_envs(){
-    local -a envs
-    envs=($( conda info -e | sed "1,2d" | cut -f1 -d' '))
-    _describe -t envs 'conda environments' envs
+    local -a envs unnamed sort globalfirst localenvs globalenvs
+    local -a ls_opts=("-1")
+    local -a describe_opts
+    local localenvspath
+    # only parse environments.txt (including unnamed envs) if asked by the user
+    zstyle -s ":conda_zsh_completion:*" show-unnamed unnamed
+    zstyle -s ":conda_zsh_completion:*" sort-envs-by-time sort
+    zstyle -s ":conda_zsh_completion:*" show-global-envs-first globalfirst
+    if test -n "$sort"; then
+        ls_opts+=("-t")
+        describe_opts+=("-V")
+    fi
+
+    # global envs (if exists) and base env.
+    globalenvs=($([[ -d "${${CONDA_EXE}%bin/conda}/envs" ]] && ls $ls_opts ${${CONDA_EXE}%bin/conda}/envs))
+    globalenvs+=("base")
+
+    # local envs (if exists).
+    if [[ -n "$CONDA_ENVS_PATH" ]]; then
+        localenvspath="$CONDA_ENVS_PATH"
+    elif [[ -n "$CONDA_ENVS_DIRS" ]]; then
+        localenvspath="$CONDA_ENVS_DIRS"
+    else
+        localenvspath="${HOME:?}/.conda/envs"
+    fi
+    localenvs=($([[ -d "$localenvspath" ]] && ls $ls_opts "$localenvspath"))
+
+    if test -n "$globalfirst"; then
+        envs=($globalenvs $localenvs)
+    else
+        envs=($localenvs $globalenvs)
+    fi
+        
+    # unmaned envs (if show-unammed). 
+    if test -n "$unnamed"; then
+        envs+=($( (test -n "$unnamed" && cat ${HOME:?}/.conda/environments.txt) | cut -f1 -d' ' | sed -e "s|^$localenvspath/||"))
+    fi
+
+    _describe $describe_opts -t envs 'conda environments' envs
 }
 
 __conda_packages_installed(){
@@ -329,7 +394,7 @@ __conda_commands(){
     )
     special=(
         run:'Launches an application installed with Conda.'
-        init:'Initialize conda into a regular environment. (DEPRECATED)'
+        init:'Initialize conda into a regular environment. (EXPERIMENTAL)'
         package:'Low-level conda package utility. (EXPERIMENTAL)'
         bundle:'Create or extract a "bundle package" (EXPERIMENTAL)'
     )

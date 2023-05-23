@@ -54,9 +54,6 @@ alias splint='splint +charindex -type -compdef -usedef -retvalother -casebreak'
 alias g++='g++ -std=c++11 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
 alias clang++='clang++ -std=c++11 -O2 -Wall -Wextra -pedantic -Wformat=2 -Wstrict-aliasing=2'
 
-# Clojure{{{1
-alias btop='rlwrap bb --repl'
-
 # Dot{{{1
 alias dot2png='dot -Tpng -Gdpi=300'
 

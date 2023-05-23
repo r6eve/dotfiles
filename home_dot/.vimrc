@@ -932,6 +932,8 @@ augroup END
 " let g:syntastic_auto_loc_list = 0
 " let g:syntastic_clojure_checkers = ['eastwood']
 " autocmd FileType clojure set signcolumn=yes
+"
+autocmd FileType clojure set foldmarker={@{,}@}
 
 " Dot{{{2
 let g:WMGraphviz_output = 'png'

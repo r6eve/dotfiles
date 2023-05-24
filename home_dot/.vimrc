@@ -290,7 +290,6 @@ Plug 'tpope/vim-surround'
 Plug 'tyru/caw.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'tyru/open-browser.vim'
 Plug 'tyru/open-browser.vim' | Plug 'tyru/open-browser-github.vim'
-Plug 'vim-scripts/gtags.vim'
 " Textobjs
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-user' | Plug 'glts/vim-textobj-comment'
@@ -885,9 +884,6 @@ endif
 
 " kana/vim-operator-replace{{{2
 map _ <Plug>(operator-replace)
-
-" vim-scripts/gtags.vim{{{2
-autocmd FileType c,cpp nmap <silent><Leader>g :Gtags -f %<CR>
 
 " Clojure{{{2
 " guns/vim-sexp

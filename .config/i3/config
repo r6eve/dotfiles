@@ -99,12 +99,12 @@ bindsym $mod+Shift+a focus parent
 # user defined commands
 bindsym Print exec --no-startup-id scrot '%Y%m%d_%H%M%S_$wx$h_scrot.png'
 bindsym --release Shift+Print exec --no-startup-id scrot '%Y%m%d_%H%M%S_$wx$h_scrot.png' -s
-bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -q set Master 2%- && mplayer -noconfig all /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -q set Master 2%+ && mplayer -noconfig all /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
-bindsym F9 exec --no-startup-id amixer -q set Master toggle
-bindsym F10 exec --no-startup-id "amixer -q set Master 2%- && mplayer -noconfig all /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
-bindsym F11 exec --no-startup-id "amixer -q set Master 2%+ && mplayer -noconfig all /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3%
+bindsym F9 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym F10 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3%
+bindsym F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3%
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 10"
 bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 10"
 bindsym --whole-window button2 nop
@@ -123,7 +123,6 @@ exec --no-startup-id xset s off
 exec --no-startup-id xset r rate 400 100
 exec --no-startup-id feh --bg-fill /home/r6eve/picts/bg.png
 exec --no-startup-id fcitx-autostart
-exec --no-startup-id /home/r6eve/.opam/default/bin/google-drive-ocamlfuse /home/r6eve/GoogleDrive
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id gpg-agent --daemon

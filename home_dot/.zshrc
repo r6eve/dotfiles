@@ -114,7 +114,9 @@ TRAPALRM() {
 }
 
 # other environments{{{1
-export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
+if [[ "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)" != "" ]]; then
+  export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
+fi
 
 # other completions{{{1
 autoload -U +X bashcompinit && bashcompinit

@@ -34,10 +34,7 @@ alias bamtools="$HOME/repos/bamtools-master/build/src/toolkit/bamtools"
 alias firefox='firefox --private-window'
 # alias themis="$HOME/.vim/plugged/vim-themis/bin/themis"
 # alias nclr="perl -pe 's/\x1b\x5b.*?[\x40-\x7e]//g'"
-alias rga="rga --line-number"
 alias man='LANG=en_US.UTF-8 man'
-
-alias -g TOSTDOUT="/tmp/tmp_for_stdout; cat /tmp/tmp_for_stdout; rm /tmp/tmp_for_stdout"
 
 alias wine='LANG=ja_JP.UTF-8 wine'
 alias winedbg='LANG=ja_JP.UTF-8 winedbg'

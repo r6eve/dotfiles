@@ -113,6 +113,9 @@ TRAPALRM() {
   ! [[ "$WIDGET" =~ ^(complete-word|expand-or-complete|.*beginning-search)$ ]] && zle reset-prompt
 }
 
+# other environments{{{1
+export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
+
 # other completions{{{1
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform

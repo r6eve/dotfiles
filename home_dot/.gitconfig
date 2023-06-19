@@ -46,8 +46,6 @@
 	required = true
 [include]
 	path = ~/.gitconfig.private
-[includeIf "gitdir:~/red/"]
-	path = ~/.gitconfig.red
 [includeIf "gitdir:~/workspace/"]
 	path = ~/.gitconfig.work
 [includeIf "gitdir:/mnt/"]

@@ -127,11 +127,11 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+a focus parent
 bindsym Print exec --no-startup-id grim
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-volume @DEFAULT_SINK@ | head -n1 | awk '{ print substr($5, 1, length($5)-1) }' > $WOBSOCK
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3% && pactl get-sink-volume @DEFAULT_SINK@ | head -n1 | awk '{ print substr($5, 1, length($5)-1) }' > $WOBSOCK
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3% && pactl get-sink-volume @DEFAULT_SINK@ | head -n1 | awk '{ print substr($5, 1, length($5)-1) }' > $WOBSOCK
-bindsym F9 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-volume @DEFAULT_SINK@ | head -n1 | awk '{ print substr($5, 1, length($5)-1) }' > $WOBSOCK
-bindsym F10 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3% && pactl get-sink-volume @DEFAULT_SINK@ | head -n1 | awk '{ print substr($5, 1, length($5)-1) }' > $WOBSOCK
-bindsym F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3% && pactl get-sink-volume @DEFAULT_SINK@ | head -n1 | awk '{ print substr($5, 1, length($5)-1) }' > $WOBSOCK
+bindsym XF86AudioMute exec --no-startup-id ~/.config/sway-helper/volume-helper.sh mute @DEFAULT_SINK@ $WOBSOCK
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/sway-helper/volume-helper.sh lower-volume @DEFAULT_SINK@ $WOBSOCK 3
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/sway-helper/volume-helper.sh raise-volume @DEFAULT_SINK@ $WOBSOCK 3
+bindsym F9 exec --no-startup-id ~/.config/sway-helper/volume-helper.sh mute @DEFAULT_SINK@ $WOBSOCK
+bindsym F10 exec --no-startup-id ~/.config/sway-helper/volume-helper.sh lower-volume @DEFAULT_SINK@ $WOBSOCK 3
+bindsym F11 exec --no-startup-id ~/.config/sway-helper/volume-helper.sh raise-volume @DEFAULT_SINK@ $WOBSOCK 3
 
 include /etc/sway/config.d/*

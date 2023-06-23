@@ -96,17 +96,21 @@ bindsym $mod+Shift+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+### Resources
+set $XOBSOCK $XDG_RUNTIME_DIR/xob.sock
+exec rm -f $XOBSOCK && mkfifo $XOBSOCK && tail -f $XOBSOCK | xob
+
 # user defined commands
 bindsym Print exec --no-startup-id scrot '%Y%m%d_%H%M%S_$wx$h_scrot.png'
 bindsym --release Shift+Print exec --no-startup-id scrot '%Y%m%d_%H%M%S_$wx$h_scrot.png' -s
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3%
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3%
-bindsym F9 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym F10 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3%
-bindsym F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3%
-bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 10"
-bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 10"
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3-helper/volume-helper.sh mute @DEFAULT_SINK@ $XOBSOCK
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3-helper/volume-helper.sh lower-volume @DEFAULT_SINK@ $XOBSOCK 3
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3-helper/volume-helper.sh raise-volume @DEFAULT_SINK@ $XOBSOCK 3
+bindsym F9 exec --no-startup-id ~/.config/i3-helper/volume-helper.sh mute @DEFAULT_SINK@ $XOBSOCK
+bindsym F10 exec --no-startup-id ~/.config/i3-helper/volume-helper.sh lower-volume @DEFAULT_SINK@ $XOBSOCK 3
+bindsym F11 exec --no-startup-id ~/.config/i3-helper/volume-helper.sh raise-volume @DEFAULT_SINK@ $XOBSOCK 3
+bindsym XF86MonBrightnessDown exec brightnessctl --class=backlight set 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl --class=backlight set +10%
 bindsym --whole-window button2 nop
 
 # user defined defaults

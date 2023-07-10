@@ -462,7 +462,7 @@ let g:ale_linters = {
   \ 'clojure': ['clj-kondo'],
   \ 'dockerfile': ['hadolint'],
   \ 'elixir': ['elixir-ls', 'mix'],
-  \ 'java': ['eclipselsp'],
+  \ 'java': ['javalsp'],
   \ 'json': ['jsonlint'],
   \ 'lua': ['luacheck'],
   \ 'perl': ['perl', 'perlcritic'],
@@ -483,6 +483,7 @@ let g:ale_elixir_elixir_ls_config = {
 " let g:ale_java_javalsp_executable = '/usr/share/java/java-language-server/lang_server_linux.sh'
 let g:ale_java_eclipselsp_path = $HOME . '/repos/eclipse.jdt.ls'
 let g:ale_java_eclipselsp_javaagent = $HOME . '/repos/lombok/lombok.jar'
+let g:ale_java_javalsp_executable = $HOME . '/repos/java-language-server/dist/lang_server_linux.sh'
 let g:ale_ocaml_ocp_indent_config = 'JaneStreet'
 let g:ale_perl_perltidy_options = '-bbt=2 -bt=2 -ce -i=2 -iscl -naws -nhsc -nolc -noll -nolq -novalign -pt=2 -fbl'
 let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'
@@ -495,9 +496,9 @@ autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javas
 
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent>K <Plug>(ale_find_references)
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim nmap <silent><Leader>f <Plug>(ale_fix)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-]> <Plug>(ale_go_to_definition)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-T> <C-O>
+autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-]> <Plug>(ale_go_to_definition)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-T> <C-O>
 
 " ctrlpvim/ctrlp.vim{{{2
 let g:ctrlp_custom_ignore = {

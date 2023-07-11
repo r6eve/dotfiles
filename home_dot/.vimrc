@@ -255,18 +255,9 @@ Plug 'dense-analysis/ale', {
     \ 'yaml.ansible'
     \]
   \}
-" Plug 'r6eve/ale', {
-"   \ 'branch' : 'fix/r-options',
-"   \ 'for' : [
-"     \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
-"     \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
-"     \ 'rust', 'r', 'scss', 'sh', 'terraform', 'vim', 'xml', 'yaml.ansible'
-"     \]
-"   \}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'inkarkat/vim-ingo-library' | Plug 'inkarkat/vim-mark'
-" Plug 'itchyny/vim-cursorword' " a little too heavy
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
@@ -480,7 +471,6 @@ let g:ale_elixir_elixir_ls_release = $HOME . '/repos/elixir-ls/rel'
 let g:ale_elixir_elixir_ls_config = {
   \ 'elixirLS': {'dialyzerEnabled': v:false}
   \ }
-" let g:ale_java_javalsp_executable = '/usr/share/java/java-language-server/lang_server_linux.sh'
 let g:ale_java_eclipselsp_path = $HOME . '/repos/eclipse.jdt.ls'
 let g:ale_java_eclipselsp_javaagent = $HOME . '/repos/lombok/lombok.jar'
 let g:ale_java_javalsp_executable = $HOME . '/repos/java-language-server/dist/lang_server_linux.sh'
@@ -918,18 +908,6 @@ augroup MyClojureSetting
       \ <Plug>(iced_eval_and_print)<Plug>(sexp_outer_top_list)``
 augroup END
 
-" " vim-fireplace
-" " venantius/vim-cljfmt
-" autocmd FileType clojure nmap <silent><Leader>f :Cljfmt<CR>
-" let g:clj_fmt_autosave = 0
-" " vim-syntastic/syntastic
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 1
-" let g:syntastic_always_populate_loc_list = 0
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_clojure_checkers = ['eastwood']
-" autocmd FileType clojure set signcolumn=yes
-"
 autocmd FileType clojure set foldmarker={@{,}@}
 
 " Dot{{{2

@@ -1,13 +1,5 @@
 # OS{{{1
-# alias grep='grep -n --color=auto'
-# alias egrep='egrep -n --color=auto'
-# alias fgrep='fgrep -n --color=auto'
-# alias algrep='grep -n --color=always'
-# alias alegrep='egrep -n --color=always'
-# alias alfgrep='fgrep -n --color=always'
 alias ag='ag -U --hidden --ignore-dir .git --ignore-dir _build'
-alias agp='ag -U --hidden --ignore-dir .git --ignore-dir _build --nonumber'
-alias fd='fd --no-ignore-vcs'
 alias swaylock='swaylock --daemonize --color=004343'
 alias ls='ls -F --color=auto'
 alias sl='ls -F --color=auto'
@@ -29,11 +21,7 @@ alias v='nvim'
 alias mnvim='/usr/bin/nvim -u ~/.min_vimrc'
 alias mvim='/usr/bin/vim -u ~/.min_vimrc'
 alias cad="$HOME/repos/caddy/caddy.rb -l -n -dd"
-alias bwa="$HOME/repos/bwa-master/bwa"
-alias bamtools="$HOME/repos/bamtools-master/build/src/toolkit/bamtools"
 alias firefox='firefox --private-window'
-# alias themis="$HOME/.vim/plugged/vim-themis/bin/themis"
-# alias nclr="perl -pe 's/\x1b\x5b.*?[\x40-\x7e]//g'"
 alias man='LANG=en_US.UTF-8 man'
 
 alias wine='LANG=ja_JP.UTF-8 wine'

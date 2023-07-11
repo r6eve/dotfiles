@@ -1,5 +1,4 @@
 # Make process and disown
-dockerun(){ docker run --rm -ti -u $(id -u):$(id -g) -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -v /etc/shadow:/etc/shadow:ro -v /etc/sudoers.d:/etc/sudoers.d:ro "$@" }
 eog(){ /usr/bin/eog "$@" >/dev/null 2>&1 &! }
 ev(){ evince "$@" >/dev/null 2>&1 &! }
 gmp(){ gimp "$@" >/dev/null 2>&1 &! }
@@ -10,16 +9,6 @@ mpdf(){ masterpdfeditor5 "$@" >/dev/null 2>&1 &! }
 dic(){ git diff --color-words --no-index "$1" "$2" }
 pmver(){ perl -M$1 -E "say \$$1::VERSION" }
 u(){ cd ./$(git rev-parse --show-cdup) }
-rg(){
-  p='.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src';
-  find $HOME/$p -name '*.rs' |xargs ag --color -- $@ |perl -pse 's@$HOME/$p/@@' -- -HOME=$HOME -p=$p
-}
-# scut(){
-#   ls *_*.png |perl -pe 'print; s/^(\d+)_(\d+).+$/$1$2.png/' |parallel -N2 'convert -crop 1400x810+0+45 {1} {2}'
-# }
-# sscut(){
-#   ls *_*.png |perl -pe 'print; s/^(\d+)_(\d+).+$/$1$2.png/' |parallel -N2 'convert -crop 1440x810+0+45 {1} {2}'
-# }
 cpy(){ cat $1 |perl -pe 's/\n// if eof' |xsel --input --clipboard }
 wcpy(){ cat $1 |perl -pe 's/\n// if eof' |wl-copy }
 ytc(){

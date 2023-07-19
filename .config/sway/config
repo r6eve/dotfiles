@@ -20,6 +20,8 @@ input "type:touchpad" {
 input "type:keyboard" {
     repeat_delay 400
     repeat_rate 50
+    xkb_options ctrl:swapcaps
+    xkb_file ~/.Xkeymap
 }
 
 ### Defaults
@@ -38,16 +40,16 @@ bindsym $mod+Shift+n move down
 bindsym $mod+Shift+p move up
 bindsym $mod+Shift+f move right
 
-bindsym $mod+Shift+1 workspace number 1
-bindsym $mod+Shift+2 workspace number 2
-bindsym $mod+Shift+3 workspace number 3
-bindsym $mod+Shift+4 workspace number 4
-bindsym $mod+Shift+5 workspace number 5
-bindsym $mod+Shift+6 workspace number 6
-bindsym $mod+Shift+7 workspace number 7
-bindsym $mod+Shift+8 workspace number 8
-bindsym $mod+Shift+9 workspace number 9
-bindsym $mod+Shift+0 workspace number 10
+bindcode $mod+10 workspace number 1
+bindcode $mod+11 workspace number 2
+bindcode $mod+12 workspace number 3
+bindcode $mod+13 workspace number 4
+bindcode $mod+14 workspace number 5
+bindcode $mod+15 workspace number 6
+bindcode $mod+16 workspace number 7
+bindcode $mod+17 workspace number 8
+bindcode $mod+18 workspace number 9
+bindcode $mod+19 workspace number 10
 bindsym $mod+1 move container to workspace number 1
 bindsym $mod+2 move container to workspace number 2
 bindsym $mod+3 move container to workspace number 3
@@ -79,7 +81,6 @@ bar {
 
 ## Startup commands
 exec --no-startup-id xrdb ~/.Xresources
-exec --no-startup-id input-remapper-control --command stop-all && input-remapper-control --command autoload
 exec --no-startup-id /usr/share/sway/scripts/inactive-windows-transparency.py --opacity 0.8
 exec --no-startup-id fcitx-autostart
 exec --no-startup-id dunst

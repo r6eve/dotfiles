@@ -510,6 +510,9 @@ map gz# <Plug>(asterisk-z#)<Plug>(anzu-update-search-status-with-echo)
 
 let g:asterisk#keeppos = 1
 
+" inkarkat/vim-mark{{{2
+let g:mwDefaultHighlightingPalette = 'extended'
+
 " r6eve/tcvime{{{2
 let tcvime_keymap = 'gcode'
 let tcvime_no_default_key_mappings = 1

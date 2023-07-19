@@ -21,7 +21,7 @@ input "type:keyboard" {
     repeat_delay 400
     repeat_rate 50
     xkb_options ctrl:swapcaps
-    xkb_file ~/.Xkeymap
+    xkb_file ~/.config/xkb/perl5_style
 }
 
 ### Defaults

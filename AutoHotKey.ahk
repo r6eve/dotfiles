@@ -1,33 +1,33 @@
 ; PowerToys: setxkbmap -option ctrl:swapcaps
 
 ; numbers <-> symbols
-$1::SendRaw,!
-$2::SendRaw,@
-$3::SendRaw,#
-$4::SendRaw,$
-$5::SendRaw,`%
-$6::SendRaw,^
-$7::SendRaw,&
-$8::SendRaw,*
-$9::SendRaw,(
-$0::SendRaw,)
-$+1::SendRaw,1
-$+2::SendRaw,2
-$+3::SendRaw,3
-$+4::SendRaw,4
-$+5::SendRaw,5
-$+6::SendRaw,6
-$+7::SendRaw,7
-$+8::SendRaw,8
-$+9::SendRaw,9
-$+0::SendRaw,0
+$1::Send "{Raw}!"
+$2::Send "{Raw}@"
+$3::Send "{Raw}#"
+$4::Send "{Raw}$"
+$5::Send "{Raw}%"
+$6::Send "{Raw}^"
+$7::Send "{Raw}&"
+$8::Send "{Raw}*"
+$9::Send "{Raw}("
+$0::Send "{Raw})"
+$+1::Send "{Raw}1"
+$+2::Send "{Raw}2"
+$+3::Send "{Raw}3"
+$+4::Send "{Raw}4"
+$+5::Send "{Raw}5"
+$+6::Send "{Raw}6"
+$+7::Send "{Raw}7"
+$+8::Send "{Raw}8"
+$+9::Send "{Raw}9"
+$+0::Send "{Raw}0"
 
 LWin & f::AltTab
 LWin & b::ShiftAltTab
 
-F9::Send,{Volume_Mute}
-F10::Send,{Volume_Down 1}
-F11::Send,{Volume_Up 1}
+F9::Send "{Volume_Mute}"
+F10::Send "{Volume_Down 1}"
+F11::Send "{Volume_Up 1}"
 
 ; Switch Input Methods
-^m::Send,#{Space}
+^m::Send "#{Space}"

@@ -2,7 +2,7 @@
 set $mod Mod4
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
-output * bg /home/r6eve/picts/bg.png fill
+output * bg ~/picts/bg.png fill
 
 ### Input configuration
 input "type:pointer" {
@@ -23,6 +23,17 @@ input "type:keyboard" {
     xkb_options ctrl:swapcaps
     xkb_file ~/.config/xkb/perl5_style
 }
+
+exec --no-startup-id rm -f ~/perl5_style.xkm
+
+input "1149:8257:Kensington_Slimblade_Trackball" {
+    natural_scroll disabled
+}
+
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+exec_always ~/.config/sway-helper/clamshell.sh
 
 ### Defaults
 floating_modifier $mod normal

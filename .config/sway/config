@@ -93,7 +93,7 @@ bar {
 ## Startup commands
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id /usr/share/sway/scripts/inactive-windows-transparency.py --opacity 0.8
-exec --no-startup-id fcitx-autostart
+exec --no-startup-id fcitx5 -d --replace
 exec --no-startup-id dunst
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet --indicator

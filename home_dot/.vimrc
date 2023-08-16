@@ -348,7 +348,7 @@ Plug 'posva/vim-vue', { 'for' : ['javascript', 'html'] }
 Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }
 
 " Markdown
-Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 'rst'] }
+Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 'mermaid', 'rst'] }
 Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
 Plug 'godlygeek/tabular', { 'for' : ['markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for' : ['markdown'] }
@@ -932,7 +932,7 @@ let g:tex_flavor = 'latex'
 autocmd FileType tex set spell
 
 " Markdown{{{2
-autocmd Filetype markdown,rst nmap <Leader>p :<C-u>PrevimOpen<CR>
+autocmd Filetype markdown,mermaid,rst nmap <Leader>p :<C-u>PrevimOpen<CR>
 
 " plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1

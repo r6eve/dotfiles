@@ -9,8 +9,8 @@ mpdf(){ masterpdfeditor5 "$@" >/dev/null 2>&1 &! }
 dic(){ git diff --color-words --no-index "$1" "$2" }
 pmver(){ perl -M$1 -E "say \$$1::VERSION" }
 u(){ cd ./$(git rev-parse --show-cdup) }
-cpy(){ cat $1 |perl -pe 's/\n// if eof' |xsel --input --clipboard }
-wcpy(){ cat $1 |perl -pe 's/\n// if eof' |wl-copy }
+xcpy(){ cat $1 |perl -pe 's/\n// if eof' |xsel --input --clipboard }
+cpy(){ cat $1 |perl -pe 's/\n// if eof' |wl-copy }
 ytc(){
   n=`echo "$1" |perl -ne 's/^[^\d]+(\d+)$/printf("%03d\n", $1)/e'`;
   yukitocaddy "$1" -o no$n.test

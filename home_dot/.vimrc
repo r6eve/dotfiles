@@ -251,7 +251,7 @@ Plug 'dense-analysis/ale', {
   \ 'for' : [
     \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
     \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
-    \ 'rust', 'r', 'scss', 'sh', 'sql', 'terraform', 'vim', 'xml',
+    \ 'rust', 'r', 'scss', 'sh', 'sql', 'terraform', 'vim', 'xml', 'yaml',
     \ 'yaml.ansible'
     \]
   \}
@@ -464,6 +464,7 @@ let g:ale_linters = {
   \ 'terraform': ['terraform_lsp', 'tflint'],
   \ 'vim': ['vimls', 'vint'],
   \ 'xml': ['xmllint'],
+  \ 'yaml': ['yamllint'],
   \ 'yaml.ansible': ['ansible-lint'],
   \ }
 
@@ -482,7 +483,7 @@ let g:ale_rust_rls_toolchain = 'stable'
 let g:ale_sh_shfmt_options = '-s -i 2 -ci'
 
 " let g:ale_sign_column_always = 1 " Too slow.
-autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim,xml,yaml.ansible set signcolumn=yes
+autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim,xml,yaml,yaml.ansible set signcolumn=yes
 
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent>K <Plug>(ale_find_references)
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim nmap <silent><Leader>f <Plug>(ale_fix)

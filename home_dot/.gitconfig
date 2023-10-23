@@ -50,3 +50,5 @@
 	path = ~/.gitconfig.work
 [includeIf "gitdir:/mnt/"]
 	path = ~/.gitconfig.mnt
+[credential]
+	helper = cache

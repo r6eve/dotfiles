@@ -5,6 +5,7 @@
 --colors=match:fg:black
 --colors=match:bg:yellow
 --colors=match:style:nobold
+--smart-case
 --hidden
 --no-ignore
 --glob=!{.git,_build}

@@ -1,0 +1,513 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#555555"
+blue = "#7799FF"
+cyan = "#54FFFF"
+green = "#54FF54"
+magenta = "#FF54FF"
+red = "#FF5454"
+white = "#FFFFFF"
+yellow = "#FFFF54"
+
+[colors.cursor]
+cursor = "#17b12b"
+text = "CellBackground"
+
+[colors.normal]
+black = "#000000"
+blue = "#0000BA"
+cyan = "#00BABA"
+green = "#00BA00"
+magenta = "#BA00BA"
+red = "#BA0000"
+white = "#BABABA"
+yellow = "#BABA00"
+
+[colors.primary]
+background = "#020814"
+foreground = "#6df7fe"
+
+[cursor]
+blink_interval = 500
+blink_timeout = 0
+
+[cursor.style]
+blinking = "Always"
+
+[font.bold]
+family = "Hack"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack"
+style = "Bold Italic"
+
+[font.italic]
+family = "Hack"
+style = "Italic"
+
+[font.normal]
+family = "Hack"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Copy"
+
+[[keyboard.bindings]]
+action = "None"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mode = "~Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "PageUp"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "PageDown"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Space"
+mode = "~Search"
+mods = "Shift|Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Space"
+mode = "Vi|~Search"
+mods = "Shift|Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Escape"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "I"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "I"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "C"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Y"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "E"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "G"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "G"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "B"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "F"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "U"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "D"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Y"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Y"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Copy"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "V"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "V"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "V"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "V"
+mode = "Vi|~Search"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Return"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Z"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "K"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "J"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "H"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "L"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Up"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Down"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Left"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Right"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Key0"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Key4"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Key6"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "H"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "M"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "L"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "B"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "W"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "E"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "B"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "W"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "E"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Key5"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Slash"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Slash"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "N"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "N"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Return"
+mode = "Search|Vi"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Escape"
+mode = "Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "C"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "U"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "W"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "P"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "N"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Up"
+mode = "Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Down"
+mode = "Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Return"
+mode = "Search|~Vi"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Return"
+mode = "Search|~Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "V"
+mode = "~Vi"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mode = "~Vi"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "None"
+key = "F"
+mode = "~Search"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "B"
+mode = "~Search"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "C"
+mode = "Vi|~Search"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Up"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "NumpadAdd"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Down"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "NumpadSubtract"
+mods = "Control"
+
+[scrolling]
+history = 0
+multiplier = 0
+
+[window]
+opacity = 0.84

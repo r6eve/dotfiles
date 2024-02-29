@@ -105,7 +105,7 @@ exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
 ### Key bindings
 bindsym $mod+Shift+Return exec urxvt
-# bindsym $mod+Shift+Return exec alacritty
+# bindsym $mod+Shift+Return exec env WAYLAND_DISPLAY= alacritty
 bindsym $mod+Shift+c kill
 bindsym $mod+backslash exec $menu
 bindsym $mod+Ctrl+r reload

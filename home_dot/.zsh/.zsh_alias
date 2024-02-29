@@ -1,5 +1,5 @@
 # OS{{{1
-alias ag='ag -U --hidden --ignore-dir .git --ignore-dir _build'
+alias ag='rg'
 alias swaylock='swaylock --daemonize --color=004343'
 alias ls='ls -F --color=auto'
 alias sl='ls -F --color=auto'

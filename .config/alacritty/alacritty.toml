@@ -52,6 +52,15 @@ style = "Italic"
 family = "Hack"
 style = "Regular"
 
+[[hints.enabled]]
+command = "firefox --private-window"
+hyperlinks = false
+post_processing = false
+persist = false
+mouse.enabled = false
+binding = { key = "U", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+
 [[keyboard.bindings]]
 action = "None"
 key = "Paste"
@@ -504,6 +513,9 @@ mods = "Control"
 action = "None"
 key = "NumpadSubtract"
 mods = "Control"
+
+[mouse]
+hide_when_typing = true
 
 [scrolling]
 history = 0

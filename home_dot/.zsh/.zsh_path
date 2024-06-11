@@ -6,7 +6,7 @@ export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rc"
 
 # wtools
 # alias wa='MAX_LENGTH=300 wag -U --hidden --ignore-dir .git --ignore-dir _build --ignore-dir build --ignore-dir target --ignore tags --ignore .cpcache --ignore .clj-kondo --ignore .pytest_cache'
-alias wa="MAX_LENGTH=300 wrg --smart-case --hidden --no-ignore --glob='!{.git,_build,.clj-kondo,.cpcache}'"
+alias wa="MAX_LENGTH=300 wrg --smart-case --hidden --no-ignore --glob='!{.git,_build,.clj-kondo,.cpcache,target}'"
 wf(){
   wfind "$@" -not -path '*/.git/*' \
     -a -not -path '*/target/*' \

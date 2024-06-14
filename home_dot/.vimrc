@@ -347,6 +347,9 @@ Plug 'jdonaldson/vaxe', { 'for' : ['haxe'] }
 Plug 'posva/vim-vue', { 'for' : ['javascript', 'html'] }
 Plug 'gavocanov/vim-js-indent', { 'for' : ['javascript', 'html'] }
 
+" Kotlin
+Plug 'udalov/kotlin-vim', { 'for' : ['kotlin'] }
+
 " Markdown
 Plug 'tyru/open-browser.vim' | Plug 'kannokanno/previm', { 'for' : ['markdown', 'mermaid', 'rst'] }
 Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
@@ -455,6 +458,7 @@ let g:ale_linters = {
   \ 'elixir': ['elixir-ls', 'mix'],
   \ 'java': ['javalsp'],
   \ 'json': ['jsonlint'],
+  \ 'kotlin': ['kotlin-language-server'],
   \ 'lua': ['luacheck'],
   \ 'perl': ['perl', 'perlcritic'],
   \ 'r': ['languageserver', 'lintr'],
@@ -484,13 +488,13 @@ let g:ale_rust_rls_toolchain = 'stable'
 let g:ale_sh_shfmt_options = '-s -i 2 -ci'
 
 " let g:ale_sign_column_always = 1 " Too slow.
-autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim,xml,yaml,yaml.ansible set signcolumn=yes
+autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim,xml,yaml,yaml.ansible set signcolumn=yes
 
-autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent>K <Plug>(ale_find_references)
+autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent>K <Plug>(ale_find_references)
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim nmap <silent><Leader>f <Plug>(ale_fix)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-]> <Plug>(ale_go_to_definition)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-T> <C-O>
+autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-]> <Plug>(ale_go_to_definition)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-T> <C-O>
 
 " ctrlpvim/ctrlp.vim{{{2
 let g:ctrlp_custom_ignore = {

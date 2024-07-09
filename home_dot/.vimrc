@@ -88,6 +88,7 @@ endif
 syntax enable
 autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#ab6560
 autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=89 gui=bold guifg=#3a4b5c guibg=#ab6560
+autocmd ColorScheme * highlight CurSearch term=NONE guifg=NONE ctermfg=NONE guibg=#a9667a ctermbg=132 gui=underline cterm=underline
 autocmd ColorScheme * highlight EndOfBuffer cterm=none ctermfg=242 gui=none guifg=#fffeeb
 autocmd ColorScheme * highlight Ignore cterm=none ctermfg=231 gui=none guifg=#fffeeb
 autocmd ColorScheme * highlight MatchParen cterm=none ctermfg=233 ctermbg=132 gui=none guifg=#334152 guibg=#a9667a
@@ -98,6 +99,7 @@ autocmd ColorScheme * highlight TabString cterm=none ctermfg=239 ctermbg=none gu
 autocmd ColorScheme * highlight TrailingSpaces term=underline ctermbg=238 guibg=#444444
 autocmd ColorScheme * highlight Visual ctermbg=132 guibg=#a9667a
 autocmd ColorScheme * highlight ZenkakuSpace cterm=none ctermbg=9 gui=none guibg=#ff0000
+autocmd ColorScheme * highlight default link WinSeparator VertSplit
 autocmd VimEnter,WinEnter * let w:m1 = matchadd('TabString', '	')
 autocmd VimEnter,WinEnter * let w:m2 = matchadd('ZenkakuSpace', '　')
 autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/

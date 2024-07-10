@@ -97,7 +97,7 @@ autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 
 autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#3a4b5c
 autocmd ColorScheme * highlight TabString cterm=none ctermfg=239 ctermbg=none gui=none guibg=#303030
 autocmd ColorScheme * highlight TrailingSpaces term=underline ctermbg=238 guibg=#444444
-autocmd ColorScheme * highlight Visual ctermbg=132 guibg=#a9667a
+autocmd ColorScheme * highlight Visual ctermfg=14 ctermbg=132 guibg=#a9667a
 autocmd ColorScheme * highlight ZenkakuSpace cterm=none ctermbg=9 gui=none guibg=#ff0000
 autocmd ColorScheme * highlight default link WinSeparator VertSplit
 autocmd VimEnter,WinEnter * let w:m1 = matchadd('TabString', '	')

@@ -92,6 +92,7 @@ autocmd ColorScheme * highlight CurSearch term=NONE guifg=NONE ctermfg=NONE guib
 autocmd ColorScheme * highlight EndOfBuffer cterm=none ctermfg=242 gui=none guifg=#fffeeb
 autocmd ColorScheme * highlight Ignore cterm=none ctermfg=231 gui=none guifg=#fffeeb
 autocmd ColorScheme * highlight MatchParen cterm=none ctermfg=233 ctermbg=132 gui=none guifg=#334152 guibg=#a9667a
+autocmd ColorScheme * highlight NonText cterm=none ctermfg=62
 autocmd ColorScheme * highlight Normal cterm=none ctermfg=14 ctermbg=none gui=none guifg=#fffeeb guibg=#020814
 autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 gui=underline guifg=#fd8489 guisp=#fd8489
 autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#3a4b5c

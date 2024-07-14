@@ -86,20 +86,20 @@ if !has('nvim')
   set pyx=3
 endif
 syntax enable
-autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#ab6560
-autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=89 gui=bold guifg=#3a4b5c guibg=#ab6560
-autocmd ColorScheme * highlight CurSearch term=NONE guifg=NONE ctermfg=NONE guibg=#a9667a ctermbg=132 gui=underline cterm=underline
-autocmd ColorScheme * highlight EndOfBuffer cterm=none ctermfg=242 gui=none guifg=#fffeeb
-autocmd ColorScheme * highlight Ignore cterm=none ctermfg=231 gui=none guifg=#fffeeb
-autocmd ColorScheme * highlight MatchParen cterm=none ctermfg=233 ctermbg=132 gui=none guifg=#334152 guibg=#a9667a
-autocmd ColorScheme * highlight NonText cterm=none ctermfg=62
-autocmd ColorScheme * highlight Normal cterm=none ctermfg=14 ctermbg=none gui=none guifg=#fffeeb guibg=none
-autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 gui=underline guifg=#fd8489 guisp=#fd8489
-autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#3a4b5c
-autocmd ColorScheme * highlight TabString cterm=none ctermfg=239 ctermbg=none gui=none guibg=#303030
-autocmd ColorScheme * highlight TrailingSpaces term=underline ctermbg=238 guibg=#444444
-autocmd ColorScheme * highlight Visual ctermfg=14 ctermbg=132 guibg=#a9667a
-autocmd ColorScheme * highlight ZenkakuSpace cterm=none ctermbg=9 gui=none guibg=#ff0000
+autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#87005f
+autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=89 gui=bold guifg=#262626 guibg=#87005f
+autocmd ColorScheme * highlight CurSearch term=NONE cterm=underline ctermfg=NONE ctermbg=132 gui=underline guifg=NONE guibg=#af5f87
+autocmd ColorScheme * highlight EndOfBuffer cterm=NONE ctermfg=242 gui=NONE guifg=#6c6c6c
+autocmd ColorScheme * highlight Ignore cterm=NONE ctermfg=231 gui=NONE guifg=#ffffff
+autocmd ColorScheme * highlight MatchParen cterm=NONE ctermfg=233 ctermbg=132 gui=NONE guifg=#121212 guibg=#af5f87
+autocmd ColorScheme * highlight NonText cterm=NONE ctermfg=62 gui=NONE guifg=#5f5fd7
+autocmd ColorScheme * highlight Normal cterm=NONE ctermfg=14 ctermbg=NONE gui=NONE guifg=#54ffff guibg=NONE
+autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 gui=underline guifg=#ff8787 guibg=#005f5f
+autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#6c6c6c
+autocmd ColorScheme * highlight TabString cterm=NONE ctermfg=239 ctermbg=NONE gui=NONE guifg=#4e4e4e guibg=NONE
+autocmd ColorScheme * highlight TrailingSpaces ctermbg=238 guibg=#444444
+autocmd ColorScheme * highlight Visual ctermfg=14 ctermbg=132 guifg=#54ffff guibg=#af5f87
+autocmd ColorScheme * highlight ZenkakuSpace cterm=NONE ctermbg=9 gui=NONE guibg=#ff5454
 autocmd ColorScheme * highlight default link WinSeparator VertSplit
 autocmd VimEnter,WinEnter * let w:m1 = matchadd('TabString', '	')
 autocmd VimEnter,WinEnter * let w:m2 = matchadd('ZenkakuSpace', '　')
@@ -270,7 +270,7 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/tcvime'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/committia.vim'
-Plug 'rhysd/vim-color-spring-night'
+Plug 'r6eve/vim-color-spring-night'
 Plug 'rhysd/vim-gfm-syntax'
 Plug 'rhysd/vim-grammarous'
 Plug 'sgur/vim-editorconfig'

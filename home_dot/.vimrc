@@ -89,6 +89,7 @@ syntax enable
 autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#87005f
 autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=89 gui=bold guifg=#262626 guibg=#87005f
 autocmd ColorScheme * highlight CurSearch term=NONE cterm=underline ctermfg=NONE ctermbg=132 gui=underline guifg=NONE guibg=#af5f87
+autocmd ColorScheme * highlight Delimiter ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 autocmd ColorScheme * highlight EndOfBuffer cterm=NONE ctermfg=242 gui=NONE guifg=#6c6c6c
 autocmd ColorScheme * highlight Ignore cterm=NONE ctermfg=231 gui=NONE guifg=#ffffff
 autocmd ColorScheme * highlight MatchParen cterm=NONE ctermfg=233 ctermbg=132 gui=NONE guifg=#121212 guibg=#af5f87

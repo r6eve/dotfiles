@@ -119,6 +119,8 @@ if [[ "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-g
   export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
 fi
 
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+
 # other completions{{{1
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform

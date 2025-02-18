@@ -37,6 +37,7 @@ __pycache__
 /.settings
 /.cpcache
 /.elixir_ls
+.nrepl-port
 .terraform
 .terraform.lock.hcl
 terraform.tfstate

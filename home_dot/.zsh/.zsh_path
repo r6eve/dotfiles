@@ -21,6 +21,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Clojure{{{1
 export PATH=$HOME/.config/nvim/plugged/vim-iced/bin:$PATH
+export PATH=$HOME/.config/nvim/plugged/elin/bin:$PATH
 
 # Elixir{{{1
 if [ -d "$HOME/.asdf" ]; then

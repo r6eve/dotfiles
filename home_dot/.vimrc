@@ -309,11 +309,13 @@ Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
 
 " Clojure
 Plug 'guns/vim-sexp', { 'for' : 'clojure' }
-" Plug '~/repos/vim-iced', { 'for' : 'clojure' }
 Plug 'liquidz/vim-iced', { 'for' : 'clojure' }
 Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 Plug 'liquidz/vim-iced-multi-session', {'for': 'clojure'}
-"
+
+" Plug 'liquidz/elin'
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " " vim-fireplace
 " Plug 'tpope/vim-salve', { 'for' : 'clojure' }
 " Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
@@ -890,6 +892,7 @@ endif
 map _ <Plug>(operator-replace)
 
 " Clojure{{{2
+
 " guns/vim-sexp
 let g:sexp_mappings = {'sexp_indent': '', 'sexp_indent_top': ''}
 
@@ -920,6 +923,9 @@ augroup MyClojureSetting
   autocmd FileType clojure nmap <buffer> <Leader>ept
       \ <Plug>(iced_eval_and_print)<Plug>(sexp_outer_top_list)``
 augroup END
+
+" " liquidz/elin
+" let g:elin_enable_default_key_mappings = v:true
 
 autocmd FileType clojure set foldmarker={@{,}@}
 

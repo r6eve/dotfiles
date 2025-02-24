@@ -267,6 +267,7 @@ Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
 Plug 'mbbill/undotree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/tcvime'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
@@ -465,7 +466,7 @@ let g:ale_linters = {
   \ 'java': ['javalsp'],
   \ 'json': ['jsonlint'],
   \ 'kotlin': ['kotlin-language-server'],
-  \ 'lua': ['luacheck'],
+  \ 'lua': ['lua-language-server', 'luacheck'],
   \ 'perl': ['perl', 'perlcritic'],
   \ 'r': ['languageserver', 'lintr'],
   \ 'python': ['pylint', 'pylsp'],
@@ -497,10 +498,10 @@ let g:ale_sh_shfmt_options = '-s -i 2 -ci'
 autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim,xml,yaml,yaml.ansible set signcolumn=yes
 
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent>K <Plug>(ale_find_references)
-autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim nmap <silent><Leader>f <Plug>(ale_fix)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-]> <Plug>(ale_go_to_definition)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-T> <C-O>
+autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim nmap <silent><Leader>f <Plug>(ale_fix)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-]> <Plug>(ale_go_to_definition)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
+autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-T> <C-O>
 
 " ctrlpvim/ctrlp.vim{{{2
 let g:ctrlp_custom_ignore = {
@@ -811,6 +812,39 @@ call submode#map('move-to-fold', 'n', '', 'k', 'zk')
 " neoclide/coc.nvim{{{2
 " :CocInstall coc-snippets
 " ~/.config/coc/extensions/node_modules/coc-snippets
+
+" neovim/nvim-lspconfig{{{2
+
+lua <<END
+local lspconfig = require('lspconfig')
+
+lspconfig.lua_ls.setup {
+  on_init = function(client)
+    if client.workspace_folders then
+      local path = client.workspace_folders[1].name
+      if path ~= vim.fn.stdpath('config') and (vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc')) then
+        return
+      end
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        version = 'LuaJIT'
+      },
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+        }
+      }
+    })
+  end,
+  settings = {
+    Lua = {}
+  }
+}
+
+END
 
 " osyo-manga/vim-anzu{{{2
 nmap n <Plug>(anzu-n-with-echo)

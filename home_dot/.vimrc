@@ -321,6 +321,7 @@ Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 Plug 'liquidz/vim-iced-multi-session', {'for': 'clojure'}
 
 " Plug 'liquidz/elin'
+" Plug 'liquidz/elin-cmp-source'
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " " vim-fireplace

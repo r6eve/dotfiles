@@ -25,6 +25,8 @@ cmp.setup({
     -- { name = 'vsnip' }, -- For vsnip users.
     { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'elin' },
+    { name = 'elixirls' },
+    { name = 'vimls' },
   }, {
     { name = 'buffer' },
   })

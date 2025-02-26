@@ -25,3 +25,9 @@ lspconfig.lua_ls.setup {
     Lua = {}
   }
 }
+
+lspconfig.elixirls.setup{
+  cmd = { '/usr/lib/elixir-ls/language_server.sh' }
+}
+
+lspconfig.vimls.setup{}

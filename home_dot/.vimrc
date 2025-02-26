@@ -437,7 +437,7 @@ vnoremap <silent><Leader>d :Linediff<CR>
 
 " dense-analysis/ale{{{2
 let g:ale_completion_enabled = 1
-set omnifunc=ale#completion#OmniFunc
+set omnifunc=ale#completion#OmniFunc " TODO: Remove after setting nvim-lspconfig
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_set_balloons = 0
 let g:airline#extensions#ale#enabled = 0

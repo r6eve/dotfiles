@@ -1,5 +1,29 @@
 local lspconfig = require('lspconfig')
 
+lspconfig.ansiblels.setup{}
+
+lspconfig.autotools_ls.setup{}
+
+lspconfig.awk_ls.setup{}
+
+lspconfig.bashls.setup{}
+
+lspconfig.elixirls.setup{
+  cmd = { '/usr/lib/elixir-ls/language_server.sh' }
+}
+
+lspconfig.clangd.setup{}
+
+-- lspconfig.clojure_lsp.setup{} -- TODO:
+
+lspconfig.cmake.setup{}
+
+lspconfig.java_language_server.setup{
+  cmd = { os.getenv('HOME') .. '/repos/java-language-server/dist/lang_server_linux.sh' }
+}
+
+lspconfig.kotlin_language_server.setup{}
+
 lspconfig.lua_ls.setup {
   on_init = function(client)
     if client.workspace_folders then
@@ -26,8 +50,12 @@ lspconfig.lua_ls.setup {
   }
 }
 
-lspconfig.elixirls.setup{
-  cmd = { '/usr/lib/elixir-ls/language_server.sh' }
-}
+lspconfig.pylsp.setup{}
+
+lspconfig.rust_analyzer.setup{}
+
+lspconfig.ts_ls.setup{}
 
 lspconfig.vimls.setup{}
+
+lspconfig.yamlls.setup{}

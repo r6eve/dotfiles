@@ -252,13 +252,13 @@ Plug 'Shougo/neomru.vim'
 Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
 Plug 'AndrewRadev/linediff.vim'
 Plug 'dense-analysis/ale', {
-  \ 'for' : [
-    \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
-    \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
-    \ 'rust', 'r', 'scss', 'sh', 'sql', 'terraform', 'vim', 'xml', 'yaml',
-    \ 'yaml.ansible'
-    \]
-  \}
+ \ 'for' : [
+   \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
+   \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
+   \ 'rust', 'r', 'scss', 'sh', 'sql', 'terraform', 'vim', 'xml', 'yaml',
+   \ 'yaml.ansible'
+   \]
+ \}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'hrsh7th/cmp-buffer'
@@ -495,13 +495,11 @@ let g:ale_java_eclipselsp_javaagent = $HOME . '/repos/lombok/lombok.jar'
 let g:ale_java_javalsp_executable = $HOME . '/repos/java-language-server/dist/lang_server_linux.sh'
 let g:ale_ocaml_ocp_indent_config = 'JaneStreet'
 let g:ale_perl_perltidy_options = '-bbt=2 -bt=2 -ce -i=2 -iscl -naws -nhsc -nolc -noll -nolq -novalign -pt=2 -fbl'
-" let g:ale_r_languageserver_config = {'r': {'lsp': {'diagnostics': 'false'}}}
 let g:ale_reason_ls_executable = '/usr/bin/reason-language-server'
 let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 let g:ale_rust_rls_toolchain = 'stable'
 let g:ale_sh_shfmt_options = '-s -i 2 -ci'
 
-" let g:ale_sign_column_always = 1 " Too slow.
 autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim,xml,yaml,yaml.ansible set signcolumn=yes
 
 autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent>K <Plug>(ale_find_references)
@@ -824,6 +822,7 @@ call submode#map('move-to-fold', 'n', '', 'k', 'zk')
 
 if has('nvim')
   lua require('nvim-lspconfig')
+  autocmd FileType python set signcolumn=yes
 endif
 
 " osyo-manga/vim-anzu{{{2

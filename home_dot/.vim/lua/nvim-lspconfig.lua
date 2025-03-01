@@ -1,28 +1,28 @@
 local lspconfig = require('lspconfig')
 
-lspconfig.ansiblels.setup{}
+lspconfig.ansiblels.setup {}
 
-lspconfig.autotools_ls.setup{}
+lspconfig.autotools_ls.setup {}
 
-lspconfig.awk_ls.setup{}
+lspconfig.awk_ls.setup {}
 
-lspconfig.bashls.setup{}
+lspconfig.bashls.setup {}
 
-lspconfig.elixirls.setup{
+lspconfig.elixirls.setup {
   cmd = { '/usr/lib/elixir-ls/language_server.sh' }
 }
 
-lspconfig.clangd.setup{}
+lspconfig.clangd.setup {}
 
--- lspconfig.clojure_lsp.setup{} -- TODO:
+-- lspconfig.clojure_lsp.setup {} -- TODO:
 
-lspconfig.cmake.setup{}
+lspconfig.cmake.setup {}
 
-lspconfig.java_language_server.setup{
+lspconfig.java_language_server.setup {
   cmd = { os.getenv('HOME') .. '/repos/java-language-server/dist/lang_server_linux.sh' }
 }
 
-lspconfig.kotlin_language_server.setup{}
+lspconfig.kotlin_language_server.setup {}
 
 lspconfig.lua_ls.setup {
   on_init = function(client)
@@ -50,12 +50,22 @@ lspconfig.lua_ls.setup {
   }
 }
 
-lspconfig.pylsp.setup{}
+lspconfig.pylsp.setup {
+  settings = {
+    pylsp = {
+      plugins = {
+        pylint = {
+          enabled = true
+        }
+      }
+    }
+  }
+}
 
-lspconfig.rust_analyzer.setup{}
+lspconfig.rust_analyzer.setup {}
 
-lspconfig.ts_ls.setup{}
+lspconfig.ts_ls.setup {}
 
-lspconfig.vimls.setup{}
+lspconfig.vimls.setup {}
 
-lspconfig.yamlls.setup{}
+lspconfig.yamlls.setup {}

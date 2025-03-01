@@ -51,7 +51,9 @@ cmp.setup.cmdline(':', {
   matching = { disallow_symbol_nonprefix_matching = false }
 })
 
--- local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
---   capabilities = capabilities
--- }
+local servers = { 'pylsp' }
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    capabilities = capabilities
+  }
+end

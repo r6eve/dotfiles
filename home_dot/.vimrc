@@ -1,7 +1,6 @@
 if !1 | finish | endif
 
 " basic settings{{{1
-set nocompatible
 set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8
@@ -55,7 +54,6 @@ set keywordprg=:help
 set splitright
 set splitbelow
 set nostartofline
-autocmd BufNewFile,BufRead *.{md,tsv} set nostartofline
 set completeopt-=preview
 set nrformats=hex,alpha
 set lazyredraw
@@ -85,28 +83,37 @@ let g:python3_host_prog = '/usr/bin/python3'
 if !has('nvim')
   set pyx=3
 endif
-autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#87005f
-autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=89 gui=bold guifg=#262626 guibg=#87005f
-autocmd ColorScheme * highlight CurSearch term=NONE cterm=underline ctermfg=NONE ctermbg=132 gui=underline guifg=NONE guibg=#af5f87
-autocmd ColorScheme * highlight Delimiter ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
-autocmd ColorScheme * highlight EndOfBuffer cterm=NONE ctermfg=242 gui=NONE guifg=#6c6c6c
-autocmd ColorScheme * highlight Ignore cterm=NONE ctermfg=231 gui=NONE guifg=#ffffff
-autocmd ColorScheme * highlight MatchParen cterm=NONE ctermfg=233 ctermbg=132 gui=NONE guifg=#121212 guibg=#af5f87
-autocmd ColorScheme * highlight NonText cterm=NONE ctermfg=62 gui=NONE guifg=#5f5fd7
-autocmd ColorScheme * highlight Normal cterm=NONE ctermfg=14 ctermbg=NONE gui=NONE guifg=#54ffff guibg=NONE
-autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 gui=underline guifg=#ff8787 guibg=#005f5f
-autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#6c6c6c
-autocmd ColorScheme * highlight TabString cterm=NONE ctermfg=239 ctermbg=NONE gui=NONE guifg=#4e4e4e guibg=NONE
-autocmd ColorScheme * highlight TrailingSpaces ctermbg=238 guibg=#444444
-autocmd ColorScheme * highlight Visual ctermfg=14 ctermbg=132 guifg=#54ffff guibg=#af5f87
-autocmd ColorScheme * highlight ZenkakuSpace cterm=NONE ctermbg=9 gui=NONE guibg=#ff5454
-autocmd ColorScheme * highlight default link WinSeparator VertSplit
-autocmd VimEnter,WinEnter * let w:m1 = matchadd('TabString', '	')
-autocmd VimEnter,WinEnter * let w:m2 = matchadd('ZenkakuSpace', '　')
-autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
-autocmd VimEnter,WinEnter *.py syntax keyword Special self
 
-augroup vimrc-todo
+augroup Nostartofline
+  autocmd!
+  autocmd BufNewFile,BufRead *.{md,tsv} set nostartofline
+augroup END
+
+augroup Highlight
+  autocmd!
+  autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#87005f
+  autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=89 gui=bold guifg=#262626 guibg=#87005f
+  autocmd ColorScheme * highlight CurSearch term=NONE cterm=underline ctermfg=NONE ctermbg=132 gui=underline guifg=NONE guibg=#af5f87
+  autocmd ColorScheme * highlight Delimiter ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
+  autocmd ColorScheme * highlight EndOfBuffer cterm=NONE ctermfg=242 gui=NONE guifg=#6c6c6c
+  autocmd ColorScheme * highlight Ignore cterm=NONE ctermfg=231 gui=NONE guifg=#ffffff
+  autocmd ColorScheme * highlight MatchParen cterm=NONE ctermfg=233 ctermbg=132 gui=NONE guifg=#121212 guibg=#af5f87
+  autocmd ColorScheme * highlight NonText cterm=NONE ctermfg=62 gui=NONE guifg=#5f5fd7
+  autocmd ColorScheme * highlight Normal cterm=NONE ctermfg=14 ctermbg=NONE gui=NONE guifg=#54ffff guibg=NONE
+  autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 gui=underline guifg=#ff8787 guibg=#005f5f
+  autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#6c6c6c
+  autocmd ColorScheme * highlight TabString cterm=NONE ctermfg=239 ctermbg=NONE gui=NONE guifg=#4e4e4e guibg=NONE
+  autocmd ColorScheme * highlight TrailingSpaces ctermbg=238 guibg=#444444
+  autocmd ColorScheme * highlight Visual ctermfg=14 ctermbg=132 guifg=#54ffff guibg=#af5f87
+  autocmd ColorScheme * highlight ZenkakuSpace cterm=NONE ctermbg=9 gui=NONE guibg=#ff5454
+  autocmd ColorScheme * highlight default link WinSeparator VertSplit
+  autocmd VimEnter,WinEnter * let w:m1 = matchadd('TabString', '	')
+  autocmd VimEnter,WinEnter * let w:m2 = matchadd('ZenkakuSpace', '　')
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+  autocmd VimEnter,WinEnter *.py syntax keyword Special self
+augroup END
+
+augroup TodoGroup
   autocmd!
   autocmd Syntax * syn match myTodo /\C\v<(DEBUG|DONE|FIXME|HACK|NB|NOTE|OPTIMIZE|REVIEW|TODO|WIP|XXX):/ containedin=.*Comment
 augroup END
@@ -114,16 +121,19 @@ highlight def link myTodo Todo
 
 if has('vim_starting') && has('reltime')
   let g:startuptime = reltime()
-  augroup vimrc-startuptime
+  augroup Startuptime
     autocmd! VimEnter * let g:startuptime = reltime(g:startuptime) | redraw
     \                 | echomsg 'startuptime: ' . reltimestr(g:startuptime)
+    autocmd WinEnter * checktime
   augroup END
 endif
-autocmd WinEnter * checktime
 
-autocmd SwapExists * let v:swapchoice = 'o'
+augroup OpenReadOnly
+  autocmd!
+  autocmd SwapExists * let v:swapchoice = 'o'
+augroup END
 
-augroup vimrc-misc
+augroup LastLocation
   autocmd!
   autocmd BufReadPost
   \ * if line("'\"") && line("'\"") <= line('$')
@@ -207,40 +217,35 @@ function! ToggleSigncolumn() abort
 endfunction
 nnoremap <F1> :call ToggleSigncolumn()<CR>
 
-function! s:on_FileType_qf_define_mappings() abort
-  nnoremap <buffer><silent> q :<C-u>cclose<CR>
-  nnoremap <buffer><silent> j :<C-u>cnext<CR>:copen<CR>
-  nnoremap <buffer><silent> k :<C-u>cprevious<CR>:copen<CR>
-  nnoremap <buffer><silent> J :<C-u>cnfile<CR>:copen<CR>
-  nnoremap <buffer><silent> K :<C-u>cpfile<CR>:copen<CR>
-  nnoremap <buffer><silent> l :<C-u>clist<CR>
-  nnoremap <buffer><CR> <CR>
-endfunction
-autocmd FileType qf call s:on_FileType_qf_define_mappings()
-
 " filetype detect settings{{{1
-autocmd BufNewFile,BufRead *.clje set filetype=clojure
-autocmd BufNewFile,BufRead *.dart set filetype=dart
-autocmd BufNewFile,BufRead *.gnu set filetype=gnuplot
-autocmd BufNewFile,BufRead *.io set filetype=io
-autocmd BufNewFile,BufRead *.jnlp set filetype=html
-autocmd BufNewFile,BufRead *.{md,md.html,mdwn,mkd,mkdn,mark*} set filetype=markdown
-autocmd BufNewFile,BufRead *.m set filetype=objc
-autocmd BufNewFile,BufRead *.{atd,mly,mlt} set filetype=ocaml
-autocmd BufNewFile,BufRead *.{cgi,t} set filetype=perl
-autocmd BufNewFile,BufRead *.re set filetype=reason
-autocmd BufNewFile,BufRead *.scala set filetype=scala
-autocmd BufNewFile,BufRead *.test set filetype=text
-autocmd BufNewFile,BufRead *.tf set filetype=terraform
-autocmd BufNewFile,BufRead *.toml set filetype=toml
-autocmd BufNewFile,BufRead *.ts set filetype=typescript
-autocmd BufNewFile,BufRead *.vimspec set filetype=vim
+augroup FiletypeDetection
+  autocmd!
+  autocmd BufNewFile,BufRead *.clje set filetype=clojure
+  autocmd BufNewFile,BufRead *.dart set filetype=dart
+  autocmd BufNewFile,BufRead *.gnu set filetype=gnuplot
+  autocmd BufNewFile,BufRead *.io set filetype=io
+  autocmd BufNewFile,BufRead *.jnlp set filetype=html
+  autocmd BufNewFile,BufRead *.{md,md.html,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  autocmd BufNewFile,BufRead *.m set filetype=objc
+  autocmd BufNewFile,BufRead *.{atd,mly,mlt} set filetype=ocaml
+  autocmd BufNewFile,BufRead *.{cgi,t} set filetype=perl
+  autocmd BufNewFile,BufRead *.re set filetype=reason
+  autocmd BufNewFile,BufRead *.scala set filetype=scala
+  autocmd BufNewFile,BufRead *.test set filetype=text
+  autocmd BufNewFile,BufRead *.tf set filetype=terraform
+  autocmd BufNewFile,BufRead *.toml set filetype=toml
+  autocmd BufNewFile,BufRead *.ts set filetype=typescript
+  autocmd BufNewFile,BufRead *.vimspec set filetype=vim
+augroup END
 
 " vim-plug{{{1
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
   \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+  augroup PlugInstall
+    autocmd!
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
+  augroup END
 endif
 
 call plug#begin('~/.config/nvim/plugged')
@@ -499,13 +504,19 @@ let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 let g:ale_rust_rls_toolchain = 'stable'
 let g:ale_sh_shfmt_options = '-s -i 2 -ci'
 
-autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim,xml,yaml,yaml.ansible set signcolumn=yes
+augroup Signcolumn
+  autocmd!
+  autocmd FileType c,cpp,clojure,cmake,css,dockerfile,elixir,go,haskell,java,javascript,json,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim,xml,yaml,yaml.ansible set signcolumn=yes
+augroup END
 
-autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent>K <Plug>(ale_find_references)
-autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim nmap <silent><Leader>f <Plug>(ale_fix)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-]> <Plug>(ale_go_to_definition)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
-autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-T> <C-O>
+augroup AleMapping
+  autocmd!
+  autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent>K <Plug>(ale_find_references)
+  autocmd FileType c,cpp,cmake,css,elixir,haskell,go,java,javascript,json,lua,ocaml,perl,python,r,rust,scss,sh,sql,terraform,vim nmap <silent><Leader>f <Plug>(ale_fix)
+  autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-]> <Plug>(ale_go_to_definition)
+  autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><Leader>s <C-w>s<Plug>(ale_go_to_definition)
+  autocmd FileType cpp,cmake,css,elixir,haskell,go,java,javascript,kotlin,lua,ocaml,perl,python,r,rust,scss,sh,terraform,vim nmap <silent><C-T> <C-O>
+augroup END
 
 " ctrlpvim/ctrlp.vim{{{2
 let g:ctrlp_custom_ignore = {
@@ -842,7 +853,12 @@ nmap N <Plug>(anzu-N-with-echo)
 " tyru/caw.vim{{{2
 let g:caw_no_default_keymappings = 1
 let g:caw_dollarpos_sp_left = ' '
-autocmd FileType python let g:caw_dollarpos_sp_left = '  '
+
+augroup CawSetting
+  autocmd!
+  autocmd FileType python let g:caw_dollarpos_sp_left = '  '
+augroup END
+
 map gci <Plug>(caw:hatpos:comment)
 map gcui <Plug>(caw:hatpos:uncomment)
 map gca <Plug>(caw:dollarpos:comment)
@@ -950,7 +966,10 @@ augroup END
 " " liquidz/elin
 " let g:elin_enable_default_key_mappings = v:true
 
-autocmd FileType clojure set foldmarker={@{,}@}
+augroup ClojureFoldmarker
+  autocmd!
+  autocmd FileType clojure set foldmarker={@{,}@}
+augroup END
 
 " Dot{{{2
 let g:WMGraphviz_output = 'png'
@@ -968,10 +987,16 @@ let g:html_indent_inctags = 'html,body,head,tbody'
 " LaTeX{{{2
 let g:tex_conceal = ''
 let g:tex_flavor = 'latex'
-autocmd FileType tex set spell
+augroup AutoSpell
+  autocmd!
+  autocmd FileType tex set spell
+augroup END
 
 " Markdown{{{2
-autocmd Filetype markdown,mermaid,rst nmap <Leader>p :<C-u>PrevimOpen<CR>
+augroup PrevimMapping
+  autocmd!
+  autocmd Filetype markdown,mermaid,rst nmap <Leader>p :<C-u>PrevimOpen<CR>
+augroup END
 
 " plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
@@ -986,13 +1011,12 @@ if executable('ocamlmerlin') && has('python')
   let g:opamshare = substitute(system('opam var share'),'\n$','','''')
   exec 'set rtp+=' . g:opamshare . '/merlin/vim'
 end
-autocmd FileType ocaml set commentstring=(*%s*)
-autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo
-" call lsp#add_filetype_config({
-"  \ 'filetype' : 'ocaml',
-"  \ 'name' : 'ocamlmerlin-lsp',
-"  \ 'cmd' : 'opam config exec -- ocamlmerlin-lsp',
-"  \})
+
+augroup OcamlSetting
+  autocmd!
+  autocmd FileType ocaml set commentstring=(*%s*)
+  autocmd BufNewFile,BufRead *.mly syn region ocamlComment start="/\*" end="\*/" contains=@Spell,ocamlComment,ocamlTodo
+augroup END
 
 " R{{{2
 let vimrplugin_assign = 0
@@ -1010,7 +1034,11 @@ let g:ruby_path = ''
 if !exists('loaded_matchit')
   runtime macros/matchit.vim
 endif
-autocmd FileType ruby call smartinput_endwise#define_default_rules()
+
+augroup SmartinputEndwise
+  autocmd!
+  autocmd FileType ruby call smartinput_endwise#define_default_rules()
+augroup END
 
 " Shell script{{{2
 let g:sh_indent_case_labels=1

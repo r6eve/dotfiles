@@ -252,11 +252,11 @@ Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
 Plug 'AndrewRadev/linediff.vim'
 Plug 'dense-analysis/ale', {
 \ 'for' : [
-  \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
-  \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
-  \ 'rust', 'r', 'scss', 'sh', 'sql', 'terraform', 'vim', 'xml', 'yaml',
-  \ 'yaml.ansible'
-  \]
+\ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
+\ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
+\ 'rust', 'r', 'scss', 'sh', 'sql', 'terraform', 'vim', 'xml', 'yaml',
+\ 'yaml.ansible'
+\]
 \}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'haya14busa/vim-asterisk'
@@ -271,6 +271,7 @@ Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
 Plug 'mbbill/undotree'
+" Plug 'mfussenegger/nvim-lint'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neovim/nvim-lspconfig'
 Plug 'osyo-manga/vim-anzu'
@@ -444,50 +445,50 @@ let g:ale_hover_cursor = 0
 let g:ale_virtualtext_cursor = 'disabled'
 
 let g:ale_fixers = {
- \ 'c': ['clang-format'],
- \ 'cpp': ['clang-format'],
- \ 'cmake': ['cmakelint'],
- \ 'css': ['prettier'],
- \ 'go': ['gofmt'],
- \ 'haskell': ['stylish-haskell'],
- \ 'java': ['google_java_format'],
- \ 'javascript': ['prettier'],
- \ 'json': ['fixjson'],
- \ 'ocaml': ['ocp-indent'],
- \ 'perl': ['perltidy'],
- \ 'python': ['yapf'],
- \ 'r': ['styler'],
- \ 'rust': ['rustfmt'],
- \ 'scss': ['prettier'],
- \ 'sh': ['shfmt'],
- \ 'sql': ['sqlformat'],
- \ 'terraform': ['terraform'],
- \ }
+\ 'c': ['clang-format'],
+\ 'cpp': ['clang-format'],
+\ 'cmake': ['cmakelint'],
+\ 'css': ['prettier'],
+\ 'go': ['gofmt'],
+\ 'haskell': ['stylish-haskell'],
+\ 'java': ['google_java_format'],
+\ 'javascript': ['prettier'],
+\ 'json': ['fixjson'],
+\ 'ocaml': ['ocp-indent'],
+\ 'perl': ['perltidy'],
+\ 'python': ['yapf'],
+\ 'r': ['styler'],
+\ 'rust': ['rustfmt'],
+\ 'scss': ['prettier'],
+\ 'sh': ['shfmt'],
+\ 'sql': ['sqlformat'],
+\ 'terraform': ['terraform'],
+\ }
 
 let g:ale_linters = {
- \ 'clojure': ['clj-kondo'],
- \ 'dockerfile': ['hadolint'],
- \ 'elixir': ['elixir-ls', 'mix'],
- \ 'java': ['javalsp'],
- \ 'json': ['jsonlint'],
- \ 'kotlin': ['kotlin-language-server'],
- \ 'lua': ['lua-language-server', 'luacheck'],
- \ 'perl': ['perl', 'perlcritic'],
- \ 'r': ['languageserver', 'lintr'],
- \ 'python': ['pylint', 'pylsp'],
- \ 'rust': ['analyzer', 'cargo'],
- \ 'sh': ['language_server', 'shellcheck'],
- \ 'terraform': ['terraform_lsp', 'tflint'],
- \ 'vim': ['vimls', 'vint'],
- \ 'xml': ['xmllint'],
- \ 'yaml': ['yamllint'],
- \ 'yaml.ansible': ['ansible-lint'],
- \ }
+\ 'clojure': ['clj-kondo'],
+\ 'dockerfile': ['hadolint'],
+\ 'elixir': ['elixir-ls', 'mix'],
+\ 'java': ['javalsp'],
+\ 'json': ['jsonlint'],
+\ 'kotlin': ['kotlin-language-server'],
+\ 'lua': ['lua-language-server', 'luacheck'],
+\ 'perl': ['perl', 'perlcritic'],
+\ 'r': ['languageserver', 'lintr'],
+\ 'python': ['pylint', 'pylsp'],
+\ 'rust': ['analyzer', 'cargo'],
+\ 'sh': ['language_server', 'shellcheck'],
+\ 'terraform': ['terraform_lsp', 'tflint'],
+\ 'vim': ['vimls', 'vint'],
+\ 'xml': ['xmllint'],
+\ 'yaml': ['yamllint'],
+\ 'yaml.ansible': ['ansible-lint'],
+\ }
 
 let g:ale_elixir_elixir_ls_release = $HOME . '/repos/elixir-ls/rel'
 let g:ale_elixir_elixir_ls_config = {
- \ 'elixirLS': {'dialyzerEnabled': v:false}
- \ }
+\ 'elixirLS': {'dialyzerEnabled': v:false}
+\ }
 let g:ale_java_eclipselsp_path = $HOME . '/repos/eclipse.jdt.ls'
 let g:ale_java_eclipselsp_javaagent = $HOME . '/repos/lombok/lombok.jar'
 let g:ale_java_javalsp_executable = $HOME . '/repos/java-language-server/dist/lang_server_linux.sh'
@@ -525,6 +526,12 @@ map z#  <Plug>(asterisk-gz#)<Plug>(anzu-update-search-status-with-echo)
 map gz# <Plug>(asterisk-z#)<Plug>(anzu-update-search-status-with-echo)
 
 let g:asterisk#keeppos = 1
+
+" hrsh7th/nvim-cmp{{{2
+
+" if has('nvim')
+"   lua require('nvim-cmp')
+" endif
 
 " inkarkat/vim-mark{{{2
 let g:mwDefaultHighlightingPalette = 'extended'
@@ -812,6 +819,11 @@ call submode#enter_with('move-to-fold', 'n', '', 'zk', 'zk')
 call submode#map('move-to-fold', 'n', '', 'j', 'zj')
 call submode#map('move-to-fold', 'n', '', 'k', 'zk')
 
+" mfussenegger/nvim-lint{{{2
+" if has('nvim')
+"   lua require('nvim-lint')
+" endif
+
 " neoclide/coc.nvim{{{2
 " :CocInstall coc-snippets
 " ~/.config/coc/extensions/node_modules/coc-snippets
@@ -820,7 +832,6 @@ call submode#map('move-to-fold', 'n', '', 'k', 'zk')
 
 " if has('nvim')
 "   lua require('nvim-lspconfig')
-"   lua require('nvim-cmp')
 "   autocmd FileType awk,automake,bash,c,cpp,clojure,cmake,config,cuda,dockerfile,edn,elixir,eelixir,heex,java,javascript,javascriptreact,javascript.jsx,kotlin,lua,make,objc,objcpp,proto,python,rust,sh,surface,typescript,typescriptreact,typescript.tsx,vim,yaml,yaml.ansible,yaml.docker-compose,yaml.gitlab set signcolumn=yes
 " endif
 

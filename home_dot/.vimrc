@@ -85,7 +85,6 @@ let g:python3_host_prog = '/usr/bin/python3'
 if !has('nvim')
   set pyx=3
 endif
-syntax enable
 autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#87005f
 autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=89 gui=bold guifg=#262626 guibg=#87005f
 autocmd ColorScheme * highlight CurSearch term=NONE cterm=underline ctermfg=NONE ctermbg=132 gui=underline guifg=NONE guibg=#af5f87
@@ -252,28 +251,28 @@ Plug 'Shougo/neomru.vim'
 Plug 'nixprime/cpsm', { 'do' : 'PY3=ON ./install.sh' }
 Plug 'AndrewRadev/linediff.vim'
 Plug 'dense-analysis/ale', {
- \ 'for' : [
-   \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
-   \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
-   \ 'rust', 'r', 'scss', 'sh', 'sql', 'terraform', 'vim', 'xml', 'yaml',
-   \ 'yaml.ansible'
-   \]
- \}
+\ 'for' : [
+  \ 'c', 'cpp', 'clojure', 'cmake', 'css', 'dockerfile', 'elixir', 'go',
+  \ 'haskell', 'java', 'javascript', 'json', 'lua', 'ocaml', 'perl', 'python',
+  \ 'rust', 'r', 'scss', 'sh', 'sql', 'terraform', 'vim', 'xml', 'yaml',
+  \ 'yaml.ansible'
+  \]
+\}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'haya14busa/vim-asterisk'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips' " TODO:
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips' " TODO:
 Plug 'inkarkat/vim-ingo-library' | Plug 'inkarkat/vim-mark'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
 Plug 'mbbill/undotree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neovim/nvim-lspconfig'
+" Plug 'neovim/nvim-lspconfig'
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/tcvime'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
@@ -309,7 +308,6 @@ Plug 'pearofducks/ansible-vim', { 'for' : 'yaml.ansible' }
 
 " C++
 Plug 'vim-jp/vim-cpp', { 'for' : 'cpp' }
-Plug 'rhysd/vim-clang-format', { 'for' : ['c', 'cpp'] }
 
 " CWL
 Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
@@ -446,50 +444,50 @@ let g:ale_hover_cursor = 0
 let g:ale_virtualtext_cursor = 'disabled'
 
 let g:ale_fixers = {
-  \ 'c': ['clang-format'],
-  \ 'cpp': ['clang-format'],
-  \ 'cmake': ['cmakelint'],
-  \ 'css': ['prettier'],
-  \ 'go': ['gofmt'],
-  \ 'haskell': ['stylish-haskell'],
-  \ 'java': ['google_java_format'],
-  \ 'javascript': ['prettier'],
-  \ 'json': ['fixjson'],
-  \ 'ocaml': ['ocp-indent'],
-  \ 'perl': ['perltidy'],
-  \ 'python': ['yapf'],
-  \ 'r': ['styler'],
-  \ 'rust': ['rustfmt'],
-  \ 'scss': ['prettier'],
-  \ 'sh': ['shfmt'],
-  \ 'sql': ['sqlformat'],
-  \ 'terraform': ['terraform'],
-  \ }
+ \ 'c': ['clang-format'],
+ \ 'cpp': ['clang-format'],
+ \ 'cmake': ['cmakelint'],
+ \ 'css': ['prettier'],
+ \ 'go': ['gofmt'],
+ \ 'haskell': ['stylish-haskell'],
+ \ 'java': ['google_java_format'],
+ \ 'javascript': ['prettier'],
+ \ 'json': ['fixjson'],
+ \ 'ocaml': ['ocp-indent'],
+ \ 'perl': ['perltidy'],
+ \ 'python': ['yapf'],
+ \ 'r': ['styler'],
+ \ 'rust': ['rustfmt'],
+ \ 'scss': ['prettier'],
+ \ 'sh': ['shfmt'],
+ \ 'sql': ['sqlformat'],
+ \ 'terraform': ['terraform'],
+ \ }
 
 let g:ale_linters = {
-  \ 'clojure': ['clj-kondo'],
-  \ 'dockerfile': ['hadolint'],
-  \ 'elixir': ['elixir-ls', 'mix'],
-  \ 'java': ['javalsp'],
-  \ 'json': ['jsonlint'],
-  \ 'kotlin': ['kotlin-language-server'],
-  \ 'lua': ['lua-language-server', 'luacheck'],
-  \ 'perl': ['perl', 'perlcritic'],
-  \ 'r': ['languageserver', 'lintr'],
-  \ 'python': ['pylint', 'pylsp'],
-  \ 'rust': ['analyzer', 'cargo'],
-  \ 'sh': ['language_server', 'shellcheck'],
-  \ 'terraform': ['terraform_lsp', 'tflint'],
-  \ 'vim': ['vimls', 'vint'],
-  \ 'xml': ['xmllint'],
-  \ 'yaml': ['yamllint'],
-  \ 'yaml.ansible': ['ansible-lint'],
-  \ }
+ \ 'clojure': ['clj-kondo'],
+ \ 'dockerfile': ['hadolint'],
+ \ 'elixir': ['elixir-ls', 'mix'],
+ \ 'java': ['javalsp'],
+ \ 'json': ['jsonlint'],
+ \ 'kotlin': ['kotlin-language-server'],
+ \ 'lua': ['lua-language-server', 'luacheck'],
+ \ 'perl': ['perl', 'perlcritic'],
+ \ 'r': ['languageserver', 'lintr'],
+ \ 'python': ['pylint', 'pylsp'],
+ \ 'rust': ['analyzer', 'cargo'],
+ \ 'sh': ['language_server', 'shellcheck'],
+ \ 'terraform': ['terraform_lsp', 'tflint'],
+ \ 'vim': ['vimls', 'vint'],
+ \ 'xml': ['xmllint'],
+ \ 'yaml': ['yamllint'],
+ \ 'yaml.ansible': ['ansible-lint'],
+ \ }
 
 let g:ale_elixir_elixir_ls_release = $HOME . '/repos/elixir-ls/rel'
 let g:ale_elixir_elixir_ls_config = {
-  \ 'elixirLS': {'dialyzerEnabled': v:false}
-  \ }
+ \ 'elixirLS': {'dialyzerEnabled': v:false}
+ \ }
 let g:ale_java_eclipselsp_path = $HOME . '/repos/eclipse.jdt.ls'
 let g:ale_java_eclipselsp_javaagent = $HOME . '/repos/lombok/lombok.jar'
 let g:ale_java_javalsp_executable = $HOME . '/repos/java-language-server/dist/lang_server_linux.sh'
@@ -820,10 +818,11 @@ call submode#map('move-to-fold', 'n', '', 'k', 'zk')
 
 " neovim/nvim-lspconfig{{{2
 
-if has('nvim')
-  lua require('nvim-lspconfig')
-  autocmd FileType python set signcolumn=yes
-endif
+" if has('nvim')
+"   lua require('nvim-lspconfig')
+"   lua require('nvim-cmp')
+"   autocmd FileType awk,automake,bash,c,cpp,clojure,cmake,config,cuda,dockerfile,edn,elixir,eelixir,heex,java,javascript,javascriptreact,javascript.jsx,kotlin,lua,make,objc,objcpp,proto,python,rust,sh,surface,typescript,typescriptreact,typescript.tsx,vim,yaml,yaml.ansible,yaml.docker-compose,yaml.gitlab set signcolumn=yes
+" endif
 
 " osyo-manga/vim-anzu{{{2
 nmap n <Plug>(anzu-n-with-echo)

@@ -227,7 +227,7 @@ Plug 'haya14busa/vim-asterisk'
 " Plug 'hrsh7th/cmp-omni'
 " Plug 'hrsh7th/cmp-path'
 " Plug 'hrsh7th/nvim-cmp'
-" Plug 'quangnguyen30192/cmp-nvim-ultisnips' " TODO:
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'inkarkat/vim-ingo-library' | Plug 'inkarkat/vim-mark'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'

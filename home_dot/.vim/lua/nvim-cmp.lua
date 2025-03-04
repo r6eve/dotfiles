@@ -3,10 +3,7 @@ local cmp = require('cmp')
 cmp.setup({
   snippet = {
     expand = function(args)
-      -- TODO:
-      -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+      vim.fn["UltiSnips#Anon"](args.body)
     end,
   },
   window = {
@@ -18,15 +15,13 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    -- { name = 'vsnip' }, -- For vsnip users.
-    { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'elin' },
-    -- { name = 'elixirls' }, -- TODO: used?
-    -- { name = 'vimls' }, -- TODO: used?
+    { name = 'nvim_lsp' },
+    { name = 'omni' },
+    { name = 'ultisnips' },
   }, {
     { name = 'buffer' },
   })

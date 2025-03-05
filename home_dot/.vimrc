@@ -111,6 +111,7 @@ augroup LastLocation
   \ | endif
 augroup END
 
+" highlight{{{1
 augroup Highlight
   autocmd!
   autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#87005f
@@ -122,6 +123,7 @@ augroup Highlight
   autocmd ColorScheme * highlight MatchParen cterm=NONE ctermfg=233 ctermbg=132 gui=NONE guifg=#121212 guibg=#af5f87
   autocmd ColorScheme * highlight NonText cterm=NONE ctermfg=62 gui=NONE guifg=#5f5fd7
   autocmd ColorScheme * highlight Normal cterm=NONE ctermfg=14 ctermbg=NONE gui=NONE guifg=#54ffff guibg=NONE
+  autocmd ColorScheme * highlight Pmenu term=NONE guifg=#262626 ctermfg=235 guibg=#d7d7ff ctermbg=189
   autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 gui=underline guifg=#ff8787 guibg=#005f5f
   autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#6c6c6c
   autocmd ColorScheme * highlight TabString cterm=NONE ctermfg=239 ctermbg=NONE gui=NONE guifg=#4e4e4e guibg=NONE
@@ -221,20 +223,19 @@ Plug 'dense-analysis/ale', {
 \}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'haya14busa/vim-asterisk'
-" Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/cmp-cmdline'
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-omni'
-" Plug 'hrsh7th/cmp-path'
-" Plug 'hrsh7th/nvim-cmp'
-" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-omni'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'inkarkat/vim-ingo-library' | Plug 'inkarkat/vim-mark'
 Plug 'kana/vim-smartinput'
 Plug 'kana/vim-smartword'
 Plug 'kana/vim-submode'
 Plug 'mbbill/undotree'
 " Plug 'mfussenegger/nvim-lint'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neovim/nvim-lspconfig'
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/tcvime'
@@ -278,7 +279,7 @@ Plug 'manabuishii/vim-cwl', { 'for' : 'cwl' }
 " Clojure
 Plug 'guns/vim-sexp', { 'for' : 'clojure' }
 Plug 'liquidz/vim-iced', { 'for' : 'clojure' }
-Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
+Plug 'r6eve/cmp-iced', { 'for' : 'clojure', 'branch' : 'spike/archived' }
 Plug 'liquidz/vim-iced-multi-session', {'for': 'clojure'}
 
 " Plug 'liquidz/elin'
@@ -497,9 +498,9 @@ let g:asterisk#keeppos = 1
 
 " hrsh7th/nvim-cmp{{{2
 
-" if has('nvim')
-"   lua require('nvim-cmp')
-" endif
+if has('nvim')
+  lua require('nvim-cmp')
+endif
 
 " inkarkat/vim-mark{{{2
 let g:mwDefaultHighlightingPalette = 'extended'
@@ -791,10 +792,6 @@ call submode#map('move-to-fold', 'n', '', 'k', 'zk')
 " if has('nvim')
 "   lua require('nvim-lint')
 " endif
-
-" neoclide/coc.nvim{{{2
-" :CocInstall coc-snippets
-" ~/.config/coc/extensions/node_modules/coc-snippets
 
 " neovim/nvim-lspconfig{{{2
 

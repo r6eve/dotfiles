@@ -19,7 +19,8 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     -- { name = 'elin' },
-    { name = 'nvim_lsp' },
+    { name = 'iced' },
+    -- { name = 'nvim_lsp' },
     { name = 'omni' },
     { name = 'ultisnips' },
   }, {

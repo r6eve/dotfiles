@@ -125,7 +125,7 @@ augroup Highlight
   autocmd ColorScheme * highlight MatchParen cterm=NONE ctermfg=233 ctermbg=132 gui=NONE guifg=#121212 guibg=#af5f87
   autocmd ColorScheme * highlight NonText cterm=NONE ctermfg=62 gui=NONE guifg=#5f5fd7
   autocmd ColorScheme * highlight Normal cterm=NONE ctermfg=14 ctermbg=NONE gui=NONE guifg=#54ffff guibg=NONE
-  autocmd ColorScheme * highlight Pmenu cterm=NONE ctermfg=189 ctermbg=235 guifg=#d7d7ff guibg=#262626
+  autocmd ColorScheme * highlight Pmenu cterm=NONE ctermfg=189 ctermbg=235 gui=NONE guifg=#d7d7ff guibg=#262626
   autocmd ColorScheme * highlight PmenuSel cterm=NONE ctermfg=222 ctermbg=238 gui=NONE guifg=#ffd787 guibg=#444444 blend=0
   autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 gui=underline guifg=#ff8787 guibg=#005f5f
   autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#6c6c6c

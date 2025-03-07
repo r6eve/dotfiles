@@ -116,7 +116,7 @@ augroup Highlight
   autocmd!
   autocmd ColorScheme * highlight ALEError ctermbg=89 guibg=#87005f
   autocmd ColorScheme * highlight ALEErrorSign cterm=bold ctermfg=235 ctermbg=89 gui=bold guifg=#262626 guibg=#87005f
-  autocmd ColorScheme * highlight CurSearch term=NONE cterm=underline ctermfg=NONE ctermbg=132 gui=underline guifg=NONE guibg=#af5f87
+  autocmd ColorScheme * highlight CurSearch cterm=underline ctermfg=NONE ctermbg=132 gui=underline guifg=NONE guibg=#af5f87
   autocmd ColorScheme * highlight CmpItemAbbrMatch term=NONE guifg=#262626 ctermfg=235 guibg=#00d7ff ctermbg=45
   autocmd ColorScheme * highlight Delimiter ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
   autocmd ColorScheme * highlight EndOfBuffer cterm=NONE ctermfg=242 gui=NONE guifg=#6c6c6c
@@ -124,7 +124,7 @@ augroup Highlight
   autocmd ColorScheme * highlight MatchParen cterm=NONE ctermfg=233 ctermbg=132 gui=NONE guifg=#121212 guibg=#af5f87
   autocmd ColorScheme * highlight NonText cterm=NONE ctermfg=62 gui=NONE guifg=#5f5fd7
   autocmd ColorScheme * highlight Normal cterm=NONE ctermfg=14 ctermbg=NONE gui=NONE guifg=#54ffff guibg=NONE
-  autocmd ColorScheme * highlight Pmenu term=NONE guifg=#262626 ctermfg=235 guibg=#d7d7ff ctermbg=189
+  autocmd ColorScheme * highlight Pmenu cterm=NONE guifg=#d7d7ff ctermfg=189 guibg=#262626 ctermbg=235
   autocmd ColorScheme * highlight SpellBad cterm=underline ctermfg=210 ctermbg=23 gui=underline guifg=#ff8787 guibg=#005f5f
   autocmd ColorScheme * highlight TabLineFill cterm=reverse ctermfg=242 gui=reverse guifg=#6c6c6c
   autocmd ColorScheme * highlight TabString cterm=NONE ctermfg=239 ctermbg=NONE gui=NONE guifg=#4e4e4e guibg=NONE

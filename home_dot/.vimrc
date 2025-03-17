@@ -288,6 +288,7 @@ Plug 'liquidz/vim-iced-multi-session', {'for': 'clojure'}
 
 " Plug 'liquidz/elin'
 " Plug 'liquidz/elin-cmp-source'
+" Plug 'liquidz/elin-format'
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " " vim-fireplace
@@ -923,6 +924,12 @@ augroup END
 
 " " liquidz/elin
 " let g:elin_enable_default_key_mappings = v:true
+"
+" " XXX: No implementation
+" augroup ElinTmpMapping
+"   autocmd!
+"   autocmd FileType clojure nmap <silent><C-T> <C-O>
+" augroup END
 
 augroup ClojureFoldmarker
   autocmd!

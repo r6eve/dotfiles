@@ -448,8 +448,8 @@ let g:ale_linters = {
 \ 'terraform': ['terraform_lsp', 'tflint'],
 \ 'vim': ['vimls', 'vint'],
 \ 'xml': ['xmllint'],
-\ 'yaml': ['yamllint'],
-\ 'yaml.ansible': ['ansible-lint'],
+\ 'yaml': ['yaml-language-server', 'yamllint'],
+\ 'yaml.ansible': ['ansible-language-server', 'ansible-lint'],
 \ }
 
 let g:ale_elixir_elixir_ls_release = $HOME . '/repos/elixir-ls/rel'

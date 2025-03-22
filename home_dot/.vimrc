@@ -288,7 +288,6 @@ Plug 'liquidz/vim-iced-multi-session', {'for': 'clojure'}
 
 " Plug 'liquidz/elin'
 " Plug 'liquidz/elin-cmp-source'
-" Plug 'liquidz/elin-format'
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " " vim-fireplace

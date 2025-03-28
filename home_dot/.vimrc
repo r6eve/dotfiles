@@ -142,7 +142,6 @@ augroup Highlight
 augroup END
 
 " key mapping{{{1
-set pastetoggle=<F2>
 nnoremap <F3> :setlocal spell! spell?<CR>
 inoremap <F3> <C-o>:setlocal spell! spell?<CR>
 nnoremap <F4> :setlocal list! list?<CR>

@@ -240,6 +240,7 @@ Plug 'kana/vim-submode'
 Plug 'mbbill/undotree'
 " Plug 'mfussenegger/nvim-lint'
 " Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/tcvime'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'
@@ -287,7 +288,6 @@ Plug 'liquidz/vim-iced-multi-session', {'for': 'clojure'}
 
 " Plug 'liquidz/elin'
 " Plug 'liquidz/elin-cmp-source'
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " " vim-fireplace
 " Plug 'tpope/vim-salve', { 'for' : 'clojure' }
@@ -802,6 +802,12 @@ call submode#map('move-to-fold', 'n', '', 'k', 'zk')
 "   lua require('nvim-lspconfig')
 "   autocmd FileType awk,automake,bash,c,cpp,clojure,cmake,config,cuda,dockerfile,edn,elixir,eelixir,heex,java,javascript,javascriptreact,javascript.jsx,kotlin,lua,make,objc,objcpp,proto,python,rust,sh,surface,typescript,typescriptreact,typescript.tsx,vim,yaml,yaml.ansible,yaml.docker-compose,yaml.gitlab set signcolumn=yes
 " endif
+
+" nvim-treesitter/nvim-treesitter{{{2
+
+if has('nvim')
+  lua require('treesitter')
+endif
 
 " osyo-manga/vim-anzu{{{2
 nmap n <Plug>(anzu-n-with-echo)

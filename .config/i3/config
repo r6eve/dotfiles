@@ -123,7 +123,7 @@ exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
 exec --no-startup-id xset -b
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
-exec --no-startup-id xset r rate 400 40
+exec --no-startup-id xset r rate 350 40
 exec --no-startup-id feh --bg-fill /home/r6eve/picts/bg.png
 exec --no-startup-id fcitx5 -d --replace
 exec --no-startup-id dunst

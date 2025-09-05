@@ -190,6 +190,7 @@ augroup FiletypeDetection
   autocmd BufNewFile,BufRead *.m set filetype=objc
   autocmd BufNewFile,BufRead *.{atd,mly,mlt} set filetype=ocaml
   autocmd BufNewFile,BufRead *.{cgi,t} set filetype=perl
+  autocmd BufNewFile,BufRead *.smk set filetype=python
   autocmd BufNewFile,BufRead *.re set filetype=reason
   autocmd BufNewFile,BufRead *.scala set filetype=scala
   autocmd BufNewFile,BufRead *.test set filetype=text

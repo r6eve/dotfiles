@@ -335,6 +335,9 @@ Plug 'rhysd/github-complete.vim', { 'for' : ['markdown', 'rst'] }
 Plug 'godlygeek/tabular', { 'for' : ['markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for' : ['markdown'] }
 
+" Nextflow
+Plug 'nextflow-io/vim-language-nextflow', { 'for' : 'nextflow' }
+
 " Perl
 Plug 'c9s/perlomni.vim', { 'for' : 'perl' }
 Plug 'vim-perl/vim-perl'

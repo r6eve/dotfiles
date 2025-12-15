@@ -242,7 +242,7 @@ Plug 'kana/vim-submode'
 Plug 'mbbill/undotree'
 " Plug 'mfussenegger/nvim-lint'
 " Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'branch' : 'master' }
 Plug 'osyo-manga/vim-anzu'
 Plug 'r6eve/tcvime'
 Plug 'Shougo/vimproc.vim' | Plug 'rhysd/clever-f.vim'

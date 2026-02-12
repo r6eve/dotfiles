@@ -31,7 +31,7 @@
 	dic = diff --color-words
 	dij = diff --word-diff-regex='\\w+'
 	dis = diff --stat
-	lo = log --graph --pretty=format:'%C(Yellow)%h %C(White)%ad %s%C(Green)%d %C(Cyan)[%an]' --date=short
+	lo = log --graph --pretty=format:'%C(Yellow)%h %C(reset)%ad %s%C(Green)%d %C(Cyan)[%an]' --date=short
 	loc = log -p --color-words
 	lon = log --name-status
 	lop = log -p

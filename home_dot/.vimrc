@@ -316,6 +316,9 @@ Plug 'ElmCast/elm-vim', { 'for' : 'elm' }
 " Fennel
 Plug 'bakpakin/fennel.vim', { 'for' : 'fennel' }
 
+" GitHub
+Plug 'github/copilot.vim'
+
 " HTML
 Plug 'mattn/emmet-vim', {
   \ 'for' : ['jsp', 'html', 'haml', 'xhtml', 'liquid', 'css', 'scss', 'sass']
@@ -954,6 +957,9 @@ let g:WMGraphviz_shelloptions = '-Gdpi=300'
 let g:fortran_fixed_source = 1
 let g:fortran_more_precise = 1
 let g:fortran_indent_less = 1
+
+" GitHub{{{2
+let g:copilot_enabled = v:false
 
 " HTML{{{2
 let g:html_indent_inctags = 'html,body,head,tbody'

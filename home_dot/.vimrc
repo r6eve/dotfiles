@@ -181,7 +181,7 @@ nnoremap <F1> :call ToggleSigncolumn()<CR>
 " filetype detect settings{{{1
 augroup FiletypeDetection
   autocmd!
-  autocmd BufNewFile,BufRead *.clje set filetype=clojure
+  autocmd BufNewFile,BufRead *.{bb,clje} set filetype=clojure
   autocmd BufNewFile,BufRead *.dart set filetype=dart
   autocmd BufNewFile,BufRead *.gnu set filetype=gnuplot
   autocmd BufNewFile,BufRead *.io set filetype=io
@@ -316,8 +316,8 @@ Plug 'ElmCast/elm-vim', { 'for' : 'elm' }
 " Fennel
 Plug 'bakpakin/fennel.vim', { 'for' : 'fennel' }
 
-" GitHub
-Plug 'github/copilot.vim'
+" " GitHub
+" Plug 'github/copilot.vim'
 
 " HTML
 Plug 'mattn/emmet-vim', {
@@ -958,8 +958,8 @@ let g:fortran_fixed_source = 1
 let g:fortran_more_precise = 1
 let g:fortran_indent_less = 1
 
-" GitHub{{{2
-let g:copilot_enabled = v:false
+" " GitHub{{{2
+" let g:copilot_enabled = v:false
 
 " HTML{{{2
 let g:html_indent_inctags = 'html,body,head,tbody'
